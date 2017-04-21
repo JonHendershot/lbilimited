@@ -1,0 +1,47 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.grid-container {
+	display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	align-items: center;
+	justify-content: center;
+	-webkit-justify-content: center;
+	-webkit-align-items: center;
+	margin: 0 auto;
+	
+	height: 100vh;
+	width: 100vw;
+	
+	.wrapper {
+		display: flex;
+		display: -webkit-flex;
+		display: -moz-flex;
+		align-items: center;
+		justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-webkit-align-items: center;
+		
+		height: 75vh;
+		width: 80vw;
+		
+		.grid-item {
+			background-color: rgb(220,220,220);
+		}
+		.item-1 {
+			height: 100%;
+			width: 49%;
+			background-color: #222;
+		}
+		.item-3 {
+			background-color: #12171a;
+		}
+		.item-2, .item-3 {
+			height: 50%;
+			width: 49%;
+		}
+	}
+}
