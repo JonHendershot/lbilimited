@@ -1,0 +1,147 @@
+/*************************************
+  - - - - - - - FONT FACES - - - - - - 
+**************************************/
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import '../fonts/stylesheet.css';
+$heading-font: "Bebas Neue", sans-serif;
+$body-font: "Roboto", sans-serif;
+
+/*************************************
+  - - - - - - COLOR PALETTE - - - - - 
+**************************************/
+$black: #000;
+$white: #fff;
+$offwhite: #F6F6F6;
+$gray: #959595;
+$dark_grey: #222629;
+$orange: #CA5D44;
+$divider_color: #C8422C;
+$border_grey: #EDEDED;
+$upload_grey: #444444;
+$progress_bg: #868686;
+/*************************************
+  - - - - - - MISC VARIALBES - - - - - 
+**************************************/
+$max-width : 1300px;
+$home-width : 60%;
+
+/*************************************
+  - - - - - - - - MIXINS - - - - - - - 
+**************************************/
+@mixin flexbox($align,$justify){
+	display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	align-items: $align;
+	-webkit-align-items: $align;
+	justify-content: $justify;
+	-webkit-justify-content: $justify;
+}
+@mixin translate($Xvalue,$Yvalue,$Zvalue){
+	-webkit-transform: translate3d($Xvalue,$Yvalue,$Zvalue);
+	-moz-transform: translate3d($Xvalue,$Yvalue,$Zvalue);
+	-ms-transform: translate3d($Xvalue,$Yvalue,$Zvalue);
+	transform: translate3d($Xvalue,$Yvalue,$Zvalue);
+}
+@mixin rotate($deg) {
+	    -ms-transform: rotate($deg); /* IE 9 */
+    -webkit-transform: rotate($deg); /* Chrome, Safari, Opera */
+    -moz-transform: rotate($deg); /* Mozilla ? */
+    transform: rotate($deg);
+}
+@mixin scale($percent) {
+	    -ms-transform: scale($percent); /* IE 9 */
+    -webkit-transform: scale($percent); /* Chrome, Safari, Opera */
+    -moz-transform: scale($percent); /* Mozilla ? */
+    transform: scale($percent);
+}
+@mixin scaleX($percent){
+	 -ms-transform: scaleX($percent); /* IE 9 */
+    -webkit-transform: scaleX($percent); /* Chrome, Safari, Opera */
+    -moz-transform: scaleX($percent); /* Mozilla ? */
+    transform: scaleX($percent);
+}
+@mixin transrotate($X,$Y,$Z,$degree){
+		-webkit-transform: translate3d($X,$Y,$Z) rotate($degree);
+	-moz-transform: translate3d($X,$Y,$Z) rotate($degree);
+	-ms-transform: translate3d($X,$Y,$Z) rotate($degree);
+	transform: translate3d($X,$Y,$Z) rotate($degree);
+}
+@mixin transition($time,$for,$style){
+	transition: $time $for $style;
+	-webkit-transition: $time $for $style;
+	-moz-transition: $time $for $style;
+	-ms-transition: $time $for $style;
+	-o-transition: $time $for $style;
+}
+@mixin easeout($time){
+-webkit-transition: all $time cubic-bezier(0.375, 0.005, 0.000, 1.000); 
+   -moz-transition: all $time cubic-bezier(0.375, 0.005, 0.000, 1.000); 
+     -o-transition: all $time cubic-bezier(0.375, 0.005, 0.000, 1.000); 
+        transition: all $time cubic-bezier(0.375, 0.005, 0.000, 1.000); /* custom */
+}
+@mixin ease($duration){
+	-webkit-transition: all $duration cubic-bezier(0.740, 0.005, 0.240, 0.995); 
+	   -moz-transition: all $duration cubic-bezier(0.740, 0.005, 0.240, 0.995); 
+	     -o-transition: all $duration cubic-bezier(0.740, 0.005, 0.240, 0.995); 
+	        transition: all $duration cubic-bezier(0.740, 0.005, 0.240, 0.995); /* custom */
+	
+	-webkit-transition-timing-function: cubic-bezier(0.740, 0.005, 0.240, 0.995); 
+	   -moz-transition-timing-function: cubic-bezier(0.740, 0.005, 0.240, 0.995); 
+	     -o-transition-timing-function: cubic-bezier(0.740, 0.005, 0.240, 0.995); 
+	        transition-timing-function: cubic-bezier(0.740, 0.005, 0.240, 0.995); /* custom */
+}
+@mixin bounceOut($length){
+	-webkit-transition: all $length cubic-bezier(0.485, 0.095, 0.705, 1); /* older webkit */
+-webkit-transition: all $length cubic-bezier(0.485, 0.095, 0.705, 1.650); 
+   -moz-transition: all $length cubic-bezier(0.485, 0.095, 0.705, 1.650); 
+     -o-transition: all $length cubic-bezier(0.485, 0.095, 0.705, 1.650); 
+        transition: all $length cubic-bezier(0.485, 0.095, 0.705, 1.650); /* custom */
+
+-webkit-transition-timing-function: cubic-bezier(0.485, 0.095, 0.705, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.485, 0.095, 0.705, 1.650); 
+   -moz-transition-timing-function: cubic-bezier(0.485, 0.095, 0.705, 1.650); 
+     -o-transition-timing-function: cubic-bezier(0.485, 0.095, 0.705, 1.650); 
+        transition-timing-function: cubic-bezier(0.485, 0.095, 0.705, 1.650); /* custom */
+}
+@mixin floatOut($float){
+	-webkit-transition: transform $float cubic-bezier(0.210, 0.395, 0.380, 1), box-shadow $float cubic-bezier(0.210, 0.395, 0.380, 1); /* older webkit */
+-webkit-transition: transform $float cubic-bezier(0.210, 0.395, 0.380, 1.030), box-shadow $float cubic-bezier(0.210, 0.395, 0.380, 1); 
+   -moz-transition: transform $float cubic-bezier(0.210, 0.395, 0.380, 1.030), box-shadow $float cubic-bezier(0.210, 0.395, 0.380, 1); 
+     -o-transition: transform $float cubic-bezier(0.210, 0.395, 0.380, 1.030), box-shadow $float cubic-bezier(0.210, 0.395, 0.380, 1); 
+        transition: transform $float cubic-bezier(0.210, 0.395, 0.380, 1.030), box-shadow $float cubic-bezier(0.210, 0.395, 0.380, 1); /* custom */
+
+-webkit-transition-timing-function: cubic-bezier(0.210, 0.395, 0.380, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.210, 0.395, 0.380, 1.030); 
+   -moz-transition-timing-function: cubic-bezier(0.210, 0.395, 0.380, 1.030); 
+     -o-transition-timing-function: cubic-bezier(0.210, 0.395, 0.380, 1.030); 
+        transition-timing-function: cubic-bezier(0.210, 0.395, 0.380, 1.030); /* custom */
+
+
+}
+@mixin blur($blur){
+	-webkit-filter: blur($blur);
+	-moz-filter: blur($blur);
+	-ms-filter: blur($blur);
+	-o-filter: blur($blur);
+	filter: blur($blur);
+}
+@mixin calc($property, $expression) { 
+  #{$property}: -o-calc(#{$expression}); 
+  #{$property}: -moz-calc(#{$expression}); 
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: calc(#{$expression}); 
+}
+@mixin max-content($mproperty) {
+	#{$mproperty}: max-content;
+	#{$mproperty}: -webkit-max-content;
+	#{$mproperty}: -moz-max-content;
+	#{$mproperty}: -moz-fit-content;
+}
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
