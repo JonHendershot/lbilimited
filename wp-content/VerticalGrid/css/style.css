@@ -24,7 +24,14 @@ html, body {
     height: 75vh;
     width: 80vw; }
     .grid-container .wrapper .grid-item {
-      background-color: gainsboro; }
+      background-color: gainsboro;
+      overflow: hidden;
+      position: relative; }
+      .grid-container .wrapper .grid-item .grid-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; }
     .grid-container .wrapper .item-1 {
       height: 100%;
       width: 49%;
@@ -32,5 +39,16 @@ html, body {
     .grid-container .wrapper .item-3 {
       background-color: #12171a; }
     .grid-container .wrapper .item-2, .grid-container .wrapper .item-3 {
-      height: 50%;
-      width: 49%; }
+      height: 49%;
+      width: 100%; }
+    .grid-container .wrapper .wrap-top {
+      width: 49%;
+      height: 100%;
+      display: flex;
+      display: -webkit-flex;
+      display: -moz-flex;
+      align-items: center;
+      justify-content: space-between;
+      -webkit-justify-content: space-between;
+      -webkit-align-items: center;
+      flex-direction: column; }
