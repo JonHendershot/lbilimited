@@ -2,27 +2,24 @@
   - - - - - - - FONT FACES - - - - - - 
 **************************************/
 @import url('../inc/fonts/stylesheet.css');
+@import url('../inc/css/font-awesome.min.css');
 $heading-font: "heading", serif;
 $body-font: "open_sans", sans-serif;
 
 /*************************************
   - - - - - - COLOR PALETTE - - - - - 
 **************************************/
-$black: #000;
+$black: #191B1C;
 $white: #fff;
-$offwhite: #F6F6F6;
-$gray: #959595;
-$dark_grey: #222629;
-$orange: #CA5D44;
-$divider_color: #C8422C;
-$border_grey: #EDEDED;
-$upload_grey: #444444;
-$progress_bg: #868686;
+$gray: #464647;
+$mainred: #962F32;
+$altred: #A82F32;
+$overlay_g: rgba(216,216,216,0.49);
+$overlay_w: rgba(255,255,255,0.3);
 /*************************************
   - - - - - - MISC VARIALBES - - - - - 
 **************************************/
-$max-width : 1300px;
-$home-width : 60%;
+
 
 /*************************************
   - - - - - - - - MIXINS - - - - - - - 
