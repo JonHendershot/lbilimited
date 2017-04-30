@@ -1,0 +1,93 @@
+.site-footer {
+	
+	.newsletter-cta {
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		padding: 150px 0 200px;
+		text-align: center;
+		
+		h3 {
+			color: $white;
+			font-weight: 100;
+			font-size: 30px;
+			margin: 0;
+		}
+		p {
+			font-size: 13px;
+			color: $white;
+			margin: 0;
+			font-weight: 300;
+			margin: 5px 0 30px;
+		}
+		form {
+			label {
+				visibility: hidden;
+				display: none;
+			}
+			input[type="email"] {
+				background-color: $black;
+				border-radius: 0px;
+				border: none;
+				text-align: center;
+				font-size: 13px;
+				color: $white;
+				margin: 0;
+				padding: 12px 3px;
+				width: 325px;
+			}
+			div.sumbit-btn {
+				background-image: url('../inc/images/sharrow.png');
+				height: 43px;
+				width: 43px;
+				background-color: $mainred;
+				background-size: 35%;
+				background-position: center center;
+				background-repeat: no-repeat;
+				cursor: pointer;
+				@include transition(0.25s,all,ease-in-out);
+			}
+			div.submit-btn:hover {
+				background-color: $altred;
+			}
+			div.form-wrap {
+				@include flexbox(center,center);
+				margin: 0 auto;
+			}
+		}
+	}
+	
+	.footer-meta {
+		background-color: $black;
+		padding: 40px 0;
+		.container {
+			@include flexbox(center,space-between);	
+			width: $menu_width;
+			margin: 0 auto;
+			font-size: 13px;
+			font-weight: 300;
+			letter-spacing: 1px;
+			color: $gray;
+			text-decoration: none;
+			
+			a {
+				color: $gray;
+				text-decoration: none;
+				@include transition(0.25s,all,ease-in-out);
+			}
+			a:hover {
+				color: $overlay_g;
+			}
+			
+			.socials {
+				a {
+					font-size: 20px;
+					margin: 0 12px;
+				}
+				a:last-child{
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}

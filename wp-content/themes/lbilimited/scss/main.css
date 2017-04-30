@@ -15,3 +15,113 @@
 /*************************************
   - - - - - - - - MIXINS - - - - - - - 
 **************************************/
+/*************************************
+  - - - - - - - M I S C - - - - - - -
+**************************************/
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility; }
+
+body {
+  background-color: #191B1C; }
+
+div, p, a, input {
+  font-family: "open_sans", sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "heading", serif; }
+
+/*************************************
+  - - - - - - - MODULES - - - - - - -
+**************************************/
+.site-footer .newsletter-cta {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 150px 0 200px;
+  text-align: center; }
+  .site-footer .newsletter-cta h3 {
+    color: #fff;
+    font-weight: 100;
+    font-size: 30px;
+    margin: 0; }
+  .site-footer .newsletter-cta p {
+    font-size: 13px;
+    color: #fff;
+    margin: 0;
+    font-weight: 300;
+    margin: 5px 0 30px; }
+  .site-footer .newsletter-cta form label {
+    visibility: hidden;
+    display: none; }
+  .site-footer .newsletter-cta form input[type="email"] {
+    background-color: #191B1C;
+    border-radius: 0px;
+    border: none;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+    margin: 0;
+    padding: 12px 3px;
+    width: 325px; }
+  .site-footer .newsletter-cta form div.sumbit-btn {
+    background-image: url("../inc/images/sharrow.png");
+    height: 43px;
+    width: 43px;
+    background-color: #962F32;
+    background-size: 35%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: 0.25s all ease-in-out;
+    -webkit-transition: 0.25s all ease-in-out;
+    -moz-transition: 0.25s all ease-in-out;
+    -ms-transition: 0.25s all ease-in-out;
+    -o-transition: 0.25s all ease-in-out; }
+  .site-footer .newsletter-cta form div.submit-btn:hover {
+    background-color: #A82F32; }
+  .site-footer .newsletter-cta form div.form-wrap {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    margin: 0 auto; }
+
+.site-footer .footer-meta {
+  background-color: #191B1C;
+  padding: 40px 0; }
+  .site-footer .footer-meta .container {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #464647;
+    text-decoration: none; }
+    .site-footer .footer-meta .container a {
+      color: #464647;
+      text-decoration: none;
+      transition: 0.25s all ease-in-out;
+      -webkit-transition: 0.25s all ease-in-out;
+      -moz-transition: 0.25s all ease-in-out;
+      -ms-transition: 0.25s all ease-in-out;
+      -o-transition: 0.25s all ease-in-out; }
+    .site-footer .footer-meta .container a:hover {
+      color: rgba(216, 216, 216, 0.49); }
+    .site-footer .footer-meta .container .socials a {
+      font-size: 20px;
+      margin: 0 12px; }
+    .site-footer .footer-meta .container .socials a:last-child {
+      margin-right: 0; }
