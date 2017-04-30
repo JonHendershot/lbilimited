@@ -3,10 +3,6 @@
  * The template for displaying the footer
  *
  * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package __replace_this_theme_name__
  */
 
 ?>
@@ -14,11 +10,14 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', '__replace_this_theme_name__' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', '__replace_this_theme_name__' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', '__replace_this_theme_name__' ), '__replace_this_theme_name__', '<a href="https://automattic.com/" rel="designer">Jon Hendershot</a>' ); ?>
-		</div><!-- .site-info -->
+		<div class="newsletter">
+			<h3>Let's stay in touch</h3>
+			<p>Current Offerings Updates and Classic Car News</p>
+			<!-- subscribe goes here -->
+		</div>
+		<div class="footer-meta">
+			
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
