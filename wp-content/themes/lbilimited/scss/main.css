@@ -31,18 +31,83 @@ div, p, a, input {
 h1, h2, h3, h4, h5, h6 {
   font-family: "heading", serif; }
 
+.dash-title::after {
+  content: "";
+  width: 200px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  -ms-transform: rotate(114deg);
+  /* IE 9 */
+  -webkit-transform: rotate(114deg);
+  /* Chrome, Safari, Opera */
+  -moz-transform: rotate(114deg);
+  /* Mozilla ? */
+  transform: rotate(114deg);
+  right: -270px;
+  top: 0;
+  transform-origin: left; }
+
 /*************************************
   - - - - - - - MODULES - - - - - - -
 **************************************/
+.site-footer .featured-posts {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center; }
+  .site-footer .featured-posts .feature {
+    width: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: block;
+    text-decoration: none;
+    padding: 48px;
+    height: 0;
+    padding-bottom: 472px; }
+    .site-footer .featured-posts .feature .content-wrapper {
+      position: relative;
+      width: max-content;
+      width: -webkit-max-content;
+      width: -moz-max-content;
+      width: -moz-fit-content; }
+      .site-footer .featured-posts .feature .content-wrapper div {
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase; }
+      .site-footer .featured-posts .feature .content-wrapper div.featured-heading {
+        font-family: "heading", serif;
+        font-size: 48px;
+        line-height: 45px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        display: table-caption; }
+      .site-footer .featured-posts .feature .content-wrapper div.featured-link {
+        font-family: "open_sans", sans-serif;
+        letter-spacing: 4px;
+        font-size: 13px;
+        padding-left: 2px;
+        font-weight: 400;
+        width: max-content;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: -moz-fit-content;
+        margin-top: 2px; }
+
 .site-footer .newsletter-cta {
   background-size: cover;
-  background-position: center center;
+  background-position: center bottom;
   background-repeat: no-repeat;
-  padding: 150px 0 200px;
+  padding: 180px 0 220px;
   text-align: center; }
   .site-footer .newsletter-cta h3 {
     color: #fff;
-    font-weight: 100;
+    font-weight: bold;
     font-size: 30px;
     margin: 0; }
   .site-footer .newsletter-cta p {
@@ -125,3 +190,10 @@ h1, h2, h3, h4, h5, h6 {
       margin: 0 12px; }
     .site-footer .footer-meta .container .socials a:last-child {
       margin-right: 0; }
+
+/*************************************
+  - - - - - - TEMPLATES - - - - - - -
+**************************************/
+.clipthis {
+  mask: url("../inc/images/subheading_mask.jpg") center center/cover;
+  -webkit-mask: url("../inc/images/subheading_mask.jpg") center center/cover; }

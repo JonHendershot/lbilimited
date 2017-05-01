@@ -1,15 +1,58 @@
 .site-footer {
+	.featured-posts {
+		@include flexbox(center,center);
+		
+		.feature {
+			width: 50%;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			display: block;
+			text-decoration: none;
+			padding: 48px;
+			height: 0;
+			padding-bottom: 472px;
+		
+			.content-wrapper {
+				position: relative;
+				@include max-content(width);
+				div {
+					text-decoration: none;
+					color: $white;
+					text-transform: uppercase;
+				}
+				div.featured-heading {
+					font-family: $heading-font;
+					font-size: 48px;
+					line-height: 45px;
+					letter-spacing: 2px;
+					font-weight: bold;
+					display: table-caption; // use this display to establish one word per line while maintaining appropriate content width
+
+				}
+				div.featured-link {
+					font-family: $body-font;
+					letter-spacing: 4px;
+					font-size: 13px;
+					padding-left: 2px;
+					font-weight: 400;
+					@include max-content(width);
+					margin-top: 2px;
+				}
+			}
+		}
+	}
 	
 	.newsletter-cta {
 		background-size: cover;
-		background-position: center center;
+		background-position: center bottom;
 		background-repeat: no-repeat;
-		padding: 150px 0 200px;
+		padding: 180px 0 220px;
 		text-align: center;
 		
 		h3 {
 			color: $white;
-			font-weight: 100;
+			font-weight: bold;
 			font-size: 30px;
 			margin: 0;
 		}

@@ -11,3 +11,16 @@ div,p,a,input{
 h1,h2,h3,h4,h5,h6 {
 	font-family: $heading-font;
 }
+
+.dash-title::after {
+	content:"";
+	width: 200px;
+	height: 2px;
+	background-color: $white;
+	position: absolute;
+	@include rotate(114deg);
+	right: -270px;
+	top: 0;
+	transform-origin: left;
+	
+}

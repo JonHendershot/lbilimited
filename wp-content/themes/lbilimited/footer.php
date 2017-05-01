@@ -23,11 +23,19 @@ $options = get_option('lbilimited_options');
 	$twitter_link = $options['LBI_twitter'];
 	$instagram_link = $options['LBI_instagram'];
 	$youtube_link = $options['LBI_youtube'];
+
+// Get conditional logic variable from each page to decide whether or not we should display the featured item module 
+$featured_toggle = get_field('featured_toggle');
 ?>
 
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<?php 
+			if($featured_toggle == 'Yes'){
+				get_template_part('template-parts/module', 'footer_feature');
+			} 
+		?>
 		<div class="newsletter-cta" style="background-image: url(<?php echo $CTA_bg_image; ?>);">
 			<?php
 				echo "<h3>$CTA_title</h3>
