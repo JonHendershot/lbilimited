@@ -1,0 +1,83 @@
+// First, some variables
+$skew_distance : 15deg;
+
+
+.sub__heading {
+	padding: 100px 0;
+	
+	article {
+		@include flexbox(center,space-between);	
+		width: 70%;
+		margin: 0 auto;
+		
+	
+		.sub__heading-content {
+			width: 50%;
+			z-index: 9999;
+			h2 {
+				color: $gray;
+				font-size: 36px;
+				letter-spacing: 1px;
+				font-weight: bold;
+				margin: 0 0 5px;
+			}
+			p {
+				font-size: 14px;
+				letter-spacing: 0.5px;
+				line-height: 30px;
+				font-weight: 300;
+				margin: 0;
+				padding-left: 2px;
+			}
+		}
+		.pgram__container {
+			position: relative;
+			@include translate(-50px,0,0);
+			.pgram__frame {
+				height: 350px;
+			    width: 280px;
+			    background-color: gray;
+			    position: relative;
+			    transform: skew(-$skew_distance);
+			    overflow: hidden;
+			    margin: 0 auto;
+			    z-index: 99;
+				
+				.pgram__image {
+					// decide on appropriate width setting and position setting options
+					height: 100%;
+				    width: 140%;
+				    background-position: center right;
+				    background-size: cover;
+				    position: absolute;
+				    top: 0;
+				    left: 0;
+				    transform: skew($skew_distance) translateX(-60px);
+				}
+			}
+		}
+		
+		.pgram__container::after {
+			content: "";
+			height: 80%;
+			width: 70%;
+			position: absolute;
+			bottom: -22px;
+			background-color: $overlay_g;
+			transform: skew(-$skew_distance);
+			left: -35%;
+			z-index: 1;
+		}
+		.pgram__container::before {
+			content: "";
+			height: 80%;
+			width: 70%;
+			position: absolute;
+			top: -22px;
+			background-color: $overlay_g;
+			transform: skew(-$skew_distance);
+			right: -35%;
+			z-index: 1;
+		}
+	}
+}

@@ -3,6 +3,9 @@
 	text-rendering: optimizelegibility;
 }
 body {
+	background-color: $white;
+}
+html {
 	background-color: $black;
 }
 div,p,a,input{
@@ -23,4 +26,7 @@ h1,h2,h3,h4,h5,h6 {
 	top: 0;
 	transform-origin: left;
 	
+}
+input:focus {
+	outline: none;
 }

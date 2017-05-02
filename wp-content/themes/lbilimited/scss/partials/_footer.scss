@@ -78,6 +78,11 @@
 				margin: 0;
 				padding: 12px 3px;
 				width: 325px;
+				border-bottom: 1px solid transparent;
+				@include transition(0.15s,all,ease-in-out);
+			}
+			input:focus {
+				border-bottom-color: $mainred; 
 			}
 			div.sumbit-btn {
 				background-image: url('../inc/images/sharrow.png');
@@ -89,6 +94,7 @@
 				background-repeat: no-repeat;
 				cursor: pointer;
 				@include transition(0.25s,all,ease-in-out);
+				
 			}
 			div.submit-btn:hover {
 				background-color: $altred;
