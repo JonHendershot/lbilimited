@@ -1,0 +1,1 @@
+<h1>image template showing</h1>

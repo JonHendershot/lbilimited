@@ -17,12 +17,12 @@ h1,h2,h3,h4,h5,h6 {
 
 .dash-title::after {
 	content:"";
-	width: 200px;
-	height: 2px;
+	width: 2px;
+	height: 180px;
 	background-color: $white;
 	position: absolute;
-	@include rotate(114deg);
-	right: -270px;
+	@include skew(-24deg);
+	right: -35px;
 	top: 0;
 	transform-origin: left;
 	

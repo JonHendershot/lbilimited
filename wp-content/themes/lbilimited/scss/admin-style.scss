@@ -1,0 +1,17 @@
+// Custom Menu Items
+#adminmenumain {
+	li.menu-icon-offerings {
+		.wp-menu-image:before {
+			font-family: 'fontawesome';
+			content: "\f1b9";
+			font-size: 17px;
+		}
+	}
+	li.menu-icon-collection {
+		.wp-menu-image:before {
+			font-family: 'fontawesome';
+			content: "\f207";
+			font-size: 19px;
+		}
+	}
+}

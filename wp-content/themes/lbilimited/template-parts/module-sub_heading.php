@@ -1,10 +1,12 @@
 <?php
 	// First, some variables
-	$heading     = get_field('title');
-	$body        = get_field('content');
-	$image       = get_field('photo');
-	$orientation = get_field('orientation');
-	$objectClass = "$orientation sub__heading";	
+	$heading        = get_field('title');
+	$body           = get_field('content');
+	$image          = get_field('photo');
+	$orientation    = get_field('orientation');
+	$photo_position = get_field('photo_position');	
+	$objectClass    = "$orientation sub__heading";
+	$imageClass     = "$photo_position pgram__image";
 
 ?>
 <section class="<?php echo $objectClass; ?>">
@@ -15,8 +17,8 @@
 		</div>
 		<div class="pgram__container">
 			<div class="pgram__frame"><!-- styled in _subheading.scss // add an orientation to this element to allow for dynamic framing on the images -->
-				<div class="pgram__image" style="background-image:url(<?php echo $image['url']; ?>)">
-				</div>
+				<img class="<?php echo $imageClass; ?>" src="<?php echo $image['url']; ?>" />
+				
 			</div>
 		</div>
 	</article>

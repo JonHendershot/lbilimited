@@ -6,32 +6,34 @@
  */
 
 // Call global options data and establish variables for the template -- this pulls information from the theme options found in the appearance menu, as established in theme_options.php
-$options = get_option('lbilimited_options');
+	$options = get_option('lbilimited_options');
 
 	// CTA Variables
-	$CTA_title = $options['LBI_f_CTA'];
-	$CTA_sub = $options['LBI_f_CTA_sub'];
-	$CTA_mailer = $options['LBI_f_mailer_shortcode'];
-	$CTA_bg_image = $options['footer_background'];
+		$CTA_title = $options['LBI_f_CTA'];
+		$CTA_sub = $options['LBI_f_CTA_sub'];
+		$CTA_mailer = $options['LBI_f_mailer_shortcode'];
+		$CTA_bg_image = $options['footer_background'];
 	
 	// Meta variables
-	$copyright = $options['LBI_f_copyright'];
-	$email = $options['LBI_f_email'];
+		$copyright = $options['LBI_f_copyright'];
+		$email = $options['LBI_f_email'];
 	
 	// Social Links
-	$facebook_link = $options['LBI_facebook'];
-	$twitter_link = $options['LBI_twitter'];
-	$instagram_link = $options['LBI_instagram'];
-	$youtube_link = $options['LBI_youtube'];
+		$facebook_link = $options['LBI_facebook'];
+		$twitter_link = $options['LBI_twitter'];
+		$instagram_link = $options['LBI_instagram'];
+		$youtube_link = $options['LBI_youtube'];
 
 // Get conditional logic variable from each page to decide whether or not we should display the featured item module 
-$featured_toggle = get_field('featured_toggle');
+	$featured_toggle = get_field('featured_toggle');
+	
 ?>
 
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<?php 
+			// Show the featured content if it's enabled for this page
 			if($featured_toggle == 'Yes'){
 				get_template_part('template-parts/module', 'footer_feature');
 			} 

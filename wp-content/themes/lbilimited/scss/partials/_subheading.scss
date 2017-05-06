@@ -32,7 +32,6 @@ $skew_distance : 15deg;
 		}
 		.pgram__container {
 			position: relative;
-			@include translate(-50px,0,0);
 			.pgram__frame {
 				height: 350px;
 			    width: 280px;
@@ -46,13 +45,24 @@ $skew_distance : 15deg;
 				.pgram__image {
 					// decide on appropriate width setting and position setting options
 					height: 100%;
-				    width: 140%;
-				    background-position: center right;
-				    background-size: cover;
 				    position: absolute;
 				    top: 0;
+				    display: block;
+				    max-width: none;
+				    width: auto;
+				}
+				// classes are dynamically generated in the wp dashboard to allow the pgram image to be framed differently. we control those classes here
+				.pgram__image.right {
+					right: 0;
+					@include translate_skew(47px,0,0,$skew_distance);
+				}
+				.pgram__image.left {
 				    left: 0;
-				    transform: skew($skew_distance) translateX(-60px);
+					@include translate_skew(-47px,0,0,$skew_distance);
+				}
+				.pgram__image.center {
+					left: 0;
+					@include translate_skew(-25%,0,0,$skew_distance);
 				}
 			}
 		}
@@ -79,5 +89,22 @@ $skew_distance : 15deg;
 			right: -35%;
 			z-index: 1;
 		}
+	}
+}
+
+.sub__heading.right {
+	article {
+		flex-direction: row;
+	}
+	.pgram__container {
+		@include translate(-50px,0,0);
+	}
+}
+.sub__heading.left {
+	article {
+		flex-direction: row-reverse;
+	}
+	.pgram__container {
+		@include translate(50px,0,0);
 	}
 }

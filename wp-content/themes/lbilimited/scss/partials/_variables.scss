@@ -16,6 +16,7 @@ $mainred: #962F32;
 $altred: #A82F32;
 $overlay_g: rgba(216,216,216,0.5);
 $overlay_w: rgba(255,255,255,0.3);
+$offer_overlay: rgba(25,27,28,0.8);
 /*************************************
   - - - - - - MISC VARIALBES - - - - - 
 **************************************/
@@ -39,6 +40,18 @@ $menu_width: 95%;
 	-moz-transform: translate3d($Xvalue,$Yvalue,$Zvalue);
 	-ms-transform: translate3d($Xvalue,$Yvalue,$Zvalue);
 	transform: translate3d($Xvalue,$Yvalue,$Zvalue);
+}
+@mixin translate_skew($Xvalue,$Yvalue,$Zvalue,$skew){
+	-webkit-transform: translate3d($Xvalue,$Yvalue,$Zvalue) skew($skew);
+	-moz-transform: translate3d($Xvalue,$Yvalue,$Zvalue) skew($skew);
+	-ms-transform: translate3d($Xvalue,$Yvalue,$Zvalue) skew($skew);
+	transform: translate3d($Xvalue,$Yvalue,$Zvalue) skew($skew);
+}
+@mixin skew($skew) {
+	-webkit-transform: skew($skew);
+	-moz-transform: skew($skew);
+	-ms-transform: skew($skew);
+	transform: skew($skew);
 }
 @mixin rotate($deg) {
 	    -ms-transform: rotate($deg); /* IE 9 */
