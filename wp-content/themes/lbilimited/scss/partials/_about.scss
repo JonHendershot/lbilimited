@@ -1,0 +1,357 @@
+section.lbi_values {
+	header {
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-color: $black;
+		padding: 75px 0;
+		
+		h2 {
+			width: 55%;
+			margin: 0 auto;
+			color: $white;
+			font-style: italic;
+			font-size: 30px;
+			line-height: 37px;
+			letter-spacing: 0.5px;
+			font-weight: normal;
+			text-align: center;
+		}
+	}
+	.value_wrapper {
+		@include flexbox(flex-end,space-between);
+		background-color: $altgray;
+		border-bottom: 1px solid $altgray;
+		
+		article {
+			width: 25%;
+			background-color: $white;
+			padding: 75px 60px;
+			border-right: 1px solid $altgray;
+			
+			h3 {
+				font-size: 24px;
+				line-height: 30px;
+				letter-spacing: 0.4px;
+				font-weight: bold;
+				text-align: center;
+				margin: 0;
+			}
+			h3:after {
+				content: "";
+				width: 21px;
+				height: 2px;
+				background-color: $mainred;
+				display: block;
+				margin: 20px auto;
+			}
+			p {
+				font-size: 13px;
+				color: $black;
+				line-height: 19px;
+				letter-spacing: 0.25px;
+				font-weight: 300;
+				margin: 0;
+				overflow: hidden;
+				max-height: 100px;
+				overflow: hidden;
+			}
+			.read_more.expand {
+				text-transform: uppercase;
+				font-size: 13px;
+				letter-spacing: 0.25px;
+				line-height: 19px;
+				display: block;
+				text-align: center;
+				margin-top: 70px;
+				cursor: pointer;
+			}
+		}
+		article:nth-child(4n+4){
+			border-right: none;
+		}
+		article.active {
+			background-color: $altgray;
+			
+			p {
+				max-height: none;
+			}
+			.read_more {
+				display: none;
+			}
+		}
+	}
+}
+section.specialists {
+	header {
+		padding: 95px 0;
+		position: relative;
+		
+		h2 {
+			font-size: 36px;
+			letter-spacing: 2px;
+			font-weight: bold;
+			text-align: center;
+			margin: 0;
+			padding-left: 2px;
+		}
+		p {
+			font-size: 13px;
+			margin: 0px auto;
+			@include max-content(width);
+			max-width: 50%;
+			margin-top: 4px;
+			font-weight: 300;
+		}
+	}
+	// Arrow to link header to content? 
+				
+		header:after {
+			content: "";
+			width: 20px;
+			height: 20px;
+			background-color: $white;
+			@include rotate(45deg);
+			position: absolute;
+			bottom: -10px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			z-index: 9999;
+		}
+		
+	// Specialists Grid
+	.specialists_grid_container {
+		position: relative;
+		
+		.dash-title {
+			@include max-content(width);
+			@include calc(max-width, "100% - 60px");
+			margin: 30px 0 0 30px;
+			position: relative;
+			z-index: 99;
+			h3 {
+				color: $white;
+				font-size: 29px;
+				line-height: 27px;
+				letter-spacing: 1.2px;
+				display: table-caption;
+				margin:0;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			p {
+				font-size: 11.5px;
+				color: $white;
+				text-transform: uppercase;
+				letter-spacing: 0.2px;
+				line-height: 14px;
+				max-width: 101px;
+				font-weight: 500;
+				margin: 0;
+				padding-left: 2px;
+			}
+		}
+		.dash-title:after {
+			height: 125px;
+			right: -10px;
+			top: 1px;
+			width: 1.2px;
+		}
+		.specialists_wrapper {
+			position: relative;
+			@include flexbox(center,space-between);
+			.specialist_item {
+				width: 25%;
+				height: 0;
+				padding-bottom: 23.8%;
+				background-position: center center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				position: relative;
+				cursor: pointer;
+				
+
+				.view_more {
+					opacity: 1;
+					position: absolute;
+					bottom: 20px;
+					left: 34px;
+					text-transform: uppercase;
+					letter-spacing: 2px;
+					color: $white;
+					font-size: 9px;
+					font-weight: 500;
+					z-index: 99;
+				}
+				
+			}
+			.specialist_item:after {
+				content: "";
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				background-color: $offer_overlay;
+				z-index: 1;
+				display: block;
+				top: 0;
+				left: 0;
+				opacity: 1;
+			}
+		}
+		.specialist_expand_container {
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			z-index: 99;
+			
+			.specialist_expand_wrapper {
+				z-index: 999;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				@include flexbox(center,space-between);
+				
+				.specialist_expand_image {
+					width: 25%;
+					height: 100%;
+					background-color: $mainred;
+				}
+				.specialist_expand_content {
+					width: 62.5%;
+					background-color: $black;
+					height: 100%;
+					position: relative;
+					.header {
+						h3 {
+							
+						}
+						p {
+							
+						}
+					}
+					.header:after {
+						height: 117px;
+					}
+					.content {
+						padding: 0px 58px;
+						color: $about_bio_gray;
+						font-size: 13px;
+						letter-spacing: 0.25px;
+						line-height: 19px;
+						max-height: 120px;
+						overflow-y: scroll; // are we locking character counts here?
+						font-weight: 300;
+						margin-top: 40px;
+						margin-bottom: 15px;
+					}
+					.launch_video {
+						margin-left: 58px;
+						font-size: 9px;
+						color: $white;
+						background-color: transparent;
+						border: 1px solid #b5b5b5;
+						padding-top: 8px;
+						padding-bottom: 8px;
+						@include transition(0.3s, all,ease-in-out);
+						font-weight: 300;
+					}
+					.launch_video:hover {
+						background-color: #b5b5b5;
+						color: $black;
+						cursor: pointer;
+						
+					}
+				}
+				.close_expand {
+					text-transform: uppercase;
+					color: $black;
+					background-color: $altgray;
+					width: 12.5%;
+					height: 100%;
+					@include flexbox(center,center);
+					cursor: pointer;
+					
+					span {
+						font-size: 12px;
+						text-transform: uppercase;
+						font-weight: 100;
+						letter-spacing: 6px;
+						padding-left: 6px;
+						display: block;
+						text-align: center;
+						line-height: 19px;
+						width: 95%;
+						
+					}
+				}
+			}
+			
+		}
+		
+		.specialist_expand_container:after {
+			// Using a pseudo element allows us to setup the skew-container
+			// animation without needing to adjust the rest of the content in
+			// some weird ways to make it frame up properly
+			$skew_dist : 15deg;
+			content: "";
+			background-color: $black;
+			@include prefix(transform, skew(-$skew_dist) scaleX(1));
+			width: 110%;
+			position: absolute;
+			top: 0;
+			left: -5%;
+			height: 100%;
+			@include easeout(800ms);
+			z-index: 9;
+		}
+	}
+	
+	// Specialists Quotes
+	.specialists_quotes_container {
+		padding: 30px 0 40px;
+		.specialist_quote_wrapper {
+			width: 55%;
+			margin: 0 auto;
+			
+			.quote {
+				font-family: $heading-font;
+				font-size: 24px;
+				letter-spacing: 0.4px;
+				line-height: 30px;
+				font-weight: normal;
+				font-style: italic;
+				text-align: center;
+				width: 100%;
+				margin: 0;
+			}
+			img {
+				max-width: 180px;
+				margin: 20px auto;
+			}
+			.specialist_tag {
+				font-size: 11px;
+				font-weight: 300;
+				letter-spacing: 0.2px;
+				line-height: 17px;
+				@include max-content(width);
+				margin: 0 auto;
+			}
+		}
+	}
+	.specialists_quotes_container:before {
+		content: ""; // \201C
+		height: 44.5px;
+		width: 35px;
+		background-image: url('../inc/images/quote.png');
+		background-size: 100%;
+		background-position: center center;
+		background-repeat: no-repeat;
+		display: block;
+		margin: 0 auto 10px;
+	}
+}

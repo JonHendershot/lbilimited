@@ -12,11 +12,13 @@ $body-font: "open_sans", sans-serif;
 $black: #191B1C;
 $white: #fff;
 $gray: #464647;
+$altgray: #eeeeee;
 $mainred: #962F32;
 $altred: #A82F32;
 $overlay_g: rgba(216,216,216,0.5);
 $overlay_w: rgba(255,255,255,0.3);
 $offer_overlay: rgba(25,27,28,0.8);
+$about_bio_gray: #818181;
 /*************************************
   - - - - - - MISC VARIALBES - - - - - 
 **************************************/
@@ -153,4 +155,11 @@ $menu_width: 95%;
   &:-moz-placeholder           {@content}
   &::-moz-placeholder          {@content}
   &:-ms-input-placeholder      {@content}  
+}
+@mixin prefix($property,$value){
+	#{$property}: $value;
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
 }

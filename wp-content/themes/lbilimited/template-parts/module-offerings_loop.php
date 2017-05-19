@@ -86,14 +86,7 @@
 						<?php
 						} // end video if
 					?>
-				</article>
-
-
-		
-		
-		
-		
-		
+				</article>	
 		
 <?php
 	

@@ -107,10 +107,15 @@ add_action( 'widgets_init', 'lbilimited_widgets_init' );
 function lbilimited_scripts() {
 	wp_enqueue_style( 'lbilimited-style', get_stylesheet_uri() );
 	wp_enqueue_style('lbi_styles', get_template_directory_uri() . '/scss/main.css', array(), '1.0.1', '');
-
+	wp_enqueue_style('owl_carousel', get_template_directory_uri() . '/inc/css/owl.carousel.min.css', array(), '2.2.1', '');
+		
+	// Regist Scripts
+	wp_register_script('owl_carousel', get_template_directory_uri() . '/inc/js/owl.carousel.min.js', array(), '2.2.1', true);
+	
+	// Enqueue Scripts
 	wp_enqueue_script( 'lbilimited-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'lbilimited-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'lbilimited_main', get_template_directory_uri() . '/js/lbilimited.js', array('jquery','owl_carousel'), '1.0.1', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -155,3 +160,69 @@ function load_custom_wp_admin_style() {
        wp_enqueue_style( 'custom_wp_admin_css' );
 }
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
+
+/**
+ * A function to retrieve the image id from the URL
+ */
+ function get_image_id($image_url) {
+	global $wpdb;
+	$attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url )); 
+        return $attachment[0]; 
+}
+
+  //////////////////////////////////////////////////////
+ /// Add an image size to use for blur placeholders ///
+//////////////////////////////////////////////////////
+	add_image_size('blur',60,60);
+	
+  ///////////////////////////////////////////////////////////
+ /// Functions to handle the page navigation on arrhives ///
+///////////////////////////////////////////////////////////
+
+
+// Add page numbers
+function get_page_numbers() {
+	global $wp_query;
+	$posts_per_page = get_option( 'posts_per_page' );
+	$total_posts = $wp_query->found_posts;
+	$paged = (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 1;
+	$page_count = ceil( $total_posts / $posts_per_page );
+	$post_type = get_post_type();
+	$url = get_post_type_archive_link( $post_type );
+	$output = array($page_count);
+	$content = '';
+	
+	$content .= "<div class='pagination'>";
+	
+	for($ii = 1; $ii <= $page_count; $ii++){
+		if($ii === $paged){
+			$class = 'active';
+		}else {
+			$class = '';
+		}
+		$content .= "<a href='{$url}page/$ii/#archive-wrapper' class='$class'>$ii</a>";
+	}
+	
+	$content .= "</div>";
+	
+	array_push($output, $content);
+	
+	
+	return $output;
+}
+
+// Add an anchor to next_posts_link and previous_posts_link 
+add_filter('get_pagenum_link', 'archive_anchor');
+
+function archive_anchor($url) {
+    return $url . '#archive-wrapper';
+}
+
+
+// Add classes to the post navigation links
+add_filter('next_posts_link_attributes', 'posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
+function posts_link_attributes() {
+    return 'class="posts-nav-link"';
+}

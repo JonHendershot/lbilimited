@@ -14,7 +14,6 @@ div,p,a,input{
 h1,h2,h3,h4,h5,h6 {
 	font-family: $heading-font;
 }
-
 .dash-title::after {
 	content:"";
 	width: 2px;
@@ -29,4 +28,30 @@ h1,h2,h3,h4,h5,h6 {
 }
 input:focus {
 	outline: none;
+}
+.main-btn {
+	background-color: $mainred;
+	color: $white;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: 100;
+	padding: 10px 30px;
+	text-decoration: none;
+}
+
+// Image Blur Preloader
+.b_image_wrapper {
+	background-color: $black;
+	.blur {
+		@include blur(20px);
+		opacity: 0.75;
+	}
+	img.full_size {
+		opacity: 0;
+		@include transition(0.5s, all, ease-in-out);
+	}
+	img.full_size.visible {
+		opacity: 1;
+	}
 }

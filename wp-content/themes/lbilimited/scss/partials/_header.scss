@@ -1,0 +1,337 @@
+  ///////////////////////
+ ////  SEARCH FORM  ////
+///////////////////////
+.search_form_container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999999;
+	visibility: hidden;
+	@include flexbox(center,center);
+	overflow: hidden;
+
+	* {
+		@include easeout(1000ms);
+	}
+	.ribbon {
+		width: 120%;
+		height: 100%;
+		background-color: $mainred;
+		position: absolute;
+		top: 0;
+		left: -10%;
+		z-index: 9;
+		@include prefix(transform, skew(-15deg) scaleX(0) );
+		transform-origin: center;
+		// Timing for animating this OUT (so the search form doesn't display a subtle overflow)
+		transition-delay: 100ms;
+	}
+	.search_form_wrapper {
+		
+		background-color: $black;
+		@include prefix( transform, skew(-15deg) scaleX(0) );
+		transform-origin: center;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 99;
+	}
+	form {
+		width: 65%;
+		@include prefix( transform, translateY(10px) ); // reset skew for content
+		opacity: 0;
+		// Easing for when this animates OUT
+		@include easeout(500ms);
+		z-index: 999;
+		transition-delay: 120ms;
+	
+		div.search-title {
+			font-size: 45px;
+			margin-bottom: -20px;
+			margin-left: -3px;
+			color: rgba(255,255,255,0.5);
+		}
+	}
+	input[type="search"] {
+		background: transparent;
+		border-radius: 0;
+		color: $white;
+		font-size: 65px;
+		border: none;
+	// 		border-bottom: 2px solid $gray;
+		padding: 10px 0 10px 1px;
+		line-height: 1;
+		width: 100%;
+	}
+}
+.search_form_container.visible {
+	visibility: visible;
+	
+	.search_form_wrapper {
+		@include prefix(transform, skew(-15deg) scaleX(1));
+		
+	}
+	.ribbon {
+		@include prefix( transform, skew(-15deg) scaleX(1) );
+		// No delay when animating IN
+		transition-delay: 0ms;
+		
+	}
+	form {
+		opacity: 1;
+		@include prefix( transform, translateY(0px) );
+		
+		// Easing for when this animates IN
+		@include easeout(1500ms);
+	}
+}
+
+
+  //////////////////////
+ /////  NAV BAR  //////
+//////////////////////
+.nav-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9999999999;
+	
+	.nav-bar {
+		width: $menu_width;
+		margin: 0 auto;
+		padding: 30px 0;
+		@include flexbox(center,space-between);
+		
+		.header-logo {
+			width: 163px;
+			height: auto;
+			
+			img {
+				position: relative;
+			}
+		}
+		.search_menu_container {
+			@include flexbox(center,center);
+			.search {
+				font-size: 8px;
+				text-transform: uppercase;
+				letter-spacing: 3px;
+				border: 1px solid rgba(255,255,255,0.5);
+				padding: 10px 23px 10px 26px;
+				@include max-content(width);
+				@include transition(0.3s, all, ease-in-out);
+				color: $white;
+				font-weight: 300;
+				background-color: transparent;
+				cursor: pointer;
+				margin: 0;
+			}
+			.search:hover {
+				background-color: $white;	
+				color: $black;
+				
+			}
+			.menu_trigger {
+				width: 34px;
+				height: 34px;
+				border: 1px solid rgba(255,255,255,0.5);
+				margin-left: 16px;
+				@include flexbox(center,center);
+				
+				.dot-container {
+					width: 18px;
+					height: 18px;
+					@include flexbox(center,space-between);
+					flex-wrap: wrap;
+					
+					.menu-dot {
+						width: 3px;
+						height: 3px;
+						background-color: $white;
+						margin: 1.5px;
+						display: block;
+					}	
+				}
+			}
+		}
+	}
+}
+  //////////////////////
+ /// PAGE  HEADERGS ///
+//////////////////////
+.site-header {
+	background-color: $black;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	@include flexbox(center,flex-start);
+	
+	img {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 9;
+	}
+	.header-content {
+		position: relative;
+		z-index: 999;
+		margin-left: 20%;
+		
+		h1 {
+			color: $white;
+			font-size: 64px;
+			letter-spacing: 3px;
+			line-height: 61px;
+			text-transform: uppercase;
+			display: table-caption;
+			text-indent: -50px;
+			margin: 0;
+			position: relative;
+		}
+		p {
+			color: $white;
+			font-size: 16px;
+			letter-spacing: 1.8px;
+			line-height: 24px;
+			margin: 0;
+			font-weight: 300;
+			margin-left: 113px;
+			max-width: 350px;
+		}
+	}
+	.header-content.search {
+		p {
+			font-family: $heading-font;
+			font-size: 48px;
+			margin: 10px 0 0 30px;
+			line-height: 45px;
+			border-bottom: 2px solid $white;
+			@include max-content(width);
+			font-weight: bold;
+			padding-left: 3px;
+			padding-bottom: 3px;
+		}
+	}
+	.header-content.home {
+		margin: 0 auto;
+		h1 {
+			font-size: 36px;
+			letter-spacing: 2px;
+			display: block;
+			text-indent: 0px;	
+			margin-bottom: 25px;
+		}
+		a {
+			display: block;
+			@include max-content(width);
+			margin: 0 auto;
+		}
+	}
+	.header-content.e404 {
+		a {
+			color: $white;
+			font-weight: 800;
+			font-style: italic;
+			text-decoration: none;
+		}
+	} 
+}
+.site-header.main, .site-header.single {
+	.header-content:not(.home):before {
+		content: "";
+		position: absolute;
+		background-color: $overlay_w;
+		height: 292px;
+		width: 190px;
+		left: 0;
+		@include translate_skew(-77px,-10px,0,-15deg);
+		top: 0;
+		bottom: 0;
+		margin: auto;
+	}
+}
+.site-header.single {
+	overflow: visible;
+	.featured-media-wrapper {
+		margin: auto;
+		height: 0;
+		overflow: hidden;
+		z-index: 99;
+		position: relative;
+		
+		img,video {
+			margin: 0;
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: auto;
+		}
+		img.top, video.top {
+			top: 0;
+		}
+		img.center, video.center {
+			top: 0;
+			bottom: 0;
+			margin: auto;
+		}
+		img.bottom, video.bottom {
+			bottom: 0;
+		}
+	}
+	img.blueprint {
+		width: 85%;
+		position: absolute;
+		top: 113px;
+		left: 0;
+		right: 0;
+		margin: auto;
+		bottom: auto;
+	}
+	.header-content {
+		margin-top: 100px;
+		h1 {
+			text-indent: 0;
+			max-width: 500px;
+			display: block;
+		}
+		p.price {
+			letter-spacing: 4.8px;
+			padding: 13px 30px;
+			@include max-content(width);
+			font-size: 13px;
+			margin-left: 50px;
+			z-index: 999;
+			position: relative;
+			margin-top: 20px;
+		}
+	}
+}
+.site-header.single.offerings {
+	margin-bottom: 166px;
+	.featured-media-wrapper {
+		width: $menu_width;
+		@include translate(0,178px,0);
+		padding-bottom: 53.84%;
+
+	}
+}
+.site-header.single.collection {
+	margin-bottom: 354px;
+	.featured-media-wrapper {
+		width: 78%;
+		@include translate(0,370px,0);
+		overflow: visible;
+		padding-bottom: 53.38%;
+		.header-content {
+			margin-top: 0;
+			@include translate(0,-48px,0);
+		}
+	}
+}

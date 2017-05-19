@@ -9,10 +9,15 @@
 /*************************************
   - - - - - - - MODULES - - - - - - -
 **************************************/
+@import 'partials/header';
 @import 'partials/footer';
 @import 'partials/subheading';
 @import 'partials/gridlock';
+@import 'partials/owl';
 /*************************************
   - - - - - - TEMPLATES - - - - - - -
 **************************************/
+@import 'partials/home';
+@import 'partials/about';
+@import 'partials/index';
 @import 'partials/offering_archive';

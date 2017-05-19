@@ -1,0 +1,262 @@
+// styles for the Archive template (run through index.php)
+
+// Variables
+	$article_width: 65%;
+
+body.blog {
+	#content {
+		background-color: $black; // need to match the section.archive-wrapper background so that we can apply a margin to the section, giving some vertical bleed to the background image
+	
+		section.archive-wrapper {
+			background-color: $black;
+			padding: 55px 0;
+			background-repeat: repeat-y;
+			background-size: 76%;
+			background-position: center top;
+			margin: 30px 0;
+			
+			// Using a flexbox will remove potential margin collapses on this wrapper's child elements
+			@include flexbox(center,center);
+			flex-wrap: wrap;
+		
+		
+			  //////////////////
+			 //  NO CONTENT  //
+			//////////////////
+			.wrapper.no-content {
+				    width: 65%;
+				    margin: 25px auto;
+				    background-color: $black;
+				    padding: 80px 0 80px 35px;
+				    
+				    h1 {
+					    color: $white;
+					    font-weight: bold;
+					    text-transform: uppercase;
+					    letter-spacing: 3px;
+					    font-size: 65px;
+					    margin: 0;
+				    }
+				    .page-content {
+					    margin-top: -15px;
+					    
+					    p {
+						    color: $white;
+						    padding-left: 35px;
+						    font-weight: 300;
+						    letter-spacing: 1px;
+						    
+						    .search_trigger {
+							    font-weight: 700;
+							    font-style: italic;
+							    cursor: pointer;
+						    }
+					    }
+				    }
+			}
+		
+		
+			  /////////////////
+			 //  HAS POSTS  //
+			/////////////////
+			article.news-post {
+				width: $article_width;
+				height: 0;
+				margin: 25px auto;
+				background-color: $black;
+				overflow: hidden;
+				padding-bottom: 24.25%;
+				position: relative;
+				box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.4);
+
+				a.post-link {
+					text-decoration: none;
+					
+					// Post Content
+				
+					.post-content {	
+						@include calc(width, "100% - 100px");
+						margin: 60px auto 0;
+						position: relative;
+						z-index: 99;	
+						@include flexbox(flex-start,space-between);	
+						
+						.post-title {
+							@include max-content(width);
+							max-width: 50%;
+							position: relative;
+							h2 {
+								margin: 0;
+								color: $white;
+								font-size: 48px;
+								letter-spacing: 2px;
+								font-weight: bold;
+								line-height: 45px;
+								text-decoration: none;
+							}
+						}
+						.post-title.dash-title:after {
+							height: 120px;
+							top: 3px;
+							right: -15px;
+						}
+						.post-meta {
+							text-align: right;
+							.date {
+								font-family: $heading-font;
+								font-weight: bold;
+								color: $white;
+								font-size: 24px;
+								letter-spacing: 1px;
+								line-height: 24px;
+								text-decoration: none;
+							}
+							span {
+								text-transform: uppercase;
+								text-decoration: none;
+								color: $white;
+								font-size: 13px;
+								letter-spacing: 4.2px;
+								font-weight: 500;
+								text-decoration: none;
+							}
+						}
+						
+						
+					}
+					
+					// Featured Image
+					
+					img {
+						position: absolute;
+						left: 0;
+						width: 100%;
+						z-index: 1;
+						backface-visibility: hidden;
+						-webkit-backface-visibility: hidden;
+					}
+					img.top {
+						top: 0;
+					}
+					img.bottom {
+						bottom: 0;
+					}
+					img.center {
+						top: 0;
+						bottom: 0;
+						margin: auto;
+					}
+				}
+				
+				a.post-link:after {
+					position: absolute;
+					content: "";
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: linear-gradient(-180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.00) 70%);
+					z-index: 9;
+				}		
+			}
+			
+			  /////////////////
+			 //  POSTS NAV  //
+			/////////////////
+			.posts-navigation {
+				width: $article_width;
+				margin: 0 auto;
+				@include flexbox(center, space-between);
+				margin-top: 25px;
+				
+				a.posts-nav-link {
+					color: $white;
+					text-decoration: none;
+					text-transform: uppercase;
+					font-size: 10px;
+					font-weight: 300;
+					letter-spacing: 0.5px;
+					border: 1px solid $white;
+					position: relative;
+					@include easeout(700ms);
+				}
+				a.posts-nav-link:first-child {
+					padding: 9px 40px 9px 74px;
+				}
+				a.posts-nav-link:last-child {
+					padding: 9px 74px 9px 40px;
+				}
+				
+				a.posts-nav-link:after {
+					content: "";
+					height: 100%;
+					width: 34px;
+					background-color: $white;
+					top: 0;
+					position: absolute;	
+					background-image: url('../inc/images/sharrow_red.png');		
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: 40%;
+				}
+				a.posts-nav-link:first-child:after {
+					left: 0;
+					@include prefix(transform,scaleX(-1));
+				}
+				a.posts-nav-link:last-child:after {
+					right: 0;
+				}
+				a.posts-nav-link.disabled {
+					border-color: $gray;
+					color: $gray;
+					visibility: hidden;
+				}
+				a.posts-nav-link.disabled:after {
+					background-color: $gray;
+					@include prefix(filter,grayscale(100%));
+					
+				}
+				.pagination {
+					a {
+						color: $white;
+						text-decoration: none;
+						font-size: 12px;
+						font-weight: 300;
+						margin: 0 4px;
+						position: relative;
+						opacity: 0.5;
+						@include easeout(800ms);
+					}
+					a:hover {
+						opacity: 1;
+					}
+					a:after {
+						content: "";
+						width: 100%;
+						height: 1px;
+						background-color: $white;
+						position: absolute;
+						bottom: -1px;
+						left: 0;
+						@include prefix(transform, translateY(5px));
+						opacity: 0;
+						@include easeout(800ms);
+						
+					}
+					a.active {
+						font-weight: 700;
+						opacity: 1;
+					}
+					a.active:after {
+						opacity: 1;
+						@include prefix(transform, translateY(0));
+					}
+					a:hover:after {
+						opacity: 1;
+						@include prefix(transform, translateY(0));	
+					}
+				}
+			}
+		}
+	}
+}

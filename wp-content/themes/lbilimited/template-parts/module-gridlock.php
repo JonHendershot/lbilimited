@@ -77,8 +77,9 @@
 				// Establish Some item-specific variables first
 					$title = get_the_title();
 					$image = get_the_post_thumbnail_url( $post->ID, 'full' );
+					$link  = get_permalink();
 				
 				// Output elements	
-					echo "<div class='grid-item $display_class $gutter' style='background-image: url($image)'></div>";
+					echo "<a href='$link' class='grid-item $display_class $gutter' style='background-image: url($image)'></a>";
 			endwhile;
 		echo "</div>";

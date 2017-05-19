@@ -52,6 +52,9 @@ function LBI_register_settings()
     add_settings_section( 'LBI_contact_section', 'Contact Information', 'LBI_display_section', 'lbilimited_options.php' );
     add_settings_section( 'LBI_social_section', 'Social Links', 'LBI_display_section', 'lbilimited_options.php' );
     add_settings_section( 'LBI_footer_section', 'Site Footer Options', 'LBI_display_section', 'lbilimited_options.php' );
+    add_settings_section( 'LBI_search_section', 'Search Results Page', 'LBI_display_section', 'lbilimited_options.php' );
+    add_settings_section( 'LBI_404_section', '404 Error Page', 'LBI_display_section', 'lbilimited_options.php' );
+
     
     
     ////////////////////////////////////
@@ -226,9 +229,42 @@ function LBI_register_settings()
     );
 
     add_settings_field( 'LBI_f_email', 'Footer Email Address', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
-
     
-  
+    
+	////////////////////////////////////
+    // - - - - SEARCH OPTIONS - - - - /
+    //////////////////////////////////
+	
+	// Search Results Header
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'results_header',
+	      'name'      => 'results_header',
+	      'desc'      => '<input data-category="results_header" class="left-float image-trigger" type="button" value="Upload Image"><p>Image to Display in Search Results header</p>',
+	      'std'       => '',
+	      'label_for' => 'results_header',
+	      'class'     => ' left-float header_image results_header'
+	    );
+	
+	    add_settings_field( 'results_header', 'Results Header', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_search_section', $field_args );
+    
+    
+	 ///////////////////////////////////
+    // - - - ERROR 404 OPTIONS - - - //
+   ///////////////////////////////////
+   
+    // 404 Header Image
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => '404_header',
+	      'name'      => '404_header',
+	      'desc'      => '<input data-category="404_header" class="left-float image-trigger" type="button" value="Upload Image"><p>Image to Display in Search Results header</p>',
+	      'std'       => '',
+	      'label_for' => 'results_header',
+	      'class'     => ' left-float header_image 404_header'
+	    );
+	
+	    add_settings_field( '404_header', '404 Header', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_404_section', $field_args );
 }
 
 
