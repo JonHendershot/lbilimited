@@ -9,18 +9,14 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<section id="archive-wrapper" class="content-area search_results">
 			
-			<header class="page-header">
-				<h1 class="page-title"> <?php printf( esc_html__( 'Search Results for: %s', 'lbilimited' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
 
 		<?php
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title">Hello: <?php printf( esc_html__( 'Search Results for: %s', 'lbilimited' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( esc_html__( 'Search: %s', 'lbilimited' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php
@@ -36,7 +32,7 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			get_template_part('template-parts/module','page_navigator');
 
 		else :
 
@@ -44,7 +40,6 @@ get_header(); ?>
 
 		endif; ?>
 
-		</main><!-- #main -->
 	</section><!-- #primary -->
 
 <?php

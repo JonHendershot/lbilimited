@@ -12,7 +12,12 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 50px;
-	
+	&.gutter-0px {
+		margin: 0;
+		margin-top: 0;
+		margin-bottom: 0;
+		width: 100% !important;
+	}
 	.grid-item {
 		height: 0;
 		background-position: center center;
@@ -39,6 +44,16 @@ $gutter_slug : gutter;
 	.grid-item.alt:nth-child(5n+4).#{$gutter_slug}-#{$i}, .grid-item.alt:nth-child(5n+5).#{$gutter_slug}-#{$i}, .grid-item.alt-inv:nth-child(5n+1).#{$gutter_slug}-#{$i}, .grid-item.alt-inv:nth-child(5n+2).#{$gutter_slug}-#{$i}, .grid-item.anom-1:nth-child(10n+10).#{$gutter_slug}-#{$i}, .grid-item.anom-1:nth-child(10n+11).#{$gutter_slug}-#{$i}, .grid-item.r-2:last-child.#{$gutter_slug}-#{$i}, .grid-item.r-2:nth-last-child(2).#{$gutter_slug}-#{$i}, .grid-item.r-1:last-child.#{$gutter_slug}-#{$i}, .grid-item.r-1:nth-last-child(2).#{$gutter_slug}-#{$i}, .grid-item.r-1:nth-child(-n+2).#{$gutter_slug}-#{$i}{
 		@include calc(width,"50% -" $i);
 		padding-bottom: 28.125%; // 16:9 Aspect Ratio
+		
+		.item-content {
+			h3 {
+				font-size: 58px;
+				line-height: 63px;
+			}
+			p {
+				font-size: 14px;
+			}
+		}
 		}
 	}
 

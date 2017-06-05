@@ -12,3 +12,8 @@
   font-family: 'fontawesome';
   content: "\f007";
   font-size: 19px; }
+
+#adminmenumain li.menu-icon-lbi_media .wp-menu-image:before {
+  font-family: 'fontawesome';
+  content: "\f03d";
+  font-size: 17px; }

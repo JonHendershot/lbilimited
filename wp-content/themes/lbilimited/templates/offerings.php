@@ -13,6 +13,9 @@
 	// Invoke sub-heading module
 		get_template_part('template-parts/module', 'sub_heading');
 	
+	// Get Search Bar
+		get_template_part('template-parts/module', 'search_bar');
+	
 	// Invoke wp loop
 		echo "<section class='offerings-container'>";
 		get_template_part('template-parts/module', 'offerings_loop');

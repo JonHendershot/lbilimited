@@ -34,14 +34,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<div id="page" class="site">
+	<div id="page" class="site">		
 		<header id="masthead" class="<?php echo $header_class; ?>" role="banner">
-			<!-- Search Bar -->
-				<div class="search_form_container">
-<!-- 					<div class="search_form_wrapper"></div> -->
-					<?php get_search_form(); ?>
-					<div class="ribbon"></div>
-				</div>
 			<!-- Fixed nav bar across the top of each page -->
 			<div class="nav-wrapper">
 				<div class="nav-bar">
@@ -59,6 +53,10 @@
 						</div>
 					</div>
 				</div>
+				<?php get_template_part('template-parts/module', 'main_menu'); ?>
+
+				<!-- Lightboxes-->
+				<?php get_template_part('template-parts/module', 'lightboxes'); ?>
 			</div>
 			<?php
 				// We have a couple different options for framing the header content, so we'll use the previously generated $post_type variable to call the appropriate page header content

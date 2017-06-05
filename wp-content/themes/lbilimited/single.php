@@ -1,35 +1,26 @@
 <?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package __replace_this_theme_name__
- */
+	// ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+	// This template will be used to display the LBI Blog and Collection Single post content 
+	// ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
 
-get_header(); ?>
+get_header(); 
+wp_reset_query();?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-		<?php
-		while ( have_posts() ) : the_post();
-
-			get_template_part( 'template-parts/content', get_post_format() );
-
-			the_post_navigation();
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+<section <?php post_class('post_wrapper'); ?>>
+	<?php 		get_template_part('template-parts/module', 'media_lightbox');
+?>
+	<article class="post_content">
+		<?php 
+			// If the post has an excerpt, output it here
+			$excerpt = get_the_excerpt();
+			if($excerpt){
+				echo "<h3 class='post_excerpt'>$excerpt</h3>";
+			}
+			// Output the post content
+			the_content(); 
+			get_template_part('template-parts/module', 'post_navigator')?>
+	</article>
+</section>
 
 <?php
-get_sidebar();
 get_footer();

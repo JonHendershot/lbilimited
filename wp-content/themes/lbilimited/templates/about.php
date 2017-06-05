@@ -43,7 +43,6 @@
 										<div class='value_content'>
 										  	<h3>$value_title</h3>
 										  	<p>$value_content</p>
-										  	<span class='read_more expand'>read more</span>
 										</div>
 									  </article>";
 							}
@@ -166,7 +165,7 @@
 		echo "</div>";	
 		
 	// Build a sectino to display the specialists' quotes
-		echo "<div class='specialists_quotes_container owl-carousel'>";
+		echo "<div class='specialists_quotes_container owl-carousel sepcialist_carousel'>";
 			
 			foreach($quotes as $quote){
 				

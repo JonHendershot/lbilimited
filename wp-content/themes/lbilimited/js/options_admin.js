@@ -33,5 +33,35 @@ jQuery(document).ready(function($){
  
     });
  
- 
+	$('select').change(function(){
+		var option = $(this).val(),
+			input_ID = $(this).attr('data-input'),
+			input = $('input.' + input_ID);
+		
+		input.val(option);
+		
+		console.log(option);
+	});
+	
+
 });
+
+// Update select elements on the options page when the page is loaded to reflect the current selected value
+(function updateFrameSelectors($){
+
+	$(window).load(function(){
+		var input = $('input.i_select');
+		
+		if(input.length){
+			input.each(function(){
+				var val = $(this).val(),
+					input_ID = $(this).attr('id');
+					
+				$('select.' + input_ID).val(val);
+			});
+		}
+		
+	});
+	
+	
+}(jQuery));

@@ -1,0 +1,625 @@
+  ////////////////////////////
+ // SOCIAL SHARING BUTTONS //
+////////////////////////////
+// this sharing markup is generated with the jetpack wordpress
+// plugin, while it's a robust plugin with a lot of features,
+// we're just using it to generate share buttons and keep its
+// contributions to the site as light-weight as possible
+// we've disabled the default JS and CSS files to save on
+// server requests and start with custom styles and functions
+// rather than having to override them
+//
+// these buttons can be managed in Settings > Sharing
+
+.sharedaddy {
+	@include max-content(width);
+	position: absolute;
+	top: 6px;
+	left: 0;
+	background-color: rgba(255,255,255,0.85);
+	@include transition(0.3s,background-color,ease-in-out);
+	&:hover {
+		background-color: rgba(255,255,255,1);
+	}
+	&.fixed {
+		top: 94px;
+		left: 11%;
+		position: fixed;
+	}
+	&.bottom {
+		position: absolute !important;
+		top: auto !important;
+		left: 0 !important;
+		bottom: 115px;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		border: 1px solid #cccccc;
+		@include max-content(width);
+		padding: 30px 17px;
+		
+		li {
+			position: relative;
+			text-align: center;
+			
+			a {
+				text-decoration: none;
+				color: #cccccc;
+				font-size: 15px;
+				margin: 7px 0;
+				display: block;
+				@include transition(0.25s, all, ease-in-out);
+			}
+			a:before {
+				font-family: 'fontawesome';
+				
+			}
+			.sharing-screen-reader-text {
+				clip: rect(1px, 1px, 1px, 1px);
+			    position: absolute !important;
+			    height: 1px;
+			    width: 1px;
+			    overflow: hidden;
+			}
+			
+			// Social Media Icons
+			&.share-facebook {
+				a:hover {
+					color: #3b5998;
+				}
+				a:before {
+					content: "\f09a";
+				}
+			}
+			&.share-twitter {
+				a:hover {
+					color: #1da1f2;
+				}
+				a:before {
+					content: "\f099";
+				}
+			}
+			&.share-pinterest {
+				a:hover {
+					color: #bd081c;
+				}
+				a:before {
+					content: "\f0d2";
+				}
+			}
+			&.share-linkedin {
+				a:hover {
+					color: #0077b5;
+				}
+				a:before {
+					content: "\f0e1";
+				}
+			}
+			&.share-google-plus-1 {
+				a {
+					font-size: 14px;
+					@include prefix(transform,translateX(2px));
+				}
+				a:hover {
+					color: #dd4b39;
+				}
+				a:before {
+					content: "\f0d5";
+				}
+			}
+			&.share-reddit {
+				a:hover {
+					color: #ff4500;
+				}
+				a:before {
+					content: "\f281";
+				}
+			}
+			&.share-pocket {
+				a:hover {
+					color: #ED4055;
+				}
+				a:before {
+					content: "\f265";
+				}
+			}
+			&.share-jetpack-whatsapp { 
+				a {
+					font-size: 16px;
+				}
+				a:hover {
+					color: #4dc247;
+				}
+				a:before {
+					content: "\f232";
+				}
+			}
+			&.share-print {
+				a:hover {
+					color: $black;
+				}
+				a:before {
+					content: "\f02f";
+				}
+			}
+			&.share-email {
+				a:hover {
+					color: $black;
+				}
+				a:before {
+					content: "\f0e0";
+				}
+			}
+			&.share-tumblr {
+				a:hover {
+					color: #32506d;
+				}
+				a:before {
+					content: "\f173";
+				}
+			}
+			&.share-skype { 
+				a:hover {
+					color: #00aff0;
+				}
+				a {
+					font-size: 17px;
+				}
+				a:before {
+					content: "\f17e";
+				}
+			}
+			&.share-telegram {
+				a:hover {
+					color: #0088cc;
+				}
+				a:before {
+					content: "\f2c6";
+				}
+			}
+		}
+	}
+}
+
+  ////////////////
+ // DOCS LIGHT //
+////////////////
+.documents_lightbox {
+	h3 {
+		    z-index: 99;
+		    position: absolute;
+		    left: -30px;
+		    font-size: 400px;
+		    line-height: 310px;
+		    color: white;
+		    opacity: 0;
+		    letter-spacing: -11px;
+		    text-transform: uppercase;
+		    font-weight: bold;
+		    transition-delay: 3300ms;
+		    @include transition(0.8s, opacity, ease-in-out);
+	}
+	.document_links {
+		@include flexbox(flex-start,flex-start);
+		flex-direction: column;
+		width: 45%;
+		margin: 0 auto;
+		text-align: left;
+		margin-top: 50px;
+		max-height: 60vh;
+		overflow: scroll;
+		a {
+			text-decoration: none;
+			text-transform: uppercase;
+			color: white;
+			font-size: 60px;
+			font-weight: 700;
+			text-align: left;
+			line-height: 64px;
+			opacity: 0.65;
+			@include transition(0.3s, all, ease-in-out);
+			
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+	&.visible {
+		h3 {
+			opacity: 0.035
+		}
+	}
+}
+
+
+body.single {
+	#content {
+		position: relative;
+		z-index: 9;
+	}
+	.content_container {
+		width: 80%;
+		margin: 0 auto;
+		position: relative;
+		
+		.content_wrapper {
+			color: $blog_body;
+			font-size: 13px;
+			letter-spacing: 0.5px;
+			line-height: 21px;
+			font-weight: 300;
+			max-width: 920px;
+			margin: 0 auto;
+		}
+		
+	}
+	.posts-navigation {
+		width: 100%;
+		margin-top: 75px;
+		
+		a {
+			border-color: $black;
+			color: $black;
+		}
+		a.posts-nav-link:first-child {
+			padding: 9px 20px 9px 54px;
+		}
+		a.posts-nav-link:last-child {
+			padding: 9px 54px 9px 20px;
+		}
+		a:after {
+			background-color: $black;
+			background-image: url('../inc/images/sharrow.png');
+		}
+		a.btn {
+			padding: 9px 30px 9px 31px;
+			font-size: 10px;
+			color: $black;
+			letter-spacing: 0.5px;
+			font-weight: 300;
+			border: 1px solid $black;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+	}
+	.contact_form{
+		h4 {
+			width: 360px;
+			text-align: center;
+			padding: 17px 0;
+			left: 10%;
+		}
+		.general_contact-container {
+			.field_row{
+				.field {
+					width: 22%;
+				}
+			}
+			input, textarea {
+				color: $white;
+			}
+		}
+		&:after {
+			content: none;
+		}
+	}
+	
+}
+  ///////////////
+ // OFFERINGS //
+///////////////
+.featured_image_showcase{
+	width: 80%;
+	margin: 55px auto;
+	
+	// flexbox to prevent margins from stacking
+	@include flexbox(inherit,inherit);
+	flex-direction: column;
+	.featured_image_slider_container {
+		overflow-x: scroll;
+		overflow-y: hidden;
+		background-color: $black;
+		
+		.featured_image_slider_wrapper {
+			@include flexbox(center,space-between);
+			@include max-content(width);
+			margin-bottom: 8px;
+			
+			.featured_slide {
+				height: 151px;
+				width: 225px;
+				position: relative;
+				@include easeout(600);
+				background-position: center center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				cursor: pointer;
+				
+				img {
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: 100%;
+					object-fit: cover; // no IE support - need a fallback for IE
+				}
+			}
+			.featured_slide:after {
+				content: "\f002";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: $offer_overlay;
+				font-size: 35px;
+				font-family: 'fontawesome';
+				color: rgba(255,255,255,0.8);
+				z-index: 9999;
+				opacity: 0;
+				visibility: hidden;
+				@include easeout(500ms);
+				@include flexbox(center,center);
+			}
+			.featured_slide:hover:after {
+				opacity: 1;
+				visibility: visible;
+			}
+			// .hidden class added based on user interaction to filter the slider content
+			.featured_slide.hidden {
+				visibility: hidden;
+				opacity: 0;
+				display: none;	
+			}
+		}
+	}
+	#image_filters{
+		@include flexbox(center,space-between);
+		padding: 0;
+		margin: 25px 0;
+
+		.featured_image_filter_wrapper {
+			@include flexbox(center,flex-start);
+			
+			i {
+				margin-bottom: 2px;
+				font-size: 14px;
+			}
+			
+			ul {
+				@include flexbox(center, space-between);
+				@include max-content(width);
+				list-style: none;
+				margin: 0px 0px 0px 30px;
+				padding: 0;
+				
+				li {
+					@include flexbox(center,center);
+					
+				}
+				li:not(:last-child):after{
+					content: "|";
+					margin: 0 10px;
+					display: inline-block;
+					color: #b9b9b9;
+					font-family: $body-font;
+					font-size: 13px;
+					font-weight: 500;
+					letter-spacing: 4px;
+					line-height: 19px;
+					padding-bottom: 2px;
+				}
+			}
+		}
+		.detailed_trigger {
+			margin-right: -4px;
+		}
+		span {
+			font-size: 11px;
+			text-transform: uppercase;
+			font-weight: 500;
+			color: $black;
+			letter-spacing: 4px;
+			line-height: 19px;
+			cursor: pointer;
+			position: relative;
+		}
+		span:after {
+			content: "";
+			@include calc(width, "100% - 2px");
+			position: absolute;
+			bottom: 2px;
+			left: -1px;
+			height: 1px;
+			background-color: #b9b9b9;
+			@include prefix(transform, scaleX(0));
+			opacity: 0;
+			@include easeout(400ms);
+		}
+		span:hover:after, span.active:after {
+			@include prefix(transform,  scaleX(1));
+			opacity: 1;
+		}
+	}
+}
+#offering_content{
+	background-color: $black;
+	position: relative;
+	margin-top: 25px; // offset the first .tilt_title
+	z-index: 9;
+	
+	h4.tilt_title {
+		width: 360px;
+		text-align: center;
+		padding: 17px 0;
+		left: 10%;
+
+	}
+	.sharedaddy {
+		top: 0;
+		
+		&.fixed {
+			top: 94px;
+			left: 10%;
+		}
+
+	}
+	.offering_overview {
+		padding: 120px 0;
+		
+		.tilt_title {
+			top: -25px;
+		}
+
+		.overview_wrapper {
+			width: 72%;
+			margin: 0 auto;
+			ul {
+				list-style-type: square;
+				color: $altgray;
+				@include flexbox(flex-start,space-between);
+				flex-wrap: wrap;
+				margin: 0 auto;
+				padding: 0;
+				list-style: none;
+				padding-left: 25px;
+				
+				li {
+					width: 49%;
+					margin: 10px 0;
+					font-size: 16px;
+					letter-spacing: 1.8px;
+					line-height: 21px;
+					color: $white;
+					font-weight: 300;
+					position: relative;
+				}
+				li:before {
+					content: "";
+					width: 8px;
+					height: 8px;
+					background-color: $altgray;
+					position: absolute;
+					top: 6px;
+					left: -25px;
+/* 					@include prefix(transform, skewX(-25deg)); */
+				}
+			}
+			
+			.overview_buttons_wrapper {
+				@include flexbox(center, space-between);
+				margin-top: 80px;
+				
+				.btn {
+					font-size: 10px;
+					text-transform: uppercase;
+					letter-spacing: 3px;
+					border: 1px solid $white;
+					color: $white;
+					padding: 10px 55px 10px 58px;
+					cursor: pointer;
+				}
+			}			
+		}
+	}
+	.offering_details_container {
+		$skew_deg : 5deg;
+		position: relative;
+		$containerSpacing: 140px;
+		
+		&:before {
+			
+			content: "";
+			width: 110%;
+			position: absolute;
+			left: -5%;
+			top: -$containerSpacing;
+			@include prefix(transform, skewY(-$skew_deg));
+			@include calc(height, "100% + "$containerSpacing);
+			background-color: $white;
+
+		}
+		
+		.offering_details_wrapper {
+/* 			@include prefix(transform, skewY($skew_deg)); */
+				margin-top: $containerSpacing;
+				padding-bottom: $containerSpacing;
+			
+			.tilt_title {
+				top: -$containerSpacing;
+			}
+			.content_container {
+				
+				
+				.posts-navigation {
+					a.disabled {
+						visibility: hidden;
+					}
+				}
+			}
+		}
+	}
+}
+
+  ///////////////////////
+ // BLOG & COLLECTION //
+///////////////////////
+.post_wrapper {
+	width: 78%;
+	margin: 50px auto;
+	position: relative;
+	
+	
+	article.post_content {
+		max-width: 880px;
+		margin: 0 auto;
+		
+		p {
+			color: $blog_body;
+			font-size: 13px;
+			letter-spacing: 0.5px;
+			line-height: 30px;
+			font-weight: 300;
+			margin-top: 0;
+			margin-bottom: 1.5em;
+		}
+		h3.post_excerpt {
+			font-size: 24px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			line-height: 30px;
+			color: $gray;
+			margin-top: 0;
+		}
+		.post_gallery_wrapper {
+			width: 100%;
+			position: relative;
+			$margin :  calc( ((100vw - 100%) / 2) * -1 );
+			@include prefix(transform, translateX($margin));
+			
+				.post_gallery {
+					width: 100vw;
+					
+					.image_viewer {
+						width: 100%;
+						height: 0;
+						padding-bottom: 30%;
+						position: relative;
+						
+						img {
+							position: absolute;
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+				}
+		}
+		.iframe_wrapper {
+			width: 80%;
+			padding-bottom: 45%; // 16:9 ratio
+		}
+	}
+}

@@ -41,11 +41,21 @@
 				
 				// grab the featured file information to dynamically generate display markup
 				$file_framing = get_field('framing');
-				$featured_file = get_field('featured_media');
-				$featured_type = $featured_file['mime_type']; 
+				$featured_image = get_field('featured_image');
+				$fimage_url = $featured_image['url'];
+				$featured_video = get_field('featured_media');
+				
+				$file_url = $featured_video['url'];
+				
+				// Set a file type based on whether or not a video is loaded for this offering
+				// if it is, we'll append 'video' the class so we can control the objects behavior 
+				if($featured_video){
+					$featured_type = $featured_video['mime_type']; 	
+				}else {
+					$featured_type = $featured_image['mime_type']; 
+				}
 				$file_exp = explode("/",$featured_type);
 				$file_type = $file_exp[0];
-				$file_url = $featured_file['url'];
 				
 				// Update Offering class
 				$offer_class .= " $file_type frame-$file_framing";
@@ -73,11 +83,12 @@
 					
 					<?php
 						
-						if($file_type == 'image'){
+						if($featured_image){
 							// Display Image background
-							echo "<img src='$file_url' class='$media_class' />";
+							echo "<img src='$fimage_url' class='$media_class' />";
 						}
-						else if($file_type == 'video'){
+						
+						if($featured_video){
 							// Display Video Background
 						?>
 							<video class="<?php echo $media_class; ?>" controls>

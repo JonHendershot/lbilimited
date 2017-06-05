@@ -5,6 +5,9 @@
 body {
 	background-color: $white;
 }
+div#page {
+	overflow-x: hidden;
+}
 html {
 	background-color: $black;
 }
@@ -29,7 +32,7 @@ h1,h2,h3,h4,h5,h6 {
 input:focus {
 	outline: none;
 }
-.main-btn {
+.main-btn, input[type="submit"] {
 	background-color: $mainred;
 	color: $white;
 	letter-spacing: 3px;
@@ -38,6 +41,43 @@ input:focus {
 	font-weight: 100;
 	padding: 10px 30px;
 	text-decoration: none;
+}
+
+// Tilt Title
+h4.tilt_title {
+    background: $mainred;
+    color: $white;
+    padding: 17px 100px;
+    display: inline-block;
+    position: absolute;
+    margin: 0;
+    top: -7px;
+    left: 11%;
+    font-size: 24px;
+    letter-spacing: 2.4px;
+    font-weight: bold;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+    z-index: 999999;
+}
+h4.tilt_title:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('../inc/images/triangle.png');
+	background-size: 100%;
+	background-position: center top;
+	background-repeat: no-repeat;
+	z-index: -1;
+}
+h4.tilt_title.upside_down:after {
+	@include prefix(transform, rotate(180deg) scaleX(-1));
+	background-position: center bottom;
+}
+h4.tilt_title.flip:after {
+	@include prefix(transform, rotate(180deg));
 }
 
 // Image Blur Preloader
@@ -53,5 +93,370 @@ input:focus {
 	}
 	img.full_size.visible {
 		opacity: 1;
+	}
+}
+
+// iframe wrapper 
+.iframe_wrapper {
+	width: 100%;
+	height: 0;
+	padding-bottom: 56.25%; // 16:9 ratio
+	position: relative;
+	margin: 40px auto;
+	
+	iframe {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		
+	}
+}
+
+// General Lightbox
+.lbi_lightbox {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	visibility: hidden;
+	@include flexbox(center,center);
+	overflow: hidden;
+	
+	.ribbon {
+		width: 120%;
+		height: 100%;
+		background-color: $mainred;
+		position: absolute;
+		top: 0;
+		left: -10%;
+		z-index: 9;
+		@include easeout(1000ms);
+		@include prefix(transform, skew(-15deg) scaleX(0) );
+		transform-origin: center;
+		// Timing for animating this OUT (so the search form doesn't display a subtle overflow)
+		transition-delay: 100ms;
+		
+	}
+	.lightbox_content {
+		width: 65%;
+		@include prefix( transform, translateY(10px) ); // reset skew for content
+		opacity: 0;
+		// Easing for when this animates OUT
+		@include easeout(500ms);
+		z-index: 999;
+		transition-delay: 120ms;
+		
+	}
+}
+.lbi_lightbox.visible {
+	visibility: visible;
+	
+	.search_form_wrapper {
+		@include prefix(transform, skew(-15deg) scaleX(1));
+		
+	}
+	.ribbon {
+		@include prefix( transform, skew(-15deg) scaleX(1) );
+		// No delay when animating IN
+		transition-delay: 0ms;
+		
+	}
+	form, .lightbox_content {
+		opacity: 1;
+		@include prefix( transform, translateY(0px) );
+		
+		// Easing for when this animates IN
+		@include easeout(1500ms);
+	}
+}
+  /////////////////////
+ //  MEDIA LIGHTBOX //
+/////////////////////
+.media_lightbox {
+	.ribbon {
+		background-color: rgba(0,0,0,0.97);
+	}
+	.image_container {
+		width: 75%;
+		padding-bottom: 42.1875%;
+		height: 0;
+		overflow: hidden;
+		position: absolute;
+		background-color: #000;
+		
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			position: absolute;
+			opacity: 0;
+			visibility: hidden;
+// 			@include transition(0.3s, opacity, ease-in-out);
+			
+			
+			&.blur_image {
+				@include prefix(filter, blur(20px));
+			}
+			
+			&.full_res {
+				
+			}
+			
+		}
+		.light_nav {
+			height: 40px;
+			width: 40px;
+			@include flexbox(center,center);
+			color: $white;
+			background-color: $mainred;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			z-index: 999999999999999999;
+			font-size: 16px;
+			opacity: 0.75;
+			cursor: pointer;
+			
+			&.next_img {
+				right: 0;
+				padding: 3px 0 0 3px;
+			}
+			&.prev_img {
+				left: 0;
+				padding: 3px 3px 0 0;
+			}
+		}
+	}
+	&.visible {
+		img.visible {
+			opacity: 1;
+			visibility: visible;
+			
+			&.blur_image {
+				opacity: 0.75;
+			}
+		}
+	}
+}
+  /////////////////
+ //  POSTS NAV  //
+/////////////////
+.posts-navigation {
+	width: 65%;
+	margin: 0 auto;
+	@include flexbox(center, space-between);
+	margin-top: 25px;
+	
+	a.posts-nav-link {
+		color: $white;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 10px;
+		font-weight: 300;
+		letter-spacing: 0.5px;
+		border: 1px solid $white;
+		position: relative;
+		@include easeout(700ms);
+	}
+	a.posts-nav-link:first-child {
+		padding: 9px 40px 9px 74px;
+	}
+	a.posts-nav-link:last-child {
+		padding: 9px 74px 9px 40px;
+	}
+	
+	a.posts-nav-link:after {
+		content: "";
+		height: 100%;
+		width: 34px;
+		background-color: $white;
+		top: 0;
+		position: absolute;	
+		background-image: url('../inc/images/sharrow_red.png');		
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 40%;
+	}
+	a.posts-nav-link:first-child:after {
+		left: 0;
+		@include prefix(transform,scaleX(-1));
+	}
+	a.posts-nav-link:last-child:after {
+		right: 0;
+	}
+	a.posts-nav-link.disabled {
+		border-color: $gray;
+		color: $gray;
+		visibility: hidden;
+	}
+	a.posts-nav-link.disabled:after {
+		background-color: $gray;
+		@include prefix(filter,grayscale(100%));
+		
+	}
+	.pagination {
+		a {
+			color: $white;
+			text-decoration: none;
+			font-size: 12px;
+			font-weight: 300;
+			margin: 0 4px;
+			position: relative;
+			opacity: 0.5;
+			@include easeout(800ms);
+		}
+		a:hover {
+			opacity: 1;
+		}
+		a:after {
+			content: "";
+			width: 100%;
+			height: 1px;
+			background-color: $white;
+			position: absolute;
+			bottom: -1px;
+			left: 0;
+			@include prefix(transform, translateY(5px));
+			opacity: 0;
+			@include easeout(800ms);
+			
+		}
+		a.active {
+			font-weight: 700;
+			opacity: 1;
+		}
+		a.active:after {
+			opacity: 1;
+			@include prefix(transform, translateY(0));
+		}
+		a:hover:after {
+			opacity: 1;
+			@include prefix(transform, translateY(0));	
+		}
+	}
+}
+  //////////////////
+ //  SEARCH BAR  //
+//////////////////
+.search_bar_container {
+	background-color: $black;
+	@include flexbox(center,space-around);
+	
+	form {
+		width: 60%;
+		position: relative;
+		display: block;
+		padding: 17px 0;
+		
+		
+		&.media_filter_container {
+			
+			div {
+				@include flexbox(center,flex-start);
+				width: 60%;
+				margin: 0 auto;
+				padding: 3.5px 0;
+				
+				p {
+					text-transform: uppercase;
+					font-weight: 300;
+					font-size: 13px;
+					color: $about_bio_gray;
+					letter-spacing: 4.2px;
+					margin: 0;
+	
+				}
+				
+				select {
+					margin-left: 15px;
+					background-color: transparent;
+					border: none;
+					color: $about_bio_gray;
+					font-size: 13px;
+					font-weight: 500;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+					
+					&:focus {
+						outline: none;
+					}
+				}
+			}
+			span.submit:after {
+// 				background-image: none;
+			}
+		}
+		input[type="search"] {
+			border: none;
+			background-color: transparent;
+			text-transform: uppercase;
+			width: 42%;
+			margin: 0 auto 0 auto;
+			color: $about_bio_gray;
+			border-bottom: 1px solid $about_bio_gray;
+			font-size: 13px;
+			font-weight: 300;
+			letter-spacing: 4px;
+			display: block;
+			border-radius: 0;
+			@include prefix(transform, translateX(-15%));
+		}
+		
+		span.submit {
+			background-color: $mainred;
+			@include prefix(transform, skew(-24deg));
+			position: absolute;
+				top: 0;
+				right: -25px;
+				height: 100%;
+				width: 140px;
+				z-index: 99;
+			
+			&:after {
+				content: "";
+				background-image: url('../inc/images/sharrow.png');
+				background-size: 10%;
+				background-position: center center;
+				background-repeat: no-repeat;
+				@include prefix(transform, skew(24deg));
+				z-index: 1;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+			
+			input {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: transparent;
+				z-index: 9;
+				border: none;
+			}
+		}
+	}
+	.form_image {
+		width: 40%;
+		position: relative;
+		overflow: hidden;
+		height: 60px;
+		img {
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			height: 100%;
+			width: auto;
+		}
 	}
 }

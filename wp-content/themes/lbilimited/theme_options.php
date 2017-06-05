@@ -54,6 +54,7 @@ function LBI_register_settings()
     add_settings_section( 'LBI_footer_section', 'Site Footer Options', 'LBI_display_section', 'lbilimited_options.php' );
     add_settings_section( 'LBI_search_section', 'Search Results Page', 'LBI_display_section', 'lbilimited_options.php' );
     add_settings_section( 'LBI_404_section', '404 Error Page', 'LBI_display_section', 'lbilimited_options.php' );
+    add_settings_section( 'LBI_misc_section', 'Miscellaneous', 'LBI_display_section', 'lbilimited_options.php' );
 
     
     
@@ -62,213 +63,258 @@ function LBI_register_settings()
     ////////////////////////////////////    
     
     
-    // Facebook
-    $field_args = array(
-      'type'      => 'text',
-      'id'        => 'LBI_facebook',
-      'name'      => 'LBI_facebook',
-      'desc'      => 'Facebook Social Link',
-      'std'       => '',
-      'label_for' => 'LBI_facebook',
-      'class'     => 'css_class'
-    );
-
-    add_settings_field( 'LBI_facebook', 'Facebook Link', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_social_section', $field_args );
-    
-    // Instagram
-    $field_args = array(
-      'type'      => 'text',
-      'id'        => 'LBI_instagram',
-      'name'      => 'LBI_instagram',
-      'desc'      => 'Instagram Link',
-      'std'       => '',
-      'label_for' => 'LBI_instagram',
-      'class'     => 'css_class'
-    );
-
-    add_settings_field( 'LBI_instagram', 'Instagram Link', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_social_section', $field_args );
-    
-    
-    // Twitter
-    $field_args = array(
-      'type'      => 'text',
-      'id'        => 'LBI_twitter',
-      'name'      => 'LBI_twitter',
-      'desc'      => 'Twitter Social Link',
-      'std'       => '',
-      'label_for' => 'LBI_twitter',
-      'class'     => 'css_class'
-    );
-
-    add_settings_field( 'LBI_twitter', 'Twitter Link', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_social_section', $field_args );
-    
-    // YouTube
-    $field_args = array(
-      'type'      => 'text',
-      'id'        => 'LBI_youtube',
-      'name'      => 'LBI_youtube',
-      'desc'      => 'Youtube Social Link',
-      'std'       => '',
-      'label_for' => 'LBI_youtube',
-      'class'     => 'css_class'
-    );
-
-    add_settings_field( 'LBI_youtube', 'YouTube Link', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_social_section', $field_args );
-    
-    
-    
-    
-    
-    
-	// Search Header Image Upload
-    $field_args = array(
-      'type'      => 'text',
-      'id'        => 'LBI_logo',
-      'name'      => 'LBI_logo',
-      'desc'      => '<input data-category="LBI_logo" class="left-float image-trigger" type="button" value="Upload Image"><p>Company Logo for Site Header</p>',
-      'std'       => '',
-      'label_for' => 'LBI_logo',
-      'class'     => ' left-float header_image LBI_logo'
-    );
-
-    add_settings_field( 'LBI_logo', 'Header Logo', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_social_section', $field_args );
-    
-    // Alternate Header Logo Color
-    $field_args = array(
-      'type'      => 'text',
-      'id'        => 'LBI_logo_alt1',
-      'name'      => 'LBI_logo_alt1',
-      'desc'      => '<input data-category="gfa-alt" class="left-float image-trigger" type="button" value="Upload Image"><p>Alternate Header Logo</p>',
-      'std'       => '',
-      'label_for' => 'know-your-world-header',
-      'class'     => ' left-float header_image gfa-alt'
-    );
-
-    add_settings_field( 'LBI_logo_alt1', 'Header Logo - Alternate 1', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_social_section', $field_args );
+	    // Facebook
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'LBI_facebook',
+	      'name'      => 'LBI_facebook',
+	      'desc'      => 'Facebook Social Link',
+	      'std'       => '',
+	      'label_for' => 'LBI_facebook',
+	      'class'     => 'css_class'
+	    );
+	
+	    add_settings_field( 'LBI_facebook', 'Facebook Link', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_social_section', $field_args );
+	    
+	    // Instagram
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'LBI_instagram',
+	      'name'      => 'LBI_instagram',
+	      'desc'      => 'Instagram Link',
+	      'std'       => '',
+	      'label_for' => 'LBI_instagram',
+	      'class'     => 'css_class'
+	    );
+	
+	    add_settings_field( 'LBI_instagram', 'Instagram Link', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_social_section', $field_args );
+	    
+	    
+	    // Twitter
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'LBI_twitter',
+	      'name'      => 'LBI_twitter',
+	      'desc'      => 'Twitter Social Link',
+	      'std'       => '',
+	      'label_for' => 'LBI_twitter',
+	      'class'     => 'css_class'
+	    );
+	
+	    add_settings_field( 'LBI_twitter', 'Twitter Link', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_social_section', $field_args );
+	    
+	    // YouTube
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'LBI_youtube',
+	      'name'      => 'LBI_youtube',
+	      'desc'      => 'Youtube Social Link',
+	      'std'       => '',
+	      'label_for' => 'LBI_youtube',
+	      'class'     => 'css_class'
+	    );
+	
+	    add_settings_field( 'LBI_youtube', 'YouTube Link', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_social_section', $field_args );
+	    
+	        
+	    
+	    
+		// Search Header Image Upload
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'LBI_logo',
+	      'name'      => 'LBI_logo',
+	      'desc'      => '<input data-category="LBI_logo" class="left-float image-trigger" type="button" value="Upload Image"><p>Company Logo for Site Header</p>',
+	      'std'       => '',
+	      'label_for' => 'LBI_logo',
+	      'class'     => ' left-float header_image LBI_logo'
+	    );
+	
+	    add_settings_field( 'LBI_logo', 'Header Logo', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_social_section', $field_args );
+	    
+	    // Alternate Header Logo Color
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'LBI_logo_alt1',
+	      'name'      => 'LBI_logo_alt1',
+	      'desc'      => '<input data-category="gfa-alt" class="left-float image-trigger" type="button" value="Upload Image"><p>Alternate Header Logo</p>',
+	      'std'       => '',
+	      'label_for' => 'know-your-world-header',
+	      'class'     => ' left-float header_image gfa-alt'
+	    );
+	
+	    add_settings_field( 'LBI_logo_alt1', 'Header Logo - Alternate 1', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_social_section', $field_args );
     
     
     ////////////////////////////////////
     // - - - - FOOTER OPTIONS - - - - //
     ////////////////////////////////////
     
-    // Footer CTA
-    $field_args = array(
-      'type'      => 'text',
-      'id'        => 'LBI_f_CTA',
-      'name'      => 'LBI_f_CTA',
-      'desc'      => 'Heading to initiate the call to action to signing up for newsletter',
-      'std'       => '',
-      'label_for' => 'LBI_f_CTA',
-      'class'     => 'css_class'
-    );
-
-    add_settings_field( 'LBI_f_CTA', 'Newsletter CTA Heading', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
-
-	// Footer CTA Subtitle
-    $field_args = array(
-      'type'      => 'text',
-      'id'        => 'LBI_f_CTA_sub',
-      'name'      => 'LBI_f_CTA_sub',
-      'desc'      => 'Subtitle text for the newsletter CTA',
-      'std'       => '',
-      'label_for' => 'LBI_f_CTA_sub',
-      'class'     => 'css_class'
-    );
-
-    add_settings_field( 'LBI_f_CTA_sub', 'Newsletter CTA Subtitle', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );   
-       
-    // Footer CTA Mailing-list Shortcode to capture subscriptions
-    $field_args = array(
-      'type'      => 'text',
-      'id'        => 'LBI_f_mailer_shortcode',
-      'name'      => 'LBI_f_mailer_shortcode',
-      'desc'      => 'Shortcode for mailing-list subscription form',
-      'std'       => '',
-      'label_for' => 'LBI_f_mailer_shortcode',
-      'class'     => 'css_class'
-    );
-
-    add_settings_field( 'LBI_f_mailer_shortcode', 'Mailer Shortcode', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
-        
-    // Footer CTA Background
-    $field_args = array(
-      'type'      => 'text',
-      'id'        => 'footer_background',
-      'name'      => 'footer_background',
-      'desc'      => '<input data-category="footer-bg" class="left-float image-trigger" type="button" value="Upload Image"><p>Image to Display behind newsletter CTA</p>',
-      'std'       => '',
-      'label_for' => 'footer_background',
-      'class'     => ' left-float header_image footer-bg'
-    );
-
-    add_settings_field( 'footer_background', 'Footer Background', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
-    
-    // Footer Copyright
-    $field_args = array(
-      'type'      => 'text',
-      'id'        => 'LBI_f_copyright',
-      'name'      => 'LBI_f_copyright',
-      'desc'      => 'Copyright text for site footer',
-      'std'       => '',
-      'label_for' => 'LBI_f_copyright',
-      'class'     => 'css_class'
-    );
-
-    add_settings_field( 'LBI_f_copyright', 'Footer Copyright', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
-    
-
-    // Footer Email
-    $field_args = array(
-      'type'      => 'text',
-      'id'        => 'LBI_f_email',
-      'name'      => 'LBI_f_email',
-      'desc'      => 'Email address to be displayed in site footer',
-      'std'       => '',
-      'label_for' => 'LBI_f_email',
-      'class'     => 'css_class'
-    );
-
-    add_settings_field( 'LBI_f_email', 'Footer Email Address', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+	    // Footer CTA
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'LBI_f_CTA',
+	      'name'      => 'LBI_f_CTA',
+	      'desc'      => 'Heading to initiate the call to action to signing up for newsletter',
+	      'std'       => '',
+	      'label_for' => 'LBI_f_CTA',
+	      'class'     => 'css_class'
+	    );
+	
+	    add_settings_field( 'LBI_f_CTA', 'Newsletter CTA Heading', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+	
+		// Footer CTA Subtitle
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'LBI_f_CTA_sub',
+	      'name'      => 'LBI_f_CTA_sub',
+	      'desc'      => 'Subtitle text for the newsletter CTA',
+	      'std'       => '',
+	      'label_for' => 'LBI_f_CTA_sub',
+	      'class'     => 'css_class'
+	    );
+	
+	    add_settings_field( 'LBI_f_CTA_sub', 'Newsletter CTA Subtitle', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );   
+	       
+	    // Footer CTA Mailing-list Shortcode to capture subscriptions
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'LBI_f_mailer_shortcode',
+	      'name'      => 'LBI_f_mailer_shortcode',
+	      'desc'      => 'Shortcode for mailing-list subscription form',
+	      'std'       => '',
+	      'label_for' => 'LBI_f_mailer_shortcode',
+	      'class'     => 'css_class'
+	    );
+	
+	    add_settings_field( 'LBI_f_mailer_shortcode', 'Mailer Shortcode', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+	        
+	    // Footer CTA Background
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'footer_background',
+	      'name'      => 'footer_background',
+	      'desc'      => '<input data-category="footer-bg" class="left-float image-trigger" type="button" value="Upload Image"><p>Image to Display behind newsletter CTA</p>',
+	      'std'       => '',
+	      'label_for' => 'footer_background',
+	      'class'     => ' left-float header_image footer-bg'
+	    );
+	
+	    add_settings_field( 'footer_background', 'Footer Background', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+	    
+	    // Footer Copyright
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'LBI_f_copyright',
+	      'name'      => 'LBI_f_copyright',
+	      'desc'      => 'Copyright text for site footer',
+	      'std'       => '',
+	      'label_for' => 'LBI_f_copyright',
+	      'class'     => 'css_class'
+	    );
+	
+	    add_settings_field( 'LBI_f_copyright', 'Footer Copyright', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+	    
+	
+	    // Footer Email
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'LBI_f_email',
+	      'name'      => 'LBI_f_email',
+	      'desc'      => 'Email address to be displayed in site footer',
+	      'std'       => '',
+	      'label_for' => 'LBI_f_email',
+	      'class'     => 'css_class'
+	    );
+	
+	    add_settings_field( 'LBI_f_email', 'Footer Email Address', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
     
     
 	////////////////////////////////////
     // - - - - SEARCH OPTIONS - - - - /
     //////////////////////////////////
 	
-	// Search Results Header
-	    $field_args = array(
-	      'type'      => 'text',
-	      'id'        => 'results_header',
-	      'name'      => 'results_header',
-	      'desc'      => '<input data-category="results_header" class="left-float image-trigger" type="button" value="Upload Image"><p>Image to Display in Search Results header</p>',
-	      'std'       => '',
-	      'label_for' => 'results_header',
-	      'class'     => ' left-float header_image results_header'
-	    );
-	
-	    add_settings_field( 'results_header', 'Results Header', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_search_section', $field_args );
-    
+		// Search Results Header
+		    $field_args = array(
+		      'type'      => 'text',
+		      'id'        => 'results_header',
+		      'name'      => 'results_header',
+		      'desc'      => '<input data-category="results_header" class="left-float image-trigger" type="button" value="Upload Image"><p>Image to Display in Search Results header</p>',
+		      'std'       => '',
+		      'label_for' => 'results_header',
+		      'class'     => ' left-float header_image results_header'
+		    );
+		
+		    add_settings_field( 'results_header', 'Results Header', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_search_section', $field_args );
+		    
+		// Search Framing
+		    $field_args = array(
+		      'type'      => 'text',
+		      'id'        => 'results_frame',
+		      'name'      => 'results_frame',
+		      'desc'      => '<select class="results_frame" data-input="results_frame"><option value="top">Top</option><option value="center">Center</option><option value="bottom">Bottom</option></select><p>How the header image frames up</p>',
+		      'std'       => '',
+		      'label_for' => 'results_frame',
+		      'class'     => ' css_class results_frame i_select'
+		    );
+		
+		    add_settings_field( 'results_frame', 'Search Results Framing', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_search_section', $field_args );
+		    
     
 	 ///////////////////////////////////
     // - - - ERROR 404 OPTIONS - - - //
    ///////////////////////////////////
    
-    // 404 Header Image
+	    // 404 Header Image
+		    $field_args = array(
+		      'type'      => 'text',
+		      'id'        => '404_header',
+		      'name'      => '404_header',
+		      'desc'      => '<input data-category="404_header" class="left-float image-trigger" type="button" value="Upload Image"><p>Image to Display in Search Results header</p>',
+		      'std'       => '',
+		      'label_for' => 'results_header',
+		      'class'     => ' left-float header_image 404_header'
+		    );
+		
+		    add_settings_field( '404_header', '404 Header', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_404_section', $field_args );
+		
+		// 404 Framing
+		    $field_args = array(
+		      'type'      => 'text',
+		      'id'        => '404_frame',
+		      'name'      => '404_frame',
+		      'desc'      => '<select class="404_frame" data-input="404_frame"><option value="top">Top</option><option value="center">Center</option><option value="bottom">Bottom</option></select><p>How the header image frames up</p>',
+		      'std'       => '',
+		      'label_for' => '404_frame',
+		      'class'     => ' css_class 404_frame i_select',
+		    );
+		
+		    add_settings_field( '404_frame', '404 Framing', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_404_section', $field_args );
+	
+	
+	
+    ////////////////////////////////////
+    // - - - - MISCELLANEOUS - - - - //
+    //////////////////////////////////
+    
+    
+	    // Offering Contact Form
 	    $field_args = array(
 	      'type'      => 'text',
-	      'id'        => '404_header',
-	      'name'      => '404_header',
-	      'desc'      => '<input data-category="404_header" class="left-float image-trigger" type="button" value="Upload Image"><p>Image to Display in Search Results header</p>',
+	      'id'        => 'offering_form',
+	      'name'      => 'offering_form',
+	      'desc'      => 'Shortcode for the contact form to be displayed on the Current Offerings single page',
 	      'std'       => '',
-	      'label_for' => 'results_header',
-	      'class'     => ' left-float header_image 404_header'
+	      'label_for' => 'offering_form',
+	      'class'     => 'css_class'
 	    );
 	
-	    add_settings_field( '404_header', '404 Header', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_404_section', $field_args );
+	    add_settings_field( 'offering_form', 'Offerings Contact Form Shortcode', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_misc_section', $field_args );
+	
+
 }
 
-
-/**
+	/**
  * Function to add necessary scripts and styles
  */
  
@@ -278,6 +324,9 @@ function my_admin_scripts() {
         wp_enqueue_media();
         wp_register_script('my-admin-js',get_template_directory_uri() . '/js/options_admin.js', array('jquery'));
         wp_enqueue_script('my-admin-js');
+        
+        wp_register_style('lbi-admin-css', get_template_directory_uri() . '/inc/css/lbi-admin.css', array());
+        wp_enqueue_style('lbi-admin-css');
 }
 
 /**

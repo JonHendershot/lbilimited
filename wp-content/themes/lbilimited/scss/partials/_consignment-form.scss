@@ -1,0 +1,619 @@
+	.project-planner-container {
+		min-height: 65vh;
+		max-width: 955px;
+		opacity: 1;
+		position: relative;
+		margin: auto;
+		transition: all 1000ms ease-in-out;
+		
+		input:active, input:focus {
+			color: $white !important;
+		}
+		.field_row {
+			.field {
+				width: 48% !important;
+			}
+		}
+		.part-3 {
+			.field_row {
+				.field {
+					width: 31% !important;
+				}
+			}
+		}
+		.planner-meta {
+			
+			@include flexbox(center,space-between);
+			width: 100%;
+			.section-number {
+				span {
+					font-family: $heading_font;
+					font-weight: bold;
+				}
+				.current-field {
+					color: $overlay_w;
+				}
+				.total-fields {
+					color: $altred;
+				}	
+			}
+			
+			.current-title {
+				font-family: $body_font;
+				color: $white;
+				font-weight: 300;
+				letter-spacing: 3px;
+			}
+		}
+		#project-planner {
+			br {
+				display: none;
+			}
+			.ppsection {
+				
+				$title-size : 20px;
+				$field-size : 46px;
+				$transform : 'uppercase';
+				$spacing : 2px;
+				
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				@include max-content(height);
+				@include translate(150%,0,0);
+				opacity: 0;
+				visibility: hidden;
+				@include ease(1000ms);
+				
+				// General 
+				
+				input[type=number].no-spin::-webkit-inner-spin-button, 
+				input[type=number].no-spin::-webkit-outer-spin-button,
+				input[type=date]::-webkit-inner-spin-button, 
+				input[type=date]::-webkit-outer-spin-button { 
+					-webkit-appearance: none; 
+					margin: 0; 
+				}
+				
+				.instruct {
+					font-family: $heading_font;
+					color: $altred;
+					font-size: $title-size;
+					letter-spacing: $spacing;
+					text-transform: $transform;
+				}
+				
+				// Budget
+				.budget-space {
+					input[type="number"] {
+						font-size: $field-size !important;
+						width: 165px !important;
+						border: none !important;
+						text-align: center;
+						font-family: $heading_font;
+						color: $white;
+						background-color: transparent;
+					}
+					input:before {
+						content: '$';
+						position: relative;
+						
+					}
+					.budget {
+						position: relative;
+						.currency {
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							right: 0;
+							@include max-content(width);
+							font-size: 33px;
+							color: $gray;
+							font-family: $heading_font;
+							margin: auto;
+							@include translate(-10px,0,0);
+						}
+					}
+					
+				}
+				
+				// Services 
+				.services {
+					.wpcf7-checkbox {
+						@include flexbox(center, space-between);
+						width: 100%;
+						margin-top: 15px;
+						.wpcf7-list-item {
+							background-color: transparent;
+							border: 1px solid $gray;
+							position: relative;
+							padding: 0 20px 4px;
+							@include transition(all,300ms,ease-in-out);
+							cursor: pointer;
+							margin: 0;
+							input[type="checkbox"]{
+								visibility: hidden;
+								display: none;
+							}
+							
+							.wpcf7-list-item-label {
+								color: $gray;
+								text-transform: uppercase;
+								font-size: 10px;
+								font-weight: 600;
+								letter-spacing: 2px;
+								@include transition(all,300ms,ease-in-out);
+								
+							}
+							
+							.wpcf7-list-item-label:before {
+								content: 'x';
+								position: absolute;
+								display: block;
+								top: 0;
+								bottom: 0;
+								left: 8px;
+								height: 50%;
+								margin: auto;
+								opacity: 0;
+							}
+							
+							
+						}
+						.wpcf7-list-item:hover {
+							border-color: $altred;
+							.wpcf7-list-item-label {
+								color: $altred;
+							}
+						}
+						.wpcf7-list-item.checked {
+							border-color: $altred;
+							background-color: $altred;
+							.wpcf7-list-item-label {
+								color: $white;
+							}
+						}
+					}
+				}
+				.service-select {
+					@include translate(0,50%,0);
+					@include easeout(600ms);
+				}
+				.service-select.elaborate {
+					@include translate(0,-10%,0);
+				}
+				.elaboration {
+					visibility: hidden;
+					opacity: 0;
+/*
+					position: absolute;
+					bottom: 0;
+*/
+					@include translate(0,-20%,0);
+					@include easeout(600ms);
+					.song-count {
+						.number-songs {
+							margin: 0 5px;
+							input {
+								background-color: transparent;
+								color: $gray;
+								font-family: $heading_font;
+								font-size: $field-size;
+								border: none;
+								width: 60px;
+								text-align: center;
+								font-weight: 800;
+							}
+						}
+					}
+				}
+				.elaboration.elaborate {
+					visibility: visible;
+					opacity: 1;
+					@include translate(0,10%,0);
+				}
+				
+				// Scheduling
+				
+				
+				.date-explain {
+					font-family: $heading_font;
+					color: $altred;
+					font-size: $title-size;
+					letter-spacing: $spacing;
+					text-transform: $transform;
+				}
+				.date-range {
+					color: $gray;
+					font-family: $heading_font;
+					font-size: $field-size;
+					letter-spacing: $spacing;
+					span {
+						display: block;
+					}
+					input {
+						background-color: transparent;
+						border: none;
+						box-shadow: none;
+						color: $gray;
+						font-family: $heading_font;
+						font-size: $field-size;
+						letter-spacing: $spacing;
+					}
+					.range-to {
+						color: $altred;
+						font-family: $heading_font;
+						font-size: $title-size;
+						letter-spacing: $spacing;
+						text-transform: $transform;
+						
+					}
+				}
+			}
+			.ppsection.visible {
+				@include translate(0,0,0);
+				visibility: visible;
+				opacity: 1;
+			}
+			.ppsection.prev {
+				@include translate(-150%,0,0);
+			}
+			// Drag & Drop Upload
+			.prev-material {
+				$upload_pad : 20px;
+				#file-upload-hidden {
+					display: none;
+					visibility: hidden;
+				}
+				.band-file {
+					display: none; // hide input for now
+				}
+				#dropzone.uploading {
+					width: 60%;
+				}
+				#dropzone {
+					background-color: $white;
+					border-radius: 5px;
+					width: 100%;
+					@include flexbox(center,center);
+					padding: 20px;
+					box-shadow: 0px 6px 28px rgba(17, 17, 17, 0.1);
+					@include ease(800ms);
+					z-index: 9999;
+					position: relative;
+					
+					.container {
+						border: 2px dashed $about_bio_gray;
+						border-radius: 5px;
+						padding: 150px 0;
+						width: 100%;
+						@include transition(0.3s, all, ease-in-out);
+						span{
+							color: #9b9b9b;
+							text-align: center;
+							font-size: 12px;
+							width: 60%;
+							margin: 0 auto;
+							display: block;
+							font-family: $body_font;
+							letter-spacing: 0px;
+							font-weight: 400;
+							@include transition (0.3s, opacity, ease-in-out);
+							max-width: 233px;
+							
+							.browse-trigger {
+								color: $altred;
+								cursor: pointer;
+								display: inline;
+							}
+						}
+						
+					
+					}
+				}
+				#dropzone.drag_over {
+					.container {
+						border-color: $altred;
+						span {
+							opacity: 0.25;
+						}
+					}
+				}
+				#filenames input[type="text"]{
+					visibility: hidden;
+					display: none;
+				}
+				#uploaded-files {
+					width: 40%;
+					padding: 0;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 0;
+					margin: auto;
+					border-radius: 5px;
+					@include max-content(height);
+					z-index: 99;
+
+					
+					.uploaded-file {
+						width: 100%;
+						visibility: hidden;
+						display: none;
+						opacity: 0;
+						padding: 15px;
+					    background-color: $altgray;
+					    border-bottom-right-radius: 5px;
+					    border-top-right-radius: 5px;
+					    margin: 5px 0;
+					    position: relative;
+						.progress-bar {
+							width: 100%;
+							background-color: $black;
+							height: 4px;
+							border-radius: 2px;
+							position: relative;
+							overflow: hidden;
+							.progress {
+								position: absolute;
+								left: 0;
+								top: 0;
+								height: 4px;
+								border-radius: 2px;
+								background: linear-gradient(to right,rgba(255,132,121,1) 0%, rgba(255,176,135,1) 100% );
+								width: 100%;
+								@include ease(400ms);
+								@include scaleX(0);
+								transform-origin: left;
+							}
+						}
+						.upload-info {
+							@include flexbox(center,space-between);
+							margin-top: 5px;
+							.file-name {
+								font-size: 11px;
+								@include ease(400ms);
+							}
+							.file-name.error {
+								font-style: italic;
+								color: red;
+							}
+							.file-name.loaded {
+								@include translate(16px,0,0)
+							}
+							.file-name:before {
+								content:'';
+								position: absolute;
+								top: 0;
+								bottom: 0;
+								left: 0;
+								background-image: url('../inc/images/checkmark.png');
+								background-size: contain;
+								background-position: center center;
+								background-repeat: no-repeat;
+								height: 100%;
+								width: 9px;
+								@include translate(-18px,0px,0);
+								display: block;
+								opacity: 0;
+								visibility: hidden;
+								@include ease(400ms);
+							}
+							.file-name.loaded:before {
+								visibility: visible;
+								opacity: 1;
+								@include translate(-13px,0,0);
+							}
+							.remove-file {
+								color: #FFAF86;
+								font-size: 14px;
+								cursor: pointer;
+							}
+							.error-list {
+								list-style: none;
+								padding: 0;
+								margin: 0;
+								position: absolute;
+								top: 0;
+								right: 0;
+								background-color: $white;
+								color: $gray;								
+							    border-radius: 4px;
+							    padding: 10px;
+							    font-size: 9px;
+							    z-index: 9999;
+							    top: 0;
+							    left: 0;
+							    right: 0;
+							    bottom: 0;
+							    margin: auto;
+							    @include max-content(width);
+							    @include max-content(height);
+							    opacity: 0;
+							    visibility: hidden;
+								@include transition(500ms, all, ease-in-out);
+							    
+							}
+							
+						}
+						.upload-info.errors {
+							.error-list {
+								opacity: 1;
+								visibility: visible;
+								
+							}
+						}
+					}
+					.uploaded-file.visible {
+						opacity: 1;
+						visibility: visible;
+						display: block;
+					}
+				}
+			}
+			
+			
+		}
+		.btns {
+			width: 100%;
+			@include flexbox(center,space-between);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			transition: 800ms all ease-in-out;
+			.nav-hint {
+				font-family: $heading_font;
+				color: $gray;
+				letter-spacing: 1px;
+				font-size: 14px;
+				padding-top: 8px;
+				visibility: hidden;
+				opacity: 0;
+				@include ease(1000ms);
+			}
+			.nav-hint.visible {
+				visibility: visible;
+				opacity: 1;
+			}
+			.main-btn.hidden {
+				visibility: hidden;
+				opacity: 0;
+			
+			}
+			.main-btn.next-field:after {
+				@include translate(-100%,0,0);
+			}
+			.main-btn.next-field:hover:after {
+				@include translate(-2px,0,0);
+			}
+			.main-btn.prev-field:after {
+				@include translate(100%,0,0);
+			}
+			.main-btn.prev-field:hover:after {
+				@include translate(2px,0,0);
+			}
+			.main-btn {
+				position: absolute;
+				top: 0;
+				cursor: pointer;
+			}
+			.main-btn.next-field, .main-btn.submit {
+				right: 0;
+			}
+			.main-btn.prev-field {
+				left: 0;
+				@include ease(1000ms);
+			}
+			
+		}
+		.btns.hidden{
+			opacity: 0;
+			visibility: hidden;
+		}
+		.submit-success {
+			text-align: center;
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			@include max-content(height);
+			margin: auto;
+			@include transition(800ms,opacity,ease-in-out);
+			img,p,div {
+				@include translate(0,50px,0);
+				@include easeout(800ms);
+			}
+			img {
+				width: 150px;
+				margin: 0 auto;
+			}
+			p {
+				color: $white;
+				font-family: $heading_font;
+				font-size: 20px;	
+				transition-delay: 100ms;
+			}
+			.main-btn {
+				margin: 0 auto;
+				transition-delay: 150ms;
+			}
+		}
+		.submit-success.visible {
+			opacity: 1;
+			visibility: visible;
+			img,p,div {
+				@include translate(0,0,0);
+			}
+		}
+	}
+	.project-planner-container.open, .general-contact-container.open {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	// Form Response
+	.wpcf7-response-output {
+		border: none;
+	    color: $white;
+	    font-weight: 600;
+	    font-style: italic;
+	    position: absolute;
+	    top: 0;
+	    padding: 0;
+	    margin: 0 auto !important;
+	    left: 0;
+	    right: 0;
+	    @include max-content(width);
+	    font-size: 14px;
+	}
+	.wpcf7-validation-errors::before {
+		color: $altred;
+		font-style: italic;
+		content: "\f071";
+/*
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+*/
+		margin-right: 5px;
+		font-family: "FontAwesome";
+		@include translate(-110%,0,0);
+		width: 20px;
+	}
+	span.wpcf7-not-valid-tip {
+	    color: red;
+	    font-weight: normal;
+	    display: block;
+	    background-color: transparent;
+	    font-size: 10px;
+	    margin: 0;
+	    padding: 3px;
+	    position: absolute;
+	    bottom: -26px;
+	}
+	span.wpcf7-not-valid-tip:before {
+		content: "\f05a";
+		font-family: "FontAwesome";
+		margin-right: 5px;
+	}
+	.service-select span.wpcf7-not-valid-tip {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		@include translate(0,-10px,0);
+	}
+	.service-select .services {
+		position: static;
+	}
+	.wpcf7-mail-sent-ok {
+		display: none !important;
+	}

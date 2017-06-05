@@ -9,8 +9,16 @@
 	// Variables
 		$title = get_the_title();
 		$feat_img = get_field('featured_image'); // we're using a custom field for the featured image so that we can have the featured image and image framing options in the same place in the dashboard. Thus, we'll call the featured image like this rather than using the_post_featured_image_url();
-		$feat_img_url = $feat_img['url'];
-		$framing = get_field('framing');
+		if($feat_img){
+			$feat_img_url = $feat_img['url'];
+		}else {
+			$feat_img_url = placeholder_image();
+		}
+		if( get_field('framing') ){
+			$framing = get_field('framing');
+		}else {
+			$framing = 'center';
+		}
 		$date = get_the_date();
 		$link = get_the_permalink();
 		

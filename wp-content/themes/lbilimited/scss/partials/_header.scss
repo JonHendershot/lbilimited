@@ -2,31 +2,9 @@
  ////  SEARCH FORM  ////
 ///////////////////////
 .search_form_container {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 999999;
-	visibility: hidden;
-	@include flexbox(center,center);
-	overflow: hidden;
-
+	z-index: 1;
 	* {
 		@include easeout(1000ms);
-	}
-	.ribbon {
-		width: 120%;
-		height: 100%;
-		background-color: $mainred;
-		position: absolute;
-		top: 0;
-		left: -10%;
-		z-index: 9;
-		@include prefix(transform, skew(-15deg) scaleX(0) );
-		transform-origin: center;
-		// Timing for animating this OUT (so the search form doesn't display a subtle overflow)
-		transition-delay: 100ms;
 	}
 	.search_form_wrapper {
 		
@@ -41,13 +19,6 @@
 		z-index: 99;
 	}
 	form {
-		width: 65%;
-		@include prefix( transform, translateY(10px) ); // reset skew for content
-		opacity: 0;
-		// Easing for when this animates OUT
-		@include easeout(500ms);
-		z-index: 999;
-		transition-delay: 120ms;
 	
 		div.search-title {
 			font-size: 45px;
@@ -68,27 +39,6 @@
 		width: 100%;
 	}
 }
-.search_form_container.visible {
-	visibility: visible;
-	
-	.search_form_wrapper {
-		@include prefix(transform, skew(-15deg) scaleX(1));
-		
-	}
-	.ribbon {
-		@include prefix( transform, skew(-15deg) scaleX(1) );
-		// No delay when animating IN
-		transition-delay: 0ms;
-		
-	}
-	form {
-		opacity: 1;
-		@include prefix( transform, translateY(0px) );
-		
-		// Easing for when this animates IN
-		@include easeout(1500ms);
-	}
-}
 
 
   //////////////////////
@@ -100,16 +50,53 @@
 	left: 0;
 	width: 100%;
 	z-index: 9999999999;
+	@include easeout(600ms);
+	
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: -2.5%;
+		width: 105%;
+		height: 100%;
+		background-color: $black;
+		z-index: -1;
+		@include prefix(transform, skew(-24deg) scaleX(0));
+		@include easeout(600ms);
+		opacity: 0.95;
+	}
+	&.sticky {
+		
+		&:after{
+			@include prefix(transform, skew(-24deg) scaleX(1));
+		}
+		.nav-bar {
+			@include prefix(transform, translateY(0px));
+		}
+
+	}
+	&.hidden {
+		@include prefix(transform, translateY(-100%));
+		.nav-bar {
+			@include prefix(transform, translateY(-30%));	
+		}
+	}
 	
 	.nav-bar {
 		width: $menu_width;
 		margin: 0 auto;
-		padding: 30px 0;
+		padding: 20px 0;
 		@include flexbox(center,space-between);
+		@include easeout(600ms);
+		@include prefix(transform, translateY(10px));
+		z-index: 99;
+		position: relative;
+
 		
 		.header-logo {
 			width: 163px;
 			height: auto;
+			@include flexbox(center,center);
 			
 			img {
 				position: relative;
@@ -130,10 +117,13 @@
 				background-color: transparent;
 				cursor: pointer;
 				margin: 0;
+				
+				&:hover, &.open {
+					background-color: $white;	
+					color: $black;
+				}
 			}
-			.search:hover {
-				background-color: $white;	
-				color: $black;
+			.search:hover, .search.open {
 				
 			}
 			.menu_trigger {
@@ -142,6 +132,7 @@
 				border: 1px solid rgba(255,255,255,0.5);
 				margin-left: 16px;
 				@include flexbox(center,center);
+				cursor: pointer;
 				
 				.dot-container {
 					width: 18px;
@@ -161,9 +152,9 @@
 		}
 	}
 }
-  //////////////////////
- /// PAGE  HEADERGS ///
-//////////////////////
+  /////////////////////
+ /// PAGE  HEADERS ///
+/////////////////////
 .site-header {
 	background-color: $black;
 	height: 100vh;
@@ -175,9 +166,19 @@
 	img {
 		width: 100%;
 		position: absolute;
-		bottom: 0;
 		left: 0;
 		z-index: 9;
+	}
+	img.top {
+		top: 0;
+	}
+	img.bottom {
+		bottom: 0;
+	}
+	img.center {
+		top: 0;
+		bottom: 0;
+		margin: auto;
 	}
 	.header-content {
 		position: relative;
@@ -202,7 +203,7 @@
 			line-height: 24px;
 			margin: 0;
 			font-weight: 300;
-			margin-left: 113px;
+			margin-left: 20px;
 			max-width: 350px;
 		}
 	}
@@ -263,15 +264,19 @@
 		margin: auto;
 		height: 0;
 		overflow: hidden;
-		z-index: 99;
+		z-index: 9;
 		position: relative;
+		overflow: hidden;
 		
+		video {
+			z-index: 99;
+		}
 		img,video {
 			margin: 0;
 			position: absolute;
-			left: 0;
+			height: 100%;
 			width: 100%;
-			height: auto;
+			object-fit: cover;
 		}
 		img.top, video.top {
 			top: 0;
@@ -284,6 +289,19 @@
 		img.bottom, video.bottom {
 			bottom: 0;
 		}
+		/*
+&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $black;
+			opacity: 0.4;
+			z-index: 9;
+		}
+*/
 	}
 	img.blueprint {
 		width: 85%;
@@ -296,6 +314,7 @@
 	}
 	.header-content {
 		margin-top: 100px;
+		margin-left: 15%;
 		h1 {
 			text-indent: 0;
 			max-width: 500px;
@@ -333,5 +352,56 @@
 			margin-top: 0;
 			@include translate(0,-48px,0);
 		}
+	}
+}
+body.page-template-media_house {
+	.site-header {
+		.main-btn {
+			z-index: 9999;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			@include prefix(transform, translateY(180%));
+			cursor: pointer;
+			font-weight: 500;
+		}
+	}
+}
+.scroll_hint_container {
+	position: absolute;
+	bottom: 20px;
+	left: 20%;
+	z-index: 9;
+	width: 10px;
+	
+	.dot {
+		height: 10px;
+		width: 10px;
+		border-radius: 50%;
+		background-color: $white;
+		display: block;
+		margin: 10px auto;
+		opacity: 0;
+		@include transition(0.55s, opacity, ease-in-out);
+		
+		&.visible {
+			opacity: 1;
+		}
+	}
+	.dot-1 {
+/*
+		height: 6px;
+		width: 6px;
+*/
+	}
+	.dot-2 {
+/*
+		height: 8px;
+		width: 8px;
+*/
+		transition-delay: 180ms;
+	}
+	.dot-3 {
+		transition-delay: 250ms;
 	}
 }

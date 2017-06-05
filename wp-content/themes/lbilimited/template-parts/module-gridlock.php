@@ -76,7 +76,8 @@
 			
 				// Establish Some item-specific variables first
 					$title = get_the_title();
-					$image = get_the_post_thumbnail_url( $post->ID, 'full' );
+					$image_file = get_field('featured_image');
+					$image = $image_file['sizes']['large'];
 					$link  = get_permalink();
 				
 				// Output elements	
