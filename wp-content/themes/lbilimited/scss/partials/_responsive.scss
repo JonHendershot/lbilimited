@@ -1,3 +1,11 @@
+@media (min-width: 1480px){
+	section.featured_gallery {
+		&:after, &:before {
+			bottom: -245px;
+			height: 245px;
+		}
+	}
+}
 @media (max-width: 1150px){
 	.specialists_wrapper {
 				.owl-item {

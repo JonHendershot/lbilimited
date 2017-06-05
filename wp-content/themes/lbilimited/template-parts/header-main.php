@@ -105,6 +105,10 @@
 			// Embed Code and Button field for Media page
 				$media_btn = get_field('button_text');
 				$media_embed = get_field('button_iframe');
+				$media_data = array(
+					'iframe' => $media_embed
+				);
+				$media_json = json_encode($media_data);
 				
 		
 			echo "<div class='b_image_wrapper'>
@@ -121,7 +125,7 @@
 					  	echo "<a href='$link' class='main-btn'>$link_text</a>";
 				  	}
 				  	if($media_btn && $media_embed){
-					  	echo "<div class='main-btn' data-item='$media_embed'>$media_btn</div>";
+					  	echo "<div class='main-btn video_trigger' data-item='$media_json'>$media_btn</div>";
 				  	}
 				  	
 			echo  "</div>"; // End .$content_class

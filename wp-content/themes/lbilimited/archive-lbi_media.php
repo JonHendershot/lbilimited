@@ -53,10 +53,6 @@
 		// Begin Loop Wrappers
 			echo "<section class='featured_gallery'>
 					<div class='tilt_title_wrapper'><h4 class='tilt_title flip'><span>featured gallery</span></h4></div>
-					<div class='video_wrapper lbi_lightbox media_lightbox'>
-						<div id='iframe_wrapper'>
-						</div>
-					</div>
 					<div class='owl-carousel media_carousel featured_media'>";
 					
 		// Begin Loop
@@ -87,11 +83,11 @@
 					}
 			
 				// Render content here
-					echo "<div class='featured_media_wrapper $display_class' data-item='$item_json' style='background-image: url($background_image)'>
+					echo "<div class='featured_media_wrapper $display_class'  style='background-image: url($background_image)'>
 							<div class='featured_media_title dash-title'>
 								<h3>$title</h3>
 							</div>
-							<div class='video_trigger' data-id='$post_ID'>Watch Video</div>
+							<div class='video_trigger' data-id='$post_ID' data-item='$item_json'>Watch Video</div>
 						  </div>";
 					  
 		// End loop and reset query

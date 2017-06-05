@@ -91,7 +91,7 @@
 					$item_json = json_encode($item_data);
 				
 				// Output elements	
-					echo "<div class='grid-item $display_class $gutter' style='background-image: url($background_image)' data-item='$item_json'>
+					echo "<div class='grid-item video_trigger $display_class $gutter' style='background-image: url($background_image)' data-item='$item_json'>
 							<div class='item-content dash-title'>
 								<h3>$title</h3>
 								<div class='video_trigger'>view more</div>

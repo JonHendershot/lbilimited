@@ -403,15 +403,17 @@ function next_trigger_id(id){
 		
 	$('.video_trigger').click(function(){
 		// 1. Set Data
-		var data = $(this).parent().data('item'),
+		var data = $(this).data('item'),
 			iframe = data.iframe,
-			iframe_wrapper = $('#iframe_wrapper');
+			iframe_wrapper = $('#iframe_wrapper'),
+			video_lightbox = $('.lbi_lightbox.video_lightbox');
 	
 		// 2. Create New iFrame Element
 			iframe_wrapper.html( iframe );
 		
 		
-		
+		// 3. Open Lightbox 
+			open_lightbox(video_lightbox);
 		
 		// AUTOPLAY
 			
@@ -574,6 +576,28 @@ function next_trigger_id(id){
 		}		
 	});
 }(jQuery));
+
+  ///////////////////
+ // OPEN LIGHTBOX //
+///////////////////
+function open_lightbox(lightbox_id){
+	var $ = jQuery,
+		timeout = 0,
+		navWrapper = $('.nav-wrapper'), // need to make sure it's visible because lightboxes are hidden in nav wrapper for z-index issues
+		closeTrigger = $('.nav-wrapper .search_trigger'); // this will change to a close lightbox trigger any time a lightbox is opened
+;
+	if( navWrapper.hasClass('hidden') ){
+		navWrapper.removeClass('hidden');
+		timeout = 800;
+	}
+	if( !lightbox_id.hasClass('visible') ){
+		setTimeout(function(){
+			lightbox_id.addClass('visible');
+			closeTrigger.text('Click to close').addClass('open');
+		}, timeout);	
+	}
+	$('body').addClass('noscroll');
+}
   ////////////////////
  // CLOSE LIGHTBOX //
 ////////////////////
@@ -585,6 +609,8 @@ function next_trigger_id(id){
 		
 		closeTrigger.click(function(){
 			
+			var iframe = $('#iframe_wrapper iframe');
+			
 			if( $(this).hasClass('open') ){
 				if( $('.search_form_container.lbi_lightbox').hasClass('visible')){ 
 					// Animate Off
@@ -592,9 +618,10 @@ function next_trigger_id(id){
 				}
 				
 				$('.lbi_lightbox.visible').removeClass('visible');
-					$(this).removeClass('open').text('click to search');
+				$(this).removeClass('open').text('click to search');
 					
-					console.log('closing');
+				iframe.attr('src',''); // stop video from playing
+				$('body').removeClass('noscroll');
 			}else {
 				// Display Search Form
 				$('.search_form_container').addClass('visible');

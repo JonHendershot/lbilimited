@@ -33,3 +33,6 @@
 						echo "</div></div>";						
 				endif;
 	}
+	if( is_page_template('archive-lbi_media.php') || is_page_template('templates/about.php') ){
+		get_template_part('template-parts/module', 'video_lightbox');
+	}	
