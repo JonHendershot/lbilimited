@@ -721,7 +721,9 @@ h4.tilt_title.flip:after {
     width: 100%;
     position: absolute;
     left: 0;
-    z-index: 9; }
+    z-index: 9;
+    height: 100%;
+    object-fit: cover; }
   .site-header img.top {
     top: 0; }
   .site-header img.bottom {
