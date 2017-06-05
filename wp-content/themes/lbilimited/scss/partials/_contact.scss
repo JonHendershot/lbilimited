@@ -65,12 +65,24 @@
 	$skew_deg: 5deg;
 	@include prefix(transform, skewY(-$skew_deg));
 	overflow: hidden;
-	position: relative;
-	z-index: 99;
+	position: absolute;
 	box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 9;
 	
-	.tilt_wrapper {
+	img { 
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		margin: auto;
+		max-width: none;
 		@include prefix(transform, skewY($skew_deg));
+		height: 115%;
 	}
 }
 
@@ -157,9 +169,11 @@
 			z-index: 999;
 			@include flexbox(center,space-between);
 			padding: 175px 0;
+			width: 78%;
 			.social_follow_container {
-				width: 160px;
-				margin: 0 25px;
+				width: 22%;
+				max-width: 160px;
+				margin: 0;
 				box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
 				
 				.social_logo {
@@ -240,6 +254,7 @@
 	}
 	form {
 		max-width: 955px;
+		width: 90%;
 		margin: 0 auto;
 		p {
 			margin: 0;

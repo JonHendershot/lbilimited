@@ -47,7 +47,7 @@ input:focus {
 h4.tilt_title {
     background: $mainred;
     color: $white;
-    padding: 17px 100px;
+    padding: 17px 0;
     display: inline-block;
     position: absolute;
     margin: 0;
@@ -58,6 +58,8 @@ h4.tilt_title {
     font-weight: bold;
     box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
     z-index: 999999;
+    width: 360px;
+    text-align: center;
 }
 h4.tilt_title:after {
 	content: "";
@@ -127,12 +129,12 @@ h4.tilt_title.flip:after {
 	overflow: hidden;
 	
 	.ribbon {
-		width: 120%;
+		width: 150%;
 		height: 100%;
 		background-color: $mainred;
 		position: absolute;
 		top: 0;
-		left: -10%;
+		left: -25%;
 		z-index: 9;
 		@include easeout(1000ms);
 		@include prefix(transform, skew(-15deg) scaleX(0) );

@@ -51,34 +51,34 @@
 	<section class="social_links">
 		<h4 class="tilt_title">We're Social</h4>
 		<div class="tilt_container">
-			<div class="tilt_wrapper">
-				
-				<img src="<?php echo $social_background['url']; ?>" />
-				<div class="tilt_content">
-					<div class="social_follow_container facebook">
-						<a target="_blank" href="<?php echo $facebook_link; ?>" class="social_logo facebook">
-							<i class="fa fa-facebook" aria-hidden="true"></i>
-						</a>
-						<a target="_blank" href="<?php echo $facebook_link; ?>" class="social_follow_btn">Like</a>
-					</div>
-					<div class="social_follow_container instagram">
-						<a target="_blank" href="<?php echo $instagram_link; ?>" class="social_logo instagram">
-							<i class="fa fa-instagram" aria-hidden="true"></i>
-						</a>
-						<a target="_blank" href="<?php echo $instagram_link; ?>" class="social_follow_btn">Follow</a>
-					</div>
-					<div class="social_follow_container youtube">
-						<a target="_blank" href="<?php echo $youtube_link; ?>" class="social_logo youtube">
-							<i class="fa fa-youtube" aria-hidden="true"></i>
-						</a>
-						<a target="_blank" href="<?php echo $youtube_link; ?>" class="social_follow_btn">Subscribe</a>
-					</div>
-					<div class="social_follow_container twitter">
-						<a target="_blank" href="<?php echo $twitter_link; ?>" class="social_logo twitter">
-							<i class="fa fa-twitter" aria-hidden="true"></i>
-						</a>
-						<a target="_blank" href="<?php echo $twitter_link; ?>" class="social_follow_btn">Follow</a>
-					</div>
+			<img src="<?php echo $social_background['url']; ?>" />
+		</div>
+		<div class="tilt_wrapper">
+			
+			<div class="tilt_content">
+				<div class="social_follow_container facebook">
+					<a target="_blank" href="<?php echo $facebook_link; ?>" class="social_logo facebook">
+						<i class="fa fa-facebook" aria-hidden="true"></i>
+					</a>
+					<a target="_blank" href="<?php echo $facebook_link; ?>" class="social_follow_btn">Like</a>
+				</div>
+				<div class="social_follow_container instagram">
+					<a target="_blank" href="<?php echo $instagram_link; ?>" class="social_logo instagram">
+						<i class="fa fa-instagram" aria-hidden="true"></i>
+					</a>
+					<a target="_blank" href="<?php echo $instagram_link; ?>" class="social_follow_btn">Follow</a>
+				</div>
+				<div class="social_follow_container youtube">
+					<a target="_blank" href="<?php echo $youtube_link; ?>" class="social_logo youtube">
+						<i class="fa fa-youtube" aria-hidden="true"></i>
+					</a>
+					<a target="_blank" href="<?php echo $youtube_link; ?>" class="social_follow_btn">Subscribe</a>
+				</div>
+				<div class="social_follow_container twitter">
+					<a target="_blank" href="<?php echo $twitter_link; ?>" class="social_logo twitter">
+						<i class="fa fa-twitter" aria-hidden="true"></i>
+					</a>
+					<a target="_blank" href="<?php echo $twitter_link; ?>" class="social_follow_btn">Follow</a>
 				</div>
 			</div>
 		</div>

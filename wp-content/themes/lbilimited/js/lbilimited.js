@@ -476,6 +476,55 @@ function next_trigger_id(id){
 	}
 	
 	
+	// Featured Collection Home
+/*
+	if( $('.home_cta_content .featured_posts').length ){
+		$('.home_cta_content .featured_posts').owlCarousel({
+			items: 3,
+			responsive: {
+				900 : {
+					items: 1,
+					dots: true,
+					dotsEac: true
+				}
+			}
+		});
+	}
+*/
+	// Specialists Wrapper 
+	if( $('.specialists_wrapper').length ){
+		$('.specialists_wrapper').owlCarousel({
+			items: 1,
+			responsive: {
+				1150 : {
+					items: 4,
+					dots: false
+				}
+			}
+		});
+	}
+	// Values
+	if($('.value_wrapper').length){
+		$('.value_wrapper').owlCarousel({
+			items:1,
+			dots: true,
+			dotsEach: true,
+			autoplay: true,
+			autoplayTimeout: 5000,
+			autoplayHoverPause: true,
+			loop: true,
+			responsive : {
+				1150 : {
+					items: 4,
+					dots: false,
+					dotsEach: false,
+					loop: false,
+					autoplay: false,
+				}
+			}
+		});
+	}
+	
 	// Featured Media
 	if($('.media_carousel').length){
 		$('.media_carousel').owlCarousel({

@@ -2,7 +2,15 @@
  /// GENERAL STYLES ////
 ///////////////////////
 
-
+.page-template-archive-lbi_media {
+	.header-content {
+		.main-btn {
+			position: absolute;
+			bottom: -40%;
+			@include max-content(width);
+		}
+	}
+}
   //////////////////////////
  //// FEATURED GALLERY ////
 //////////////////////////
