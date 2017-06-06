@@ -348,10 +348,12 @@
 	}
 }
 .site-header.single.collection {
+	margin-bottom: 45vh;
 	.featured-media-wrapper {
 		width: 78%;
 		overflow: visible;
 		padding-bottom: 53.38%;
+		bottom: -40vh;
 		.header-content {
 			margin-top: 0;
 			@include translate(0,-48px,0);

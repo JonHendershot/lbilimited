@@ -913,16 +913,19 @@ h4.tilt_title.flip:after {
   width: 95%;
   padding-bottom: 53.84%; }
 
-.site-header.single.collection .featured-media-wrapper {
-  width: 78%;
-  overflow: visible;
-  padding-bottom: 53.38%; }
-  .site-header.single.collection .featured-media-wrapper .header-content {
-    margin-top: 0;
-    -webkit-transform: translate3d(0, -48px, 0);
-    -moz-transform: translate3d(0, -48px, 0);
-    -ms-transform: translate3d(0, -48px, 0);
-    transform: translate3d(0, -48px, 0); }
+.site-header.single.collection {
+  margin-bottom: 45vh; }
+  .site-header.single.collection .featured-media-wrapper {
+    width: 78%;
+    overflow: visible;
+    padding-bottom: 53.38%;
+    bottom: -40vh; }
+    .site-header.single.collection .featured-media-wrapper .header-content {
+      margin-top: 0;
+      -webkit-transform: translate3d(0, -48px, 0);
+      -moz-transform: translate3d(0, -48px, 0);
+      -ms-transform: translate3d(0, -48px, 0);
+      transform: translate3d(0, -48px, 0); }
 
 body.page-template-media_house .site-header .main-btn {
   z-index: 9999;
