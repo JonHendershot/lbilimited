@@ -138,27 +138,7 @@ jQuery(window).load(function(){
 			closeTrigger = $('.specialist_expand_container .close_expand');
 		
 		trigger.click(function(){
-			// Set Variables
-				var data = $(this).data('self'),
-					photo_blur = data.photo_blur,
-					photo_full = data.photo_full,
-					bio = data.bio,
-					name = data.name,
-					position = data.position; 
-				
-			// Load Images
-				$('.specialist_expand_image img').attr('src',photo_full);	
-				$('.specialist_expand_content h3').text(name);
-				$('.specialist_expand_content p').text(position);
-				$('.specialist_expand_content .content').text(bio);
-				
-			// Show Container
-				expandContainer.addClass('visible');
-				
-			// Show Content
-				setTimeout(function(){
-					$('.specialist_expand_wrapper').addClass('visible');
-				}, 500);
+			updateSpecialist(trigger);
 		});
 		
 		closeTrigger.click(function(){
@@ -191,7 +171,31 @@ jQuery(window).load(function(){
 		});
 }(jQuery));
 
-
+function updateSpecialist(specialist){
+	// Set Variables
+				var $ = jQuery,
+					data = specialist.data('self'),
+					photo_blur = data.photo_blur,
+					photo_full = data.photo_full,
+					bio = data.bio,
+					name = data.name,
+					position = data.position,
+					expandContainer = $('.specialist_expand_container'); 
+				
+			// Load Images
+				$('.specialist_expand_image img').attr('src',photo_full);	
+				$('.specialist_expand_content h3').text(name);
+				$('.specialist_expand_content p').text(position);
+				$('.specialist_expand_content .content').text(bio);
+				
+			// Show Container
+				expandContainer.addClass('visible');
+				
+			// Show Content
+				setTimeout(function(){
+					$('.specialist_expand_wrapper').addClass('visible');
+				}, 500);
+}
 
   ///////////////////////
  // OFFERING LIGHTBOX //
@@ -209,7 +213,7 @@ jQuery(window).load(function(){
 			load_img(data);
 			
 		// Open Lightbox
-			lightbox.addClass('visible');
+			open_lightbox(lightbox);
 		
 		// Update Lightbox Triger
 			closeTrigger.text('click to close').addClass('open');
@@ -325,9 +329,11 @@ function next_trigger_id(id){
 		if(menu.hasClass('open')){
 			menu.removeClass('menu_visible');
 			setTimeout(function(){ menu.removeClass('open') },900);
+			$('body').removeClass('noscroll');
 		}else {
 			menu.addClass('open');
 			setTimeout(function(){ menu.addClass('menu_visible') },500);
+			$('body').addClass('noscroll');
 		}
 	});
 }(jQuery));
@@ -473,7 +479,7 @@ function next_trigger_id(id){
 			autoplay: false,
 			autoplayTimeout: 4000,
 			autoplayHoverPause: true,
-			autoHeight: true
+			autoHeight: true,
 		});
 	}
 	
@@ -495,7 +501,7 @@ function next_trigger_id(id){
 */
 	// Specialists Wrapper 
 	if( $('.specialists_wrapper').length ){
-		$('.specialists_wrapper').owlCarousel({
+		var specialistOwl = $('.specialists_wrapper').owlCarousel({
 			items: 1,
 			responsive: {
 				1150 : {
@@ -503,6 +509,13 @@ function next_trigger_id(id){
 					dots: false
 				}
 			}
+		});
+		specialistOwl.on('changed.owl.carousel',function(e){
+			setTimeout(function(){
+				var activeSpecialist = $('.specialists_wrapper .owl-item.active .specialist_item');
+				
+				updateSpecialist(activeSpecialist);
+			}, 100);
 		});
 	}
 	// Values
@@ -515,6 +528,7 @@ function next_trigger_id(id){
 			autoplayTimeout: 5000,
 			autoplayHoverPause: true,
 			loop: true,
+			autoHeight: true,
 			responsive : {
 				1150 : {
 					items: 4,
@@ -597,6 +611,13 @@ function open_lightbox(lightbox_id){
 		}, timeout);	
 	}
 	$('body').addClass('noscroll');
+	
+	// If image scroller exists, we need to clone it into the proper lightbox! 
+	if( $('.featured_image_showcase').length ){
+		console.log('fired');
+		$('.featured_image_showcase').clone().appendTo( '.media_lightbox' );
+		
+	}
 }
   ////////////////////
  // CLOSE LIGHTBOX //

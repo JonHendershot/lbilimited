@@ -8,6 +8,19 @@
 }
 @media (max-width: 1150px){
 	.specialists_wrapper {
+		&:after {
+			content: "swipe to view more";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			color: $white;
+			text-transform: uppercase;
+			font-size: 9px;
+			letter-spacing: 3px;
+			text-align: center;
+		}
 				.owl-item {
 					float: left;
 					.specialist_item {
@@ -21,6 +34,12 @@
 								top: 31px;
 							}
 						}
+						&:after {
+							opacity: 1 !important;
+							background-color: transparent;
+							@include transition(0s,all,linear);
+							background: linear-gradient(rgba(27, 27, 28, 0) 45%, rgba(27, 27, 28, 1) 100%);
+						}
 					}
 					&.active {
 						
@@ -28,18 +47,22 @@
 							&:after {
 								opacity: 1;
 							}
+/*
 							.dash-title {
 								h3,p {
-									opacity: 1;
+									opacity: 0;
 									@include prefix(transform, translateX(0));
 								}
 								&:after {
 									@include prefix(transform, skew(-24deg) scaleY(1));
 								}
 							}
+*/
+/*
 							.view_more {
 								opacity: 1;
 							}
+*/
 							
 						}
 					}
@@ -340,7 +363,7 @@
 	}
 	body.single-offerings {
 		.featured_image_showcase {
-			width: 95% !important;
+			width: 95%;
 			margin-top: 0;
 			
 			#image_filters {
@@ -860,11 +883,18 @@
 				}
 			}
 			.specialists_wrapper {
+				
 				.owl-item {
 					float: left;
 					.specialist_item {
 						width: 100% !important;
 						padding-bottom: 100% !important;
+						&:after {
+							opacity: 1 !important;
+							background-color: transparent;
+							@include transition(0s,all,linear);
+							background: linear-gradient(rgba(27, 27, 28, 0) 45%, rgba(27, 27, 28, 1) 100%);
+						}
 						.specialist_content {
 							margin: 0;
 							padding: 30px 0 0 30px;
@@ -877,9 +907,11 @@
 					&.active {
 						
 						.specialist_item{
-							&:after {
-								opacity: 1;
+							&:after { 
+								opacity: 1 !important;
+								
 							}
+/*
 							.dash-title {
 								h3,p {
 									opacity: 1;
@@ -889,9 +921,12 @@
 									@include prefix(transform, skew(-24deg) scaleY(1));
 								}
 							}
+*/
+/*
 							.view_more {
 								opacity: 1;
 							}
+*/
 							
 						}
 					}

@@ -247,6 +247,14 @@ h4.tilt_title.flip:after {
 			}
 		}
 	}
+	section.featured_image_showcase {
+		margin: 0;
+		width: 100% !important;
+		bottom: 0;
+		position: fixed;
+		z-index: 99;
+		
+	}
 }
   /////////////////////
  //  VIDEO LIGHTBOX //

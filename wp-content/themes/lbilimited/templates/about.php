@@ -136,10 +136,13 @@
 <?	// End Specialists While Loop & Increment Specialist ID	
 		$specialist_id++;	
 		endwhile;
-		
+	
+	
 	// End .specialists_wrapper
 		echo "</div>";
-		
+// Scroll Hint
+// 		echo "<div class='scroll_hint'><span class='view_more'>swipe to view more</span></div>";
+
 	// Build lightbox skeleton-frame for displaying specialist information upon a user's 'view-more' click 
 		echo "<div class='specialist_expand_container'>
 				<div class='specialist_expand_wrapper'>

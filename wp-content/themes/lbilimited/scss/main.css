@@ -281,6 +281,13 @@ h4.tilt_title.flip:after {
   .media_lightbox.visible img.visible.blur_image {
     opacity: 0.75; }
 
+.media_lightbox section.featured_image_showcase {
+  margin: 0;
+  width: 100% !important;
+  bottom: 0;
+  position: fixed;
+  z-index: 99; }
+
 .lbi_lightbox.video_lightbox .ribbon {
   background-color: rgba(0, 0, 0, 0.87); }
 
@@ -4150,7 +4157,8 @@ section.specialists .specialists_grid_container {
     align-items: center;
     -webkit-align-items: center;
     justify-content: space-between;
-    -webkit-justify-content: space-between; }
+    -webkit-justify-content: space-between;
+    background-color: #191B1C; }
     section.specialists .specialists_grid_container .specialists_wrapper .owl-item {
       float: left; }
     section.specialists .specialists_grid_container .specialists_wrapper .specialist_item {
@@ -5841,6 +5849,18 @@ body.single .contact_form:after {
     height: 245px; } }
 
 @media (max-width: 1150px) {
+  .specialists_wrapper:after {
+    content: "swipe to view more";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-align: center; }
   .specialists_wrapper .owl-item {
     float: left; }
     .specialists_wrapper .owl-item .specialist_item {
@@ -5851,23 +5871,34 @@ body.single .contact_form:after {
         padding: 30px 0 0 30px; }
         .specialists_wrapper .owl-item .specialist_item .specialist_content:after {
           top: 31px; }
-    .specialists_wrapper .owl-item.active .specialist_item:after {
-      opacity: 1; }
-    .specialists_wrapper .owl-item.active .specialist_item .dash-title h3, .specialists_wrapper .owl-item.active .specialist_item .dash-title p {
-      opacity: 1;
-      transform: translateX(0);
-      -webkit-transform: translateX(0);
-      -moz-transform: translateX(0);
-      -ms-transform: translateX(0);
-      -o-transform: translateX(0); }
-    .specialists_wrapper .owl-item.active .specialist_item .dash-title:after {
-      transform: skew(-24deg) scaleY(1);
-      -webkit-transform: skew(-24deg) scaleY(1);
-      -moz-transform: skew(-24deg) scaleY(1);
-      -ms-transform: skew(-24deg) scaleY(1);
-      -o-transform: skew(-24deg) scaleY(1); }
-    .specialists_wrapper .owl-item.active .specialist_item .view_more {
-      opacity: 1; }
+      .specialists_wrapper .owl-item .specialist_item:after {
+        opacity: 1 !important;
+        background-color: transparent;
+        transition: 0s all linear;
+        -webkit-transition: 0s all linear;
+        -moz-transition: 0s all linear;
+        -ms-transition: 0s all linear;
+        -o-transition: 0s all linear;
+        background: linear-gradient(rgba(27, 27, 28, 0) 45%, #1b1b1c 100%); }
+    .specialists_wrapper .owl-item.active .specialist_item {
+      /*
+							.dash-title {
+								h3,p {
+									opacity: 0;
+									@include prefix(transform, translateX(0));
+								}
+								&:after {
+									@include prefix(transform, skew(-24deg) scaleY(1));
+								}
+							}
+*/
+      /*
+							.view_more {
+								opacity: 1;
+							}
+*/ }
+      .specialists_wrapper .owl-item.active .specialist_item:after {
+        opacity: 1; }
   section.specialists .specialists_grid_container .specialist_expand_container {
     position: relative;
     height: auto;
@@ -6034,7 +6065,7 @@ body.single .contact_form:after {
       -ms-transform: translateY(-50%);
       -o-transform: translateY(-50%); }
   body.single-offerings .featured_image_showcase {
-    width: 95% !important;
+    width: 95%;
     margin-top: 0; }
     body.single-offerings .featured_image_showcase #image_filters {
       flex-direction: column;
@@ -6338,28 +6369,39 @@ body.single .contact_form:after {
     .page-template-about section.specialists .specialists_wrapper .owl-item .specialist_item {
       width: 100% !important;
       padding-bottom: 100% !important; }
+      .page-template-about section.specialists .specialists_wrapper .owl-item .specialist_item:after {
+        opacity: 1 !important;
+        background-color: transparent;
+        transition: 0s all linear;
+        -webkit-transition: 0s all linear;
+        -moz-transition: 0s all linear;
+        -ms-transition: 0s all linear;
+        -o-transition: 0s all linear;
+        background: linear-gradient(rgba(27, 27, 28, 0) 45%, #1b1b1c 100%); }
       .page-template-about section.specialists .specialists_wrapper .owl-item .specialist_item .specialist_content {
         margin: 0;
         padding: 30px 0 0 30px; }
         .page-template-about section.specialists .specialists_wrapper .owl-item .specialist_item .specialist_content:after {
           top: 31px; }
-    .page-template-about section.specialists .specialists_wrapper .owl-item.active .specialist_item:after {
-      opacity: 1; }
-    .page-template-about section.specialists .specialists_wrapper .owl-item.active .specialist_item .dash-title h3, .page-template-about section.specialists .specialists_wrapper .owl-item.active .specialist_item .dash-title p {
-      opacity: 1;
-      transform: translateX(0);
-      -webkit-transform: translateX(0);
-      -moz-transform: translateX(0);
-      -ms-transform: translateX(0);
-      -o-transform: translateX(0); }
-    .page-template-about section.specialists .specialists_wrapper .owl-item.active .specialist_item .dash-title:after {
-      transform: skew(-24deg) scaleY(1);
-      -webkit-transform: skew(-24deg) scaleY(1);
-      -moz-transform: skew(-24deg) scaleY(1);
-      -ms-transform: skew(-24deg) scaleY(1);
-      -o-transform: skew(-24deg) scaleY(1); }
-    .page-template-about section.specialists .specialists_wrapper .owl-item.active .specialist_item .view_more {
-      opacity: 1; }
+    .page-template-about section.specialists .specialists_wrapper .owl-item.active .specialist_item {
+      /*
+							.dash-title {
+								h3,p {
+									opacity: 1;
+									@include prefix(transform, translateX(0));
+								}
+								&:after {
+									@include prefix(transform, skew(-24deg) scaleY(1));
+								}
+							}
+*/
+      /*
+							.view_more {
+								opacity: 1;
+							}
+*/ }
+      .page-template-about section.specialists .specialists_wrapper .owl-item.active .specialist_item:after {
+        opacity: 1 !important; }
   section.offerings-container article.offering {
     padding-bottom: 60% !important; }
     section.offerings-container article.offering:after {

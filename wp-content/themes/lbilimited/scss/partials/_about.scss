@@ -175,6 +175,7 @@ section.specialists {
 		.specialists_wrapper {
 			position: relative;
 			@include flexbox(center,space-between);
+			background-color: $black;
 			
 			.owl-item {
 				float: left;
