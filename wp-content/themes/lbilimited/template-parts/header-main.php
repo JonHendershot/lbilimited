@@ -28,6 +28,7 @@
 			$link       = get_field('call_to_action_link');
 			$header_img = get_the_post_thumbnail_url();
 			$header_thumb = get_the_post_thumbnail_url( $post->ID,'blur' );
+			$subtitle = get_field('page_subtitle');
 		}else if( is_single() ){
 			$content_class = 'header-content single';
 			$title = get_the_title();

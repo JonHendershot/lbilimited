@@ -7,7 +7,7 @@
 <form role="search" method="get" class="search-form lightbox_content" action="http://localhost:8888/lbi/">
 	<label>
 		<div class="search-title">I would like to find:</div>
-		<input type="search" class="search-field" placeholder="" value="" name="s" autocomplete="off">
+		<input type="text" id="focus_field" class="search-field" placeholder="" value="" name="s" autocomplete="off">
 	</label>
 	<input type="submit" class="search-submit" value="Search" hidden>
 	

@@ -192,6 +192,11 @@ h4.tilt_title.flip:after {
 		overflow: hidden;
 		position: absolute;
 		background-color: #000;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
 		
 		img {
 			height: 100%;
@@ -426,7 +431,7 @@ h4.tilt_title.flip:after {
 // 				background-image: none;
 			}
 		}
-		input[type="search"] {
+		input[type="text"] {
 			border: none;
 			background-color: transparent;
 			text-transform: uppercase;

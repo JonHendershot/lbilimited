@@ -8,7 +8,7 @@
 	<?php if(is_page_template('templates/offerings.php')) : ?>
 		<form role="search" action="<?php echo site_url('/'); ?>" method="get">
 	
-			<input type="search" name="s" placeholder="Looking for something specific?" autocomplete="off"/>
+			<input type="text" name="s" placeholder="Looking for something specific?" autocomplete="off"/>
 	
 			<input type="hidden" name="post_type" value="offerings" /> <!-- // hidden 'your_custom_post_type' value -->
 	

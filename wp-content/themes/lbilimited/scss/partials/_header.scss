@@ -27,7 +27,7 @@
 			color: rgba(255,255,255,0.5);
 		}
 	}
-	input[type="search"] {
+	input[type="text"] {
 		background: transparent;
 		border-radius: 0;
 		color: $white;
@@ -262,13 +262,19 @@
 }
 .site-header.single {
 	overflow: visible;
+	position: relative;
+	margin-bottom: 100px;
 	.featured-media-wrapper {
 		margin: auto;
 		height: 0;
 		overflow: hidden;
 		z-index: 9;
-		position: relative;
+		position: absolute;
 		overflow: hidden;
+		bottom: -100px;
+		left: 0;
+		right: 0;
+		
 		
 		video {
 			z-index: 99;
@@ -335,19 +341,15 @@
 	}
 }
 .site-header.single.offerings {
-	margin-bottom: 166px;
 	.featured-media-wrapper {
 		width: $menu_width;
-		@include translate(0,178px,0);
 		padding-bottom: 53.84%;
 
 	}
 }
 .site-header.single.collection {
-	margin-bottom: 354px;
 	.featured-media-wrapper {
 		width: 78%;
-		@include translate(0,370px,0);
 		overflow: visible;
 		padding-bottom: 53.38%;
 		.header-content {

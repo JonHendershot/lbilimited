@@ -1,3 +1,14 @@
+// HEIGHT QUERY //
+@media (min-height: 1100px){
+	#masthead.site-header.single {
+		height: 70vh;
+	}
+}
+@media (min-height: 1000px){
+	#masthead.site-header.single {
+		height: 80vh;
+	}
+}
 @media (min-width: 1480px){
 	section.featured_gallery {
 		&:after, &:before {
