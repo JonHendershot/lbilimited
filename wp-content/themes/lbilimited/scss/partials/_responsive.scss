@@ -51,6 +51,20 @@
 							@include transition(0s,all,linear);
 							background: linear-gradient(rgba(27, 27, 28, 0) 45%, rgba(27, 27, 28, 1) 100%);
 						}
+						&:hover {
+							// We don't want to display the specialist meta overlay on mobile because it's displayed below at all times
+							.dash-title {
+								h3,p {
+									opacity: 0 !important;
+								}
+								&:after {
+									@include prefix(transform, skew(-24deg) scaleY(0) !important);
+								}
+							}
+							.view_more {
+								opacity: 0 !important;
+							}
+						}
 					}
 					&.active {
 						

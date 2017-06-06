@@ -5886,6 +5886,16 @@ body.single .contact_form:after {
         -ms-transition: 0s all linear;
         -o-transition: 0s all linear;
         background: linear-gradient(rgba(27, 27, 28, 0) 45%, #1b1b1c 100%); }
+      .specialists_wrapper .owl-item .specialist_item:hover .dash-title h3, .specialists_wrapper .owl-item .specialist_item:hover .dash-title p {
+        opacity: 0 !important; }
+      .specialists_wrapper .owl-item .specialist_item:hover .dash-title:after {
+        transform: skew(-24deg) scaleY(0) !important;
+        -webkit-transform: skew(-24deg) scaleY(0) !important;
+        -moz-transform: skew(-24deg) scaleY(0) !important;
+        -ms-transform: skew(-24deg) scaleY(0) !important;
+        -o-transform: skew(-24deg) scaleY(0) !important; }
+      .specialists_wrapper .owl-item .specialist_item:hover .view_more {
+        opacity: 0 !important; }
     .specialists_wrapper .owl-item.active .specialist_item {
       /*
 							.dash-title {
