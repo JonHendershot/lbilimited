@@ -12,6 +12,8 @@ jQuery(window).load(function(){
 	$('.lazy-load').each(function(){
 		lazyLoader( $(this) );
 	});
+	
+	console.log('version updated! Repo is working and the DNS has updated!');
 });
 
   //////////////////////
