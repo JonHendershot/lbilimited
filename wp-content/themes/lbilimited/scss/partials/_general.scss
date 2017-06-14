@@ -283,6 +283,48 @@ h4.tilt_title.flip:after {
 		}
 	}
 }
+  //////////////////////
+ //  NOTIFY LIGHTBOX //
+//////////////////////
+.notify_lightbox {
+	.contact_form {
+		background-color: transparent;
+		z-index: 99;
+		.notify_title {
+			font-size: 45px;
+		    margin-bottom: 20px;
+		    margin-left: -3px;
+		    color: $white;
+		}
+		form {
+			width: 100%;
+			input {
+				color: $white !important;
+			}
+			input[type="submit"]{
+				color: $mainred !important;
+				background-color: $white;
+				margin-left: 0;
+				margin-right: auto;
+				margin-top: 0;
+			}
+			.newsletter_optin {
+				@include prefix(transform, translateY(15px));
+			}
+		}
+		
+		&:after {
+			content: none;
+		}
+		
+		.field_row.half {
+			margin-bottom: 35px;
+			.field {
+				width: 47%;
+			}
+		}
+	}
+}
   /////////////////
  //  POSTS NAV  //
 /////////////////

@@ -14,13 +14,16 @@
 		get_template_part('template-parts/module', 'sub_heading');
 	
 	// Get Search Bar
-		get_template_part('template-parts/module', 'search_bar');
+// 		get_template_part('template-parts/module', 'search_bar');
 	
 	// Invoke wp loop
 		echo "<section class='offerings-container'>";
 		get_template_part('template-parts/module', 'offerings_loop');
 		echo "</section>";
 
+	// Get subscribe for notifactions CTA
+		get_template_part('template-parts/module', 'notify');
+		
 	// Invoke site footer
 		get_footer();
 ?>

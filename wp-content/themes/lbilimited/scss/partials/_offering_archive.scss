@@ -113,3 +113,41 @@ section.offerings-container {
 	
 
 }
+section.notify_me_container {
+	padding: 160px 0 145px;
+	background-color: $black;
+	
+	.notify_content {
+		width: 95%;
+		margin: 0 auto;
+		max-width: 750px;
+		
+		h3 {
+			font-size: 48px;
+			text-align: center;
+			line-height: 45px;
+			color: $white;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin: 0 auto;
+		}
+		p {
+			font-size: 13px;
+			text-align: center;
+			color: $white;
+			font-weight: 300;
+			max-width: 45%;
+			margin: 10px auto 20px;
+		}
+		.main-btn {
+			display: block;
+			@include max-content(width);
+			margin: 0 auto;
+			cursor: pointer;
+			font-weight: 300;
+			padding: 10px 30px 10px 33px;
+		}
+	}
+	
+	
+}

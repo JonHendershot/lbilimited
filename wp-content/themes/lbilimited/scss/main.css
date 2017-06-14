@@ -311,6 +311,37 @@ h4.tilt_title.flip:after {
     width: 100%;
     height: 100%; }
 
+.notify_lightbox .contact_form {
+  background-color: transparent;
+  z-index: 99; }
+  .notify_lightbox .contact_form .notify_title {
+    font-size: 45px;
+    margin-bottom: 20px;
+    margin-left: -3px;
+    color: #fff; }
+  .notify_lightbox .contact_form form {
+    width: 100%; }
+    .notify_lightbox .contact_form form input {
+      color: #fff !important; }
+    .notify_lightbox .contact_form form input[type="submit"] {
+      color: #962F32 !important;
+      background-color: #fff;
+      margin-left: 0;
+      margin-right: auto;
+      margin-top: 0; }
+    .notify_lightbox .contact_form form .newsletter_optin {
+      transform: translateY(15px);
+      -webkit-transform: translateY(15px);
+      -moz-transform: translateY(15px);
+      -ms-transform: translateY(15px);
+      -o-transform: translateY(15px); }
+  .notify_lightbox .contact_form:after {
+    content: none; }
+  .notify_lightbox .contact_form .field_row.half {
+    margin-bottom: 35px; }
+    .notify_lightbox .contact_form .field_row.half .field {
+      width: 47%; }
+
 .posts-navigation {
   width: 65%;
   margin: 0 auto;
@@ -4692,6 +4723,39 @@ section.offerings-container article.offering:after {
 
 section.offerings-container article.offering:hover:after {
   opacity: 1; }
+
+section.notify_me_container {
+  padding: 160px 0 145px;
+  background-color: #191B1C; }
+  section.notify_me_container .notify_content {
+    width: 95%;
+    margin: 0 auto;
+    max-width: 750px; }
+    section.notify_me_container .notify_content h3 {
+      font-size: 48px;
+      text-align: center;
+      line-height: 45px;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0 auto; }
+    section.notify_me_container .notify_content p {
+      font-size: 13px;
+      text-align: center;
+      color: #fff;
+      font-weight: 300;
+      max-width: 45%;
+      margin: 10px auto 20px; }
+    section.notify_me_container .notify_content .main-btn {
+      display: block;
+      width: max-content;
+      width: -webkit-max-content;
+      width: -moz-max-content;
+      width: -moz-fit-content;
+      margin: 0 auto;
+      cursor: pointer;
+      font-weight: 300;
+      padding: 10px 30px 10px 33px; }
 
 .page-template-archive-lbi_media .header-content .main-btn {
   position: absolute;

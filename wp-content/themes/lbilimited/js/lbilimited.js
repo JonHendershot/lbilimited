@@ -210,6 +210,17 @@ function updateSpecialist(specialist){
 }
 
   ///////////////////////
+ // NOTIFY LIGHTBOX //
+///////////////////////
+(function notifyLightbox($){
+	var trigger = $('.notify_trigger'),
+		lightbox = $('.notify_lightbox');
+		
+		trigger.click(function(){
+			open_lightbox(lightbox);
+		});
+}(jQuery));
+  ///////////////////////
  // OFFERING LIGHTBOX //
 ///////////////////////
 (function mediaLightbox($){
@@ -683,18 +694,32 @@ function open_lightbox(lightbox_id){
 (function checkboxes($){
 	var elem = $('.cf7_checkbox_wrapper .wpcf7-list-item-label');
 	
-	elem.click(function(){
-		var checkbox = $(this).parent().find('input[type="checkbox"]');
+	if( elem.length ){
+		
+		elem.click(function(){
+			cbox( $(this) );
+		});
+		
+		$(window).load(function(){
+			elem.each(function(){
+				cbox( $(this) );
+			});
+		});
+	}
+	
+	function cbox(item){
+		console.log('checkbox fire');
+		var checkbox = item.parent().find('input[type="checkbox"]');
 		
 		if(checkbox.attr('checked') === 'checked'){
 			checkbox.attr('checked',false);
-			$(this).removeClass('checked');
+			item.removeClass('checked');
 		}else {
 			checkbox.attr('checked',true);
-			$(this).addClass('checked');
+			item.addClass('checked');
 		}
-		
-	});
+
+	}
 }(jQuery));
 
 function textareaAdjust(t){
@@ -786,12 +811,14 @@ function setMaxHeight(elemclass){
 		});
 	
 	// Checkboxes 
+/*
 	$('.wpcf7-list-item').click(function(){
 		var object = $(this),
 			value = $(this).text();
 		
 		checkbox(object,value);
 	});
+*/
 	
 	
 	// Mail Sent Ok
