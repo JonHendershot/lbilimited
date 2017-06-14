@@ -1,16 +1,56 @@
 section.offerings-container {
 	article.offering {
+		$transition_speed: 1000ms;
 		width: 100%;
 		height: 0;
 		padding-bottom: 35%;
 		overflow: hidden;
 		position: relative;
 		
+		&:hover {
+			.offering-data {
+				.offering-meta {
+					h2 {
+						span {
+							@include prefix(transform, translate(0px));
+							opacity: 1;
+						}
+					}
+					p {
+						opacity: 1;
+						transition-delay: 0.4 * $transition_speed;
+					}
+				}
+				.offering-price {
+					&:after {
+						@include prefix(transform, skew(-24deg) scaleX(1));
+						opacity: 1;
+					}
+					
+					
+					.price, a {
+						opacity: 1;
+						transition-delay: 0.8 * $transition_speed;
+
+					}
+			
+				}
+				&:after {
+					@include prefix(transform, skew(-25deg) scaleY(1) !important);
+					visibility: visible !important;
+					opacity: 1 !important;
+				}
+			}
+			
+		}
+		
 		.offering-data {
+			
 			z-index: 999;
 			position: relative;
 			margin-top: 60px;
 			@include max-content(width);
+			
 			.offering-meta {
 				position: relative;
 				max-width: 375px;
@@ -23,6 +63,22 @@ section.offerings-container {
 					display: table-cell;
 					line-height: 45px;
 					letter-spacing: 2px;
+					
+					span {
+						display: block;
+						@include prefix(transform, translateX(-15px));
+						@include easeout($transition_speed);
+						opacity: 0;
+					}
+					
+					@for $int from 1 through 3 {
+						$decay : 1 - ( 0.15 * ( $int - 1 ) );
+						$delay : ( ($int - 1) * 80 ) * $decay;
+						span:nth-child(#{$int}){
+							transition-delay: #{$delay}ms;
+						}
+					}
+					
 				}
 				p {
 					font-size: 12px;
@@ -32,19 +88,40 @@ section.offerings-container {
 					font-weight: 300;
 					margin: 10px 0 0;
 					padding-left: 3px;
+					opacity: 0;
+					
+					@include easeout($transition_speed);
+					transition-delay: 0ms;
 				}
 			}
 			.offering-price {
 				$skew_dist : 24deg;
-				background-color: $white;
+				background-color: transparent;
 				@include flexbox(center, space-between);
 				padding-left: 3px;
 				z-index: 999;
 				position: relative;
 				padding: 5px 0;
-				@include calc(width, "100% + 8px");
-				@include skew(-$skew_dist);
+				@include calc(width, "100% + 9px");
+				@include prefix(transform, skew(-$skew_dist) );
 				margin: 22px 0 0 -9px;
+				overflow: hidden;
+				@include easeout($transition_speed);
+				&:after {
+					content: "";
+					width: 105%;
+					position: absolute;
+					height: 100%;
+					top: 0;
+					right: 0;
+					left: -2.5%;
+					margin: auto;
+					background-color: $white;
+					@include prefix(transform, skew(-$skew_dist) scaleX(0));
+					transform-origin: right;
+					@include easeout($transition_speed);
+					z-index: 1;
+				}
 				.price {
 					color: $black;
 					font-size: 13px;
@@ -54,6 +131,11 @@ section.offerings-container {
 					@include skew($skew_dist);
 					padding-left: 6px;
 					letter-spacing: 0.25px;
+					@include easeout($transition_speed);
+					opacity: 0;
+					transition-delay: 0ms;
+					z-index: 9;
+					backface-visibility: hidden;
 				}
 				
 				a {
@@ -63,6 +145,11 @@ section.offerings-container {
 					margin-right: 25px;
 					@include skew($skew_dist);
 					letter-spacing: 1px;
+					opacity: 0;
+					@include easeout($transition_speed);
+					transition-delay: 0ms;
+					z-index: 9;
+					backface-visibility: hidden;
 				}		
 			}
 		}
@@ -73,6 +160,10 @@ section.offerings-container {
 			height: 100%;
 			width: 2px;
 			transform-origin: bottom;
+			@include prefix(transform, skew(-24deg) scaleY(0.125));
+			@include easeout($transition_speed);
+			visibility: hidden;
+			opacity: 0;
 		}
 		.offering-fmedia {
 			position: absolute;

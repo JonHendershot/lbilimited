@@ -298,6 +298,7 @@ h4.tilt_title.flip:after {
 		}
 		form {
 			width: 100%;
+			max-width: none;
 			input {
 				color: $white !important;
 			}

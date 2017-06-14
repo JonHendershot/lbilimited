@@ -53,18 +53,19 @@
 	@include easeout(600ms);
 	
 	&:after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: -8%;
-		width: 116%;
-		height: 100%;
-		background-color: $black;
-		z-index: -1;
-		@include prefix(transform, skew(-24deg) scaleX(0));
-		@include easeout(600ms);
-		opacity: 0.95;
-	}
+			content: "";
+			position: absolute;
+			top: 0;
+			left: -8%;
+			width: 116%;
+			height: 100%;
+			background-color: $black;
+			z-index: -1;
+			@include prefix(transform, skew(-24deg) scaleX(0));
+			@include easeout(600ms);
+			opacity: 0.95;
+		}
+	
 	&.sticky {
 		
 		&:after{
@@ -76,9 +77,13 @@
 
 	}
 	&.hidden {
-		@include prefix(transform, translateY(-100%));
-		.nav-bar {
+		
+		.nav-bar, &:after {
+			@include prefix(transform, translateY(-100%));
+		}
+		a.header-logo, div.search_menu_container  {
 			@include prefix(transform, translateY(-30%));	
+			
 		}
 	}
 	
@@ -92,11 +97,11 @@
 		z-index: 99;
 		position: relative;
 
-		
 		.header-logo {
 			width: 163px;
 			height: auto;
 			@include flexbox(center,center);
+			@include easeout(600ms);
 			
 			img {
 				position: relative;
@@ -104,6 +109,7 @@
 		}
 		.search_menu_container {
 			@include flexbox(center,center);
+			@include easeout(600ms);
 			.search {
 				font-size: 8px;
 				text-transform: uppercase;
@@ -197,6 +203,10 @@
 			text-indent: -50px;
 			margin: 0;
 			position: relative;
+			
+			span {
+				display: block;
+			}
 		}
 		p {
 			color: $white;
@@ -347,7 +357,7 @@
 
 	}
 }
-.site-header.single.collection {
+.site-header.single.collection, .site-header.single {
 	margin-bottom: 45vh;
 	.featured-media-wrapper {
 		width: 78%;

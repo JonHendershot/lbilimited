@@ -31,7 +31,7 @@
 			$subtitle = get_field('page_subtitle');
 		}else if( is_single() ){
 			$content_class = 'header-content single';
-			$title = get_the_title();
+			$title = offering_title();
 			$price_val = get_field('price');
 			$blueprint_url = get_template_directory_uri() . '/inc/images/blueprint.png';
 			

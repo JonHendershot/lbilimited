@@ -397,11 +397,22 @@ function next_trigger_id(id){
 	}
 }(jQuery));
 
-(function test_offering($){
+(function offering_video($){
 	$('.offering').hover(function(){
-		$(this).find('video').get(0).play();
+		if( $(this).hasClass('video') ){
+			var video = $(this).find('video').get(0);
+			
+			video.play();
+		}
+		
 	},function(){
-		$(this).find('video').get(0).pause();
+		
+		if( $(this).hasClass('video') ){
+			var video = $(this).find('video').get(0);
+			
+			video.pause();
+			video.currentTime = 0;
+		}
 	});
 }(jQuery));
 
@@ -625,13 +636,11 @@ function open_lightbox(lightbox_id){
 ;
 	if( navWrapper.hasClass('hidden') ){
 		navWrapper.removeClass('hidden');
-		timeout = 800;
+
 	}
 	if( !lightbox_id.hasClass('visible') ){
-		setTimeout(function(){
-			lightbox_id.addClass('visible');
-			closeTrigger.text('Click to close').addClass('open');
-		}, timeout);	
+		lightbox_id.addClass('visible');
+		closeTrigger.text('Click to close').addClass('open');
 	}
 	$('body').addClass('noscroll');
 	

@@ -409,6 +409,76 @@ add_filter('the_content', 'div_wrapper');
 
 
   ////////////////////////////////////////////////////////////////////
+ /// Function to return offerings titles based on year make model ///
+////////////////////////////////////////////////////////////////////
+function offering_title(){
+		$year = get_field('year');
+		$make = get_field('make');
+		$model = get_field('model');
+		
+		// if we have enough delineated information, we'll set year make model to break out, otherwise we'll just use the normal post title
+		if( $year && $make ){
+			$title = "<span>$year</span><span>$make</span><span>$model</span>";
+		}else {
+			$title_content = get_the_title();
+			$title = "<span>$title_content</span>";
+		}
+		
+		return $title;
+	
+}
+
+  //////////////////////////////////////////////////////////////////////////
+ /// Function to add information to wp_lbi_notify on notify form submit ///
+//////////////////////////////////////////////////////////////////////////
+// The theme has a function where users can be notified if an offering is posted
+// based on a certain criteria (year, make, model). The form collects that information
+// and stores it in a db table with their email. This is the function that does that
+
+add_action('wpcf7_mail_sent','save_notification_data');
+
+function save_notification_data( $contact_form ){
+	
+	$form_id = $contact_form->id();
+	$notify_id = 72611; // the form id of the notification form
+	
+	if($form_id === $notify_id){
+		global $wpdb;
+ 
+		/*
+		Note: since version 3.9 Contact Form 7 has removed $wpcf7->posted_data
+		and now we use an API to get the posted data.
+		*/
+		
+		
+	    $submission = WPCF7_Submission::get_instance();
+	  
+	    if ( $submission ) {
+	    	$posted_data = $submission->get_posted_data();
+	    }
+		
+		$name = $posted_data['your-name'];
+		$email = $posted_data['your-email'];
+		$vehicle_year = $posted_data['vehicle-year'];
+		$vehicle_make = $posted_data['vehicle-make'];
+		$vehicle_model = $posted_data['vehicle-model'];
+	
+		$wpdb->insert( $wpdb->prefix . 'lbi_notify', 
+		    array( 
+		       'name'  => $name,
+		       'email' => $email,
+		       'vehicle_year' => $vehicle_year,
+		       'vehicle_make' => $vehicle_make,
+		       'vehicle_model' => $vehicle_model,
+		       'date' => date('Y-m-d H:i:s')
+			)
+		);
+
+	}
+	
+}
+
+  ////////////////////////////////////////////////////////////////////
  /// Function to grab a random photo from the palceholders direct ///
 ////////////////////////////////////////////////////////////////////
 function placeholder_image() {

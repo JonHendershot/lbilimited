@@ -35,9 +35,11 @@
 			
 			// Set item specific variables
 				$excerpt = get_the_excerpt();
-				$title = get_the_title();
+				$title = offering_title();
 				$offer_class = "offering";
 				$media_class = "offering-fmedia";
+				
+				
 				
 				// grab the featured file information to dynamically generate display markup
 				$file_framing = get_field('framing');
