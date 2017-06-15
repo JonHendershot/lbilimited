@@ -63,95 +63,181 @@
 		
 	
 	?>
-	
-	<section class="featured_image_showcase">
-		<div class="featured_image_slider_container">
-			<div class="featured_image_slider_wrapper">
-				<?php
-					
-					// Variables
-						// Because these pages can have 400+ photos in them, 
-						// we'll create a loop number to be incremented each time 
-						// a photo in the array is accessed so that we can 
-						// lazyload images later than a certain threshold
-						// to mitigate server load 
-							$loop_number = 0;
-							
-						// a categories array will be used to dynamically create a filter 
-						// based on which category of photos are present
-							$categories = array(); 
-							
-							
-					foreach($photos['glams'] as $key=>$glam){
-						 
-						if( !empty($glam) ){
-							// Add the $key to the categories array.
-								$categories[] = $key;
+	<section class="featured_image_sliders">
+		<div class="featured_image_showcase glam">
+			<div class="featured_image_slider_container">
+				<div class="featured_image_slider_wrapper">
+					<?php
+						
+						// Variables
+							// Because these pages can have 400+ photos in them, 
+							// we'll create a loop number to be incremented each time 
+							// a photo in the array is accessed so that we can 
+							// lazyload images later than a certain threshold
+							// to mitigate server load 
+								$loop_number = 0;
 								
-							
-							// Display content of this category
-							foreach($glam as $id=>$photo){
-							
-								$med_url = $photo['sizes']['medium_large'];
-								$full_url = $photo['url'];
-								$blur_url = $photo['sizes']['blur'];
-								$cat = strtolower( str_replace(" ", "_", $key) );
-								$slug = "$cat-$id slide-$loop_number";
-								$img_alt = $photo['alt'];
-								$tiny_gif = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+							// a categories array will be used to dynamically create a filter 
+							// based on which category of photos are present
+								$categories = array(); 
 								
-								
-								// Create array of image information to be used for lightbox
-									$image_info = array(
-										'full_url' => $full_url,
-										'blur_url' => $blur_url,
-										'photo_id' => $loop_number							
-									);
-									$image_data = array_map('utf8_encode', $image_info);
-									$image_json = json_encode($image_data);
+						// Output the photo slider for the glams photos		
+							foreach($photos['glams'] as $key=>$glam){
+							 
+							if( !empty($glam) ){
+								// Add the $key to the categories array.
+									$categories[] = $key;
 									
-								// Only the first 6 images of the slider are visible, intially, 
-								// so we'll only load the first 6 images at first and then
-								// everything after 6 will be lazyloaded
-									if($loop_number <= 6){
-										$image = "<img src='$med_url' alt='$img_alt'/>";
-									}else {
-										$image = "<img src='$tiny_gif' data-src='$med_url' class='lazy-load'  alt='$img_alt'/>";
-									}
-									
-									echo "<div class='featured_slide $cat $slug' data-image='$image_json' data-id='$loop_number'>$image</div>";
 								
-								// Increment our $loop_number to update how many images have 
-								// been loaded so far
-									$loop_number++;
+								// Display content of this category
+								foreach($glam as $id=>$photo){
+								
+									$med_url = $photo['sizes']['medium_large'];
+									$full_url = $photo['url'];
+									$blur_url = $photo['sizes']['blur'];
+									$cat = strtolower( str_replace(" ", "_", $key) );
+									$slug = "$cat-$id slide-$loop_number";
+									$img_alt = $photo['alt'];
+									$tiny_gif = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+									
+									
+									// Create array of image information to be used for lightbox
+										$image_info = array(
+											'img_class' => 'glam',
+											'full_url' => $full_url,
+											'blur_url' => $blur_url,
+											'photo_id' => $loop_number							
+										);
+										$image_data = array_map('utf8_encode', $image_info);
+										$image_json = json_encode($image_data);
+										
+									// Only the first 6 images of the slider are visible, intially, 
+									// so we'll only load the first 6 images at first and then
+									// everything after 6 will be lazyloaded
+										if($loop_number <= 6){
+											$image = "<img src='$med_url' alt='$img_alt'/>";
+										}else {
+											$image = "<img src='$tiny_gif' data-src='$med_url' class='lazy-load'  alt='$img_alt'/>";
+										}
+										
+										echo "<div class='featured_slide glam-$cat $slug' data-image='$image_json' data-id='$loop_number'>$image</div>";
+									
+									// Increment our $loop_number to update how many images have 
+									// been loaded so far
+										$loop_number++;
+								}
 							}
 						}
-					}
-				?>
+	
+					?>
+				</div>
+			</div>
+			<div id="image_filters">
+				<div class="featured_image_filter_wrapper">
+					<i class="fa fa-filter"></i>
+					<ul class="filter">
+						<li class="cat-all">
+							<span class="active" data-cat="all" data-class="glam">All</span>
+						</li>
+						<?php
+							foreach($categories as $category){
+								
+								$cat_id = strtolower( str_replace(" ", "_", $category) );
+								
+								echo "<li class='cat-$cat_id'>
+										<span data-cat='glam-$cat_id' data-class='glam'>$category</span>
+									  </li>";
+							}	
+						?>
+					</ul>
+				</div>
+				<span class="gallery_trigger detailed_trigger" data-gallery="reg">View detailed photos</span>
 			</div>
 		</div>
-		<div id="image_filters">
-			<div class="featured_image_filter_wrapper">
-				<i class="fa fa-filter"></i>
-				<ul class="filter">
-					<li class="cat-all">
-						<span class="active" data-cat="all">All</span>
-					</li>
+		<div class="featured_image_showcase reg">
+			<div class="featured_image_slider_container">
+				<div class="featured_image_slider_wrapper">
 					<?php
-						foreach($categories as $category){
-							
-							$cat_id = strtolower( str_replace(" ", "_", $category) );
-							
-							echo "<li class='cat-$cat_id'>
-									<span data-cat='$cat_id'>$category</span>
-								  </li>";
-						}	
+						
+						// Variables
+									
+							// We need to reset the $loop_number integer and $categories array because
+							// we'll be using them again to output the regs photos for the post
+								$loop_number = 0;
+								$categories = array();
+						
+						// Output the photo slider for the regs photos
+						
+							foreach($photos['regs'] as $key=>$reg){
+							 
+								if( !empty($reg) ){
+									// Add the $key to the categories array.
+										$categories[] = $key;
+										
+									
+									// Display content of this category
+									foreach($reg as $id=>$photo){
+									
+										$med_url = $photo['sizes']['medium_large'];
+										$full_url = $photo['url'];
+										$blur_url = $photo['sizes']['blur'];
+										$cat = strtolower( str_replace(" ", "_", $key) );
+										$slug = "$cat-$id slide-$loop_number";
+										$img_alt = $photo['alt'];
+										$tiny_gif = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+										
+										
+										// Create array of image information to be used for lightbox
+											$image_info = array(
+												'img_class' => 'reg',
+												'full_url' => $full_url,
+												'blur_url' => $blur_url,
+												'photo_id' => $loop_number							
+											);
+											$image_data = array_map('utf8_encode', $image_info);
+											$image_json = json_encode($image_data);
+											
+											
+										// None of these are visible on the intial load, so they will all be lazy loaded
+											$image = "<img src='$tiny_gif' data-src='$med_url' class='lazy-load'  alt='$img_alt' />";
+										
+											
+											echo "<div class='featured_slide reg-$cat $slug' data-image='$image_json' data-id='$loop_number'>$image</div>";
+										
+										// Increment our $loop_number to update how many images have 
+										// been loaded so far
+											$loop_number++;
+									}
+								}
+							}
+	
 					?>
-				</ul>
+				</div>
 			</div>
-			<span class="detailed_trigger">View detailed photos</span>
+			<div id="image_filters">
+				<div class="featured_image_filter_wrapper">
+					<i class="fa fa-filter"></i>
+					<ul class="filter">
+						<li class="cat-all">
+							<span class="active" data-cat="all" data-class="reg">All</span>
+						</li>
+						<?php
+							foreach($categories as $category){
+								
+								$cat_id = strtolower( str_replace(" ", "_", $category) );
+								
+								echo "<li class='cat-$cat_id'>
+										<span data-cat='reg-$cat_id' data-class='reg'>$category</span>
+									  </li>";
+							}	
+						?>
+					</ul>
+				</div>
+				<span class="gallery_trigger detailed_trigger" data-gallery="glam">View glam photos</span>
+			</div>
 		</div>
 	</section>
+
 	<section id="offering_content">
 		<div class="offering_overview">
 			<h4 class="tilt_title upside_down">Overview Stats</h4>
@@ -207,10 +293,7 @@
 					<div class="content_wrapper">
 						<?php the_content(); ?>
 						<?php get_template_part('template-parts/module','post_navigator'); ?>
-						</div>
-					
-					
-				
+					</div>
 				</div>
 			</div>
 		</div>
@@ -225,10 +308,6 @@
 			);
 			
 			lbi_contact($form_array, 'contact');
-	?>
-	
-<!-- Test Arrays -->	
-<?php
 	
 	
 
@@ -279,10 +358,7 @@
 				}
 */			
 /* 		echo "</pre>"; */
-?>
-<!-- Test Arrays -->
 
-<?php
 
 	// Invoke site footer
 		get_footer();

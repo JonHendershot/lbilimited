@@ -374,19 +374,21 @@ function next_trigger_id(id){
 		
 		// Filter content when a filter item is clicked
 		filter.click(function(){
-			var cat = $(this).data('cat');
-				
+			var cat = $(this).data('cat'),
+				photoClass = $(this).data('class'), // need to use this filter to distinguish which class of photos we're filtering, regs or glams
+				showcaseScope = $('.featured_image_showcase.' + photoClass); // using the parent showcase wrappers to establish a scope of action for these filter events
 			
 			// Change slider content
 				if(cat == 'all'){
-					$('.featured_slide').removeClass('hidden');
+					showcaseScope.find('.featured_slide').removeClass('hidden');
+					showcaseScope.find(filter).removeClass('acitve');
 				}else {
-					$('.featured_slide.' + cat).removeClass('hidden');
-					$('.featured_slide:not(.'+cat+')').addClass('hidden');
+					showcaseScope.find('.featured_slide.' + cat).removeClass('hidden');
+					showcaseScope.find(' .featured_slide:not(.'+cat+')').addClass('hidden');
 				}
 			
 			// Update Filter Information
-				filter.removeClass('active');
+				showcaseScope.find(filter).removeClass('active');
 				$(this).addClass('active');
 				$('.jspPane, .jspDrag').css({'left':0}); //reset scroll position of slider
 			
