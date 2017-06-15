@@ -63,8 +63,8 @@
 		
 	
 	?>
-	<section class="featured_image_sliders">
-		<div class="featured_image_showcase glam">
+	<section class="featured_image_sliders vhfix">
+		<div class="featured_image_showcase glam visible">
 			<div class="featured_image_slider_container">
 				<div class="featured_image_slider_wrapper">
 					<?php

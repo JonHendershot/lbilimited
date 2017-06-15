@@ -236,7 +236,9 @@ function updateSpecialist(specialist){
 			load_img(data);
 			
 		// Open Lightbox
-			open_lightbox(lightbox);
+			if( !lightbox.hasClass('visible') ){
+				open_lightbox(lightbox);
+			}
 		
 		// Update Lightbox Triger
 			closeTrigger.text('click to close').addClass('open');
@@ -360,44 +362,7 @@ function next_trigger_id(id){
 		}
 	});
 }(jQuery));
-  /////////////////////
- // Offering Filter //
-/////////////////////
-(function offeringFilter($){
-	if( $('.featured_image_showcase').length ){
-		
-		// Initialize the slider scrollbar which uses jquery ScrollPane 3rd party plugin
-		$('.featured_image_slider_container').jScrollPane();
-		
-		// Grab the Filters
-		var filter = $('ul.filter li span');
-		
-		// Filter content when a filter item is clicked
-		filter.click(function(){
-			var cat = $(this).data('cat'),
-				photoClass = $(this).data('class'), // need to use this filter to distinguish which class of photos we're filtering, regs or glams
-				showcaseScope = $('.featured_image_showcase.' + photoClass); // using the parent showcase wrappers to establish a scope of action for these filter events
-			
-			// Change slider content
-				if(cat == 'all'){
-					showcaseScope.find('.featured_slide').removeClass('hidden');
-					showcaseScope.find(filter).removeClass('acitve');
-				}else {
-					showcaseScope.find('.featured_slide.' + cat).removeClass('hidden');
-					showcaseScope.find(' .featured_slide:not(.'+cat+')').addClass('hidden');
-				}
-			
-			// Update Filter Information
-				showcaseScope.find(filter).removeClass('active');
-				$(this).addClass('active');
-				$('.jspPane, .jspDrag').css({'left':0}); //reset scroll position of slider
-			
-			// Re-initialize the ScrollPane plugin to update the slider width and scroll information
-				$('.featured_image_slider_container').jScrollPane();
 
-			});
-	}
-}(jQuery));
 
 (function offering_video($){
 	$('.offering').hover(function(){
@@ -647,13 +612,16 @@ function open_lightbox(lightbox_id){
 	$('body').addClass('noscroll');
 	
 	// If image scroller exists, we need to clone it into the proper lightbox! 
-/*
 	if( $('.featured_image_showcase').length ){
 		console.log('fired');
-		$('.featured_image_showcase').clone().appendTo( '.media_lightbox' );
+		$('.featured_image_showcase.visible').addClass('in_lightbox');
 		
+		// reinitialize the jscroller to account for the new window width
+			$('.featured_image_showcase.visible .featured_image_slider_container').jScrollPane();		
+		
+		
+	
 	}
-*/
 }
   ////////////////////
  // CLOSE LIGHTBOX //
@@ -687,6 +655,15 @@ function open_lightbox(lightbox_id){
 				setTimeout(function(){
 					focusField.focus();
 				}, 500);  
+			}
+			
+			if($('.featured_image_showcase').length){
+				$('.featured_image_showcase').removeClass('in_lightbox');
+				$('.jspContainer').height($('.featured_image_showcase.visible .featured_slide').height() + 8); // height isn't resetting properly so we need to force it before we reinitialize
+				$('.featured_image_showcase.visible .featured_image_slider_container').jScrollPane();	
+
+				
+				
 			}
 		});
 		
@@ -1224,9 +1201,58 @@ function ppNextField(currentFieldID, nextFieldID){
 	var vhItem = $('.vhfix');
 	
 	vhItem.each(function(){
-		var height = vhItem.height();
+		var height = $(this).height();
 		console.log(height);
 		
 		$(this).css({'height' : height});
 	});
+}(jQuery));
+
+  /////////////////////
+ // Offering Filter //
+/////////////////////
+(function offeringFilter($){
+	if( $('.featured_image_showcase').length ){
+		
+		// Initialize the slider scrollbar which uses jquery ScrollPane 3rd party plugin
+		$('.featured_image_slider_container').jScrollPane();
+		
+		// Grab the Filters
+		var filter = $('ul.filter li span'),
+			galleryTrigger = $('.gallery_trigger');
+		
+		// Filter content when a filter item is clicked
+		filter.click(function(){
+			var cat = $(this).data('cat'),
+				photoClass = $(this).data('class'), // need to use this filter to distinguish which class of photos we're filtering, regs or glams
+				showcaseScope = $('.featured_image_showcase.' + photoClass); // using the parent showcase wrappers to establish a scope of action for these filter events
+			
+			// Change slider content
+				if(cat == 'all'){
+					showcaseScope.find('.featured_slide').removeClass('hidden');
+					showcaseScope.find(filter).removeClass('acitve');
+				}else {
+					showcaseScope.find('.featured_slide.' + cat).removeClass('hidden');
+					showcaseScope.find(' .featured_slide:not(.'+cat+')').addClass('hidden');
+				}
+			
+			// Update Filter Information
+				showcaseScope.find(filter).removeClass('active');
+				$(this).addClass('active');
+				$('.jspPane, .jspDrag').css({'left':0}); //reset scroll position of slider
+			
+			// Re-initialize the ScrollPane plugin to update the slider width and scroll information
+				$('.featured_image_showcase.visible .featured_image_slider_container').jScrollPane();
+
+
+			});
+		
+		// Change photo gallery 
+		galleryTrigger.click(function(){
+			var gallery = $(this).data('gallery');
+			
+			$('.featured_image_showcase.visible').removeClass('visible');
+			$('.featured_image_showcase.' + gallery).addClass('visible');
+		});
+	}
 }(jQuery));

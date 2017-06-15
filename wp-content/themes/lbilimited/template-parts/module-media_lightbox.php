@@ -10,5 +10,9 @@
 			<span class="prev_img light_nav" data-img=""><i class="fa fa-chevron-left"></i></span>
 			
 		</div>
+		<div class="featured_image_showcase_lightbox">
+			<div class="featured_image_slider_container_lightbox">
+			</div>
+		</div>
 		<div class="ribbon"></div>
 	</div>

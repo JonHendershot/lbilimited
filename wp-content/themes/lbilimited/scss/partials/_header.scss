@@ -51,7 +51,7 @@
 	width: 100%;
 	z-index: 9999999999;
 	@include easeout(600ms);
-	
+	visibility: visible;
 	&:after {
 			content: "";
 			position: absolute;
@@ -77,7 +77,7 @@
 
 	}
 	&.hidden {
-		
+		visibility: hidden;
 		.nav-bar, &:after {
 			@include prefix(transform, translateY(-100%));
 		}
@@ -284,7 +284,6 @@
 		bottom: -100px;
 		left: 0;
 		right: 0;
-		
 		
 		video {
 			z-index: 99;
