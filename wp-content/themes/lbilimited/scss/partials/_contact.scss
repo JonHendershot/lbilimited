@@ -80,9 +80,10 @@
 		bottom: 0;
 		right: 0;
 		margin: auto;
-		max-width: none;
 		@include prefix(transform, skewY($skew_deg));
-		height: 115%;
+		height: 130%;
+		width: 130%;
+		object-fit: cover;
 	}
 }
 

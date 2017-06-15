@@ -1,19 +1,44 @@
 // HEIGHT QUERY //
-@media (min-height: 1100px){
+@media (min-height: 1100px) {
 	#masthead.site-header.single {
 		height: 70vh;
+		margin-bottom: 10vh;
+		.featured-media-wrapper {
+			bottom: -10vh !important;
+		}
 	}
 }
-@media (min-height: 1000px){
+@media (min-height: 1000px) {
 	#masthead.site-header.single {
 		height: 80vh;
+		margin-bottom: 10vh;
+		.featured-media-wrapper {
+			bottom: -10vh !important;
+		}
 	}
 }
+// WIDTH QUERY //
 @media (min-width: 1480px){
 	section.featured_gallery {
 		&:after, &:before {
 			bottom: -245px;
 			height: 245px;
+		}
+	}
+}
+@media (min-width: 1250px){
+	header.site-header {
+		.header-content:not(.home) {
+			@include prefix(transform, translate3d(0,-38%,0) !important);
+			&:before {
+				height: 392px !important;
+				width: 255px !important;
+			}
+			h1 {
+				font-size: 110px;
+				line-height: 88px;
+				max-width: 900px !important;
+			}
 		}
 	}
 }

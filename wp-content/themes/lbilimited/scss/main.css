@@ -961,12 +961,12 @@ h4.tilt_title.flip:after {
   padding-bottom: 53.84%; }
 
 .site-header.single.collection, .site-header.single {
-  margin-bottom: 45vh; }
+  margin-bottom: 20vh; }
   .site-header.single.collection .featured-media-wrapper, .site-header.single .featured-media-wrapper {
     width: 78%;
     overflow: visible;
     padding-bottom: 53.38%;
-    bottom: -40vh; }
+    bottom: -20vh; }
     .site-header.single.collection .featured-media-wrapper .header-content, .site-header.single .featured-media-wrapper .header-content {
       margin-top: 0;
       -webkit-transform: translate3d(0, -48px, 0);
@@ -3643,13 +3643,14 @@ body.page-template-home .social_cta {
     bottom: 0;
     right: 0;
     margin: auto;
-    max-width: none;
     transform: skewY(5deg);
     -webkit-transform: skewY(5deg);
     -moz-transform: skewY(5deg);
     -ms-transform: skewY(5deg);
     -o-transform: skewY(5deg);
-    height: 115%; }
+    height: 130%;
+    width: 130%;
+    object-fit: cover; }
 
 .contact_information {
   display: flex;
@@ -6156,16 +6157,37 @@ body.single .contact_form:after {
 **************************************/
 @media (min-height: 1100px) {
   #masthead.site-header.single {
-    height: 70vh; } }
+    height: 70vh;
+    margin-bottom: 10vh; }
+    #masthead.site-header.single .featured-media-wrapper {
+      bottom: -10vh !important; } }
 
 @media (min-height: 1000px) {
   #masthead.site-header.single {
-    height: 80vh; } }
+    height: 80vh;
+    margin-bottom: 10vh; }
+    #masthead.site-header.single .featured-media-wrapper {
+      bottom: -10vh !important; } }
 
 @media (min-width: 1480px) {
   section.featured_gallery:after, section.featured_gallery:before {
     bottom: -245px;
     height: 245px; } }
+
+@media (min-width: 1250px) {
+  header.site-header .header-content:not(.home) {
+    transform: translate3d(0, -38%, 0) !important;
+    -webkit-transform: translate3d(0, -38%, 0) !important;
+    -moz-transform: translate3d(0, -38%, 0) !important;
+    -ms-transform: translate3d(0, -38%, 0) !important;
+    -o-transform: translate3d(0, -38%, 0) !important; }
+    header.site-header .header-content:not(.home):before {
+      height: 392px !important;
+      width: 255px !important; }
+    header.site-header .header-content:not(.home) h1 {
+      font-size: 110px;
+      line-height: 88px;
+      max-width: 900px !important; } }
 
 @media (max-width: 1150px) {
   .specialists_wrapper:after {

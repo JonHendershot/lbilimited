@@ -131,7 +131,7 @@
 				  	
 			echo  "</div>"; // End .$content_class
 			
-			if( is_page_template('templates/media_house.php') ){
+			if( is_page_template('archive-lbi_media.php') ){
 			  	echo "<div class='scroll_hint_container'>
 			  			<span class='dot dot-1'></span>
 			  			<span class='dot dot-2'></span>
