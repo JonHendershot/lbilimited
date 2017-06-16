@@ -80,7 +80,7 @@
 			/// SINGLE POST PAGE ///
 			///////////////////////
 			
-			echo "<img src='$blueprint_url' class='blueprint' />
+			echo "
 				  <div class='featured-media-wrapper'>";
 	
 			if($file_type == 'video'){
