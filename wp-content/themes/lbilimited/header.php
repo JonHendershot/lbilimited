@@ -42,6 +42,18 @@
 					<a href="<?php echo home_url(); ?>" class="header-logo">
 						<img src="<?php echo $logo; ?>" class="main-logo" />
 					</a>
+					<?php if( is_single() && get_post_type() == 'offerings' ){
+						$year = get_field('year');
+						$make = get_field('make');
+						$model = get_field('model');
+						$price_val = get_field('price');
+						$price = 'Offered at: $' . number_format($price_val,0,".",",");
+						echo "<div class='header_meta'>
+								<p class='title'>$year $make $model</p>
+								<p class='price'>$price</p>
+							  </div>";
+					}
+					?>
 					<div class="search_menu_container">
 						<p class="search search_trigger header">Click to search</p>
 						<div class="menu_trigger">

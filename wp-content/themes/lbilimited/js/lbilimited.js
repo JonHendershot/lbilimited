@@ -599,7 +599,7 @@ function open_lightbox(lightbox_id){
 	var $ = jQuery,
 		timeout = 0,
 		navWrapper = $('.nav-wrapper'), // need to make sure it's visible because lightboxes are hidden in nav wrapper for z-index issues
-		closeTrigger = $('.nav-wrapper .search_trigger, .media_lightbox .ribbon'); // this will change to a close lightbox trigger any time a lightbox is opened
+		closeTrigger = $('.nav-wrapper .search_trigger'); // this will change to a close lightbox trigger any time a lightbox is opened
 ;
 	if( navWrapper.hasClass('hidden') ){
 		navWrapper.removeClass('hidden');
@@ -643,7 +643,7 @@ function open_lightbox(lightbox_id){
 	// so we want to scope the close function appropriately here to close the current open lightbox (should it exist), and
 	// if it doesn't exist, open the search form
 (function closeLightbox($){
-	var closeTrigger = $('.nav-wrapper .search_trigger, .media_lightbox .ribbon'),
+	var closeTrigger = $('.nav-wrapper .search_trigger'),
 		focusField = $('#focus_field');
 		
 		closeTrigger.click(function(){

@@ -74,6 +74,9 @@
 		.nav-bar {
 			@include prefix(transform, translateY(0px));
 		}
+		.header_meta {
+			@include prefix(transform, translateY(0px) !important);
+		}
 
 	}
 	&.hidden {
@@ -84,6 +87,9 @@
 		a.header-logo, div.search_menu_container  {
 			@include prefix(transform, translateY(-30%));	
 			
+		}
+		.header_meta {
+			@include prefix(transform, translateY(-50px) !important);
 		}
 	}
 	
@@ -97,6 +103,43 @@
 		z-index: 99;
 		position: relative;
 
+		.header_meta {
+					
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    margin: auto;
+		    @include max-content(height);
+		    @include max-content(width);
+		    @include prefix(transform, translateY(-150px));
+		    @include easeout(600ms);
+		    
+		    p.title {
+			    
+			    color: white;
+			    font-size: 20px;
+			    margin: 0;
+
+		    }
+		    p.price {
+			    
+			    margin: 0;
+			    position: absolute;
+			    bottom: 0;
+			    left: 0;
+			    right: 0;
+			    margin: auto;
+			    @include max-content(width);
+			    color: white;
+			    @include prefix(transform, translateY(138%));
+			    background-color: $mainred;
+			    padding: 2px 20px;
+
+		    }
+
+		}
 		.header-logo {
 			width: 163px;
 			height: auto;
