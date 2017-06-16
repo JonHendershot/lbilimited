@@ -338,13 +338,21 @@ body.single {
 		width: 100%;
 		z-index: 9999999999;
 		@include prefix(transform, translateY(100%) !important);
-		
+		&.showing {
+			@include prefix(transform, translateY(0) !important);
+			
+			
+		}
 		#image_filters {
 			margin: 0;
 			padding: 10px;
 			background-color: rgba(0,0,0,0.97);
 			i, span, span:before, span:after {
 				color: $white !important;
+			}
+			.show_filter_trigger {
+				visibility: visible;
+				opacity: 1;
 			}
 		}
 		.jspContainer {
@@ -419,6 +427,7 @@ body.single {
 		@include flexbox(center,space-between);
 		padding: 0;
 		margin: 25px 0;
+		position: relative;
 
 		.featured_image_filter_wrapper {
 			@include flexbox(center,flex-start);
@@ -489,6 +498,43 @@ body.single {
 			line-height: 19px;
 			cursor: pointer;
 			position: relative;
+		}
+		
+		.show_filter_trigger {
+			position: absolute;
+		    left: 0;
+		    right: 0;
+		    top: 0;
+		    bottom: 0;
+		    margin: auto;
+		    height: max-content;
+		    width: max-content;
+		    transform: translateY(-200%);
+		    margin: auto;
+		    opacity: 0;
+		    visibility: hidden;
+		    cursor: pointer;
+		    
+		    i {
+			    font-size: 14px;
+		    }
+		    i.arrow {
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    right: 0;
+			    bottom: 0;
+			    margin: auto;
+			    @include prefix(transform, translateY(-110%));
+			    @include max-content(width);
+			    @include max-content(height);
+			    @include easeout(600ms);
+		    }
+		    &.showing {
+				i.arrow {
+					@include prefix(transform, translateY(110%) scaleY(-1) !important);
+				}
+			}
 		}
 		
 	}

@@ -96,7 +96,7 @@
 									$full_url = $photo['url'];
 									$blur_url = $photo['sizes']['blur'];
 									$cat = strtolower( str_replace(" ", "_", $key) );
-									$slug = "$cat-$id slide-$loop_number";
+									$slug = "$cat-$id slide-$loop_number-glam";
 									$img_alt = $photo['alt'];
 									$tiny_gif = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 									
@@ -120,7 +120,7 @@
 											$image = "<img src='$tiny_gif' data-src='$med_url' class='lazy-load'  alt='$img_alt'/>";
 										}
 										
-										echo "<div class='featured_slide glam-$cat $slug' data-image='$image_json' data-id='$loop_number'>$image</div>";
+										echo "<div class='featured_slide glam glam-$cat $slug' data-image='$image_json' data-id='$loop_number'>$image</div>";
 									
 									// Increment our $loop_number to update how many images have 
 									// been loaded so far
@@ -150,6 +150,12 @@
 							}	
 						?>
 					</ul>
+				</div>
+				<div class="show_filter_trigger">
+					<i class="fa fa-square-o"></i>
+					<i class="fa fa-square-o"></i>
+					<i class="fa fa-square-o"></i>
+					<i class="fa fa-chevron-up arrow"></i>
 				</div>
 				<span class="gallery_trigger detailed_trigger" data-gallery="reg">View detailed photos</span>
 			</div>
@@ -182,7 +188,7 @@
 										$full_url = $photo['url'];
 										$blur_url = $photo['sizes']['blur'];
 										$cat = strtolower( str_replace(" ", "_", $key) );
-										$slug = "$cat-$id slide-$loop_number";
+										$slug = "$cat-$id slide-$loop_number-reg";
 										$img_alt = $photo['alt'];
 										$tiny_gif = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 										
@@ -202,7 +208,7 @@
 											$image = "<img src='$tiny_gif' data-src='$med_url' class='lazy-load'  alt='$img_alt' />";
 										
 											
-											echo "<div class='featured_slide reg-$cat $slug' data-image='$image_json' data-id='$loop_number'>$image</div>";
+											echo "<div class='featured_slide reg reg-$cat $slug' data-image='$image_json' data-id='$loop_number'>$image</div>";
 										
 										// Increment our $loop_number to update how many images have 
 										// been loaded so far
@@ -232,6 +238,12 @@
 							}	
 						?>
 					</ul>
+				</div>
+				<div class="show_filter_trigger" alt="Show image thumbnails">
+					<i class="fa fa-square-o"></i>
+					<i class="fa fa-square-o"></i>
+					<i class="fa fa-square-o"></i>
+					<i class="fa fa-chevron-up arrow"></i>
 				</div>
 				<span class="gallery_trigger detailed_trigger" data-gallery="glam">View glam photos</span>
 			</div>

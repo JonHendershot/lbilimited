@@ -198,6 +198,11 @@ h4.tilt_title.flip:after {
 		bottom: 0;
 		margin: auto;
 		
+		&:hover {
+			.light_nav {
+				@include prefix(transform, translateX(0) !important);
+			}
+		}
 		img {
 			height: 100%;
 			width: 100%;
@@ -231,14 +236,17 @@ h4.tilt_title.flip:after {
 			font-size: 16px;
 			opacity: 0.75;
 			cursor: pointer;
+			@include easeout(600ms);
 			
 			&.next_img {
 				right: 0;
 				padding: 3px 0 0 3px;
+				@include prefix(transform, translateX(100%));
 			}
 			&.prev_img {
 				left: 0;
 				padding: 3px 3px 0 0;
+				@include prefix(transform, translateX(-100%));
 			}
 		}
 	}

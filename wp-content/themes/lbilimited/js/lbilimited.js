@@ -173,9 +173,8 @@ jQuery(window).load(function(){
 		
 		trigger.click(function(){
 			if(!lightbox.hasClass('visible')){
-				// OPEN IT UP
-				lightbox.addClass('visible');
-				closeTrigger.text('Click to close').addClass('open');
+				// OPEN IT UP				
+				open_lightbox(lightbox);
 			}
 			
 		});
@@ -245,7 +244,7 @@ function updateSpecialist(specialist){
 		
 	});
 	navbtn.click(function(){
-		var img = parseInt( $(this).attr('data-img') );
+		var img = $(this).attr('data-img');
 		
 		next_img(img);
 	});
@@ -261,6 +260,7 @@ function load_img(data){
 	var $ = jQuery,		
 		blur = data.blur_url,
 		full = data.full_url,
+		imgClass = data.img_class,
 		id = parseInt(data.photo_id),
 		blur_img = new Image(),
 		img = new Image(),
@@ -283,33 +283,33 @@ function load_img(data){
 			
 			
 		// Update Image Triggers 
-			next_trigger_id(id);
+			next_trigger_id(id, imgClass);
 		
 }
-function next_trigger_id(id){
+function next_trigger_id(id, imgClass){
 	var $ = jQuery,
 		nextIndex = id + 1,
 		prevIndex = id - 1,
-		totalIndex = $('.featured_slide').last().attr('data-id');
+		totalIndex = $('.featured_slide.' + imgClass).last().attr('data-id');
 	
 	
 	// If the next slide exists, get the id, else get the first slide
-	if( $('.featured_slide.slide-' + nextIndex).length ){
+	if( $('.featured_slide.slide-' + nextIndex + '-' + imgClass).length ){
 		var nextSlideID = nextIndex;
 	}else {
 		var nextSlideID = 0;
 	}
 	
 	// If the previous slide exists, get the id, else get the last slide
-	if( $('.featured_slide.slide-' + prevIndex).length ){
+	if( $('.featured_slide.slide-' + prevIndex + '-' + imgClass).length ){
 		var prevSlideID = prevIndex;
 	}else {
 		var prevSlideID = totalIndex;
 	}
 	
 	// Apply index to nav buttons
-		$('.media_lightbox .light_nav.next_img').attr('data-img',nextSlideID);
-		$('.media_lightbox .light_nav.prev_img').attr('data-img',prevSlideID);
+		$('.media_lightbox .light_nav.next_img').attr('data-img',nextSlideID + '-' + imgClass);
+		$('.media_lightbox .light_nav.prev_img').attr('data-img',prevSlideID + '-' + imgClass);
 	
 }
 
@@ -599,7 +599,7 @@ function open_lightbox(lightbox_id){
 	var $ = jQuery,
 		timeout = 0,
 		navWrapper = $('.nav-wrapper'), // need to make sure it's visible because lightboxes are hidden in nav wrapper for z-index issues
-		closeTrigger = $('.nav-wrapper .search_trigger'); // this will change to a close lightbox trigger any time a lightbox is opened
+		closeTrigger = $('.nav-wrapper .search_trigger, .media_lightbox .ribbon'); // this will change to a close lightbox trigger any time a lightbox is opened
 ;
 	if( navWrapper.hasClass('hidden') ){
 		navWrapper.removeClass('hidden');
@@ -608,21 +608,34 @@ function open_lightbox(lightbox_id){
 	if( !lightbox_id.hasClass('visible') ){
 		lightbox_id.addClass('visible');
 		closeTrigger.text('Click to close').addClass('open');
+		
 	}
 	$('body').addClass('noscroll');
 	
-	// If image scroller exists, we need to clone it into the proper lightbox! 
-	if( $('.featured_image_showcase').length ){
-		console.log('fired');
-		$('.featured_image_showcase.visible').addClass('in_lightbox');
+	// If image scroller exists, and we triggered it, we need to clone it into the proper lightbox! 
+	if( $('.featured_image_showcase').length && lightbox_id.hasClass('media_lightbox') ){
+		
+		$('.featured_image_showcase').addClass('in_lightbox');
 		
 		// reinitialize the jscroller to account for the new window width
-			$('.featured_image_showcase.visible .featured_image_slider_container').jScrollPane();		
-		
-		
-	
+		$('.featured_image_showcase .featured_image_slider_container').jScrollPane();		
+			
 	}
 }
+  /////////////////////////////
+ // SHOW FILTER IN LIGHTBOX //
+/////////////////////////////
+(function show_lightbox_filter($){
+	$('.show_filter_trigger').click(function(){
+		if($(this).hasClass('showing')){
+			$('.show_filter_trigger').removeClass('showing');
+			$('.featured_image_showcase').removeClass('showing');
+		}else {
+			$('.show_filter_trigger').addClass('showing');
+			$('.featured_image_showcase').addClass('showing');
+		}
+	});
+}(jQuery));
   ////////////////////
  // CLOSE LIGHTBOX //
 ////////////////////
@@ -630,7 +643,7 @@ function open_lightbox(lightbox_id){
 	// so we want to scope the close function appropriately here to close the current open lightbox (should it exist), and
 	// if it doesn't exist, open the search form
 (function closeLightbox($){
-	var closeTrigger = $('.nav-wrapper .search_trigger'),
+	var closeTrigger = $('.nav-wrapper .search_trigger, .media_lightbox .ribbon'),
 		focusField = $('#focus_field');
 		
 		closeTrigger.click(function(){
@@ -644,7 +657,7 @@ function open_lightbox(lightbox_id){
 				}
 				
 				$('.lbi_lightbox.visible').removeClass('visible');
-				$(this).removeClass('open').text('click to search');
+				closeTrigger.removeClass('open').text('click to search');
 					
 				iframe.attr('src',''); // stop video from playing
 				$('body').removeClass('noscroll');
@@ -659,8 +672,8 @@ function open_lightbox(lightbox_id){
 			
 			if($('.featured_image_showcase').length){
 				$('.featured_image_showcase').removeClass('in_lightbox');
-				$('.jspContainer').height($('.featured_image_showcase.visible .featured_slide').height() + 8); // height isn't resetting properly so we need to force it before we reinitialize
-				$('.featured_image_showcase.visible .featured_image_slider_container').jScrollPane();	
+				$('.jspContainer').height($('.featured_image_showcase .featured_slide').height() + 8); // height isn't resetting properly so we need to force it before we reinitialize
+				$('.featured_image_showcase .featured_image_slider_container').jScrollPane();	
 
 				
 				

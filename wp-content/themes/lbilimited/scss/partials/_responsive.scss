@@ -26,7 +26,7 @@
 		}
 	}
 }
-@media (min-width: 1250px){
+@media (min-width: 1250px) and (min-height:900px){
 	header.site-header {
 		.header-content:not(.home) {
 			@include prefix(transform, translate3d(0,-38%,0) !important);
