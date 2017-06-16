@@ -6,9 +6,9 @@
 	
 	// Dynamic require URL to grab wp-load.php in both local and production environments
 	if($_SERVER['DOCUMENT_ROOT']=='/Applications/MAMP/htdocs/Sites' || $_SERVER['DOCUMENT_ROOT']=='/Applications/MAMP/htdocs'){
-		$wpLoad_URL = '/gfa/wp-load.php';
+		$wpLoad_URL = '/lbi/wp-load.php';
 	}else {
-		$wpLoad_URL = '/wp-load.php';
+		$wpLoad_URL = '/~lbi/wp-load.php';
 	}
 	require($_SERVER['DOCUMENT_ROOT'].$wpLoad_URL);
 	
