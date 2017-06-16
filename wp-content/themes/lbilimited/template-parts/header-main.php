@@ -5,7 +5,7 @@
 		$title = '';
 		$subtitle = '';
 		$featured_image_frame = get_field('featured_image_framing');
-		$content_class = 'header-content';
+		$content_class = 'header-content off ';
 		$header_img = '';
 		
 		// Call global options data and establish variables for the template -- this pulls information from the theme options found in the appearance menu, as established in theme_options.php

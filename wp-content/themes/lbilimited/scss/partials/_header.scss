@@ -1,3 +1,70 @@
+  //////////////////////
+ ////  PRE LOADER  ////
+//////////////////////
+#pre_loader {
+	$outTime: 1800ms;
+	$inTime: 600ms;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999999;
+    @include flexbox(center,center);
+    
+    .ribbon {
+	    
+	    position: absolute;
+	    top: 0;
+	    left: -25vw;
+	    width: 150vw;
+	    height: 100%;
+	    @include prefix(transform, skew(-24deg) scaleX(1));
+	    background-color: $white;
+	    display: block;
+	    z-index: 9;
+		@include easeout($inTime);
+		opacity: 1;
+		
+    }
+    img.gif {
+	    position: absolute;
+	    top: 100px;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    margin: auto;
+	    width: 150px;
+	    opacity: 0;
+    }
+    img {
+	    width: 250px;
+	    height: auto;
+	    @include easeout($inTime);
+	    z-index: 9;
+	    margin-top: -20px;
+	    @include prefix(transform, translateY(0px));
+	    opacity: 1;
+	    backface-visibility: hidden;
+    }
+    
+    &.off {
+	    visibility: hidden;
+	    
+	    .ribbon {
+		    @include prefix(transform, skew(-24deg) scaleX(1));
+		    opacity: 0;
+		    @include easeout($outTime);
+		    transition-delay: 300ms;
+	    }
+	    img {
+		    @include prefix(transform, translateY(10px));
+		    opacity: 0;
+		    @include easeout($outTime);
+	    }
+    }
+
+}
   ///////////////////////
  ////  SEARCH FORM  ////
 ///////////////////////
@@ -49,7 +116,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 9999999999;
+	z-index: 999999998;
 	@include easeout(600ms);
 	visibility: visible;
 	&:after {
@@ -204,6 +271,7 @@
   /////////////////////
  /// PAGE  HEADERS ///
 /////////////////////
+	$timing: 1000ms;
 .site-header {
 	background-color: $black;
 	height: 100vh;
@@ -235,7 +303,21 @@
 		position: relative;
 		z-index: 999;
 		margin-left: 20%;
+	
 		
+		&.off {
+			&:before {
+				@include prefix(transform, translate3d(-77px, -10px,0) skew(-15deg) scaleX(0) !important);
+			}
+			h1 {
+				@include prefix(transform, translateY(3px));
+				opacity: 0;
+			}
+			p {
+				@include prefix(transform, translateY(8px));
+				opacity: 0;
+			}
+		}
 		h1 {
 			color: $white;
 			font-size: 64px;
@@ -246,6 +328,10 @@
 			text-indent: -50px;
 			margin: 0;
 			position: relative;
+			@include easeout(1200ms);
+			@include prefix(transform, translateY(0));
+			transition-delay: 600ms;
+			opacity: 1;
 			
 			span {
 				display: block;
@@ -260,6 +346,10 @@
 			font-weight: 300;
 			margin-left: 20px;
 			max-width: 350px;
+			@include easeout(1200ms);
+			@include prefix(transform, translateY(0));
+			transition-delay: 600ms;
+			opacity: 1;
 		}
 	}
 	.header-content.search {
@@ -307,10 +397,12 @@
 		height: 292px;
 		width: 190px;
 		left: 0;
-		@include translate_skew(-77px,-10px,0,-15deg);
+		@include prefix(transform, translate3d(-77px, -10px,0) skew(-15deg) scaleX(1));
 		top: 0;
 		bottom: 0;
 		margin: auto;
+		@include easeout($timing);
+		transform-origin: left;
 	}
 }
 .site-header.single {

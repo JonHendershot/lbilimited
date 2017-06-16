@@ -252,6 +252,11 @@
 		position: relative;
 		z-index: 999;
 		padding-top: 70px;
+		
+		&.consignment_form {
+			width: 100%;
+			padding-top: 0;
+		}
 	}
 	form {
 		max-width: 955px;
@@ -448,5 +453,7 @@
 	display: block;
 }
 .form_consignment {
-	margin-top: 70px;
+	margin-top: 120px;
+	padding: 0;
+	overflow: visible;
 }

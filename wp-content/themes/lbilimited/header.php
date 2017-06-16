@@ -34,6 +34,11 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<div id="pre_loader">
+		<div class="ribbon"></div>
+		<img src="<?php echo get_template_directory_uri() . '/inc/images/load.gif'; ?>" class="gif" />
+		<img src="<?php echo get_template_directory_uri() . '/inc/images/dark_logo.png'; ?>" />
+	</div>
 	<div id="page" class="site">		
 		<header id="masthead" class="<?php echo $header_class; ?>" role="banner">
 			<!-- Fixed nav bar across the top of each page -->

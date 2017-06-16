@@ -13,8 +13,30 @@ jQuery(window).load(function(){
 		lazyLoader( $(this) );
 	});
 	
-	console.log('version updated! Repo is working and the DNS has updated!');
+	$('#pre_loader').addClass('off');
+	setTimeout(function(){
+		$('.header-content.off').removeClass('off');
+	},700);
+	
 });
+
+(function pageTransition($){
+	$('a').click(function(e){
+		var url = $(this).attr('href');
+		
+		
+		if(url.includes('localhost:8888')){
+			e.preventDefault();
+			
+			$('#pre_loader').removeClass('off');
+			setTimeout(function(){
+				window.location = url;
+			},1000);
+		
+		}
+		
+	});
+}(jQuery));
 
   //////////////////////
  // Offering Contact //
@@ -209,7 +231,7 @@ function updateSpecialist(specialist){
 }
 
   ///////////////////////
- // NOTIFY LIGHTBOX //
+ // NOTIFY LIGHTBOX ////
 ///////////////////////
 (function notifyLightbox($){
 	var trigger = $('.notify_trigger'),
@@ -218,6 +240,18 @@ function updateSpecialist(specialist){
 		trigger.click(function(){
 			open_lightbox(lightbox);
 		});
+}(jQuery));
+
+  /////////////////////////////////
+ // CONSIGNMENT FORM LIGHTBOX ////
+/////////////////////////////////
+(function consignment_launch($){
+	var option_trigger = $('.option_form_trigger'),
+		lightbox = $('.lbi_lightbox.consignment_lightbox');
+	
+	option_trigger.click(function(){
+		open_lightbox(lightbox);
+	});
 }(jQuery));
   ///////////////////////
  // OFFERING LIGHTBOX //
@@ -680,6 +714,22 @@ function open_lightbox(lightbox_id){
 			}
 		});
 		
+		
+		$(document).keyup(function(e) {
+		     if (e.keyCode == 27 && $('.lbi_lightbox').hasClass('visible')) { // escape key maps to keycode `27`
+		       if( $('.search_form_container.lbi_lightbox').hasClass('visible')){ 
+					// Animate Off
+					focusField.focusout();
+				}
+				
+				$('.lbi_lightbox.visible').removeClass('visible');
+				closeTrigger.removeClass('open').text('click to search');
+					
+				iframe.attr('src',''); // stop video from playing
+				$('body').removeClass('noscroll');
+		    }
+		});
+		
 }(jQuery));
 
 // Contact Form 7 doesn't support adding custom attributes to fields, so we'll need to add an event listener to our textareas
@@ -931,8 +981,8 @@ function setMaxHeight(elemclass){
 							
 						}
 						
-						
-						xhr.open('post','http://localhost:8888/lbi/wp-content/plugins/dragDrop/upload_file.php'); // fix this static link!
+						var home_url = $('.consignment_lightbox').data('url');
+						xhr.open('post',home_url + '/wp-content/plugins/dragDrop/upload_file.php'); // fix this static link!
 						xhr.send(formData);	
 					}
 				}

@@ -39,3 +39,6 @@
 	if( is_page_template('templates/offerings.php') ){
 		get_template_part('template-parts/module', 'notify_lightbox');
 	}
+	if( is_page_template('templates/contact.php') ){
+		get_template_part('template-parts/contact', 'consignment_lightbox');
+	}

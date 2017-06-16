@@ -1,11 +1,9 @@
 	.project-planner-container {
-		min-height: 65vh;
-		max-width: 955px;
-		width: 90%;
 		opacity: 1;
 		position: relative;
 		margin: auto;
 		transition: all 1000ms ease-in-out;
+		min-height: 25vh;
 		
 		input:active, input:focus {
 			color: $white !important;
@@ -49,6 +47,15 @@
 		#project-planner {
 			br {
 				display: none;
+			}
+			form {
+				max-width: none;
+				width: 100%;
+				
+				textarea {
+					margin-top: 0;
+					color: $white;
+				}
 			}
 			.ppsection {
 				
@@ -462,12 +469,12 @@
 			width: 100%;
 			@include flexbox(center,space-between);
 			position: absolute;
-			bottom: 0;
+			bottom: -75px;
 			left: 0;
 			transition: 800ms all ease-in-out;
 			.nav-hint {
 				font-family: $heading_font;
-				color: $gray;
+				color: rgba(255,255,255,0.5);
 				letter-spacing: 1px;
 				font-size: 14px;
 				padding-top: 8px;
@@ -500,6 +507,12 @@
 				position: absolute;
 				top: 0;
 				cursor: pointer;
+				background-color: $white;
+				color: $mainred;
+				font-weight: 500;
+				visibility: visible;
+				padding: 7px 23px 7px 26px;
+				font-size: 8px;
 			}
 			.main-btn.next-field, .main-btn.submit {
 				right: 0;
