@@ -24,11 +24,12 @@
 		}else if( is_front_page() ){
 			$content_class .= ' home';
 			$title      = get_field('header_title');
+			$subtitle = 'Offering the finest services in classic car sales, brokerage, and collection management';
 			$link_text  = get_field('call_to_action_text');
 			$link       = get_field('call_to_action_link');
 			$header_img = get_the_post_thumbnail_url();
 			$header_thumb = get_the_post_thumbnail_url( $post->ID,'blur' );
-			$subtitle = get_field('page_subtitle');
+// 			$subtitle = get_field('page_subtitle');
 		}else if( is_single() ){
 			$content_class = 'header-content single';
 			$title = offering_title();
@@ -119,6 +120,9 @@
 				  <div class='$content_class'>
 				  	<h1>$title</h1>";
 
+				  	if(is_front_page()){
+					  	echo "<div class='sub_heading'>";
+				  	}
 				  	if($subtitle){
 					  	echo "<p>$subtitle</p>";
 				  	}
@@ -127,6 +131,9 @@
 				  	}
 				  	if($media_btn && $media_embed){
 					  	echo "<div class='main-btn video_trigger' data-item='$media_json'>$media_btn</div>";
+				  	}
+				  	if(is_front_page()){
+					  	echo "</div>";
 				  	}
 				  	
 			echo  "</div>"; // End .$content_class
