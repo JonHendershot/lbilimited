@@ -442,6 +442,9 @@
 		bottom: -100px;
 		left: 0;
 		right: 0;
+		&:before {
+			 content: "";
+		}
 		
 		video {
 			z-index: 99;

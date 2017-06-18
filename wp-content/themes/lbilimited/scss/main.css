@@ -1166,6 +1166,8 @@ h4.tilt_title.flip:after {
 			z-index: 9;
 		}
 */ }
+    .site-header.single .featured-media-wrapper:before {
+      content: ""; }
     .site-header.single .featured-media-wrapper video {
       z-index: 99; }
     .site-header.single .featured-media-wrapper img, .site-header.single .featured-media-wrapper video {
