@@ -9,8 +9,8 @@
 	// Let's declare a price variable and figure out which category we're in first
 		$price;
 		$category_list = array(
-			'past' => 4,
-			'current' => 3
+			'past' => 265,
+			'current' => 264
 		);
 		$category = get_field('display_content');
 		$category_id = $category_list[$category];
@@ -22,11 +22,16 @@
 	
 	// Now let's set up our loop
 		$args = array(
-			'cat' => $category_id,
 			'post_type' => 'offerings',
 			'posts_per_page' => -1,
 			'orderby' => 'menu_order',
-			'order' => 'ASC'
+			'order' => 'ASC',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'offering_type',
+					'terms' => $category_id	
+				)
+			)
 		);
 		$query = new WP_Query( $args );
 		
