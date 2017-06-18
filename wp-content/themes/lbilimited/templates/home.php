@@ -45,7 +45,6 @@
 			while( $query->have_posts() ) : $query->the_post();
 			
 				if($post_type == 'offerings'){
-					if(in_category($cat)){
 						// Variables
 							$_posttitle = get_the_title();
 							$post_link = get_the_permalink();
@@ -56,7 +55,7 @@
 							}else {
 								$image_url = get_the_post_thumbnail_url('medium');
 							}
-					}
+					
 				}else {
 					// Variables
 						$post_title = get_the_title();
