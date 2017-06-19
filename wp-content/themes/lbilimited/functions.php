@@ -544,7 +544,7 @@ function update_past_offerings_media(){
 		////////////
 		// Only run for posts > ID = 350 to exclude sample posts
 		////////////
-		if( $offering_id == 73134 ) {
+		if( $offering_id > 350 ) {
 
 		
 			////////////
@@ -584,9 +584,11 @@ function update_past_offerings_media(){
 			////////////
 			// Uncomment to output the number of elements matched and the $meta_value_array to check our work
 			////////////
-				echo "<h1>$uploaded_number</h1><pre>";
+/*
+				echo "<pre>";
 					print_r($meta_value_array);
 				echo "</pre>";
+*/
 			
 			////////////
 			// Update the posts meta information with $meta_value
