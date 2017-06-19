@@ -132,6 +132,10 @@
 					?>
 				</div>
 			</div>
+			<?php 
+				// Only show Filters IF there's more than one category of photos present
+				if( count($categories) > 1) :
+			?>
 			<div id="image_filters">
 				<div class="featured_image_filter_wrapper">
 					<i class="fa fa-filter"></i>
@@ -159,6 +163,7 @@
 				</div>
 				<span class="gallery_trigger detailed_trigger" data-gallery="reg">View detailed photos</span>
 			</div>
+			<?php endif; ?>
 		</div>
 		<div class="featured_image_showcase reg">
 			<div class="featured_image_slider_container">
@@ -220,6 +225,10 @@
 					?>
 				</div>
 			</div>
+			<?php 
+				// Only show Filters IF there's more than one category of photos present
+				if( count($categories) > 1) :
+			?>
 			<div id="image_filters">
 				<div class="featured_image_filter_wrapper">
 					<i class="fa fa-filter"></i>
@@ -247,6 +256,7 @@
 				</div>
 				<span class="gallery_trigger detailed_trigger" data-gallery="glam">View glam photos</span>
 			</div>
+			<?php endif; ?>
 		</div>
 	</section>
 
