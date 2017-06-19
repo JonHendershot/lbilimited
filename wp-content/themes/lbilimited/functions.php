@@ -175,6 +175,15 @@ add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
         return $attachment[0]; 
 }
 
+  //////////////////////////////////////////
+ /// Incerase Max Size of Media Uploads ///
+//////////////////////////////////////////
+/*
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
+*/
+
   //////////////////////////////////////////////////////
  /// Add an image size to use for blur placeholders ///
 //////////////////////////////////////////////////////
@@ -500,3 +509,7 @@ function delete_post_children($post_id) {
 }
 add_action('delete_post', 'delete_post_children');
 */
+
+function update_sliders(){
+	return
+}
