@@ -75,7 +75,7 @@
 				}
 				
 			// Markup for offering display
-?>
+?>				<a href="<?php the_permalink(); ?>">
 				<article class="<?php echo $offer_class; ?>">
 					<div class="offering-data dash-title">
 						<div class="offering-meta">
@@ -84,7 +84,7 @@
 						</div>
 						<div class="offering-price">
 							<span class="price"><?php echo $price; ?></span>
-							<a href="<?php the_permalink(); ?>">Learn More +</a>
+							<span class="learn-more">Learn More +</span>
 						</div>
 					</div>
 					
@@ -105,6 +105,7 @@
 						} // end video if
 					?>
 				</article>	
+				</a>
 		
 <?php
 	
