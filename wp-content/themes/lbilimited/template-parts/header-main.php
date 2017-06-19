@@ -31,6 +31,7 @@
 			$header_thumb = get_the_post_thumbnail_url( $post->ID,'blur' );
 // 			$subtitle = get_field('page_subtitle');
 		}else if( is_single() ){
+			$post_type = get_post_type();
 			$content_class = 'header-content single';
 			$title = offering_title();
 			$price_val = get_field('price');
@@ -46,6 +47,14 @@
 			$featured_img = get_field('featured_image');
 			$featured_img_url = $featured_img['url'];
 			$feat_alt = $featured_img['alt'];
+			
+			
+			if( $post_type = 'offerings' ){
+				$photos_array = get_field('exterior_glam');
+				$featured_img_url = $photos_array[0]['url'];
+				$feat_alt = $photos_array[0]['alt'];
+			}
+			
 			
 		}else if( is_404() ) {
 			$title = 'oooops!';
