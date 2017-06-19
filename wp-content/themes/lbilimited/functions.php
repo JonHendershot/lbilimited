@@ -548,9 +548,16 @@ function update_past_offerings_media(){
 
 		
 			////////////
-			// Get all image attachments for post
+			// Get all image attachments for this post
 			////////////	
-			$attached_images = get_attached_media( 'image/jpeg', $offering_id );
+			$media = get_posts(array(
+			    'post_parent' => $offering_id,
+			    'post_type' => 'attachment',
+			    'post_mime_type' => 'image/jpeg',
+			    'orderby' => 'post_date',
+			    'order' => 'ASC',
+			    'posts_per_page' => -1
+			));
 			
 			////////////
 			// See how many image attachments have been uploaded to this post and establish the gallery meta_value
@@ -562,18 +569,20 @@ function update_past_offerings_media(){
 			////////////
 			// FOR EACH image uploaded to this post 
 			////////////
-			foreach($attached_images as $image){
+			foreach($media as $image){
 				
 			
 				////////////
 				// Get this image's ID information
 				////////////
 					$photo_id = $image->ID;
+
 				
 				////////////
 				// Append this image's id information to $meta_value_array
 				////////////
 					$meta_value_array[] = $photo_id;
+					
 					
 			////////////
 			// End for each
@@ -586,7 +595,7 @@ function update_past_offerings_media(){
 			////////////
 /*
 				echo "<pre>";
-					print_r($meta_value_array);
+					print_r($media);
 				echo "</pre>";
 */
 			

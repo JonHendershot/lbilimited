@@ -6,5 +6,5 @@
 
 
 get_header();
-// update_past_offerings_media();
+update_past_offerings_media();
 get_footer();
