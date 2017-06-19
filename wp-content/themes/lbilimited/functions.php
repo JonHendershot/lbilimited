@@ -509,9 +509,102 @@ function delete_post_children($post_id) {
 }
 add_action('delete_post', 'delete_post_children');
 */
-/*
 
-function update_sliders(){
-	return
+function update_past_offerings_media(){
+		
+	////////////
+	// Select all past-offerings posts 
+	////////////
+	wp_reset_query();
+	$args = array(
+		'post_type' => 'offerings',
+		'posts_per_page' => -1,
+		'orderby' => 'menu_order',
+		'order' => 'ASC',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'offering_type',
+				'terms' => 265	
+			)
+		)
+	);
+	$query = new WP_Query( $args );
+	
+	////////////
+	// WHILE past-offerings post
+	////////////
+	while( $query->have_posts() ) : $query->the_post();
+		
+		////////////
+		// Select the post ID 
+		////////////
+		$offering_id = get_the_ID();
+		
+			
+		////////////
+		// Only run for posts > ID = 350 to exclude sample posts
+		////////////
+		if( $offering_id == 73134 ) {
+
+		
+			////////////
+			// Get all image attachments for post
+			////////////	
+			$attached_images = get_attached_media( 'image/jpeg', $offering_id );
+			
+			////////////
+			// See how many image attachments have been uploaded to this post and establish the gallery meta_value
+			// 		as per WP docs, the meta_value should be passed as a raw array - the database will serialize it before 
+			//		it's inserted, so we just need to save each image post ID as an array value
+			////////////
+			$meta_value_array = array();
+			
+			////////////
+			// FOR EACH image uploaded to this post 
+			////////////
+			foreach($attached_images as $image){
+				
+			
+				////////////
+				// Get this image's ID information
+				////////////
+					$photo_id = $image->ID;
+				
+				////////////
+				// Append this image's id information to $meta_value_array
+				////////////
+					$meta_value_array[] = $photo_id;
+					
+			////////////
+			// End for each
+			////////////
+			}
+
+			
+			////////////
+			// Uncomment to output the number of elements matched and the $meta_value_array to check our work
+			////////////
+				echo "<h1>$uploaded_number</h1><pre>";
+					print_r($meta_value_array);
+				echo "</pre>";
+			
+			////////////
+			// Update the posts meta information with $meta_value
+			////////////
+			update_post_meta( $offering_id, 'exterior_glam', $meta_value_array);
+
+
+			
+		////////////
+		// END if: ID>350
+		////////////
+		}
+				
+	////////////
+	// End WHILE past-offerings post
+	////////////
+	endwhile;
 }
-*/
+
+
+
