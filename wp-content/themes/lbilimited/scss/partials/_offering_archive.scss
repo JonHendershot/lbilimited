@@ -50,10 +50,10 @@ section.offerings-container {
 			position: relative;
 			margin-top: 60px;
 			@include max-content(width);
+			max-width: 46%;
 			
 			.offering-meta {
 				position: relative;
-				max-width: 375px;
 				margin-left: 80px;
 				h2 {
 					font-size: 48px;
@@ -89,7 +89,7 @@ section.offerings-container {
 					margin: 10px 0 0;
 					padding-left: 3px;
 					opacity: 0;
-					
+					max-width: 75%;
 					@include easeout($transition_speed);
 					transition-delay: 0ms;
 				}

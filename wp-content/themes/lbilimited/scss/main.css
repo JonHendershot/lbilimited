@@ -4928,10 +4928,10 @@ section.offerings-container article.offering {
     width: max-content;
     width: -webkit-max-content;
     width: -moz-max-content;
-    width: -moz-fit-content; }
+    width: -moz-fit-content;
+    max-width: 46%; }
     section.offerings-container article.offering .offering-data .offering-meta {
       position: relative;
-      max-width: 375px;
       margin-left: 80px; }
       section.offerings-container article.offering .offering-data .offering-meta h2 {
         font-size: 48px;
@@ -4972,6 +4972,7 @@ section.offerings-container article.offering {
         margin: 10px 0 0;
         padding-left: 3px;
         opacity: 0;
+        max-width: 75%;
         -webkit-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
         -moz-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
         -o-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
