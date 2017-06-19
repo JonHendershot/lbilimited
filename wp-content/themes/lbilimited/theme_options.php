@@ -322,7 +322,7 @@ function LBI_register_settings()
 		      'class'     => ' left-float header_image loading_img'
 		    );
 		
-		    add_settings_field( 'loading_img', 'Loading Icon', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_misc_section', $field_args );
+		    add_settings_field( 'loading_img', 'Loading Screen Icon', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_misc_section', $field_args );
 	
 
 }
