@@ -5864,7 +5864,7 @@ body.single .contact_form:after {
   content: none; }
 
 .featured_image_sliders {
-  margin: 55px 0;
+  margin: 55px 0 75px;
   position: relative; }
 
 .featured_image_showcase {
@@ -6011,7 +6011,7 @@ body.single .contact_form:after {
     justify-content: space-between;
     -webkit-justify-content: space-between;
     padding: 0;
-    margin: 25px 0;
+    margin: 25px 0 0;
     position: relative; }
     .featured_image_showcase #image_filters .featured_image_filter_wrapper {
       display: flex;
