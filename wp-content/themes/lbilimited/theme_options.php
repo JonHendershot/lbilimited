@@ -310,6 +310,19 @@ function LBI_register_settings()
 	    );
 	
 	    add_settings_field( 'offering_form', 'Offerings Contact Form Shortcode', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_misc_section', $field_args );
+	    
+		// Image For Loading Screen
+		    $field_args = array(
+		      'type'      => 'text',
+		      'id'        => 'loading_img',
+		      'name'      => 'loading_img',
+		      'desc'      => '<input data-category="loading_img" class="left-float image-trigger" type="button" value="Upload Image"><p>Logo Image to Display in on Loading Screen</p>',
+		      'std'       => '',
+		      'label_for' => 'results_header',
+		      'class'     => ' left-float header_image loading_img'
+		    );
+		
+		    add_settings_field( 'loading_img', 'Loading Icon', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_misc_section', $field_args );
 	
 
 }
