@@ -509,7 +509,9 @@ function delete_post_children($post_id) {
 }
 add_action('delete_post', 'delete_post_children');
 */
+/*
 
 function update_sliders(){
 	return
 }
+*/
