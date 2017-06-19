@@ -13,6 +13,7 @@
 	$header_class = 'vhfix site-header';
 	$post_type = get_post_type();
 	$logo = $options['LBI_logo'];
+	$loading_icon = $options['loading_img'];
 	
 	// Setup dynamic page-type class to establish different styles for css
 	if( is_single() ){
@@ -36,8 +37,7 @@
 <body <?php body_class(); ?>>
 	<div id="pre_loader">
 		<div class="ribbon"></div>
-		<img src="<?php echo get_template_directory_uri() . '/inc/images/load.gif'; ?>" class="gif" />
-		<img src="<?php echo get_template_directory_uri() . '/inc/images/dark_logo.png'; ?>" />
+		<img src="<?php echo $loading_icon; ?>" />
 	</div>
 	<div id="page" class="site">		
 		<header id="masthead" class="<?php echo $header_class; ?>" role="banner">
