@@ -161,7 +161,7 @@
 					<i class="fa fa-square-o"></i>
 					<i class="fa fa-chevron-up arrow"></i>
 				</div>
-				<span class="gallery_trigger detailed_trigger" data-gallery="reg">View detailed photos</span>
+				<div class="gallery_trigger detailed_trigger" data-gallery="reg">View detailed photos</div>
 			</div>
 			<?php endif; ?>
 		</div>
@@ -254,7 +254,7 @@
 					<i class="fa fa-square-o"></i>
 					<i class="fa fa-chevron-up arrow"></i>
 				</div>
-				<span class="gallery_trigger detailed_trigger" data-gallery="glam">View glam photos</span>
+				<div class="gallery_trigger glam_trigger" data-gallery="glam">View glam photos</div>
 			</div>
 			<?php endif; ?>
 		</div>

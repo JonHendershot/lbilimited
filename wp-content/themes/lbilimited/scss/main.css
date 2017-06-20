@@ -5918,8 +5918,9 @@ body.single .contact_form:after {
       -o-transform: translateY(0) !important; }
     .featured_image_showcase.in_lightbox #image_filters {
       margin: 0;
-      padding: 10px;
-      background-color: rgba(0, 0, 0, 0.97); }
+      padding: 0px;
+      background-color: rgba(0, 0, 0, 0.97);
+      overflow: visible; }
       .featured_image_showcase.in_lightbox #image_filters i, .featured_image_showcase.in_lightbox #image_filters span, .featured_image_showcase.in_lightbox #image_filters span:before, .featured_image_showcase.in_lightbox #image_filters span:after {
         color: #fff !important; }
       .featured_image_showcase.in_lightbox #image_filters .show_filter_trigger {
@@ -6012,8 +6013,10 @@ body.single .contact_form:after {
     justify-content: space-between;
     -webkit-justify-content: space-between;
     padding: 0;
-    margin: 25px 0 0;
-    position: relative; }
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    background-color: #eeeeee; }
     .featured_image_showcase #image_filters .featured_image_filter_wrapper {
       display: flex;
       display: -webkit-flex;
@@ -6025,7 +6028,8 @@ body.single .contact_form:after {
       -webkit-justify-content: flex-start; }
       .featured_image_showcase #image_filters .featured_image_filter_wrapper i {
         margin-bottom: 2px;
-        font-size: 14px; }
+        font-size: 14px;
+        color: #191B1C; }
       .featured_image_showcase #image_filters .featured_image_filter_wrapper ul {
         display: flex;
         display: -webkit-flex;
@@ -6091,9 +6095,9 @@ body.single .contact_form:after {
           -ms-transform: scaleX(1);
           -o-transform: scaleX(1);
           opacity: 1; }
-    .featured_image_showcase #image_filters .detailed_trigger {
+    .featured_image_showcase #image_filters .gallery_trigger {
       margin-right: -4px; }
-      .featured_image_showcase #image_filters .detailed_trigger:before, .featured_image_showcase #image_filters .detailed_trigger:after {
+      .featured_image_showcase #image_filters .gallery_trigger:before, .featured_image_showcase #image_filters .gallery_trigger:after {
         font-family: 'fontawesome';
         font-size: 12px;
         color: #191B1C;
@@ -6103,13 +6107,13 @@ body.single .contact_form:after {
         -o-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
         transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
         /* custom */ }
-    .featured_image_showcase #image_filters span {
+    .featured_image_showcase #image_filters span, .featured_image_showcase #image_filters .gallery_trigger {
       font-size: 11px;
       text-transform: uppercase;
       font-weight: 500;
       color: #191B1C;
       letter-spacing: 4px;
-      line-height: 19px;
+      line-height: 21px;
       cursor: pointer;
       position: relative; }
     .featured_image_showcase #image_filters .show_filter_trigger {
@@ -6159,6 +6163,54 @@ body.single .contact_form:after {
         -moz-transform: translateY(110%) scaleY(-1) !important;
         -ms-transform: translateY(110%) scaleY(-1) !important;
         -o-transform: translateY(110%) scaleY(-1) !important; }
+    .featured_image_showcase #image_filters .gallery_trigger {
+      color: #fff; }
+      .featured_image_showcase #image_filters .gallery_trigger:after, .featured_image_showcase #image_filters .gallery_trigger:before {
+        color: #fff; }
+      .featured_image_showcase #image_filters .gallery_trigger:hover.glam_trigger:after {
+        transform: skew(24deg) translateX(-5%);
+        -webkit-transform: skew(24deg) translateX(-5%);
+        -moz-transform: skew(24deg) translateX(-5%);
+        -ms-transform: skew(24deg) translateX(-5%);
+        -o-transform: skew(24deg) translateX(-5%); }
+      .featured_image_showcase #image_filters .gallery_trigger:hover.detailed_trigger:before {
+        transform: skew(-24deg) translateX(5%);
+        -webkit-transform: skew(-24deg) translateX(5%);
+        -moz-transform: skew(-24deg) translateX(5%);
+        -ms-transform: skew(-24deg) translateX(5%);
+        -o-transform: skew(-24deg) translateX(5%); }
+    .featured_image_showcase #image_filters .featured_image_filter_wrapper, .featured_image_showcase #image_filters .gallery_trigger {
+      padding: 10px;
+      position: relative;
+      z-index: 1; }
+    .featured_image_showcase #image_filters .detailed_trigger:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 115%;
+      background-color: #962F32;
+      transform: skew(-24deg) translateX(7%);
+      -webkit-transform: skew(-24deg) translateX(7%);
+      -moz-transform: skew(-24deg) translateX(7%);
+      -ms-transform: skew(-24deg) translateX(7%);
+      -o-transform: skew(-24deg) translateX(7%);
+      z-index: -1; }
+    .featured_image_showcase #image_filters .glam_trigger:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 120%;
+      background-color: #962F32;
+      transform: skew(24deg) translateX(-7%);
+      -webkit-transform: skew(24deg) translateX(-7%);
+      -moz-transform: skew(24deg) translateX(-7%);
+      -ms-transform: skew(24deg) translateX(-7%);
+      -o-transform: skew(24deg) translateX(-7%);
+      z-index: -1; }
   .featured_image_showcase.reg {
     position: absolute;
     top: 0;
@@ -6190,10 +6242,10 @@ body.single .contact_form:after {
             letter-spacing: 4px;
             line-height: 19px;
             padding-bottom: 2px; }
-      .featured_image_showcase.reg #image_filters .detailed_trigger:before {
+      .featured_image_showcase.reg #image_filters .glam_trigger:before {
         content: "\f060";
         margin-right: 8px; }
-      .featured_image_showcase.reg #image_filters .detailed_trigger:hover:before {
+      .featured_image_showcase.reg #image_filters .glam_trigger:hover:before {
         transform: translateX(-4px);
         -webkit-transform: translateX(-4px);
         -moz-transform: translateX(-4px);
@@ -6205,10 +6257,10 @@ body.single .contact_form:after {
     -moz-transform: translateX(-101%);
     -ms-transform: translateX(-101%);
     -o-transform: translateX(-101%); }
-    .featured_image_showcase.glam #image_filters .detailed_trigger:after {
+    .featured_image_showcase.glam #image_filters .gallery_trigger:after {
       content: "\f061";
       margin-left: 8px; }
-    .featured_image_showcase.glam #image_filters .detailed_trigger:hover:after {
+    .featured_image_showcase.glam #image_filters .gallery_trigger:hover:after {
       transform: translateX(4px);
       -webkit-transform: translateX(4px);
       -moz-transform: translateX(4px);

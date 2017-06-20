@@ -345,8 +345,9 @@ body.single {
 		}
 		#image_filters {
 			margin: 0;
-			padding: 10px;
+			padding: 0px;
 			background-color: rgba(0,0,0,0.97);
+			overflow: visible;
 			i, span, span:before, span:after {
 				color: $white !important;
 			}
@@ -357,7 +358,6 @@ body.single {
 		}
 		.jspContainer {
 			height: 128px !important;
-			
 			.featured_slide {
 				height: 120px !important;
 				width: 180px !important;
@@ -426,15 +426,18 @@ body.single {
 	#image_filters{
 		@include flexbox(center,space-between);
 		padding: 0;
-		margin: 25px 0 0;
+		margin: 0;
 		position: relative;
-
+		overflow: hidden;
+		background-color: $altgray;
+// 		margin-top: 5px;
 		.featured_image_filter_wrapper {
 			@include flexbox(center,flex-start);
 			
 			i {
 				margin-bottom: 2px;
 				font-size: 14px;
+				color: $black;
 			}
 			
 			ul {
@@ -478,7 +481,7 @@ body.single {
 				}
 			}
 		}
-		.detailed_trigger {
+		.gallery_trigger {
 			margin-right: -4px;
 			
 			&:before, &:after {
@@ -489,13 +492,13 @@ body.single {
 				@include easeout(600ms);
 			}
 		}
-		span {
+		span, .gallery_trigger {
 			font-size: 11px;
 			text-transform: uppercase;
 			font-weight: 500;
 			color: $black;
 			letter-spacing: 4px;
-			line-height: 19px;
+			line-height: 21px;
 			cursor: pointer;
 			position: relative;
 		}
@@ -537,6 +540,49 @@ body.single {
 			}
 		}
 		
+		.gallery_trigger {
+			color: $white;
+			
+			&:after, &:before {
+				color: $white;
+			}
+			
+			&:hover {
+				&.glam_trigger:after {
+					@include prefix(transform, skew(24deg) translateX(-5%));
+				}
+				&.detailed_trigger:before {
+					@include prefix(transform, skew(-24deg) translateX(5%));
+				}
+			}
+		}
+		.featured_image_filter_wrapper, .gallery_trigger {
+			padding: 10px;
+			position: relative;
+			z-index: 1;
+		}
+		.detailed_trigger:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: 115%;
+			background-color: $mainred;
+			@include prefix(transform, skew(-24deg) translateX(7%));
+			z-index: -1;
+		}
+		.glam_trigger:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 120%;
+			background-color: $mainred;
+			@include prefix(transform, skew(24deg) translateX(-7%));
+			z-index: -1;
+		}
 	}
 	
 	&.reg {
@@ -576,7 +622,7 @@ body.single {
 				}
 			}
 			
-			.detailed_trigger {
+			.glam_trigger {
 				&:before {
 					content: "\f060";	
 					margin-right: 8px;
@@ -591,7 +637,7 @@ body.single {
 		@include prefix(transform, translateX(-101%));
 		
 		#image_filters {
-			.detailed_trigger{
+			.gallery_trigger{
 				&:after {
 					content: "\f061";
 					margin-left: 8px;
