@@ -27,7 +27,7 @@
 			$subtitle = 'Offering the finest services in classic car sales, brokerage, and collection management';
 			$link_text  = get_field('call_to_action_text');
 			$link       = get_field('call_to_action_link');
-			$header_img = get_the_post_thumbnail_url();
+			$header_img = get_the_post_thumbnail_url($post->ID, 'large');
 			$header_thumb = get_the_post_thumbnail_url( $post->ID,'blur' );
 // 			$subtitle = get_field('page_subtitle');
 		}else if( is_single() ){
@@ -71,7 +71,7 @@
 			$content_class .= ' page archive';
 			$title = get_the_title( $post_id );
 			$subtitle = get_field('page_subtitle');
-			$header_img = get_the_post_thumbnail_url( $post_id, 'large' );
+			$header_img = get_the_post_thumbnail_url( $post_id, 'full' );
 			$header_thumb = get_the_post_thumbnail_url( $post_id, 'blur' );
 			$featured_image_frame = get_field('featured_image_framing', $post_id);
 		}else {
