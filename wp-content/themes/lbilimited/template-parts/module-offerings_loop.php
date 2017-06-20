@@ -14,6 +14,7 @@
 		);
 		$category = get_field('display_content');
 		$category_id = $category_list[$category];
+		$post_count = 1;
 	
 	// If we're in the Past Offerings category - our price variable should be locked to 'sold' for each item, otherwise, we'll set it in the loop
 		if($category == 'past'){
@@ -43,7 +44,7 @@
 				$title = offering_title();
 				$offer_class = "offering";
 				$media_class = "offering-fmedia";
-				
+				$post_id = get_the_ID();
 				
 				
 				// grab the featured file information to dynamically generate display markup
@@ -75,7 +76,7 @@
 				}
 				
 			// Markup for offering display
-?>				<a href="<?php the_permalink(); ?>">
+?>				<a href="<?php the_permalink(); ?>" id="<?php echo "post-$post_id"; ?>">
 				<article class="<?php echo $offer_class; ?>">
 					<div class="offering-data dash-title">
 						<div class="offering-meta">
@@ -92,7 +93,12 @@
 						
 						if($featured_image){
 							// Display Image background
-							echo "<img src='$fimage_url' class='$media_class' />";
+							if($post_count > 5){
+								echo "<img data-src='$fimage_url' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' class='$media_class lazy-load' />";
+							}else {
+								echo "<img src='$fimage_url' class='$media_class' />";
+							}
+							
 						}
 						
 						if($featured_video){
@@ -110,5 +116,6 @@
 <?php
 	
 	// End Loop
+		$post_count++;
 		endwhile;
 		wp_reset_query();

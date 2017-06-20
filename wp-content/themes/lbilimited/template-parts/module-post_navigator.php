@@ -4,10 +4,10 @@
 						// Setup the archive post link to take users back to the archive page
 							$post_type = get_post_type();
 							if($post_type == 'offerings'){
-								if(in_category('current-offerings')){
+								if(has_term('current-offerings','offering_type')){
 									$slug = 'current-offerings';
 								}else 
-								if( in_category('past-offerings')){
+								if( has_term('past-offerings','offering_type')){
 									$slug = 'past-offerings';
 								}
 								
@@ -19,6 +19,7 @@
 							}
 							
 							$archive_link = home_url() . "/$slug";
+							$anchor = get_the_ID();
 					
 						// If we're on the first or last page, we need to disable the 
 						// appropriate navigation button, so we'll check that logic here
@@ -38,7 +39,7 @@
 								  		echo '<a class="posts-nav-link disabled" disabled>Previous Post</a>';
 							  		}
 							  		
-							  		echo "<a href='$archive_link' class='btn'>Back to Archive</a>";
+							  		echo "<a href='$archive_link#post-$anchor' class='btn'>Back to Archive</a>";
 							  		
 							  		if($next_post){
 								  		// Variables 
