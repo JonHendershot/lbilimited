@@ -142,7 +142,7 @@
 			@include prefix(transform, translateY(0px));
 		}
 		.header_meta {
-			@include prefix(transform, translateY(0px) !important);
+			@include prefix(transform, translateY(19px) !important);
 		}
 
 	}
@@ -182,25 +182,22 @@
 		    @include max-content(width);
 		    @include prefix(transform, translateY(-150px));
 		    @include easeout(600ms);
+		    text-align: center;
 		    
 		    p.title {
 			    
 			    color: white;
 			    font-size: 20px;
 			    margin: 0;
+			    text-align: center;
+			    margin-bottom: 6px;
 
 		    }
 		    p.price {
 			    
 			    margin: 0;
-			    position: absolute;
-			    bottom: 0;
-			    left: 0;
-			    right: 0;
-			    margin: auto;
-			    @include max-content(width);
+				display: inline-block;
 			    color: white;
-			    @include prefix(transform, translateY(138%));
 			    background-color: $mainred;
 			    padding: 2px 20px;
 
