@@ -619,3 +619,30 @@ function update_past_offerings_media(){
 
 
 
+function get_archive_page_num( $post_id ){
+	
+	$post_type = get_post_type( $post_id );
+	$index = '';
+	$archive_page_number = '';
+	$per_page = get_option('posts_per_page');
+	
+	$args = array(
+		'post_type' => $post_type,
+		'posts_per_page' => -1,
+		'orderby' => 'date',
+		'order' => 'DESC'
+	);
+	
+	$posts = get_posts( $args );
+	foreach($posts as $key=>$post){
+		$this_id = $post->ID;
+		
+		if($this_id === $post_id){
+			$index = $key;
+			$archive_page_number = ceil( $index / $per_page );
+		}
+	}
+	
+	return $archive_page_number;
+	
+}

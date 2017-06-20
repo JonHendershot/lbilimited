@@ -15,7 +15,10 @@
 							if($post_type == 'collection'){
 								$slug = 'lbi-collection';
 							}else {
-								$slug = 'in-the-news';
+								
+								$post_page = get_archive_page_num( $post->ID );
+								$slug = "in-the-news/page/$post_page/";
+
 							}
 							
 							$archive_link = home_url() . "/$slug";
