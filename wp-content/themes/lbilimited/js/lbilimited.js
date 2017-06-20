@@ -56,7 +56,7 @@ jQuery(window).load(function(){
 (function stickyMenu($){
 	var nav = $('.nav-wrapper'),
 		menu = $('#main_menu'),
-		windowHeight = window.innerHeight,
+		windowHeight = (window.innerHeight * 0.5),
 		lastScrollTop = window.pageYOffset;
 	
 	$(window).scroll(function(){
@@ -73,7 +73,7 @@ jQuery(window).load(function(){
 			console.log('remove sticky fired');
 		}
 		
-		if(scrollDistance > (windowHeight * 1.4) && ! nav.hasClass('hidden') && scrollDistance > lastScrollTop){
+		if(scrollDistance > (windowHeight * 2) && ! nav.hasClass('hidden') && scrollDistance > lastScrollTop && !$('body').hasClass('single-offerings')){
 			nav.addClass('hidden');
 			console.log('add hidden fired');
 		}
