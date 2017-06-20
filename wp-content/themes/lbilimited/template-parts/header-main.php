@@ -1,5 +1,5 @@
 <?php
-	// First, some variables
+	// First, set some variables
 		$link = '';
 		$link_text = '';
 		$title = '';
