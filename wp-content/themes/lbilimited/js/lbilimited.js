@@ -97,7 +97,7 @@ jQuery(window).load(function(){
 			var percentScrolled = ( scrollDistance / windowHeight ) * 2,
 				percentAnimate = (1 -  percentScrolled);
 			
-			if( percentAnimate > 0.3 ){
+			if( percentAnimate > 0.4 ){
 				if( scrollDistance < lastScrollTop && $('header .header-content').hasClass('hide') ){
 					$('header .header-content').removeClass('hide');
 				}
