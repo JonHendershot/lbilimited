@@ -50,6 +50,10 @@
 		padding: 180px 0 220px;
 		text-align: center;
 		position: relative;
+		.content {
+			z-index: 9999;
+			position: relative;
+		}
 		h3 {
 			color: $white;
 			font-weight: bold;

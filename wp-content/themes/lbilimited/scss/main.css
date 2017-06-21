@@ -1437,6 +1437,9 @@ body.page-template-media_house .site-header .main-btn {
   padding: 180px 0 220px;
   text-align: center;
   position: relative; }
+  .site-footer .newsletter-cta .content {
+    z-index: 9999;
+    position: relative; }
   .site-footer .newsletter-cta h3 {
     color: #fff;
     font-weight: bold;

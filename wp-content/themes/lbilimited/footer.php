@@ -45,9 +45,11 @@
 				if($foverlay_toggle == 'On'){
 					echo "<span class='media_overlay'></span>";
 				}
-				echo "<h3>$CTA_title</h3>
+				
+				echo "<div class='content'>
+				<h3>$CTA_title</h3>
 				<p>$CTA_sub</p>" .
-				do_shortcode($CTA_mailer);
+				do_shortcode($CTA_mailer) . '</div>';
 				
 			?>
 		</div>
