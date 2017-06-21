@@ -163,6 +163,21 @@ function LBI_register_settings()
 	      'class'     => ' left-float header_image in-the-news-photo'
 	    );
 	    add_settings_field( 'in-the-news-photo', 'Recent News Background Photo', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+	    
+
+    // Recent News Overlay
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'in-the-news-overlay',
+	      'name'      => 'in-the-news-overlay',
+	      'desc'      => '<select class="in-the-news-overlay" data-input="in-the-news-overlay"><option value="On">On</option><option value="Off">Off</option></select><p>Turn on if using a light photo to set a transparent dark overlay so that text remains visible</p>',
+	      'std'       => '',
+	      'label_for' => 'in-the-news-overlay',
+	      'class'     => ' css_class in-the-news-overlay i_select'
+	    );
+	
+	    add_settings_field( 'in-the-news-overlay', 'Recent News Image Overlay Toggle', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+
 	
 	// Current Offerings Photo
 	    $field_args = array(
@@ -176,6 +191,19 @@ function LBI_register_settings()
 	    );
 	    add_settings_field( 'current-offerings-photo', 'Current Offerings Background Photo', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
 
+    // Current Offerings Overlay
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'current-offerings-overlay',
+	      'name'      => 'current-offerings-overlay',
+	      'desc'      => '<select class="current-offerings-overlay" data-input="current-offerings-overlay"><option value="On">On</option><option value="Off">Off</option></select><p>Turn on if using a light photo to set a transparent dark overlay so that text remains visible</p>',
+	      'std'       => '',
+	      'label_for' => 'current-offerings-overlay',
+	      'class'     => ' css_class current-offerings-overlay i_select'
+	    );
+	
+	    add_settings_field( 'current-offerings-overlay', 'Current Offerings Image Overlay Toggle', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+
 	// Past Offerings Photo
 	    $field_args = array(
 	      'type'      => 'text',
@@ -188,6 +216,19 @@ function LBI_register_settings()
 	    );
 	    add_settings_field( 'past-offerings-photo', 'Past Offerings Background Photo', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
 	    
+    // Past Offerings Overlay
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'past-offerings-overlay',
+	      'name'      => 'past-offerings-overlay',
+	      'desc'      => '<select class="past-offerings-overlay" data-input="past-offerings-overlay"><option value="On">On</option><option value="Off">Off</option></select><p>Turn on if using a light photo to set a transparent dark overlay so that text remains visible</p>',
+	      'std'       => '',
+	      'label_for' => 'past-offerings-overlay',
+	      'class'     => ' css_class past-offerings-overlay i_select'
+	    );
+	
+	    add_settings_field( 'past-offerings-overlay', 'Past Offerings Image Overlay Toggle', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+	    
 	// Collection Photo
 	    $field_args = array(
 	      'type'      => 'text',
@@ -199,6 +240,20 @@ function LBI_register_settings()
 	      'class'     => ' left-float header_image collection-photo'
 	    );
 	    add_settings_field( 'collection-photo', 'Collection Background Photo', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+
+    // Collection Overlay
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'collection-overlay',
+	      'name'      => 'collection-overlay',
+	      'desc'      => '<select class="collection-overlay" data-input="collection-overlay"><option value="On">On</option><option value="Off">Off</option></select><p>Turn on if using a light photo to set a transparent dark overlay so that text remains visible</p>',
+	      'std'       => '',
+	      'label_for' => 'collection-overlay',
+	      'class'     => ' css_class collection-overlay i_select'
+	    );
+	
+	    add_settings_field( 'collection-overlay', 'Collection Image Overlay Toggle', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+	    
     
     
     
@@ -255,7 +310,7 @@ function LBI_register_settings()
 	
 	    add_settings_field( 'footer_background', 'Footer Background', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
 	    
-	    // Footer Overlay Framing
+	    // Footer Overlay
 		    $field_args = array(
 		      'type'      => 'text',
 		      'id'        => 'footer_overlay',

@@ -82,7 +82,7 @@ body.page-template-home {
 				margin: auto;
 				@include prefix(transform, skewX(-23deg) translateX(-47%));
 				background-color: $black;
-				z-index: 99;
+				z-index: 999;
 
 				box-shadow: 2px 0px 3px 0px rgba(0,0,0,0.50);
 

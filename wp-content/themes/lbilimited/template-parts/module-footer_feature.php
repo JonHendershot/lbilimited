@@ -12,8 +12,11 @@
 			$title = $feature['label'];
 			$slug = $feature['value'];
 			$photo_slug = $slug . '-photo';
+			$overlay_slug = $slug . '-overlay';
+			$overlay_toggle = $options[$overlay_slug];
 			$photo = $options[$photo_slug];
 			if($key <= 1){
+				
 		?>
 		
 		<a href="<?php echo home_url() . '/' . $slug; ?>" class="feature" style="background-image:url(<?php echo $photo; ?>);">
@@ -21,6 +24,10 @@
 				<div class="featured-heading"><?php echo $title; ?></div>
 				<div class="featured-link">Click to View</div>
 			</div>
+			<?php if($overlay_toggle == 'On'){
+				echo "<span class='media_overlay'></span>";
+				}
+			?>
 		</a>
 		<?php	
 		}

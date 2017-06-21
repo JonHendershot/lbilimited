@@ -8,6 +8,12 @@
 		$content_class = 'header-content off ';
 		$header_img = '';
 		$header_video = get_field('video_loop_file');
+		$overlay_toggle = get_field('overlay_toggle');
+		$media_overlay = '';
+		
+		if($overlay_toggle == 'On'){
+				$media_overlay = "<span class='media_overlay'></span>";
+			}
 		
 		// Call global options data and establish variables for the template -- this pulls information from the theme options found in the appearance menu, as established in theme_options.php
 		$options = get_option('lbilimited_options');
@@ -94,7 +100,10 @@
 			///////////////////////
 			
 			echo "
-				  <div class='featured-media-wrapper'>";
+				  <div class='featured-media-wrapper'>
+				  	$media_overlay";
+				  
+			
 	
 			if($file_type == 'video'){
 				echo "<video class='' autoplay loop>
@@ -133,6 +142,7 @@
 			echo "<div class='b_image_wrapper'>
 				  	<img src='$header_thumb' class='blur $featured_image_frame' />
 				  	<img data-src='$header_img' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' class='full_size lazy-load $featured_image_frame' />
+				  	$media_overlay
 				  </div>";
 			
 			if( $header_video ){
