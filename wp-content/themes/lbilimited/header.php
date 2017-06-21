@@ -17,7 +17,7 @@
 	
 	// Setup dynamic page-type class to establish different styles for css
 	if( is_single() ){
-		$header_type = 'single';
+		$header_type = 'single off timing';
 	}else {
 		$header_type = 'main';
 	}
@@ -52,11 +52,20 @@
 						$make = get_field('make');
 						$model = get_field('model');
 						$price_val = get_field('price');
+						$title = get_the_title();
 						$price = 'Offered at: $' . number_format($price_val,0,".",",");
-						echo "<div class='header_meta'>
-								<p class='title'>$year $make $model</p>
-								<p class='price'>$price</p>
-							  </div>";
+						
+						echo "<div class='header_meta'>";
+						if( $year && $make ){
+							echo "<p class='title'>$year $make $model</p>";
+						}else {
+							echo "<p class='title'>$title</p>";
+						}
+						if($price){
+							echo "<p class='price'>$price</p>";
+						}
+								
+						echo "</div>";
 					}
 					?>
 					<div class="search_menu_container">

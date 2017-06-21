@@ -427,7 +427,7 @@ function offering_title(){
 		
 		// if we have enough delineated information, we'll set year make model to break out, otherwise we'll just use the normal post title
 		if( $year && $make ){
-			$title = "<span>$year</span><span>$make</span><span>$model</span>";
+			$title = "<span class='layer-0'>$year</span><span class='layer-1'>$make</span><span class='layer-2'>$model</span>";
 		}else {
 			$title_content = get_the_title();
 			$title = "<span>$title_content</span>";

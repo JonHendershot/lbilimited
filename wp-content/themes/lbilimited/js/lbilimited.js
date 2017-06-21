@@ -17,6 +17,14 @@ jQuery(window).load(function(){
 	setTimeout(function(){
 		$('.header-content.off').removeClass('off');
 	},700);
+	if($('.site-header').hasClass('off')){
+		setTimeout(function(){
+			$('.site-header').removeClass('off');
+		}, 500);
+		setTimeout(function(){
+			$('.site-header').removeClass('timing');
+		},1200)
+	}
 	
 });
 
@@ -57,7 +65,8 @@ jQuery(window).load(function(){
 	var nav = $('.nav-wrapper'),
 		menu = $('#main_menu'),
 		windowHeight = (window.innerHeight * 0.5),
-		lastScrollTop = window.pageYOffset;
+		lastScrollTop = window.pageYOffset,
+		titleSpans = $('header .header-content h1 span');
 	
 	$(window).scroll(function(){
 		var scrollDistance = window.pageYOffset;
@@ -80,6 +89,45 @@ jQuery(window).load(function(){
 		if(scrollDistance < lastScrollTop && nav.hasClass('hidden')){
 			nav.removeClass('hidden');
 			console.log('remove hidden fired');
+		}
+		
+		
+		// Animate Header Title Off of Page 
+		if( $('body.single-offerings').length ){
+			var percentScrolled = ( scrollDistance / windowHeight ) * 2,
+				percentAnimate = (1 -  percentScrolled);
+			
+			if( percentAnimate > 0.3 ){
+				if( scrollDistance < lastScrollTop && $('header .header-content').hasClass('hide') ){
+					$('header .header-content').removeClass('hide');
+				}
+
+				for(var i = 0; i <= titleSpans.length; i++){
+					var adjust = ( i + 1 ) / 1.5,
+						move = scrollDistance * adjust * -1;
+					$('header .header-content h1 span.layer-' + i).css({
+						'transform':'translateX('+ move +'px)',
+						'opacity'  : percentAnimate
+					});	
+				}
+				$('header .header-content .geo_elem').css({
+					'transition' : '0ms all linear',
+					'transform' : 'translate3d(-77px, -10px, 0) skew(-15deg) scaleX(' + percentAnimate + ')',
+				});		
+				
+				$('header .header-content p.price .banner').css({
+					'transform' : 'scaleY(' + percentAnimate  + ')'
+				});
+				$('header .header-content p.price .price-wrapper').css({
+					'transform' : 'translateY(' + (35 * percentScrolled) * -1 + 'px)',
+					'opacity' : percentAnimate
+				});
+				console.log('animating');
+			}else if(!$('header .header-content').hasClass('hide')){
+				$('header .header-content').addClass('hide');
+			}
+			
+			
 		}
 		lastScrollTop = scrollDistance;
 	});
@@ -1319,3 +1367,13 @@ function ppNextField(currentFieldID, nextFieldID){
 		});
 	}
 }(jQuery));
+
+function throttle(fn, wait) {
+  var time = Date.now();
+  return function() {
+    if ((time + wait - Date.now()) < 0) {
+      fn();
+      time = Date.now();
+    }
+  }
+}

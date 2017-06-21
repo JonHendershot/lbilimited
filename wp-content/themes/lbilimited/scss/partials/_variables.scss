@@ -93,6 +93,12 @@ $menu_width: 95%;
      -o-transition: all $time cubic-bezier(0.375, 0.005, 0.000, 1.000); 
         transition: all $time cubic-bezier(0.375, 0.005, 0.000, 1.000); /* custom */
 }
+@mixin easeoutImportant($time){
+-webkit-transition: all $time cubic-bezier(0.375, 0.005, 0.000, 1.000) !important; 
+   -moz-transition: all $time cubic-bezier(0.375, 0.005, 0.000, 1.000) !important; 
+     -o-transition: all $time cubic-bezier(0.375, 0.005, 0.000, 1.000) !important; 
+        transition: all $time cubic-bezier(0.375, 0.005, 0.000, 1.000) !important; /* custom */
+}
 @mixin slideOut($time){
 -webkit-transition: transform $time cubic-bezier(0.375, 0.005, 0.000, 1.000), opacity $time cubic-bezier(0.375, 0.005, 0.000, 1.000), visibility $time cubic-bezier(0.375, 0.005, 0.000, 1.000); 
    -moz-transition: transform $time cubic-bezier(0.375, 0.005, 0.000, 1.000), opacity $time cubic-bezier(0.375, 0.005, 0.000, 1.000), visibility $time cubic-bezier(0.375, 0.005, 0.000, 1.000); 

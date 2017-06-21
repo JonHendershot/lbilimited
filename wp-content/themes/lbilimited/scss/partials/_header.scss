@@ -303,7 +303,7 @@
 	
 		
 		&.off {
-			&:before {
+			.geo_elem {
 				@include prefix(transform, translate3d(-77px, -10px,0) skew(-15deg) scaleX(0) !important);
 			}
 			h1 {
@@ -408,9 +408,42 @@
 			text-decoration: none;
 		}
 	} 
+	.header-content.hide {
+		h1 {
+			span {
+				opacity: 0 !important;
+				
+				&.layer-0 {
+					@include prefix(transform, translateX(-140px) !important);
+				}
+				&.layer-1 {
+					@include prefix(transform, translateX(-270px) !important);
+				}
+				&.layer-2 {
+					@include prefix(transform, translateX(-400px) !important);
+				}
+				
+			}	
+		}
+		span.geo_elem {
+			@include prefix(transform, translate3d(-77px, -10px, 0px) skew(-15deg) scaleX(0) !important);
+		}
+		p.price {
+			span.price-wrapper {
+				@include prefix(transform, translateY(-40px) !important);
+				opacity: 0 !important;
+			}
+			span.banner {
+				@include prefix(transform, scaleY(0) !important);
+			}
+		}
+	}
+	.header-content.animator * {
+			@include transition(0.6s, all, ease-out !important);
+		}
 }
 .site-header.main, .site-header.single {
-	.header-content:before { // :not(.home)
+	.geo_elem { // :not(.home)
 		content: "";
 		position: absolute;
 		background-color: $overlay_w;
@@ -504,6 +537,44 @@
 			z-index: 999;
 			position: relative;
 			margin-top: 20px;
+			background-color: transparent !important;
+			overflow: hidden;
+			.price-wrapper {
+				z-index: 9;
+				position: relative;
+				display: block;
+			}
+			.banner {
+				
+			    height: 100%;
+			    width: 100%;
+			    position: absolute;
+			    background-color: $mainred;
+			    top: 0;
+			    left: 0;
+			    z-index: 1;
+			    transform-origin: top;
+	
+			}
+		}
+	}
+	&.off {
+
+		@for $ii from 0 through 2 {
+			$num : ($ii + 1) * 0.75;
+			$dist : 50 * $num;
+			.layer-#{$ii}{
+				@include prefix(transform, translateX(#{-$dist}px) !important);
+			}
+		}
+		.featured-media-wrapper > img {
+			@include prefix(transform, translateY(100px));
+			opacity: 0 !important;
+		}
+	}
+	&.timing {
+		* {
+			@include easeoutImportant(1200ms);
 		}
 	}
 }
@@ -511,7 +582,10 @@
 	.featured-media-wrapper {
 		width: $menu_width;
 		padding-bottom: 53.84%;
-
+		img {
+		@include easeout(1200ms);
+		opacity: 1;
+		}
 	}
 }
 .site-header.single.collection, .site-header.single {
@@ -578,3 +652,4 @@ body.page-template-media_house {
 		transition-delay: 250ms;
 	}
 }
+

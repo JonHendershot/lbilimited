@@ -43,7 +43,7 @@
 			$file_exp = explode("/",$featured_type);
 			$file_type = $file_exp[0];
 			$header_img = $featured_file['url'];
-			$content_class .= " $framing";
+			$content_class .= " $framing animator off";
 			$featured_img = get_field('featured_image');
 			$featured_img_url = $featured_img['url'];
 			$feat_alt = $featured_img['alt'];
@@ -101,10 +101,14 @@
 				echo "<img src='$featured_img_url' class='' alt='$feat_alt' />";	
 			}
 			echo "<div class='$content_class'>
+				  	<span class='geo_elem'></span>
 				  	<h1>$title</h1>";
 				  	if($price_val){
 					  	$price = 'Offered at: $' . number_format($price_val,0,".",",");
-					  	echo "<p class='price main-btn'>$price</p>";
+					  	echo "<p class='price main-btn'>
+					  			<span class='price-wrapper'>$price</span>
+					  			<span class='banner'></span>
+					  		  </p>";
 				  	}  	
 			echo  "</div></div>";
 		}else {
@@ -127,6 +131,7 @@
 				  	<img data-src='$header_img' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' class='full_size lazy-load $featured_image_frame' />
 				  </div>
 				  <div class='$content_class'>
+				  	<span class='geo_elem'></span>
 				  	<h1>$title</h1>";
 
 				  	if(is_front_page()){
