@@ -286,15 +286,13 @@
 		object-fit: cover;
 	}
 	img.top {
-		top: 0;
+		object-position: center top;
 	}
 	img.bottom {
-		bottom: 0;
+		object-position: center bottom;
 	}
 	img.center {
-		top: 0;
-		bottom: 0;
-		margin: auto;
+		object-position: center center;
 	}
 	.header_video {
 		position: absolute;

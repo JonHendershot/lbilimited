@@ -964,13 +964,11 @@ h4.tilt_title.flip:after {
     height: 100%;
     object-fit: cover; }
   .site-header img.top {
-    top: 0; }
+    object-position: center top; }
   .site-header img.bottom {
-    bottom: 0; }
+    object-position: center bottom; }
   .site-header img.center {
-    top: 0;
-    bottom: 0;
-    margin: auto; }
+    object-position: center center; }
   .site-header .header_video {
     position: absolute;
     top: 0;
