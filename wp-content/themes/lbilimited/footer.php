@@ -40,9 +40,15 @@
 		?>
 		<div class="newsletter-cta" style="background-image: url(<?php echo $CTA_bg_image; ?>);">
 			<?php
+				
+				$foverlay_toggle = $options['footer_overlay'];
+				if($featured_toggle == 'On'){
+					echo "<span class='media_overlay'></span>";
+				}
 				echo "<h3>$CTA_title</h3>
 				<p>$CTA_sub</p>" .
 				do_shortcode($CTA_mailer);
+				
 			?>
 		</div>
 		<div class="footer-meta">
