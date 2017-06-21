@@ -42,7 +42,7 @@
 			<?php
 				
 				$foverlay_toggle = $options['footer_overlay'];
-				if($featured_toggle == 'On'){
+				if($foverlay_toggle == 'On'){
 					echo "<span class='media_overlay'></span>";
 				}
 				echo "<h3>$CTA_title</h3>
