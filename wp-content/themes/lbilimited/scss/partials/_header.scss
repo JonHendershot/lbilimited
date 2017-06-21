@@ -568,7 +568,7 @@
 			}
 		}
 		.featured-media-wrapper > img {
-			@include prefix(transform, translateY(100px));
+			@include prefix(transform, translateY(70px));
 			opacity: 0 !important;
 		}
 	}
