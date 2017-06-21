@@ -71,13 +71,7 @@
 				
 			// If we're in the Current Offering category, set the price here
 				if($category == 'current'){
-					$price_option = get_field('display_type');
-					if($price_option == 'display-price'){
-						$price_value = get_field('price');
-						$price = 'Offered at: $' . number_format($price_value,0,".",",");
-					}else {
-						$price = $price_option;
-					}
+					$price = get_offering_price();
 				}
 				
 			// Markup for offering display

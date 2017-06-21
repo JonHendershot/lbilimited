@@ -51,9 +51,8 @@
 						$year = get_field('year');
 						$make = get_field('make');
 						$model = get_field('model');
-						$price_val = get_field('price');
 						$title = get_the_title();
-						$price = 'Offered at: $' . number_format($price_val,0,".",",");
+						$price = get_offering_price();
 						
 						echo "<div class='header_meta'>";
 						if( $year && $make ){
@@ -61,9 +60,8 @@
 						}else {
 							echo "<p class='title'>$title</p>";
 						}
-						if($price){
-							echo "<p class='price'>$price</p>";
-						}
+						echo "<p class='price'>$price</p>";
+						
 								
 						echo "</div>";
 					}

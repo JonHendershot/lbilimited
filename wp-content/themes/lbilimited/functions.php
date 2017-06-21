@@ -646,3 +646,29 @@ function get_archive_page_num( $post_id ){
 	return $archive_page_number;
 	
 }
+
+
+  /////////////////////////////////////////////////////////////////////////////
+ /// Function to get the price of an offering - to be used inside the post ///
+/////////////////////////////////////////////////////////////////////////////
+function get_offering_price(){
+	
+	$price_option = get_field('display_type');
+	if( $price_option ){
+		if( $price_option == 'display-price' ){
+		
+			$price_value = get_field('price');
+			if( $price_value ){
+				$price = 'Offered at: $' . number_format($price_value,0,".",",");
+			}
+			
+		}else {
+			$price = $price_option;
+		}
+	}else {
+		$price = false;
+	}
+
+	return $price;
+	
+}

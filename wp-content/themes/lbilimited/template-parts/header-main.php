@@ -36,13 +36,7 @@
 			$content_class = 'header-content single';
 			$title = offering_title();
 			
-			$price_option = get_field('display_type');
-			if($price_option == 'display-price'){
-				$price_value = get_field('price');
-				$price = 'Offered at: $' . number_format($price_value,0,".",",");
-			}else {
-				$price = $price_option;
-			}
+			$price = get_offering_price();
 			
 			
 			$blueprint_url = get_template_directory_uri() . '/inc/images/blueprint.png';
@@ -113,7 +107,7 @@
 			echo "<div class='$content_class'>
 				  	<span class='geo_elem'></span>
 				  	<h1>$title</h1>";
-				  	if($price_option){
+				  	if($price){
 					  	
 					  	echo "<p class='price main-btn'>
 					  			<span class='price-wrapper'>$price</span>
