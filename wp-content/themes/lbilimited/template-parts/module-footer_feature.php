@@ -1,5 +1,34 @@
 <div class="featured-posts">
+	<?php $features = get_field('feature_display'); 
+		  $options = get_option('lbilimited_options');
+		
+/*
+		echo "<pre>";
+			print_r($features);
+		echo "</pre>";
+*/
+		
+		foreach($features as $key=>$feature){
+			$title = $feature['label'];
+			$slug = $feature['value'];
+			$photo_slug = $slug . '-photo';
+			$photo = $options[$photo_slug];
+			if($key <= 1){
+		?>
+		
+		<a href="<?php echo home_url() . '/' . $slug; ?>" class="feature" style="background-image:url(<?php echo $photo; ?>);">
+			<div class="content-wrapper dash-title">
+				<div class="featured-heading"><?php echo $title; ?></div>
+				<div class="featured-link">Click to View</div>
+			</div>
+		</a>
+		<?php	
+		}
+		}
+		
+	?>
 	
+<!--
 	<a href="<?php echo home_url() . '/lbi-collection'; ?>" class="feature" style="background-image:url(<?php echo get_template_directory_uri() . '/inc/images/collection_sample.jpg'; ?>);">
 		<div class="content-wrapper dash-title">
 			<div class="featured-heading">LBI Collection</div>
@@ -14,4 +43,5 @@
 		</div>
 	</a>
 	
+-->
 </div>

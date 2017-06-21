@@ -7,6 +7,7 @@
 		$featured_image_frame = get_field('featured_image_framing');
 		$content_class = 'header-content off ';
 		$header_img = '';
+		$header_video = get_field('video_loop_file');
 		
 		// Call global options data and establish variables for the template -- this pulls information from the theme options found in the appearance menu, as established in theme_options.php
 		$options = get_option('lbilimited_options');
@@ -34,7 +35,16 @@
 			$post_type = get_post_type();
 			$content_class = 'header-content single';
 			$title = offering_title();
-			$price_val = get_field('price');
+			
+			$price_option = get_field('display_type');
+			if($price_option == 'display-price'){
+				$price_value = get_field('price');
+				$price = 'Offered at: $' . number_format($price_value,0,".",",");
+			}else {
+				$price = $price_option;
+			}
+			
+			
 			$blueprint_url = get_template_directory_uri() . '/inc/images/blueprint.png';
 			
 			$framing = get_field('framing');
@@ -103,8 +113,8 @@
 			echo "<div class='$content_class'>
 				  	<span class='geo_elem'></span>
 				  	<h1>$title</h1>";
-				  	if($price_val){
-					  	$price = 'Offered at: $' . number_format($price_val,0,".",",");
+				  	if($price_option){
+					  	
 					  	echo "<p class='price main-btn'>
 					  			<span class='price-wrapper'>$price</span>
 					  			<span class='banner'></span>
@@ -129,8 +139,25 @@
 			echo "<div class='b_image_wrapper'>
 				  	<img src='$header_thumb' class='blur $featured_image_frame' />
 				  	<img data-src='$header_img' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' class='full_size lazy-load $featured_image_frame' />
-				  </div>
-				  <div class='$content_class'>
+				  </div>";
+			
+			if( $header_video ){
+				$file_type = $header_video['mime_type'];
+				$file_url = $header_video['url'];
+				echo "<div class='header_video'>
+					  	<video id='header-video' autoplay loop>
+					  		<source src='$file_url' type='$file_type'></source>
+					  	</video>
+					  </div>";
+				
+/*
+				echo "<pre>";
+					print_r($header_video);
+				echo "</pre>";
+*/
+			}
+				 
+			echo "<div class='$content_class'>
 				  	<span class='geo_elem'></span>
 				  	<h1>$title</h1>";
 

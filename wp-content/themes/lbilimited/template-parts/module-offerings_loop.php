@@ -7,7 +7,7 @@
 	
 	
 	// Let's declare a price variable and figure out which category we're in first
-		$price;
+		$price = '';
 		$category_list = array(
 			'past' => 265,
 			'current' => 264
@@ -71,8 +71,13 @@
 				
 			// If we're in the Current Offering category, set the price here
 				if($category == 'current'){
-					$price_value = get_field('price');
-					$price = 'Offered at: $' . number_format($price_value,0,".",",");
+					$price_option = get_field('display_type');
+					if($price_option == 'display-price'){
+						$price_value = get_field('price');
+						$price = 'Offered at: $' . number_format($price_value,0,".",",");
+					}else {
+						$price = $price_option;
+					}
 				}
 				
 			// Markup for offering display

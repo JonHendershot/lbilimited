@@ -150,6 +150,59 @@ function LBI_register_settings()
     // - - - - FOOTER OPTIONS - - - - //
     ////////////////////////////////////
     
+    
+    
+	// Recent News Photo
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'in-the-news-photo',
+	      'name'      => 'in-the-news-photo',
+	      'desc'      => '<input data-category="in-the-news-photo" class="left-float image-trigger" type="button" value="Upload Image"><p>Image to Display the Recent News call to action, should it be displayed</p>',
+	      'std'       => '',
+	      'label_for' => 'footer_background',
+	      'class'     => ' left-float header_image in-the-news-photo'
+	    );
+	    add_settings_field( 'in-the-news-photo', 'Recent News Background Photo', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+	
+	// Current Offerings Photo
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'current-offerings-photo',
+	      'name'      => 'current-offerings-photo',
+	      'desc'      => '<input data-category="current-offerings-photo" class="left-float image-trigger" type="button" value="Upload Image"><p>Image to Display the Current Offerings call to action, should it be displayed</p>',
+	      'std'       => '',
+	      'label_for' => 'footer_background',
+	      'class'     => ' left-float header_image current-offerings-photo'
+	    );
+	    add_settings_field( 'current-offerings-photo', 'Current Offerings Background Photo', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+
+	// Past Offerings Photo
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'past-offerings-photo',
+	      'name'      => 'past-offerings-photo',
+	      'desc'      => '<input data-category="past-offerings-photo" class="left-float image-trigger" type="button" value="Upload Image"><p>Image to Display the Past Offerings call to action, should it be displayed</p>',
+	      'std'       => '',
+	      'label_for' => 'footer_background',
+	      'class'     => ' left-float header_image past-offerings-photo'
+	    );
+	    add_settings_field( 'past-offerings-photo', 'Past Offerings Background Photo', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+	    
+	// Collection Photo
+	    $field_args = array(
+	      'type'      => 'text',
+	      'id'        => 'collection-photo',
+	      'name'      => 'collection-photo',
+	      'desc'      => '<input data-category="collection-photo" class="left-float image-trigger" type="button" value="Upload Image"><p>Image to Display the LBI Collection call to action, should it be displayed</p>',
+	      'std'       => '',
+	      'label_for' => 'footer_background',
+	      'class'     => ' left-float header_image collection-photo'
+	    );
+	    add_settings_field( 'collection-photo', 'Collection Background Photo', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+    
+    
+    
+    
 	    // Footer CTA
 	    $field_args = array(
 	      'type'      => 'text',
@@ -201,6 +254,19 @@ function LBI_register_settings()
 	    );
 	
 	    add_settings_field( 'footer_background', 'Footer Background', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
+	    
+	    // Footer Overlay Framing
+		    $field_args = array(
+		      'type'      => 'text',
+		      'id'        => 'footer_overlay',
+		      'name'      => 'footer_overlay',
+		      'desc'      => '<select class="footer_overlay" data-input="footer_overlay"><option value="On">On</option><option value="Off">Off</option></select><p>Turn on if using a light photo to set a transparent dark overlay so that text remains visible</p>',
+		      'std'       => '',
+		      'label_for' => 'footer_overlay',
+		      'class'     => ' css_class footer_overlay i_select'
+		    );
+		
+		    add_settings_field( 'footer_overlay', 'Footer Image Overlay', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
 	    
 	    // Footer Copyright
 	    $field_args = array(
