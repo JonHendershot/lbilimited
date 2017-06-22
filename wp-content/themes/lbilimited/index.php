@@ -14,7 +14,7 @@
 		get_header();
 	
 	// Content Wrapper
-		echo "<section id='archive-wrapper' class='archive-wrapper' style='background-image: url($blueprint_img_url)'>";
+		echo "<section id='archive-wrapper' class='archive-wrapper'>"; // style='background-image: url($blueprint_img_url)'
 		
 	// Post Loop Logic	
 		if ( have_posts() ) :

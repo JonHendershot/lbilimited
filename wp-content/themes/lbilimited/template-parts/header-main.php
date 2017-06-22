@@ -40,7 +40,7 @@
 		}else if( is_single() ){
 			$post_type = get_post_type();
 			$content_class = 'header-content single';
-			$title = offering_title();
+			
 			
 			$price = get_offering_price();
 			
@@ -59,10 +59,13 @@
 			$feat_alt = $featured_img['alt'];
 			
 			
-			if( $post_type = 'offerings' ){
+			if( $post_type == 'offerings' ){
 				$photos_array = get_field('exterior_glam');
 				$featured_img_url = $photos_array[0]['url'];
 				$feat_alt = $photos_array[0]['alt'];
+				$title = offering_title();
+			}else {
+				$title = get_the_title($post->ID);
 			}
 			
 			
@@ -102,6 +105,7 @@
 			echo "
 				  <div class='featured-media-wrapper'>
 				  	<div class='featured-media'>
+				  		<span class='media_shade'></span>
 				  		$media_overlay";
 				  
 			

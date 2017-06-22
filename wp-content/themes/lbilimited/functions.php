@@ -309,7 +309,7 @@ function lbi_single_gallery(){
 	$output = '';
 	
 	// Build the post Gallery and put the first image in the viewer
-	$output .= "<div class='post_gallery_wrapper featured_image_showcase'>
+	$output .= "<div class='post_gallery_wrapper featured_image_showcase visible margin'>
 					<div class='post_gallery'>
 						<div class='image_viewer'>
 							<img src='$first_image' alt='$first_alt' />
@@ -690,4 +690,15 @@ function offering_has_photos($array){
 	}
 	
 	return $has_images;
+}
+
+
+  //////////////////////////////////////////////////////////////////
+ /// Function to remove featured image box from blog post type ///
+//////////////////////////////////////////////////////////////////
+
+add_action('do_meta_boxes', 'remove_thumbnail_box');
+
+function remove_thumbnail_box() {
+    remove_meta_box( 'postimagediv','post','side' );
 }

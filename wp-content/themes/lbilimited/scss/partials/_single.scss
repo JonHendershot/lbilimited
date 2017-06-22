@@ -327,6 +327,10 @@ body.single {
 	@include flexbox(inherit,inherit);
 	flex-direction: column;
 	
+	
+	&.margin {
+		margin: 50px 0;
+	}
 	// styles for showing it in the lightbox 
 	&.in_lightbox {
 		position: fixed !important;
