@@ -1219,6 +1219,14 @@ h4.tilt_title.flip:after {
 */ }
     .site-header.single .featured-media-wrapper:before {
       content: ""; }
+    .site-header.single .featured-media-wrapper .featured-media {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      cursor: pointer; }
     .site-header.single .featured-media-wrapper video {
       z-index: 99; }
     .site-header.single .featured-media-wrapper img, .site-header.single .featured-media-wrapper video {
@@ -1400,7 +1408,8 @@ body.page-template-media_house .site-header .main-btn {
     text-decoration: none;
     padding: 48px;
     height: 0;
-    padding-bottom: 472px; }
+    padding-bottom: 472px;
+    position: relative; }
     .site-footer .featured-posts .feature .content-wrapper {
       position: relative;
       width: max-content;

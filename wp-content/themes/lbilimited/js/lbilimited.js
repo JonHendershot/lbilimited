@@ -308,8 +308,23 @@ function updateSpecialist(specialist){
 	var offeringTrigger = $('.featured_slide'),
 		lightbox = $('.media_lightbox'),
 		closeTrigger = $('.nav-wrapper .search_trigger'),
-		navbtn = $('.light_nav');
+		navbtn = $('.light_nav'),
+		featuredHeader = $('header .featured-media-wrapper .featured-media');
 	
+	featuredHeader.click(function(){
+		// Setup Variables 
+		var data = $('.featured_slide.slide-0-glam').data('image');
+		
+		load_img(data);
+		
+		// Open Lightbox
+		if( !lightbox.hasClass('visible') ){
+			open_lightbox(lightbox);
+		}
+		
+		// Update Lightbox Triger
+			closeTrigger.text('click to close').addClass('open');
+	});
 	offeringTrigger.click(function(){
 		// Setup Variables
 			var data = $(this).data('image');

@@ -101,7 +101,8 @@
 			
 			echo "
 				  <div class='featured-media-wrapper'>
-				  	$media_overlay";
+				  	<div class='featured-media'>
+				  		$media_overlay";
 				  
 			
 	
@@ -113,7 +114,9 @@
 			if($featured_img) {
 				echo "<img src='$featured_img_url' class='' alt='$feat_alt' />";	
 			}
-			echo "<div class='$content_class'>
+			
+			echo "</div>
+				  <div class='$content_class'>
 				  	<span class='geo_elem'></span>
 				  	<h1>$title</h1>";
 				  	if($price){
