@@ -51,7 +51,7 @@
 							
 							if( get_field('featured_image') ){
 								$image = get_field('featured_image');
-								$image_url = $image['sizes']['medium-large'];
+								$image_url = $image['sizes']['medium_large'];
 							}else {
 								$image_url = get_the_post_thumbnail_url('medium');
 							}
@@ -63,9 +63,9 @@
 						
 						if( get_field('featured_image') ){
 							$image = get_field('featured_image');
-							$image_url = $image['sizes']['medium-large'];
+							$image_url = $image['sizes']['medium_large'];
 						}else {
-							$image_url = get_the_post_thumbnail_url('medium-large');
+							$image_url = get_the_post_thumbnail_url('medium_large');
 						}		
 				}
 			
