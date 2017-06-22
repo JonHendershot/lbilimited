@@ -662,6 +662,9 @@ function get_offering_price(){
 				$price = 'Offered at: $' . number_format($price_value,0,".",",");
 			}
 			
+		}else if( $price_option == 'other' ){
+			$other_field = get_field('price_field_other');
+			$price = $other_field;
 		}else {
 			$price = $price_option;
 		}
