@@ -16,6 +16,7 @@
 			.content-wrapper {
 				position: relative;
 				@include max-content(width);
+				z-index: 9999;
 				div {
 					text-decoration: none;
 					color: $white;

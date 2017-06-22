@@ -1415,7 +1415,8 @@ body.page-template-media_house .site-header .main-btn {
       width: max-content;
       width: -webkit-max-content;
       width: -moz-max-content;
-      width: -moz-fit-content; }
+      width: -moz-fit-content;
+      z-index: 9999; }
       .site-footer .featured-posts .feature .content-wrapper div {
         text-decoration: none;
         color: #fff;
