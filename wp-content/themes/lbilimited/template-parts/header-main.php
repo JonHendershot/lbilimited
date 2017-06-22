@@ -84,14 +84,14 @@
 			$content_class .= ' page archive';
 			$title = get_the_title( $post_id );
 			$subtitle = get_field('page_subtitle');
-			$header_img = get_the_post_thumbnail_url( $post_id, 'full' );
+			$header_img = get_the_post_thumbnail_url( $post_id, 'large' );
 			$header_thumb = get_the_post_thumbnail_url( $post_id, 'blur' );
 			$featured_image_frame = get_field('featured_image_framing', $post_id);
 		}else {
 			$content_class .= ' page';
 			$title = get_the_title();
 			$subtitle = get_field('page_subtitle');
-			$header_img = get_the_post_thumbnail_url( $post->ID, 'full' );
+			$header_img = get_the_post_thumbnail_url( $post->ID, 'large' );
 			$header_thumb = get_the_post_thumbnail_url( $post->ID, 'blur' );
 		}
 		
