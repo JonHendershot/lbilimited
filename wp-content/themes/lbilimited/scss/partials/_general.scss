@@ -42,8 +42,14 @@ span.media_overlay {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.2);
-    z-index: 999;
+    z-index: 99;
+    @include easeout(700ms);
+
+	&.hide {
+		opacity: 0 !important;
+	}
 }
+
 .main-btn, input[type="submit"] {
 	background-color: $mainred;
 	color: $white;
