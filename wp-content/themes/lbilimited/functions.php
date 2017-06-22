@@ -672,3 +672,19 @@ function get_offering_price(){
 	return $price;
 	
 }
+
+  //////////////////////////////////////////////////////////////////
+ /// Function to check if an offering category has photos in it ///
+//////////////////////////////////////////////////////////////////
+function offering_has_photos($array){
+	
+	$has_images = false;
+	
+	foreach($array as $category){
+		if( ! empty($category) ){
+			$has_images = true;
+		}
+	}
+	
+	return $has_images;
+}

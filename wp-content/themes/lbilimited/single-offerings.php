@@ -60,10 +60,15 @@
 		
 	// Invoke site header
 		get_header();
-		
 	
+	// Check if the glam and regs categories have items
+		$glams_have_photos = offering_has_photos( $photos['glams'] );
+		$regs_have_photos  = offering_has_photos( $photos['regs'] );
+	
+	if($glams_have_photos || $regs_have_photos) :
 	?>
 	<section class="featured_image_sliders vhfix">
+		<?php if( $glams_have_photos ) : ?>
 		<div class="featured_image_showcase glam visible">
 			<div class="featured_image_slider_container">
 				<div class="featured_image_slider_wrapper">
@@ -132,10 +137,7 @@
 					?>
 				</div>
 			</div>
-			<?php 
-				// Only show Filters IF there's more than one category of photos present
-				if( count($categories) > 1) :
-			?>
+			
 			<div id="image_filters">
 				<div class="featured_image_filter_wrapper">
 					<i class="fa fa-filter"></i>
@@ -144,6 +146,11 @@
 							<span class="active" data-cat="all" data-class="glam">All</span>
 						</li>
 						<?php
+						
+							// Only show Filters IF there's more than one category of photos present
+							if( count($categories) > 1) :
+				
+
 							foreach($categories as $category){
 								
 								$cat_id = strtolower( str_replace(" ", "_", $category) );
@@ -152,6 +159,7 @@
 										<span data-cat='glam-$cat_id' data-class='glam'>$category</span>
 									  </li>";
 							}	
+							endif;
 						?>
 					</ul>
 				</div>
@@ -161,10 +169,15 @@
 					<i class="fa fa-square-o"></i>
 					<i class="fa fa-chevron-up arrow"></i>
 				</div>
+				<?php if( $regs_have_photos ) : ?>
 				<div class="gallery_trigger detailed_trigger" data-gallery="reg">View detailed photos</div>
+				<?php endif; ?>
 			</div>
-			<?php endif; ?>
+			
 		</div>
+		<?php endif; // if glams have photos
+			  if( $regs_have_photos ) :
+		?>	
 		<div class="featured_image_showcase reg">
 			<div class="featured_image_slider_container">
 				<div class="featured_image_slider_wrapper">
@@ -225,11 +238,9 @@
 					?>
 				</div>
 			</div>
-			<?php 
-				// Only show Filters IF there's more than one category of photos present
-				if( count($categories) > 1) :
-			?>
+			
 			<div id="image_filters">
+				
 				<div class="featured_image_filter_wrapper">
 					<i class="fa fa-filter"></i>
 					<ul class="filter">
@@ -237,6 +248,10 @@
 							<span class="active" data-cat="all" data-class="reg">All</span>
 						</li>
 						<?php
+							
+							// Only show Filters IF there's more than one category of photos present
+							if( count($categories) > 1) :
+						
 							foreach($categories as $category){
 								
 								$cat_id = strtolower( str_replace(" ", "_", $category) );
@@ -245,20 +260,26 @@
 										<span data-cat='reg-$cat_id' data-class='reg'>$category</span>
 									  </li>";
 							}	
+							endif;
 						?>
 					</ul>
 				</div>
+	
 				<div class="show_filter_trigger" alt="Show image thumbnails">
 					<i class="fa fa-square-o"></i>
 					<i class="fa fa-square-o"></i>
 					<i class="fa fa-square-o"></i>
 					<i class="fa fa-chevron-up arrow"></i>
 				</div>
+				<?php if( $glams_have_photos ) : ?>
 				<div class="gallery_trigger glam_trigger" data-gallery="glam">View glam photos</div>
+				<?php endif; ?>
 			</div>
-			<?php endif; ?>
+			
 		</div>
+		<?php endif; // if regs have photos ?>
 	</section>
+	<?php endif; ?>
 
 	<section id="offering_content">
 		<div class="offering_overview">
@@ -351,6 +372,8 @@
 */
 
 /* 			print_r($photos); */
+
+
 	
 		// Example: loop through a photos['category']
 /*
