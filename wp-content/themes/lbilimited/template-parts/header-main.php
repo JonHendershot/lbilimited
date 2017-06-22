@@ -107,7 +107,7 @@
 			
 	
 			if($file_type == 'video'){
-				echo "<video class='' autoplay loop>
+				echo "<video class='' autoplay loop muted>
 					 	<source src='$header_img' />
 					 </video>";
 			}
@@ -152,7 +152,7 @@
 				$file_type = $header_video['mime_type'];
 				$file_url = $header_video['url'];
 				echo "<div class='header_video'>
-					  	<video id='header-video' autoplay loop>
+					  	<video id='header-video' autoplay loop muted>
 					  		<source src='$file_url' type='$file_type'></source>
 					  	</video>
 					  </div>";
