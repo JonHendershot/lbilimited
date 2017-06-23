@@ -1201,6 +1201,41 @@ h4.tilt_title.flip:after {
   overflow: visible;
   position: relative;
   margin-bottom: 100px; }
+  .site-header.single.offerings {
+    height: -o-calc(62.7vw  + 20px);
+    height: -moz-calc(62.7vw  + 20px);
+    height: -webkit-calc(62.7vw  + 20px);
+    height: calc(62.7vw  + 20px); }
+    .site-header.single.offerings .featured-media-wrapper {
+      width: 95%;
+      padding-bottom: 62.7vw;
+      top: 120px; }
+      .site-header.single.offerings .featured-media-wrapper img {
+        -webkit-transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
+        -moz-transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
+        -o-transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
+        transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
+        /* custom */
+        opacity: 1; }
+  .site-header.single.collection, .site-header.single.post {
+    height: -o-calc(54.6vw  + 100px);
+    height: -moz-calc(54.6vw  + 100px);
+    height: -webkit-calc(54.6vw  + 100px);
+    height: calc(54.6vw  + 100px);
+    margin-bottom: 200px; }
+    .site-header.single.collection .featured-media-wrapper, .site-header.single.post .featured-media-wrapper {
+      width: 78%;
+      overflow: visible;
+      padding-bottom: 54.6vw;
+      top: 300px; }
+      .site-header.single.collection .featured-media-wrapper .header-content, .site-header.single.post .featured-media-wrapper .header-content {
+        margin-top: 0;
+        -webkit-transform: translate3d(0, -48px, 0);
+        -moz-transform: translate3d(0, -48px, 0);
+        -ms-transform: translate3d(0, -48px, 0);
+        transform: translate3d(0, -48px, 0); }
+        .site-header.single.collection .featured-media-wrapper .header-content h1, .site-header.single.post .featured-media-wrapper .header-content h1 {
+          max-width: 35%; }
   .site-header.single .featured-media-wrapper {
     margin: auto;
     height: 0;
@@ -1208,7 +1243,6 @@ h4.tilt_title.flip:after {
     z-index: 9;
     position: absolute;
     overflow: hidden;
-    bottom: -100px;
     left: 0;
     right: 0;
     /*
@@ -1350,31 +1384,6 @@ h4.tilt_title.flip:after {
     -o-transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1) !important;
     transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1) !important;
     /* custom */ }
-
-.site-header.single.offerings .featured-media-wrapper {
-  width: 95%;
-  padding-bottom: 53.84%; }
-  .site-header.single.offerings .featured-media-wrapper img {
-    -webkit-transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
-    -moz-transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
-    -o-transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
-    transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
-    /* custom */
-    opacity: 1; }
-
-.site-header.single.collection, .site-header.single.post {
-  margin-bottom: 20vh; }
-  .site-header.single.collection .featured-media-wrapper, .site-header.single.post .featured-media-wrapper {
-    width: 78%;
-    overflow: visible;
-    padding-bottom: 53.38%;
-    bottom: -20vh; }
-    .site-header.single.collection .featured-media-wrapper .header-content, .site-header.single.post .featured-media-wrapper .header-content {
-      margin-top: 0;
-      -webkit-transform: translate3d(0, -48px, 0);
-      -moz-transform: translate3d(0, -48px, 0);
-      -ms-transform: translate3d(0, -48px, 0);
-      transform: translate3d(0, -48px, 0); }
 
 body.page-template-media_house .site-header .main-btn {
   z-index: 9999;
@@ -6690,39 +6699,16 @@ body.single .contact_form:after {
 /*************************************
   - - - - - - RESPONSIVE - - - - - - -
 **************************************/
-@media (min-height: 1100px) {
-  #masthead.site-header.single {
-    height: 70vh;
-    margin-bottom: 10vh; }
-    #masthead.site-header.single .featured-media-wrapper {
-      bottom: -10vh !important; } }
-
-@media (min-height: 1000px) {
-  #masthead.site-header.single {
-    height: 80vh;
-    margin-bottom: 10vh; }
-    #masthead.site-header.single .featured-media-wrapper {
-      bottom: -10vh !important; } }
+@media (max-aspect-ratio: 1/1) {
+  #masthead.site-header {
+    height: 85vh; }
+    #masthead.site-header .featured-media-wrapper {
+      padding-bottom: 63.865%; } }
 
 @media (min-width: 1480px) {
   section.featured_gallery:after, section.featured_gallery:before {
     bottom: -245px;
     height: 245px; } }
-
-@media (min-width: 1250px) and (min-height: 900px) {
-  header.site-header .header-content:not(.home) {
-    transform: translate3d(0, -38%, 0) !important;
-    -webkit-transform: translate3d(0, -38%, 0) !important;
-    -moz-transform: translate3d(0, -38%, 0) !important;
-    -ms-transform: translate3d(0, -38%, 0) !important;
-    -o-transform: translate3d(0, -38%, 0) !important; }
-    header.site-header .header-content:not(.home):before {
-      height: 392px !important;
-      width: 255px !important; }
-    header.site-header .header-content:not(.home) h1 {
-      font-size: 110px;
-      line-height: 88px;
-      max-width: 900px !important; } }
 
 @media (max-width: 1150px) {
   .specialists_wrapper:after {
@@ -6929,21 +6915,23 @@ body.single .contact_form:after {
       opacity: 1 !important; }
   .site-header.single {
     height: 65vh;
-    margin-bottom: 80px !important; }
+    margin-bottom: 80px !important;
+    /*
+		&.offerings {
+			.featured-media-wrapper {
+				overflow: visible;
+			}
+			.header-content {
+				position: absolute;
+				top: 0;
+				left: 0;
+				margin-top: 0;
+				@include prefix(transform, translateY(-50%));
+			}
+		}
+*/ }
     .site-header.single.collection .featured-media-wrapper video {
       display: none; }
-    .site-header.single.offerings .featured-media-wrapper {
-      overflow: visible; }
-    .site-header.single.offerings .header-content {
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin-top: 0;
-      transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-      -moz-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      -o-transform: translateY(-50%); }
   body.single-offerings .featured_image_showcase {
     width: 95%; }
     body.single-offerings .featured_image_showcase #image_filters {
