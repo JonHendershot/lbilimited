@@ -439,11 +439,25 @@ function LBI_register_settings()
 		      'name'      => 'loading_img',
 		      'desc'      => '<input data-category="loading_img" class="left-float image-trigger" type="button" value="Upload Image"><p>Logo Image to Display in on Loading Screen</p>',
 		      'std'       => '',
-		      'label_for' => 'results_header',
+		      'label_for' => 'loading_img',
 		      'class'     => ' left-float header_image loading_img'
 		    );
 		
 		    add_settings_field( 'loading_img', 'Loading Screen Icon', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_misc_section', $field_args );
+		    
+		    
+		// Default image for blog posts
+		    $field_args = array(
+		      'type'      => 'text',
+		      'id'        => 'blog_img',
+		      'name'      => 'blog_img',
+		      'desc'      => '<input data-category="blog_img" class="left-float image-trigger" type="button" value="Upload Image"><p>Default image to display as the featured image for blog postse</p>',
+		      'std'       => '',
+		      'label_for' => 'blog_img',
+		      'class'     => ' left-float header_image blog_img'
+		    );
+		
+		    add_settings_field( 'blog_img', 'Default Blog Image', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_misc_section', $field_args );
 	
 
 }

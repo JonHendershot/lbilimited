@@ -58,6 +58,10 @@
 			$featured_img_url = $featured_img['url'];
 			$feat_alt = $featured_img['alt'];
 			
+			if( $post_type == 'post' && ! $featured_img ){
+				$featured_img = true;
+				$featured_img_url = $options['blog_img'];
+			}
 			
 			if( $post_type == 'offerings' ){
 				$photos_array = get_field('exterior_glam');
