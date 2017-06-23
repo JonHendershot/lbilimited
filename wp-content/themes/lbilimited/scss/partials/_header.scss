@@ -492,11 +492,11 @@
 	}
 	
 	&.collection, &.post {
-		$media_offset : 300px;
+		$media_offset : 250px;
 		$media_ar : 0.546;
 		$media_height : $media_ar * 100vw;
 		$header_height : $media_ar * 100vw;
-		@include calc(height, $header_height " + 100px");
+		@include calc(height, $header_height " + 50px");
 		margin-bottom: 200px;
 		.featured-media-wrapper {
 			width: 78%;
