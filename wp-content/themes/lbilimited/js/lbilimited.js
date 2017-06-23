@@ -506,7 +506,24 @@ function next_trigger_id(id, imgClass){
 		
 	}
 */
-	
+	$('.photo_trigger').click(function(){
+		var data = $(this).data('item'),
+			img = data[0]['full_url'],
+			lightbox = $('.media_lightbox'),
+			closeTrigger = $('.nav-wrapper .search_trigger');
+			
+			console.log(data[0]);
+			load_img(data[0]);
+		
+		// Open Lightbox
+		if( !lightbox.hasClass('visible') ){
+			open_lightbox(lightbox);
+		}
+		
+		// Update Lightbox Triger
+			closeTrigger.text('click to close').addClass('open');
+			
+	});
 		
 		
 	$('.video_trigger').click(function(){

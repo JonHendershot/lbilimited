@@ -59,35 +59,68 @@
 			$query = new WP_Query($featured_args);
 			$loop_index = 1;
 			while( $query->have_posts() ) : $query->the_post();
+				
 			
 				// Variables
 					$title = get_the_title();
-					$video_embed_html = get_field('video_embed_code'); // will return an valid html, if provided
-					$video_embed = html_entity_decode($video_embed_html); // we have to conver the html object into a plain string so that it can be stored in the JSON array, otherwise the double quotes in the iframe will not be escaped, causing invalid JSON
+					$media_type = get_field('media_type');
 					$post_ID = get_the_ID();
 					$background_image = get_the_post_thumbnail_url();
-					$item_info = array(
-						'video_id' => $post_ID,
-						'video_title' => $title,
-						'iframe' => $video_embed
-					);
+					
 					$display_class = '';
+					
+				// Check what type of media it is and establish the triggers and json info accordingly
+					if( $media_type == 'video' ){
+						
+						$video_embed_html = get_field('video_embed_code'); // will return an valid html, if provided
+						$video_embed = html_entity_decode($video_embed_html); // we have to conver the html object into a plain string so that it can be stored in the JSON array, otherwise the double quotes in the iframe will not be escaped, causing invalid JSON
+						$item_info = array(
+							'video_id' => $post_ID,
+							'video_title' => $title,
+							'iframe' => $video_embed
+						);
+						
+						$trigger_class = 'video_trigger';
+						$trigger_text = 'Watch Video';
+						
+					}else {
+						$gallery = get_field('photo_gallery');
+						
+						$item_info = array();
+						
+						foreach( $gallery as $key=>$photo ){
+							$blur_url = $photo['sizes']['blur'];
+							$full_url = $photo['sizes']['large'];
+							
+							$item_info[] = array(
+								'full_url' => $full_url,
+								'blur_url' => $blur_url,
+								'photo_id' => $key
+							);
+						}
+						
+						$trigger_class = 'photo_trigger';
+						$trigger_text = 'View Photos';
+					}
 				
 				// Store $item_info as json array to store in markup
-					$item_data = array_map("utf8_encode", $item_info); // ensure data is in utf8
-					$item_json = json_encode($item_data);
+// 					$item_data = array_map("utf8_encode", $item_info); // ensure data is in utf8
+					$item_json = json_encode($item_info);
 					
 				// If we're on the 3rd element, we need a class to control the proper display
 					if( $loop_index === 2 ){
 						$display_class='next';
 					}
+					
+
+					
 			
 				// Render content here
 					echo "<div class='featured_media_wrapper $display_class'  style='background-image: url($background_image)'>
 							<div class='featured_media_title dash-title'>
 								<h3>$title</h3>
 							</div>
-							<div class='video_trigger' data-id='$post_ID' data-item='$item_json'>Watch Video</div>
+							<div class='trigger $trigger_class' data-id='$post_ID' data-item='$item_json'>$trigger_text</div>
 						  </div>";
 					  
 		// End loop and reset query

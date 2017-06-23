@@ -126,7 +126,7 @@ section.featured_gallery {
 				@include prefix(transform, skew(-24deg) scaleY(0));
 				@include easeout(800ms);
 			}
-			.video_trigger {
+			.trigger {
 				position: absolute;
 				bottom: 30px;
 				right: 0;
@@ -167,7 +167,7 @@ section.featured_gallery {
 
 						}
 					}
-					.video_trigger {
+					.trigger {
 						opacity: 1;
 						@include prefix(transform, translateX(50%));
 						transition-delay: 300ms;
@@ -319,7 +319,7 @@ section.sub_heading.media_sub {
 				@include prefix(transform, translateX(30px));
 				@include easeout($easeTiming);
 			}
-			.video_trigger {
+			.trigger {
 				color: $white;
 				text-transform: uppercase;
 				font-weight: 500;
@@ -352,7 +352,7 @@ section.sub_heading.media_sub {
 			.item-content {
 				opacity: 1;
 				
-				h3,.video_trigger {
+				h3,.trigger {
 					@include prefix(transform, translateX(0));
 				}
 				

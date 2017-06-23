@@ -94,7 +94,7 @@
 					echo "<div class='grid-item video_trigger $display_class $gutter' style='background-image: url($background_image)' data-item='$item_json'>
 							<div class='item-content dash-title'>
 								<h3>$title</h3>
-								<div class='video_trigger'>view more</div>
+								<div class='trigger video_trigger'>view more</div>
 							</div>
 						  </div>";
 			endwhile;

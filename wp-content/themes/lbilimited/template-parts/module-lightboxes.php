@@ -35,6 +35,7 @@
 	}
 	if( is_page_template('archive-lbi_media.php') || is_page_template('templates/about.php') ){
 		get_template_part('template-parts/module', 'video_lightbox');
+		get_template_part('template-parts/module', 'media_lightbox');
 	}	
 	if( is_page_template('templates/offerings.php') ){
 		get_template_part('template-parts/module', 'notify_lightbox');
