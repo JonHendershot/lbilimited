@@ -182,7 +182,7 @@ section.specialists {
 			}
 			.specialist_item {
 				height: 0;
-				padding-bottom:98%;
+// 				padding-bottom:98%;
 				background-position: center center;
 				background-size: cover;
 				background-repeat: no-repeat;
@@ -262,22 +262,25 @@ section.specialists {
 				content: "";
 				background-color: $black;
 				@include prefix(transform, skew(-$skew_dist) scaleX(0));
-				width: 110%;
+				width: 120%;
 				position: absolute;
 				top: 0;
-				left: -5%;
+				left: -10%;
 				height: 100%;
 				@include easeout(800ms);
 				z-index: 9;
 			}
 			.specialist_expand_wrapper {
+				
+				$img_size : 340px;
+				
 				z-index: 999;
 				position: absolute;
 				top: 0;
 				left: 0;
 				width: 100%;
 				height: 100%;
-				@include flexbox(center,space-between);
+				@include flexbox(center,center);
 				visibility: hidden;
 				opacity: 0;
 				@include easeout(1000ms);
@@ -300,8 +303,10 @@ section.specialists {
 				}
 				
 				.specialist_expand_image {
-					width: 25%;
-					height: 100%;
+					width: $img_size;
+					height: $img_size;
+					border-radius: 50%;
+					overflow: hidden;
 					background-color: transparent;
 					position: relative;
 					img {
@@ -311,36 +316,51 @@ section.specialists {
 						object-fit: cover;	
 					}
 				}
+				
 				.specialist_expand_content {
-					width: 62.5%;
+					width: 70%;
 					background-color: $black;
-					height: 100%;
+					@include max-content(height);
 					position: relative;
+					@include flexbox(center, space-between);
+				
+					
+					.specialist_content {
+						$margin : 40px;
+						@include calc(width, "100% - " ($img_size + $margin) );
+						position: relative;
+						.header-content {
+							@include flexbox(center, flex-start);
+
+						}
+					
+					}
+					
 					.header {
+						padding: 0;
+
 						h3,p {
 							opacity: 1;
 							@include prefix(transform, translateX(0));
 						}
-						
 					}
 					.header:after {
-						height: 117px;
+						height: 100%;
 						@include prefix(transform, skew(-24deg) scaleY(1));
+						top: 2px;
+						right: -50px;
 					}
 					.content {
-						padding: 0px 58px;
 						color: $about_bio_gray;
 						font-size: 13px;
 						letter-spacing: 0.25px;
 						line-height: 19px;
-						max-height: 120px;
 						overflow-y: scroll; // are we locking character counts here?
 						font-weight: 300;
-						margin-top: 40px;
-						margin-bottom: 15px;
+						margin: 20px 0 0;
 					}
 					.launch_video {
-						margin-left: 58px;
+						margin-left: 75px;
 						font-size: 9px;
 						color: $white;
 						background-color: transparent;
@@ -349,6 +369,12 @@ section.specialists {
 						padding-bottom: 8px;
 						@include transition(0.3s, all,ease-in-out);
 						font-weight: 300;
+						display: block;
+						
+						&.hidden {
+							visibility: hidden;
+							display: none;
+						}
 					}
 					.launch_video:hover {
 						background-color: #b5b5b5;
@@ -356,34 +382,39 @@ section.specialists {
 						cursor: pointer;
 						
 					}
-				}
-				.close_expand {
-					text-transform: uppercase;
-					color: $black;
-					background-color: $altgray;
-					width: 12.5%;
-					height: 100%;
-					@include flexbox(center,center);
-					cursor: pointer;
-					@include prefix(transform, translateX(100%));
 					
-					@include easeout(1000ms);
-					transition-delay: 100ms;
-
-					span {
-						font-size: 12px;
+					.close_expand {
 						text-transform: uppercase;
-						font-weight: 100;
-						letter-spacing: 6px;
-						padding-left: 6px;
+						color: $white;
+						cursor: pointer;
+						position: absolute;
+						bottom: -30px;
+						left: 0;
+						
+						
+					span {
+						font-size: 10px;
+						text-transform: uppercase;
+						font-weight: 500;
 						display: block;
-						text-align: center;
-						line-height: 19px;
-						width: 95%;
-						@include prefix(transform, translateX(50%));
-						@include easeout(1000ms);
+						&:before {
+							content: "\f060";
+							font-family: 'fontawesome';
+							display: inline-block;
+							font-size: 9px;
+							color: $white;
+							margin-right: 5px;
+							@include prefix(transform, translate3d(0,-1px,0));
+							@include easeout(400ms);
+						}
 
 					}
+					&:hover {
+						span:before {
+							@include prefix(transform, translate3d(-5px,-1px,0));
+						}
+					}
+				}
 				}
 			}
 			

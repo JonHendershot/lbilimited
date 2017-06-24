@@ -17,44 +17,54 @@
 	
 	// Preparation :: Setup Grid Numbers to ensure the last row is full [used for evaluation in Display Logic]
 		$grid_lock = array(
-			"grid_a" => array(
-					"key" => "norm",
-					"values" => array() 
-				),
-			"grid_b" => array(
-					"key" => "alt",
-					"values" => array() 
-				),
-			"grid_c" => array(
-					"key" => "alt-inv",
-					"values" => array() 
-				),
-			"grid_d" => array(
-					"key" => "r-1",
-					"values" => array() 
-				),
-			"grid_e" => array(
-					"key" => "r-2",
-					"values" => array()
-			)
-		);
+		"grid_a" => array(
+				"key" => "norm",
+				"values" => array() 
+			),
+		"grid_b" => array(
+				"key" => "norm_3",
+				"values" => array() 
+			),
+		"grid_c" => array(
+				"key" => "alt",
+				"values" => array() 
+			),
+		"grid_d" => array(
+				"key" => "alt-inv",
+				"values" => array() 
+			),
+		"grid_e" => array(
+				"key" => "r-1",
+				"values" => array()
+		),
+		"grid_f" => array(
+				"key" => "r-2",
+				"values" => array()
+		),
+		"grid_g" => array(
+				"key" => "r-3",
+				"values" => array()
+		)
+	);
 	
 	// Evaluation :: Push in to arrays
-		for($nn = 5; $nn <= $iterations; $nn++){
-			if($nn % 3 == 0){ // is divisible by 3
-				$grid_lock["grid_a"]["values"][] = $nn;
-			} else if($nn % 5 == 0 || $nn % 5 === 3){
-				$grid_lock["grid_b"]["values"][] = $nn;
-			} else if($nn % 5 == 2){
-				$grid_lock["grid_c"]["values"][] = $nn;
-			} else if($nn % 3 == 1){
-				$grid_lock["grid_d"]["values"][] = $nn;
-			} else if($nn % 3 == 2){
-				$grid_lock["grid_e"]["values"][] = $nn;
-			} else { // catchall
-				$grid_lock["grid_f"]["values"][] = $nn;
-			}
+	for($nn = 5; $nn <= $iterations; $nn++){
+		if($nn % 4 == 0){ // is divisible by 4
+			$grid_lock["grid_a"]["values"][] = $nn;
+		} else if($nn % 3 == 0 ){
+			$grid_lock["grid_b"]["values"][] = $nn;
+		} else if($nn % 7 == 0 || $nn % 7 == 4){
+			$grid_lock["grid_c"]["values"][] = $nn;
+		} else if($nn % 7 == 3){
+			$grid_lock["grid_d"]["values"][] = $nn;
+		} else if($nn % 4 == 1){
+			$grid_lock["grid_e"]["values"][] = $nn;
+		} else if( $nn % 4 == 2 ){ 
+			$grid_lock["grid_f"]["values"][] = $nn;
+		} else if($nn % 4 == 3 ){
+			$grid_lock["grid_g"]["values"][] = $nn;
 		}
+	}
 
 // Display Arrays
 /*
@@ -75,7 +85,7 @@
 		$quotes = array(); // intialize array to store quote information so that we don't need to loop for it again later
 
 	// Loop: Create Container, Begin Loop, and Create Items
-		echo "<div class='gridlock-container $gutter'>";
+		echo "<div class='gridlock_2-container specialists_wrapper $gutter'>";
 			while( $query->have_posts() ) : $query->the_post(); 
 			
 				// Establish Variables for this Specialist

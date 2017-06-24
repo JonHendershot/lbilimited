@@ -32,6 +32,10 @@ h1,h2,h3,h4,h5,h6 {
 	transform-origin: left;
 	
 }
+.owl-nav.disabled {
+	display: none !important;
+	visibility: hidden !important;
+}
 input:focus {
 	outline: none;
 }

@@ -1,5 +1,5 @@
 // Gridlock
-.gridlock-container{
+.gridlock-container, .gridlock_2-container{
 	display: flex;
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -32,10 +32,12 @@ $gutter_slug : gutter;
 // Spacing
 // Loop through number of gutter options and apply element widths accordingly
 @for $i from 0px through 30px {
+	
+	// GRIDLOCK 1 STYLES // 
 	.gridlock-container.#{$gutter_slug}-#{$i} {
 			@include calc(margin-top,$i " * 0.5");
 			@include calc(width,$menu_width " + " $i);
-	}
+	
 	.grid-item.#{$gutter_slug}-#{$i}{
 		@include calc(width,"33.333% -" $i);
 		@include calc(margin,$i " * 0.5");
@@ -45,15 +47,41 @@ $gutter_slug : gutter;
 		@include calc(width,"50% -" $i);
 		padding-bottom: 28.125%; // 16:9 Aspect Ratio
 		
-		.item-content {
-			h3 {
-				font-size: 58px;
-				line-height: 63px;
-			}
-			p {
-				font-size: 14px;
+			.item-content {
+				h3 {
+					font-size: 58px;
+					line-height: 63px;
+				}
+				p {
+					font-size: 14px;
+				}
 			}
 		}
+	} // END GRIDLOCK 1 STYLES
+	
+	// GRIDLOCK_2 STYLES //
+	
+	.gridlock_2-container.#{$gutter_slug}-#{$i} {
+			@include calc(margin-top,$i " * 0.5");
+			@include calc(margin-bottom,$i " * 0.5");
+			@include calc(width,"100% -" $i);
+
+		.grid-item.#{$gutter_slug}-#{$i},.grid-item.r-1:nth-child(-n+1).#{$gutter_slug}-#{$i}, .grid-item.r-1:nth-child(-n+2).#{$gutter_slug}-#{$i}, .grid-item.r-1:nth-child(-n+3).#{$gutter_slug}-#{$i}, .grid-item.r-1:nth-child(-n+4).#{$gutter_slug}-#{$i} {
+			@include calc(width,"25% -" $i);
+			@include calc(margin,$i " * 0.5");
+			padding-bottom: 25%;
+			
+			
+			// .grid-item.r-1:last-child.#{$gutter_slug}-#{$i}, .grid-item.r-1:nth-last-child(2).#{$gutter_slug}-#{$i}, .grid-item.r-1:nth-last-child(3).#{$gutter_slug}-#{$i}, .grid-item.r-1:nth-last-child(4).#{$gutter_slug}-#{$i}
+		}
+		.grid-item.norm_3.#{$gutter_slug}-#{$i}{
+			@include calc(width,"33.333% -" $i);
+			padding-bottom: 33.333%;
+		}
+		.grid-item.alt:nth-child(7n+5).#{$gutter_slug}-#{$i}, .grid-item.alt:nth-child(7n+6).#{$gutter_slug}-#{$i}, .grid-item.alt:nth-child(7n+7).#{$gutter_slug}-#{$i}, .grid-item.alt-inv:nth-child(7n+1).#{$gutter_slug}-#{$i}, .grid-item.alt-inv:nth-child(7n+2).#{$gutter_slug}-#{$i}, .grid-item.alt-inv:nth-child(7n+3).#{$gutter_slug}-#{$i}, .grid-item.anom-1:nth-child(10n+10).#{$gutter_slug}-#{$i}, .grid-item.anom-1:nth-child(10n+11).#{$gutter_slug}-#{$i}, .grid-item.r-3:last-child.#{$gutter_slug}-#{$i}, .grid-item.r-3:nth-last-child(2).#{$gutter_slug}-#{$i}, .grid-item.r-3:nth-last-child(3).#{$gutter_slug}-#{$i}, .grid-item.r-1.#{$gutter_slug}-#{$i}, .grid-item.r-2:nth-last-child(1).#{$gutter_slug}-#{$i}, .grid-item.r-2:nth-last-child(2).#{$gutter_slug}-#{$i}, .grid-item.r-2:nth-last-child(3).#{$gutter_slug}-#{$i}, .grid-item.r-2:nth-child(-n+1).#{$gutter_slug}-#{$i}, .grid-item.r-2:nth-child(-n+2).#{$gutter_slug}-#{$i}, .grid-item.r-2:nth-child(-n+3).#{$gutter_slug}-#{$i}, {
+			@include calc(width,"33.333% -" $i);
+			padding-bottom: 33.333%;
 		}
 	}
-
+	// END GRIDLOCK 2 STYLES //
+}

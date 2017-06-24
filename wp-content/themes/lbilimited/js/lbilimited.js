@@ -263,6 +263,7 @@ function updateSpecialist(specialist){
 					bio = data.bio,
 					name = data.name,
 					position = data.position,
+					video = data.video_iframe,
 					expandContainer = $('.specialist_expand_container'); 
 				
 			// Load Images
@@ -270,6 +271,13 @@ function updateSpecialist(specialist){
 				$('.specialist_expand_content h3').text(name);
 				$('.specialist_expand_content p').text(position);
 				$('.specialist_expand_content .content').text(bio);
+				
+				if(video !== ''){
+					$('.specialist_expand_content .launch_video').removeClass('hidden').attr('data-frame',video);
+				}else {
+					$('.specialist_expand_content .launch_video').addClass('hidden').attr('data-frame','');
+
+				}
 				
 			// Show Container
 				expandContainer.addClass('visible');
@@ -619,15 +627,11 @@ function next_trigger_id(id, imgClass){
 	}
 */
 	// Specialists Wrapper 
-	if( $('.specialists_wrapper').length ){
+	if( $('.specialists_wrapper').length && window.innerWidth < 1150 ){
+		console.log('firing');
+		
 		var specialistOwl = $('.specialists_wrapper').owlCarousel({
-			items: 1,
-			responsive: {
-				1150 : {
-					items: 4,
-					dots: false
-				}
-			}
+			items: 1
 		});
 		specialistOwl.on('changed.owl.carousel',function(e){
 			setTimeout(function(){
