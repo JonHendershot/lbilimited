@@ -23,7 +23,7 @@ h1,h2,h3,h4,h5,h6 {
 .dash-title::after {
 	content:"";
 	width: 2px;
-	height: 180px;
+	height: 100%; // 180px
 	background-color: $white;
 	position: absolute;
 	@include skew(-24deg);

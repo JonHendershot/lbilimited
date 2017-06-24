@@ -488,6 +488,9 @@
 				@include easeout(1200ms);
 				opacity: 1;
 			}
+			.media_shade {
+				z-index: 999999;
+			}
 		}
 	}
 	
