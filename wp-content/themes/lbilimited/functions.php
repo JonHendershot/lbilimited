@@ -702,3 +702,74 @@ add_action('do_meta_boxes', 'remove_thumbnail_box');
 function remove_thumbnail_box() {
     remove_meta_box( 'postimagediv','post','side' );
 }
+
+  /////////////////////////////////////////////////////////////////////////////
+ /// Function to return appropriate media content based on what type it is ///
+/////////////////////////////////////////////////////////////////////////////
+function get_media($file){
+	$file_type = $file['mime_type'];
+	$file_class = $file['type'];
+	$file_url = $file['url'];
+	$file_alt = $file['alt'];
+	$output = "<div class='featured_media'>";
+	
+
+	
+	if( $file_class == 'video' ){
+		$src = $file_url;
+		$output .= "<video id='header-video' autoplay loop muted>
+					  		<source src='$src' type='$file_type' class='laszy-load'></source>
+					  	</video>";
+	}
+	if( $file_class == 'image' ){
+		$src = $file['sizes']['large'];
+		$output .= "<img src='$src' alt='$file_alt' class='lazy-load'/>";
+	}
+	
+	$output .= "</div>";
+	return $output; 
+}
+
+
+  //////////////////////////////////////////////////////////////////////
+ /// Function to replace an input with letters wrapped in span tags ///
+//////////////////////////////////////////////////////////////////////
+
+function span_per_letter($input){
+	
+	// Create DOM document and load HTML string, hinting that it is UTF-8 encoded.
+	// We need a root element for this so we wrap the source in a temporary <div>.
+	$hint = '<meta http-equiv="content-type" content="text/html; charset=utf-8">';
+	$dom = new DOMDocument();
+	$dom->loadHTML($hint . "<div>" . $input . "</div>");
+	
+	// Get contents of temporary root node
+	$root = $dom->getElementsByTagName('div')->item(0);
+	
+	// Loop through children
+	$next = $root->firstChild;
+	while ($node = $next) {
+	    $next = $node->nextSibling; // Save for next while iteration
+	
+	    // We are only interested in text nodes (not <br/> etc)
+	    if ($node->nodeType == XML_TEXT_NODE) {
+	        // Wrap each character of the text node (e.g. "Hi ") in a <span> of
+	        // its own, e.g. "<span>H</span><span>i</span><span> </span>"
+	        foreach (preg_split('/(?<!^)(?!$)/u', $node->nodeValue) as $char) {
+	            $span = $dom->createElement('span', $char);
+	            $root->insertBefore($span, $node);
+	        }
+	        // Drop text node (e.g. "Hi ") leaving only <span> wrapped chars
+	        $root->removeChild($node);
+	    }
+	}
+	
+	// Back to string via SimpleXMLElement (so that the output is more similar to
+	// the source than would be the case with $root->C14N() etc), removing temporary
+	// root <div> element and space-only spans as well.
+	$withSpans = simplexml_import_dom($root)->asXML();
+	$withSpans = preg_replace('#^<div>|</div>$#', '', $withSpans);
+	$withSpans = preg_replace('#<span> </span>#', ' ', $withSpans);
+	
+	return $withSpans;
+}

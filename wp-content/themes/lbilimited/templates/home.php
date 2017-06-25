@@ -105,12 +105,21 @@
 		get_template_part('template-parts/module', 'sub_heading');
 		
 	// Build Social Media Call To Action
-	
+		$social_header_input = get_field('main_text');
+		$social_header = span_per_letter($social_header_input);
+		$social_sub = get_field('sub_text');
+		$social_bgmedia = get_field('background_media');
+		$social_bg_opacity_raw = get_field('overlay_opacity');
+		$social_bg_opacity = $social_bg_opacity_raw / 100;
+		$social_link = get_field('clickthrough_link');
+		$background = get_media($social_bgmedia,false);
 	?>
-	<section class="social_cta">
-		<h3>#claimyourclassic</h3>	
-		<p>your dream car is only a click away</p>
-	</section>
+	<a href="<?php echo $social_link ?>" target="_blank" class="social_cta waypoint" data-padding="250">
+		<h3><?php echo $social_header; ?></h3>	
+		<p><?php echo $social_sub; ?></p>
+		<span class="background_overlay" style="opacity: <?php echo $social_bg_opacity; ?>"></span>
+		<?php echo $background; ?>
+	</a>
 	<?php
 		
 	// Invoke site footer

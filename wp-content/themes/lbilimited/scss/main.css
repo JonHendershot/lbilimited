@@ -5070,7 +5070,20 @@ body.page-template-home .sub__heading .sub__heading-content p {
 
 body.page-template-home .social_cta {
   padding: 135px 0;
-  background-color: #191B1C; }
+  background-color: #191B1C;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  text-decoration: none; }
+  body.page-template-home .social_cta.waypoint h3 span {
+    transform: translateY(15px);
+    -webkit-transform: translateY(15px);
+    -moz-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    -o-transform: translateY(15px);
+    opacity: 0; }
+  body.page-template-home .social_cta.waypoint p {
+    opacity: 0; }
   body.page-template-home .social_cta h3 {
     font-weight: normal;
     font-style: italic;
@@ -5079,7 +5092,222 @@ body.page-template-home .social_cta {
     text-align: center;
     letter-spacing: 1px;
     padding-left: 1px;
-    margin: 0; }
+    margin: 0;
+    z-index: 9;
+    position: relative; }
+    body.page-template-home .social_cta h3 span {
+      transform: translateY(0px);
+      -webkit-transform: translateY(0px);
+      -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+      -o-transform: translateY(0px);
+      opacity: 1;
+      -webkit-transition: all 500ms cubic-bezier(0.375, 0.005, 0, 1);
+      -moz-transition: all 500ms cubic-bezier(0.375, 0.005, 0, 1);
+      -o-transition: all 500ms cubic-bezier(0.375, 0.005, 0, 1);
+      transition: all 500ms cubic-bezier(0.375, 0.005, 0, 1);
+      /* custom */
+      display: inline-block; }
+      body.page-template-home .social_cta h3 span:nth-child(1) {
+        transition-delay: 52ms; }
+      body.page-template-home .social_cta h3 span:nth-child(2) {
+        transition-delay: 78ms; }
+      body.page-template-home .social_cta h3 span:nth-child(3) {
+        transition-delay: 104ms; }
+      body.page-template-home .social_cta h3 span:nth-child(4) {
+        transition-delay: 130ms; }
+      body.page-template-home .social_cta h3 span:nth-child(5) {
+        transition-delay: 156ms; }
+      body.page-template-home .social_cta h3 span:nth-child(6) {
+        transition-delay: 182ms; }
+      body.page-template-home .social_cta h3 span:nth-child(7) {
+        transition-delay: 208ms; }
+      body.page-template-home .social_cta h3 span:nth-child(8) {
+        transition-delay: 234ms; }
+      body.page-template-home .social_cta h3 span:nth-child(9) {
+        transition-delay: 260ms; }
+      body.page-template-home .social_cta h3 span:nth-child(10) {
+        transition-delay: 286ms; }
+      body.page-template-home .social_cta h3 span:nth-child(11) {
+        transition-delay: 312ms; }
+      body.page-template-home .social_cta h3 span:nth-child(12) {
+        transition-delay: 338ms; }
+      body.page-template-home .social_cta h3 span:nth-child(13) {
+        transition-delay: 364ms; }
+      body.page-template-home .social_cta h3 span:nth-child(14) {
+        transition-delay: 390ms; }
+      body.page-template-home .social_cta h3 span:nth-child(15) {
+        transition-delay: 416ms; }
+      body.page-template-home .social_cta h3 span:nth-child(16) {
+        transition-delay: 442ms; }
+      body.page-template-home .social_cta h3 span:nth-child(17) {
+        transition-delay: 468ms; }
+      body.page-template-home .social_cta h3 span:nth-child(18) {
+        transition-delay: 494ms; }
+      body.page-template-home .social_cta h3 span:nth-child(19) {
+        transition-delay: 520ms; }
+      body.page-template-home .social_cta h3 span:nth-child(20) {
+        transition-delay: 546ms; }
+      body.page-template-home .social_cta h3 span:nth-child(21) {
+        transition-delay: 572ms; }
+      body.page-template-home .social_cta h3 span:nth-child(22) {
+        transition-delay: 598ms; }
+      body.page-template-home .social_cta h3 span:nth-child(23) {
+        transition-delay: 624ms; }
+      body.page-template-home .social_cta h3 span:nth-child(24) {
+        transition-delay: 650ms; }
+      body.page-template-home .social_cta h3 span:nth-child(25) {
+        transition-delay: 676ms; }
+      body.page-template-home .social_cta h3 span:nth-child(26) {
+        transition-delay: 702ms; }
+      body.page-template-home .social_cta h3 span:nth-child(27) {
+        transition-delay: 728ms; }
+      body.page-template-home .social_cta h3 span:nth-child(28) {
+        transition-delay: 754ms; }
+      body.page-template-home .social_cta h3 span:nth-child(29) {
+        transition-delay: 780ms; }
+      body.page-template-home .social_cta h3 span:nth-child(30) {
+        transition-delay: 806ms; }
+      body.page-template-home .social_cta h3 span:nth-child(31) {
+        transition-delay: 832ms; }
+      body.page-template-home .social_cta h3 span:nth-child(32) {
+        transition-delay: 858ms; }
+      body.page-template-home .social_cta h3 span:nth-child(33) {
+        transition-delay: 884ms; }
+      body.page-template-home .social_cta h3 span:nth-child(34) {
+        transition-delay: 910ms; }
+      body.page-template-home .social_cta h3 span:nth-child(35) {
+        transition-delay: 936ms; }
+      body.page-template-home .social_cta h3 span:nth-child(36) {
+        transition-delay: 962ms; }
+      body.page-template-home .social_cta h3 span:nth-child(37) {
+        transition-delay: 988ms; }
+      body.page-template-home .social_cta h3 span:nth-child(38) {
+        transition-delay: 1014ms; }
+      body.page-template-home .social_cta h3 span:nth-child(39) {
+        transition-delay: 1040ms; }
+      body.page-template-home .social_cta h3 span:nth-child(40) {
+        transition-delay: 1066ms; }
+      body.page-template-home .social_cta h3 span:nth-child(41) {
+        transition-delay: 1092ms; }
+      body.page-template-home .social_cta h3 span:nth-child(42) {
+        transition-delay: 1118ms; }
+      body.page-template-home .social_cta h3 span:nth-child(43) {
+        transition-delay: 1144ms; }
+      body.page-template-home .social_cta h3 span:nth-child(44) {
+        transition-delay: 1170ms; }
+      body.page-template-home .social_cta h3 span:nth-child(45) {
+        transition-delay: 1196ms; }
+      body.page-template-home .social_cta h3 span:nth-child(46) {
+        transition-delay: 1222ms; }
+      body.page-template-home .social_cta h3 span:nth-child(47) {
+        transition-delay: 1248ms; }
+      body.page-template-home .social_cta h3 span:nth-child(48) {
+        transition-delay: 1274ms; }
+      body.page-template-home .social_cta h3 span:nth-child(49) {
+        transition-delay: 1300ms; }
+      body.page-template-home .social_cta h3 span:nth-child(50) {
+        transition-delay: 1326ms; }
+      body.page-template-home .social_cta h3 span:nth-child(51) {
+        transition-delay: 1352ms; }
+      body.page-template-home .social_cta h3 span:nth-child(52) {
+        transition-delay: 1378ms; }
+      body.page-template-home .social_cta h3 span:nth-child(53) {
+        transition-delay: 1404ms; }
+      body.page-template-home .social_cta h3 span:nth-child(54) {
+        transition-delay: 1430ms; }
+      body.page-template-home .social_cta h3 span:nth-child(55) {
+        transition-delay: 1456ms; }
+      body.page-template-home .social_cta h3 span:nth-child(56) {
+        transition-delay: 1482ms; }
+      body.page-template-home .social_cta h3 span:nth-child(57) {
+        transition-delay: 1508ms; }
+      body.page-template-home .social_cta h3 span:nth-child(58) {
+        transition-delay: 1534ms; }
+      body.page-template-home .social_cta h3 span:nth-child(59) {
+        transition-delay: 1560ms; }
+      body.page-template-home .social_cta h3 span:nth-child(60) {
+        transition-delay: 1586ms; }
+      body.page-template-home .social_cta h3 span:nth-child(61) {
+        transition-delay: 1612ms; }
+      body.page-template-home .social_cta h3 span:nth-child(62) {
+        transition-delay: 1638ms; }
+      body.page-template-home .social_cta h3 span:nth-child(63) {
+        transition-delay: 1664ms; }
+      body.page-template-home .social_cta h3 span:nth-child(64) {
+        transition-delay: 1690ms; }
+      body.page-template-home .social_cta h3 span:nth-child(65) {
+        transition-delay: 1716ms; }
+      body.page-template-home .social_cta h3 span:nth-child(66) {
+        transition-delay: 1742ms; }
+      body.page-template-home .social_cta h3 span:nth-child(67) {
+        transition-delay: 1768ms; }
+      body.page-template-home .social_cta h3 span:nth-child(68) {
+        transition-delay: 1794ms; }
+      body.page-template-home .social_cta h3 span:nth-child(69) {
+        transition-delay: 1820ms; }
+      body.page-template-home .social_cta h3 span:nth-child(70) {
+        transition-delay: 1846ms; }
+      body.page-template-home .social_cta h3 span:nth-child(71) {
+        transition-delay: 1872ms; }
+      body.page-template-home .social_cta h3 span:nth-child(72) {
+        transition-delay: 1898ms; }
+      body.page-template-home .social_cta h3 span:nth-child(73) {
+        transition-delay: 1924ms; }
+      body.page-template-home .social_cta h3 span:nth-child(74) {
+        transition-delay: 1950ms; }
+      body.page-template-home .social_cta h3 span:nth-child(75) {
+        transition-delay: 1976ms; }
+      body.page-template-home .social_cta h3 span:nth-child(76) {
+        transition-delay: 2002ms; }
+      body.page-template-home .social_cta h3 span:nth-child(77) {
+        transition-delay: 2028ms; }
+      body.page-template-home .social_cta h3 span:nth-child(78) {
+        transition-delay: 2054ms; }
+      body.page-template-home .social_cta h3 span:nth-child(79) {
+        transition-delay: 2080ms; }
+      body.page-template-home .social_cta h3 span:nth-child(80) {
+        transition-delay: 2106ms; }
+      body.page-template-home .social_cta h3 span:nth-child(81) {
+        transition-delay: 2132ms; }
+      body.page-template-home .social_cta h3 span:nth-child(82) {
+        transition-delay: 2158ms; }
+      body.page-template-home .social_cta h3 span:nth-child(83) {
+        transition-delay: 2184ms; }
+      body.page-template-home .social_cta h3 span:nth-child(84) {
+        transition-delay: 2210ms; }
+      body.page-template-home .social_cta h3 span:nth-child(85) {
+        transition-delay: 2236ms; }
+      body.page-template-home .social_cta h3 span:nth-child(86) {
+        transition-delay: 2262ms; }
+      body.page-template-home .social_cta h3 span:nth-child(87) {
+        transition-delay: 2288ms; }
+      body.page-template-home .social_cta h3 span:nth-child(88) {
+        transition-delay: 2314ms; }
+      body.page-template-home .social_cta h3 span:nth-child(89) {
+        transition-delay: 2340ms; }
+      body.page-template-home .social_cta h3 span:nth-child(90) {
+        transition-delay: 2366ms; }
+      body.page-template-home .social_cta h3 span:nth-child(91) {
+        transition-delay: 2392ms; }
+      body.page-template-home .social_cta h3 span:nth-child(92) {
+        transition-delay: 2418ms; }
+      body.page-template-home .social_cta h3 span:nth-child(93) {
+        transition-delay: 2444ms; }
+      body.page-template-home .social_cta h3 span:nth-child(94) {
+        transition-delay: 2470ms; }
+      body.page-template-home .social_cta h3 span:nth-child(95) {
+        transition-delay: 2496ms; }
+      body.page-template-home .social_cta h3 span:nth-child(96) {
+        transition-delay: 2522ms; }
+      body.page-template-home .social_cta h3 span:nth-child(97) {
+        transition-delay: 2548ms; }
+      body.page-template-home .social_cta h3 span:nth-child(98) {
+        transition-delay: 2574ms; }
+      body.page-template-home .social_cta h3 span:nth-child(99) {
+        transition-delay: 2600ms; }
+      body.page-template-home .social_cta h3 span:nth-child(100) {
+        transition-delay: 2626ms; }
   body.page-template-home .social_cta p {
     font-size: 12px;
     letter-spacing: 0.2px;
@@ -5090,7 +5318,30 @@ body.page-template-home .social_cta {
     margin: 20px auto 0;
     color: #fefefe;
     text-transform: uppercase;
-    font-weight: 300; }
+    font-weight: 300;
+    opacity: 1;
+    -webkit-transition: all 3000ms cubic-bezier(0.375, 0.005, 0, 1);
+    -moz-transition: all 3000ms cubic-bezier(0.375, 0.005, 0, 1);
+    -o-transition: all 3000ms cubic-bezier(0.375, 0.005, 0, 1);
+    transition: all 3000ms cubic-bezier(0.375, 0.005, 0, 1);
+    /* custom */
+    z-index: 9;
+    position: relative; }
+  body.page-template-home .social_cta span.background_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #191B1C;
+    z-index: 1; }
+  body.page-template-home .social_cta .featured_media img, body.page-template-home .social_cta .featured_media video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    object-fit: cover;
+    top: 0; }
 
 .newsletter_optin .wpcf7-list-item {
   margin-top: 30px;

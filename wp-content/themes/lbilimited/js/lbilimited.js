@@ -930,6 +930,7 @@ function lazyLoader(img){
 				img.addClass('div_check');
 			}
 
+
 			img.addClass('visible');
 		};
 	
