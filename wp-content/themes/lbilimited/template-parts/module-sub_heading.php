@@ -13,7 +13,7 @@
 ?>
 	<section class="<?php echo $objectClass; ?>">
 		<article>
-			<div class="sub__heading-content waypoint" data-padding="200">
+			<div class="sub__heading-content waypoint" data-padding="100">
 				<h2><?php echo $heading; ?></h2>
 				<p><?php echo $body; ?></p>
 			</div>

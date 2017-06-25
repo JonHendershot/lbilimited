@@ -155,7 +155,7 @@ function waypoint(elem, scrollY){
 		windowHeight = window.innerHeight,
 		threshold = scrollY + windowHeight;
 
-	if(waypointTrigger < threshold){
+	if( waypointTrigger < threshold && elem.hasClass('waypoint') ){
 		elem.removeClass('waypoint');
 	}
 }
@@ -490,6 +490,12 @@ function next_trigger_id(id, imgClass){
 			menu.addClass('open');
 			setTimeout(function(){ menu.addClass('menu_visible') },500);
 			$('body').addClass('noscroll');
+			
+			// If menu is open, change the Z index
+			if( $('.search_form_container').hasClass('visible') ){
+
+				$('.search_form_container').css({'z-index' : '1'});
+			}
 		}
 	});
 }(jQuery));
@@ -823,6 +829,11 @@ function open_lightbox(lightbox_id){
 				setTimeout(function(){
 					focusField.focus();
 				}, 500);  
+				// If menu is open, change the Z index
+				if( $('#main_menu').hasClass('open') ){
+					console.log('its open');
+					$('.search_form_container').css({'z-index' : '10'});
+				}
 			}
 			
 			if($('.featured_image_showcase').length){
