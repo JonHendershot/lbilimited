@@ -717,13 +717,13 @@ function get_media($file){
 	
 	if( $file_class == 'video' ){
 		$src = $file_url;
-		$output .= "<video id='header-video' autoplay loop muted>
-					  		<source src='$src' type='$file_type' class='laszy-load'></source>
+		$output .= "<video id='social-video' autoplay loop muted>
+					  		<source data-src='$src' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' type='$file_type' class='lazy-load'></source>
 					  	</video>";
 	}
 	if( $file_class == 'image' ){
 		$src = $file['sizes']['large'];
-		$output .= "<img src='$src' alt='$file_alt' class='lazy-load'/>";
+		$output .= "<img data-src='$src' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='$file_alt' class='lazy-load'/>";
 	}
 	
 	$output .= "</div>";

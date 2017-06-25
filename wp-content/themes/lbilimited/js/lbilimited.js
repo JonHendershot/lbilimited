@@ -916,11 +916,12 @@ function textareaAdjust(t){
 
 function lazyLoader(img){
 	
-	var src = img.attr('data-src'), // Get image src
-		loader = new Image(); // create new DOM element
-		loader.src = src; // load the new image with the src
-		
-		loader.onload = function(){ // when the image is loaded, apply the source appropriately to the element
+	var src = img.attr('data-src'); // Get image src
+		if(img.is('img') || img.is('div')){
+			var loader = new Image(); // create new DOM element
+			loader.src = src; // load the new image with the src
+			
+			loader.onload = function(){ // when the image is loaded, apply the source appropriately to the element
 			
 			if(img.is('img')){
 				img.attr('src',src); 
@@ -933,6 +934,16 @@ function lazyLoader(img){
 
 			img.addClass('visible');
 		};
+		}
+		if( img.is('source') ){
+			img.attr('src',src);
+			var video = document.getElementById('social-video');
+			video.load();
+			video.play();
+		}
+
+		
+		
 	
 }
 
