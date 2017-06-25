@@ -19,7 +19,7 @@
 			</div>
 			<div class="pgram__container waypoint" data-padding="200">
 				<div class="pgram__frame">
-					<img class="<?php echo $imageClass; ?>" src="<?php echo $image['url']; ?>" />
+					<img class="<?php echo $imageClass; ?>" src="<?php echo $image['sizes']['medium_large']; ?>" />
 				</div>
 			</div>
 		</article>
