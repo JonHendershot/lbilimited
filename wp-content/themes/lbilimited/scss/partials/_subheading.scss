@@ -14,12 +14,19 @@ $skew_distance : 15deg;
 		.sub__heading-content {
 			width: 50%;
 			z-index: 9999;
+			opacity: 1;
+			* {
+				@include easeout(1000ms);
+				@include prefix(transform, translateY(0px));
+
+			}
 			h2 {
 				color: $gray;
 				font-size: 36px;
 				letter-spacing: 1px;
 				font-weight: bold;
 				margin: 0 0 5px;
+				opacity: 1;
 			}
 			p {
 				font-size: 14px;
@@ -28,10 +35,23 @@ $skew_distance : 15deg;
 				font-weight: 300;
 				margin: 0;
 				padding-left: 2px;
+				opacity: 1;
+			}
+			&.waypoint {
+				h2 {
+					@include prefix(transform, translateY(15px));
+					opacity: 0;
+				}
+				p {
+					@include prefix(transform, translateY(30px));
+					opacity: 0;
+				}
 			}
 		}
 		.pgram__container {
 			position: relative;
+			opacity: 1;
+			@include easeout(1000ms);
 			.pgram__frame {
 				height: 350px;
 			    width: 280px;
@@ -65,29 +85,36 @@ $skew_distance : 15deg;
 					@include translate_skew(-25%,0,0,$skew_distance);
 				}
 			}
+			
+			&.waypoint {
+				opacity: 0;
+				&::before {
+					@include prefix(transform, skew(-$skew_distance) translateX(-70px));
+				}
+				&::after {
+					@include prefix(transform, skew(-$skew_distance) translateX(70px));
+				}
+			}
 		}
 		
-		.pgram__container::after {
+		
+		.pgram__container::before, .pgram__container::after {
 			content: "";
 			height: 80%;
 			width: 70%;
 			position: absolute;
-			bottom: -22px;
 			background-color: $overlay_g;
-			transform: skew(-$skew_distance);
-			left: -35%;
+			@include prefix(transform, skew(-$skew_distance) translateX(0px));
 			z-index: 1;
+			@include easeout(1000ms);
+		}
+		.pgram__container::after {
+			bottom: -22px;
+			left: -35%;			
 		}
 		.pgram__container::before {
-			content: "";
-			height: 80%;
-			width: 70%;
-			position: absolute;
 			top: -22px;
-			background-color: $overlay_g;
-			transform: skew(-$skew_distance);
 			right: -35%;
-			z-index: 1;
 		}
 	}
 }

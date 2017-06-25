@@ -58,9 +58,9 @@ jQuery(window).load(function(){
 	}
 }(jQuery));
 
-  /////////////////
- // STICKY MENU //
-/////////////////
+  ///////////////////
+ // SCROLL EVENTS //
+///////////////////
 (function stickyMenu($){
 	var nav = $('.nav-wrapper'),
 		menu = $('#main_menu'),
@@ -134,9 +134,31 @@ jQuery(window).load(function(){
 			
 		}
 		lastScrollTop = scrollDistance;
+		
+		
+		// WAYPOINT SCROLLER
+		var waypointElem = $('.waypoint');
+		
+		waypointElem.each(function(){
+			var elem = $(this);
+			waypoint(elem,scrollDistance);
+		});
+
 	});
 }(jQuery));
 
+
+function waypoint(elem, scrollY){
+	var offsetTop = (elem.offset().top),
+		thresholdPadding = parseInt( elem.data('padding') ),
+		waypointTrigger = offsetTop + thresholdPadding,
+		windowHeight = window.innerHeight,
+		threshold = scrollY + windowHeight;
+
+	if(waypointTrigger < threshold){
+		elem.removeClass('waypoint');
+	}
+}
 
   //////////////////
  // STICKY SHARE //
@@ -627,14 +649,25 @@ function next_trigger_id(id, imgClass){
 	}
 */
 	// Specialists Wrapper 
-	if( $('.specialists_wrapper').length && window.innerWidth < 1150 ){
-		console.log('firing');
+	if( $('.specialists_wrapper').length && window.innerWidth < 1150 ){		
 		
+		// Init Carousel for mobile device width
 		var specialistOwl = $('.specialists_wrapper').owlCarousel({
 			items: 1
 		});
+		
+		// The specialist meta container starts as an empty frame, which isn't a big deal
+		// for desktop because it's hidden until the user interacts with it. For mobile,
+		// it's visiblie imediately, so we need to update its content with the first active specialist
+		var mobileSpecialist = $('.specialists_wrapper .owl-item.active .specialist_item');
+		updateSpecialist(mobileSpecialist);
+		
+		// Update the specialist meta container on each chang event
 		specialistOwl.on('changed.owl.carousel',function(e){
 			setTimeout(function(){
+				
+				// we need to grab the active specialist each time the container changes
+				// this allows us to update the information in the meta container
 				var activeSpecialist = $('.specialists_wrapper .owl-item.active .specialist_item');
 				
 				updateSpecialist(activeSpecialist);

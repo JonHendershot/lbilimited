@@ -68,6 +68,36 @@ body.blog {
 				padding-bottom: 24.25%;
 				position: relative;
 				box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.4);
+				@include easeout(1000ms);
+				opacity: 1;
+				@include prefix(transform, translateY(0px));
+				
+				&.waypoint {
+					@include prefix(transform, translateY(40px));
+					opacity: 0;
+					
+					.post-content {
+						.post-title {
+							h2 {
+								@include prefix(transform, translateY(25px));
+							}
+/*
+							&.dash-title:after {
+								@include prefix(transform, skew(-24deg) scaleY(0) !important);
+							}
+*/
+						}
+						.post-meta {
+							.date {
+								@include prefix(transform, translateY(25px));
+							}
+							span.expand {
+								@include prefix(transform, translateY(35px));
+								opacity: 0;
+							}
+						}
+					}
+				}
 
 				a.post-link {
 					text-decoration: none;
@@ -80,6 +110,11 @@ body.blog {
 						position: relative;
 						z-index: 99;	
 						@include flexbox(flex-start,space-between);	
+						
+						h2,.date,span {
+							@include prefix(transform, translateY(0px));
+							@include easeout(1000ms);
+						}
 						
 						.post-title {
 							@include max-content(width);
@@ -96,9 +131,12 @@ body.blog {
 							}
 						}
 						.post-title.dash-title:after {
-							height: 120px;
-							top: 3px;
-							right: -15px;
+							height: 100%;
+							top: 7px;
+							right: -25px;
+							@include prefix(transform, skew(-24deg) scaleY(1));
+							@include easeout(1000ms);
+							transform-origin: top;
 						}
 						.post-meta {
 							text-align: right;
@@ -119,6 +157,9 @@ body.blog {
 								letter-spacing: 4.2px;
 								font-weight: 500;
 								text-decoration: none;
+								display: block;
+								transition-delay: 100ms;
+								opacity: 1;
 							}
 						}
 						
@@ -152,8 +193,8 @@ body.blog {
 					position: absolute;
 					content: "";
 					top: 0;
-					left: 0;
-					width: 100%;
+					left: -5%;
+					width: 110%;
 					height: 100%;
 					background: linear-gradient(-180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.00) 70%);
 					z-index: 9;

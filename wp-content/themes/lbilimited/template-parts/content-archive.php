@@ -26,7 +26,7 @@
 ?>
 
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'news-post' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'news-post waypoint' ); ?> data-padding="70">
 	<a href="<?php the_permalink(); ?>" class="post-link">
 		<div class="post-content">
 			<div class="post-title dash-title">

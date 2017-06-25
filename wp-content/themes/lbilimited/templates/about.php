@@ -89,15 +89,15 @@
 						<div class="specialist_content">
 							<div class="header-content">
 								<div class='header dash-title'>
-							    	<h3>Andrew Mastin</h3>
-							        <p>Specialist & Founder</p>
+							    	<h3></h3>
+							        <p></p>
 							    </div>
 							    <div class="btns">
 									<span class='launch_video main-btn hidden' data-frame=''>launch video</span>
 							    </div>
 							</div>
 						    <div class='content'>
-						    	<p>Andrew was born and raised in South Eastern Pennsylvania. His first words, \u0022car keys\u0022 made his interests evident and a ride in a Ferrari 328 GTS at the age of five defined his future. Needless to say, AndrewÃ¢ÂÂs interest in cars was inevitable and extremely enthusiastic; which was the premise on which he and Adolfo founded LBI. Today he is an active, aggressive member of the team and collector car community.\r\n\r\nHe is constantly looking to grow, expand, educate himself (and others) all while enjoying the cars which he is so fortunate to be a part of every day. His areas of interest are certainly sports cars from the 1960Ã¢ÂÂs, but he also has a great appreciation and understanding for Pre-War European and American classics. On the off chance you find Andrew not at the office or on the road in pursuit of the next find, you might find him on the lawn at Pebble Beach or Amelia Island with his family, or out on some back roads behind the wheel.</p>
+						    	<p></p>
 						    </div>
 						     <div class='close_expand'><span>go back</span></div>
 						</div>
