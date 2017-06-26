@@ -5455,7 +5455,8 @@ body.page-template-home .social_cta {
   width: -webkit-calc(100% - 200px);
   width: calc(100% - 200px);
   margin: 0 auto;
-  padding: 70px 0 100px; }
+  padding: 70px 0 100px;
+  max-width: 1250px; }
   .contact_information .map_img {
     width: 600px; }
   .contact_information .information_wrapper .header h2 {
@@ -6161,7 +6162,8 @@ section.specialists .specialists_grid_container {
         align-items: center;
         -webkit-align-items: center;
         justify-content: space-between;
-        -webkit-justify-content: space-between; }
+        -webkit-justify-content: space-between;
+        max-width: 1000px; }
         section.specialists .specialists_grid_container .specialist_expand_container .specialist_expand_wrapper .specialist_expand_content .specialist_content {
           width: -o-calc(100% -  380px);
           width: -moz-calc(100% -  380px);

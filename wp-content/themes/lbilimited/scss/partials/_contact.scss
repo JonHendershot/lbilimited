@@ -97,6 +97,7 @@
 	@include calc(width,"100% - 200px");
 	margin: 0 auto;
 	padding: 70px 0 100px;
+	max-width: 1250px;
 	.map_img {
 		width: 600px;
 	}

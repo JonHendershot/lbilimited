@@ -323,6 +323,7 @@ section.specialists {
 					@include max-content(height);
 					position: relative;
 					@include flexbox(center, space-between);
+					max-width: 1000px;
 				
 					
 					.specialist_content {
