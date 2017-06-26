@@ -55,12 +55,12 @@ $skew_distance : 15deg;
 			.pgram__frame {
 				height: 350px;
 			    width: 280px;
-			    background-color: gray;
 			    position: relative;
 			    transform: skew(-$skew_distance);
 			    overflow: hidden;
 			    margin: 0 auto;
 			    z-index: 99;
+			    background-color: transparent;
 				
 				.pgram__image {
 					// decide on appropriate width setting and position setting options

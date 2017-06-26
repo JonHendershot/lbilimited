@@ -1661,12 +1661,12 @@ body.page-template-media_house .site-header .main-btn {
       .sub__heading article .pgram__container .pgram__frame {
         height: 350px;
         width: 280px;
-        background-color: gray;
         position: relative;
         transform: skew(-15deg);
         overflow: hidden;
         margin: 0 auto;
-        z-index: 99; }
+        z-index: 99;
+        background-color: transparent; }
         .sub__heading article .pgram__container .pgram__frame .pgram__image {
           height: 100%;
           position: absolute;
