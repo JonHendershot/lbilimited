@@ -30,10 +30,11 @@ jQuery(window).load(function(){
 
 (function pageTransition($){
 	$('a').click(function(e){
-		var url = $(this).attr('href');
+		var url = $(this).attr('href'),
+			hostname = window.location.hostname;
 		
 		
-		if(url.includes('localhost:8888')){
+		if( url.includes(hostname) ){
 			e.preventDefault();
 			
 			$('#pre_loader').removeClass('off');
