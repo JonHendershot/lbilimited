@@ -5740,7 +5740,7 @@ body.page-template-home .social_cta {
     -webkit-justify-content: space-between;
     max-width: 960px;
     margin: 0 auto;
-    padding: 55px 0 75px;
+    padding: 55px 0 130px;
     position: relative;
     z-index: 99; }
     .form_selection_container .form_selection_wrapper .form_option {
@@ -5785,22 +5785,6 @@ body.page-template-home .social_cta {
       border-color: #191B1C; }
       .form_selection_container .form_selection_wrapper .option_2 .option_form_trigger {
         background-color: #191B1C; }
-
-.form_selection_container:after {
-  content: "";
-  width: 110%;
-  background-color: #fff;
-  height: 150px;
-  z-index: 1;
-  transform: skewY(-5deg);
-  -webkit-transform: skewY(-5deg);
-  -moz-transform: skewY(-5deg);
-  -ms-transform: skewY(-5deg);
-  -o-transform: skewY(-5deg);
-  position: absolute;
-  bottom: -70px;
-  left: -5%;
-  display: block; }
 
 .form_consignment {
   margin-top: 120px;

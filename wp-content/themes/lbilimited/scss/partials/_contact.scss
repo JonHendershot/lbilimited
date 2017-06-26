@@ -385,7 +385,7 @@
 		@include flexbox(center,space-between);
 		max-width: 960px;
 		margin: 0 auto;
-		padding: 55px 0 75px;
+		padding: 55px 0 130px;
 		position: relative;
 		z-index: 99;
 		
@@ -440,18 +440,6 @@
 			}
 		}
 	}
-}
-.form_selection_container:after {
-	content: "";
-	width: 110%;
-	background-color: $white;
-	height: 150px;
-	z-index: 1;
-	@include prefix(transform, skewY(-5deg));
-	position: absolute;
-	bottom: -70px;
-	left: -5%;
-	display: block;
 }
 .form_consignment {
 	margin-top: 120px;
