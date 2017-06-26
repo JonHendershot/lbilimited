@@ -10,10 +10,7 @@
 		$header_video = get_field('video_loop_file');
 		$overlay_toggle = get_field('overlay_toggle');
 		$media_overlay = '';
-		
-		if($overlay_toggle == 'On'){
-				$media_overlay = "<span class='media_overlay'></span>";
-			}
+	
 		
 		// Call global options data and establish variables for the template -- this pulls information from the theme options found in the appearance menu, as established in theme_options.php
 		$options = get_option('lbilimited_options');
@@ -91,6 +88,8 @@
 			$header_img = get_the_post_thumbnail_url( $post_id, 'large' );
 			$header_thumb = get_the_post_thumbnail_url( $post_id, 'blur' );
 			$featured_image_frame = get_field('featured_image_framing', $post_id);
+			$overlay_toggle = get_field('overlay_toggle', $post_id);
+			
 		}else {
 			$content_class .= ' page';
 			$title = get_the_title();
@@ -98,6 +97,10 @@
 			$header_img = get_the_post_thumbnail_url( $post->ID, 'large' );
 			$header_thumb = get_the_post_thumbnail_url( $post->ID, 'blur' );
 		}
+		
+			if($overlay_toggle == 'On'){
+				$media_overlay = "<span class='media_overlay'></span>";
+			}	
 		
 	// Render Content
 		if( is_single() ){ 
