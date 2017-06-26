@@ -8,6 +8,7 @@ function mobile(){
 }
 jQuery(window).load(function(){
 	var $ = jQuery;
+
 	
 	$('.lazy-load').each(function(){
 		lazyLoader( $(this) );
@@ -31,7 +32,7 @@ jQuery(window).load(function(){
 (function pageTransition($){
 	$('a').click(function(e){
 		var url = $(this).attr('href'),
-			hostname = window.location.hostname;
+			hostname = window.location.host;
 		
 		
 		if( url.includes(hostname) ){
@@ -56,6 +57,25 @@ jQuery(window).load(function(){
 		var offeringTitle = $('section.contact_form').attr('data-car');
 				
 		$('.offering_contact input[name="offering-name"]').val(offeringTitle).attr('disabled',true).parent().parent().addClass('filled_out');
+	}
+}(jQuery));
+
+
+  ////////////////////////
+ // Home Page Envelope //
+////////////////////////
+(function homeEnvelope($){
+	if($('.home_cta_content').length){
+		var hoverTrigger = $('.featured_post');
+		
+		hoverTrigger.hover(function(){
+			
+			var featID = $(this).data('self').post_id;
+			 $('.home_cta_image .post-' + featID).addClass('feat-visible');
+			 console.log(featID);
+		},function(){
+			$('.feat-visible').removeClass('feat-visible');
+		});
 	}
 }(jQuery));
 

@@ -41,19 +41,23 @@
 			);
 			$query = new WP_Query( $args );
 			$post_display = '';
+			$full_imgs = array();
+			$ii = 0;
 			
 			while( $query->have_posts() ) : $query->the_post();
 			
 				if($post_type == 'offerings'){
 						// Variables
-							$_posttitle = get_the_title();
+							$post_title = offering_title();
 							$post_link = get_the_permalink();
 							
 							if( get_field('featured_image') ){
 								$image = get_field('featured_image');
 								$image_url = $image['sizes']['medium_large'];
+								$full_img = $image['url'];
 							}else {
-								$image_url = get_the_post_thumbnail_url('medium');
+								$image_url = get_the_post_thumbnail_url('medium_large');
+								$full_img = get_the_post_thumbnail_url('full');
 							}
 					
 				}else {
@@ -64,17 +68,31 @@
 						if( get_field('featured_image') ){
 							$image = get_field('featured_image');
 							$image_url = $image['sizes']['medium_large'];
+							$full_img = $image['url'];
 						}else {
 							$image_url = get_the_post_thumbnail_url('medium_large');
+							$full_img = get_the_post_thumbnail_url('full');
 						}		
 				}
+				
+				
 			
 				// We're storing the content in a variable here so we can build it later without needing to print out
 				// a bunch of the markup surrounding it here.
-				$post_display .= "<a href='$post_link' class='featured_post'>
+				$full_imgs[] = array(
+					'img' => $full_img,
+					'title' => $post_title
+				);
+				$post_info = array(
+					'post_id' => $ii
+				);
+				$post_data = array_map('utf8_encode', $post_info);
+				$post_json = json_encode($post_data);
+				
+				$post_display .= "<a href='$post_link' class='featured_post' data-self='$post_json'>
 									<img class='object-fit' src='$image_url' />
 								  </a>";
-					
+			$ii++;		
 			endwhile;
 			wp_reset_query();
 		
@@ -85,6 +103,14 @@
 			<div class="home_cta_wrapper">
 				<div class="home_cta_image">
 					<img src="<?php echo $photo['url']; ?>" />	
+					<?php foreach($full_imgs as $index=>$img){
+						
+						$src = $img['img'];
+						$post_title = $img['title'];
+						
+						echo "<img src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' data-src='$src' class='lazy-load post-$index feat_full' />
+							  <h2 class='post-$index'>$post_title</h2>";
+					} ?>
 				</div>
 				<div class="home_cta_content">
 					<h3><?php echo $title; ?></h3>

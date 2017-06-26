@@ -773,3 +773,13 @@ function span_per_letter($input){
 	
 	return $withSpans;
 }
+
+
+  //////////////////////////////////////////////////////////////////////
+ /// Function to replace an input with words wrapped in span tags ///
+//////////////////////////////////////////////////////////////////////
+function span_per_word($input){
+	$output = preg_replace('([a-zA-Z.,!?0-9]+(?![^<]*>))', '<span>$0</span>', $input);
+	
+	return $output;
+}
