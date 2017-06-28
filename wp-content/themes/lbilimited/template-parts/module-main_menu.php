@@ -14,7 +14,7 @@
 			$title = $item->title;
 			$url = $item->url;
 			$page_ID = $item->object_id;
-			$image = get_the_post_thumbnail_url($page_ID, 'medium_large');
+			$image = get_the_post_thumbnail_url($page_ID, 'blur');
 			
 	
 	
@@ -27,7 +27,9 @@
 		}
 			echo "<a href='$url'>
 				  	<span class='item-$key dash-title'>$title</span>
-				  	<img data-src='$image' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' class='object-fit lazy-load' />
+				  	<div class='image_wrapper'>
+				  		<img data-src='$image' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' class='object-fit lazy-load' />
+				  	</div>
 				  </a>";
 			
 		

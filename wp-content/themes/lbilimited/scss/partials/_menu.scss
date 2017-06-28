@@ -71,15 +71,25 @@
 						@include easeout(300ms);
 					}
 				}
-				img {
+				.image_wrapper {
 					position: absolute;
+					top: 0;
+					left: 0;
 					width: 100%;
 					height: 100%;
-					object-fit: cover;
-					z-index: 1;
-					opacity: 0;
-					@include easeout(800ms);
+					overflow: hidden;
+					img {
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						z-index: 1;
+						opacity: 0;
+						@include easeout(800ms);
+						@include prefix(filter, blur(20px));
+					}
 				}
+				
 				
 /*
 				&:after {
@@ -103,7 +113,7 @@
 						}
 					}
 					img {
-						opacity: 0.5;
+						opacity: 0.4;
 					}
 				}
 									
