@@ -14,7 +14,13 @@
 			$title = $item->title;
 			$url = $item->url;
 			$page_ID = $item->object_id;
-			$image = get_the_post_thumbnail_url($page_ID, 'medium_large');
+			$menu_image = get_field('menu_photo', $page_ID);
+			
+			if($menu_image){
+				$image = $menu_image['sizes']['medium_large'];
+			}else {
+				$image = get_the_post_thumbnail_url($page_ID, 'medium_large');
+			}
 			
 	
 	
