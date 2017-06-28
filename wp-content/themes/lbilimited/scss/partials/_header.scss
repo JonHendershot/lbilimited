@@ -207,11 +207,15 @@
 		.header-logo {
 			width: 163px;
 			height: auto;
-			@include flexbox(center,center);
+			@include flexbox(center,flex-start);
 			@include easeout(600ms);
 			
 			img {
 				position: relative;
+				height: auto;
+				width: auto;
+				max-width: 100%;
+				max-height: 32px;
 			}
 		}
 		.search_menu_container {

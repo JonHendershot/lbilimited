@@ -883,15 +883,19 @@ h4.tilt_title.flip:after {
       display: -ms-flex;
       align-items: center;
       -webkit-align-items: center;
-      justify-content: center;
-      -webkit-justify-content: center;
+      justify-content: flex-start;
+      -webkit-justify-content: flex-start;
       -webkit-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
       -moz-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
       -o-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
       transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
       /* custom */ }
       .nav-wrapper .nav-bar .header-logo img {
-        position: relative; }
+        position: relative;
+        height: auto;
+        width: auto;
+        max-width: 100%;
+        max-height: 32px; }
     .nav-wrapper .nav-bar .search_menu_container {
       display: flex;
       display: -webkit-flex;
