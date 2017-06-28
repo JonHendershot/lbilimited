@@ -4124,12 +4124,7 @@ body.page-template-media_house .site-header .main-btn {
             -moz-transition: all 800ms cubic-bezier(0.375, 0.005, 0, 1);
             -o-transition: all 800ms cubic-bezier(0.375, 0.005, 0, 1);
             transition: all 800ms cubic-bezier(0.375, 0.005, 0, 1);
-            /* custom */
-            filter: blur(20px);
-            -webkit-filter: blur(20px);
-            -moz-filter: blur(20px);
-            -ms-filter: blur(20px);
-            -o-filter: blur(20px); }
+            /* custom */ }
         #main_menu .menu_section .menu_items_wrapper a:hover span {
           opacity: 1 !important; }
           #main_menu .menu_section .menu_items_wrapper a:hover span:after {

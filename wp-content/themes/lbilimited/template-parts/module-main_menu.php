@@ -14,7 +14,7 @@
 			$title = $item->title;
 			$url = $item->url;
 			$page_ID = $item->object_id;
-			$image = get_the_post_thumbnail_url($page_ID, 'blur');
+			$image = get_the_post_thumbnail_url($page_ID, 'medium_large');
 			
 	
 	

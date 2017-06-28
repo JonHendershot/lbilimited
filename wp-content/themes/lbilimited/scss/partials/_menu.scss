@@ -86,7 +86,7 @@
 						z-index: 1;
 						opacity: 0;
 						@include easeout(800ms);
-						@include prefix(filter, blur(20px));
+// 						@include prefix(filter, blur(20px));
 					}
 				}
 				
