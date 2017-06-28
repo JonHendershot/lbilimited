@@ -977,15 +977,13 @@ h4.tilt_title.flip:after {
   justify-content: flex-start;
   -webkit-justify-content: flex-start; }
   .site-header img {
-    width: auto;
+    width: 100%;
     position: absolute;
     left: 0;
     z-index: 8;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    top: 0;
-    max-width: 100%;
-    max-height: 32px; }
+    top: 0; }
   .site-header img.top {
     object-position: center top; }
   .site-header img.bottom {
