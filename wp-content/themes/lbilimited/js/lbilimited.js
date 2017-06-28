@@ -714,7 +714,7 @@ function next_trigger_id(id, imgClass){
 			autoHeight: true,
 			responsive : {
 				1150 : {
-					items: 4,
+					items: 3,
 					dots: false,
 					dotsEach: false,
 					loop: false,
