@@ -654,12 +654,15 @@ function get_archive_page_num( $post_id ){
 function get_offering_price(){
 	
 	$price_option = get_field('display_type');
+	
 	if( $price_option ){
 		if( $price_option == 'display-price' ){
 		
 			$price_value = get_field('price');
 			if( $price_value ){
 				$price = 'Offered at: $' . number_format($price_value,0,".",",");
+			}else {
+				$price = false;
 			}
 			
 		}else if( $price_option == 'other' ){
