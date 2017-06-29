@@ -17,8 +17,8 @@
 // 		get_template_part('template-parts/module', 'search_bar');
 	
 	// Invoke wp loop
-		echo "<section class='offerings-container'>";
-		get_template_part('template-parts/module', 'offerings_loop');
+		echo "<section class='offerings-container' id='archive-wrapper'>";
+		get_template_part('template-parts/module', 'offerings_loop_container');
 		echo "</section>";
 
 	// Get subscribe for notifactions CTA

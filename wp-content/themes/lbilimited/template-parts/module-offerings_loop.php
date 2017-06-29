@@ -1,45 +1,5 @@
 <?php
-	
-	// ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
-	// This module will loop through the LBI offerings posts and display the appropriate content, 
-	// based on which category we're calling from the page
-	// ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
-	
-	
-	// Let's declare a price variable and figure out which category we're in first
-		$price = '';
-		$category_list = array(
-			'past' => 265,
-			'current' => 264
-		);
-		$category = get_field('display_content');
-		$category_id = $category_list[$category];
-		$post_count = 1;
-	
-	// If we're in the Past Offerings category - our price variable should be locked to 'sold' for each item, otherwise, we'll set it in the loop
-		if($category == 'past'){
-			$price = 'Sold';
-		}
-	
-	// Now let's set up our loop
-		$args = array(
-			'post_type' => 'offerings',
-			'posts_per_page' => -1,
-			'orderby' => 'menu_order',
-			'order' => 'ASC',
-			'tax_query' => array(
-				array(
-					'taxonomy' => 'offering_type',
-					'terms' => $category_id	
-				)
-			)
-		);
-		$query = new WP_Query( $args );
-		
-	// Begin Loop
-		while( $query->have_posts() ) : $query->the_post(); 
-			
-			// Set item specific variables
+	// Set item specific variables
 				$excerpt = get_the_excerpt();
 				$title = offering_title();
 				$offer_class = "offering";
@@ -70,13 +30,13 @@
 				$media_class .= " offering-bg-$file_type $file_framing";
 				
 			// If we're in the Current Offering category, set the price here
-				if($category == 'current'){
-					$price = get_offering_price();
-				}
+				$price = get_offering_price();
+			
 				
 			// Markup for offering display
-?>				<a href="<?php the_permalink(); ?>" id="<?php echo "post-$post_id"; ?>">
+?>				
 				<article class="<?php echo $offer_class; ?>">
+					<a href="<?php the_permalink(); ?>" id="<?php echo "post-$post_id"; ?>">
 					<div class="offering-data dash-title">
 						<div class="offering-meta">
 							<h2><?php echo $title; ?></h2>
@@ -92,11 +52,8 @@
 						
 						if($featured_image){
 							// Display Image background
-							if($post_count > 5){
-								echo "<img data-src='$fimage_url' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' class='$media_class lazy-load' />";
-							}else {
+
 								echo "<img src='$fimage_url' class='$media_class' />";
-							}
 							
 						}
 						
@@ -109,12 +66,5 @@
 						<?php
 						} // end video if
 					?>
-				</article>	
 				</a>
-		
-<?php
-	
-	// End Loop
-		$post_count++;
-		endwhile;
-		wp_reset_query();
+				</article>	

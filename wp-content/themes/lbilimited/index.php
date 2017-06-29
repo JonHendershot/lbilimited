@@ -22,11 +22,11 @@
 		// Post Loop
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'archive' );
+				get_template_part( 'template-parts/module', 'post_loop' );
 
 			endwhile;
 
-			get_template_part('template-parts/module', 'page_navigator');			
+// 			get_template_part('template-parts/module', 'page_navigator');			
 			
 		else :
 

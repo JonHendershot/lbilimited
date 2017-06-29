@@ -1,6 +1,7 @@
 section.offerings-container {
 	a {
 		text-decoration: none;
+		}
 		article.offering {
 			$transition_speed: 1000ms;
 			width: 100%;
@@ -187,7 +188,7 @@ section.offerings-container {
 				margin: auto;
 			}
 		}
-		article.offering:after {
+		article.offering a:after {
 			content: "";
 			position: absolute;
 			top: 0;
@@ -199,13 +200,9 @@ section.offerings-container {
 			opacity: 0;
 			@include transition(0.3s, all, ease-in-out);
 		}
-		article.offering:hover:after {
+		article.offering:hover a:after {
 			opacity: 1;
 		}
-
-	}
-	
-
 }
 section.notify_me_container {
 	padding: 160px 0 145px;
