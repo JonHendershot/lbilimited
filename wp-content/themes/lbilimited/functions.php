@@ -795,7 +795,7 @@ function span_per_word($input){
 ////////////////////////////////////////////////////////////////////////////
 
 function ajax_load_more() {
- 
+ 	if( is_page_template('templates/offerings.php') || is_home() ){
 	// register our main script but do not enqueue it yet
 	wp_register_script( 'load_more', get_template_directory_uri() . '/js/loadmore.js', array('jquery'), true );
  
@@ -862,9 +862,14 @@ function ajax_load_more() {
 	) );
  
  	wp_enqueue_script( 'load_more' );
+ 	}
 }
- 
-add_action( 'wp_enqueue_scripts', 'ajax_load_more' );
+
+
+	add_action( 'wp_enqueue_scripts', 'ajax_load_more' );
+
+	
+
 
   //////////////////////////////////////////////////////////
  /// AJAX handler for the load-more-posts functionality ///

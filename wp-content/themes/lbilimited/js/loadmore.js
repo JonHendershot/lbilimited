@@ -1,7 +1,9 @@
 (function ajax_load_more($){
+
 	var canBeLoaded = true, // this param allows to initiate the AJAX call only if necessary
 	    bottomOffset = 2000; // the distance (in px) from the page bottom when you want to load more posts
  
+	
 	$(window).scroll(function(){
 		var data = {
 			'action': 'loadmore',
@@ -35,4 +37,5 @@
 			});
 		}
 	});
+	
 }(jQuery));
