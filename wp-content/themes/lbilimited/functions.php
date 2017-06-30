@@ -796,46 +796,69 @@ function span_per_word($input){
 
 function ajax_load_more() {
  
-	global $wp_query; 
- 
 	// register our main script but do not enqueue it yet
 	wp_register_script( 'load_more', get_template_directory_uri() . '/js/loadmore.js', array('jquery'), true );
  
 	
+	
+	
+	// a bit hacky as of right now, but we're able to determine if were ont he offerings post type archive 
+	// by detecting a certain field that is specific to those pages
+	// if that field is present, use the offerings query logic, if not, use the default post type (for blog posts)
+	// offerings and news are the only to pages that are lazy-loaded with AJAX
+
+	// establish list of categories to check later
 	$category_list = array(
 			'past' => 265,
 			'current' => 264
 		);
+	// get the offering-archive-specific field
 	$offering_category = get_field('display_content');
 	
 	
+	// if that field exists, frame the query arguments for offerings
 	if($offering_category){
-		$category_id = $category_list[$offering_category];
 		
-		$wp_query->query_vars['post_type'] = 'offerings';
-		$wp_query->query_vars['pagename'] = 'in-the-news'; // WHY does this only work through the index slug?! WTF
-		$wp_query->query_vars['name'] = '';
-		$wp_query->query_vars['tax_query'] = array(
-			array(
-				'taxonomy' => 'offering_type',
-				'terms' => $category_id
+		$category_id = $category_list[$offering_category];		
+
+		
+		$args = array(
+			'post_type' => 'offerings',
+			'orderby' => 'menu_order',
+			'order' => 'ASC',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'offering_type',
+					'terms' => $category_id	
+				)
 			)
-			
 		);
 	}
+	// if not, default the arguments to query the blog posts
+	else {
+		$args = array(
+			'post_type' => 'post'
+		);
+	}
+	
+	// establish a new query
+	$q = new WP_Query($args);
+
  
-	echo "<pre>";
-	print_r($wp_query->query_vars);
-	echo "</pre>";
+	// Un-comment the next three lines to check the query array for debugging
+//	echo "<pre>";
+//	print_r($q->query_vars);
+//	echo "</pre>";
+
  
 	// now the most interesting part
 	// we have to pass parameters to loadmore.js script but we can get the parameters values only in PHP
 	// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
 	wp_localize_script( 'load_more', 'load_more_params', array(
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
-		'posts' => serialize( $wp_query->query_vars ), // everything about your loop is here
-		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
-		'max_page' => $wp_query->max_num_pages
+		'posts' => serialize( $q->query_vars ), // everything about your loop is here
+		'current_page' => $q->query_vars[ 'paged' ] ? $q->query_vars[ 'paged' ] : 1,
+		'max_page' => $q->max_num_pages
 	) );
  
  	wp_enqueue_script( 'load_more' );
@@ -860,11 +883,11 @@ function ajax_load_more_handler(){
 	// it is always better to use WP_Query but not here
 	query_posts( $args );
 	
-/*
-	echo "<pre>";
-	print_r( $args );
-	echo "</pre>";
-*/
+	// Un-comment the next three lines to check the query array for debugging
+//	echo "<pre>";
+//	print_r( $args );
+//	echo "</pre>";
+
  
 	if( have_posts() ) :
  
@@ -884,8 +907,6 @@ function ajax_load_more_handler(){
 	endif;
 	die; // here we exit the script and even no wp_reset_query() required!
 }
- 
- 
  
 add_action('wp_ajax_loadmore', 'ajax_load_more_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'ajax_load_more_handler'); // wp_ajax_nopriv_{action}

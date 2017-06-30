@@ -1,16 +1,19 @@
 (function ajax_load_more($){
 	var canBeLoaded = true, // this param allows to initiate the AJAX call only if necessary
-	    bottomOffset = 4000; // the distance (in px) from the page bottom when you want to load more posts
+	    bottomOffset = 2000; // the distance (in px) from the page bottom when you want to load more posts
  
 	$(window).scroll(function(){
 		var data = {
 			'action': 'loadmore',
 			'query': load_more_params.posts,
 			'page' : load_more_params.current_page
-		};
-		
-// 		console.log(data);
-		if( $(document).scrollTop() > ( $(document).height() - bottomOffset ) && canBeLoaded == true ){
+		},
+			archiveOffset = $('#archive-wrapper').offset().top,
+			archiveBottomOffset = archiveOffset + $('#archive-wrapper').height() - $(window).height(); // subtract window height to detect when the bottom of the wrapper will hit the botom of viewport, not top
+// 		console.log( 'Scrolled: ' +  $(document).scrollTop() + ' | Archive Bottom: ' + archiveBottomOffset );
+
+		if( $(document).scrollTop() > ( archiveBottomOffset - bottomOffset ) && canBeLoaded == true ){
+// 			console.log('fired ajax');
 			$.ajax({
 				url : load_more_params.ajaxurl,
 				data:data,
