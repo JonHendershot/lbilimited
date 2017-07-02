@@ -120,7 +120,7 @@
 							<div class='featured_media_title dash-title'>
 								<h3>$title</h3>
 							</div>
-							<div class='trigger $trigger_class' data-id='$post_ID' data-item='$item_json'>$trigger_text</div>
+							<div class='trigger $trigger_class main-btn' data-id='$post_ID' data-item='$item_json'>$trigger_text</div>
 						  </div>";
 					  
 		// End loop and reset query
@@ -137,9 +137,10 @@
 	 // Sub Heading //
 	/////////////////
 	
+		$sub_content = span_per_word($sub_content);
 		echo "<section class='sub_heading media_sub'>
 				<div class='media_sub_img' style='background-image:url($sub_photo_url)'></div>
-				<div class='media_sub_content'>
+				<div class='media_sub_content waypoint' data-padding='200'>
 					<h3 class='media_sub_title'>$sub_title</h3>
 					<p>$sub_content</p>
 				</div>
@@ -169,10 +170,10 @@
 	///////////////////////
 	
 		echo "<section class='media_suggestion'>
-			  	<div class='suggestion_title'>
+			  	<div class='suggestion_title waypoint' data-padding='50'>
 			  		<h3>$suggest_title</h3>
 			  	</div>
-			  	<div class='suggestion_form contact_form'>
+			  	<div class='suggestion_form contact_form waypoint' data-padding='200'>
 			  		$suggest_form
 			  	</div>
 			  </section>";

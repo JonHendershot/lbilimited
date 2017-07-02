@@ -55,14 +55,33 @@ span.media_overlay {
 }
 
 .main-btn, input[type="submit"] {
-	background-color: $mainred;
 	color: $white;
 	letter-spacing: 3px;
 	text-transform: uppercase;
 	font-size: 10px;
 	font-weight: 100;
-	padding: 10px 30px;
+	padding: 10px 30px 10px 33px;
 	text-decoration: none;
+	position: relative;
+	z-index: 8;
+	
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $mainred;
+		z-index: -1;
+		@include easeout(600ms);
+		@include prefix(transform, skew(0deg));
+		transform-origin: center;
+	}
+	&:hover:after {
+		@include prefix(transform, skew(-14deg) scaleY(1));
+		background-color: $altred;
+	}
 }
 
 // Tilt Title

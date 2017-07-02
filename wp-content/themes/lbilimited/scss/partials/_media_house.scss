@@ -96,6 +96,7 @@ section.featured_gallery {
 			margin: 0 auto;
 			z-index: 99;
 // 			@include easeout(1000ms);
+			@include prefix(transition, 0.5s all ease-in-out);
 			
 			.featured_media_title.dash-title {
 				position: absolute;
@@ -119,7 +120,7 @@ section.featured_gallery {
 				}
 			}
 			.dash-title:after {
-				height: 150%;
+				height: 100%;
 				top: 4px;
 				transform-origin: top;
 				right: -75px;
@@ -135,7 +136,7 @@ section.featured_gallery {
 				text-transform: uppercase;
 				font-weight: 500;
 				letter-spacing: 2.7px;
-				background-color: $mainred;
+// 				background-color: $mainred;
 				padding: 14px 32px 12px;
 				line-height: 13px;
 				@include max-content(width);
@@ -146,6 +147,7 @@ section.featured_gallery {
 			}
 		}
 		.owl-item {
+			z-index: 9;
 			.next {
 				@include prefix(transform, translateX(-60%));
 			}
@@ -153,6 +155,7 @@ section.featured_gallery {
 				@include prefix(transform, translateX(60%));
 			}
 			&.active {
+				z-index: 1;
 				.featured_media_wrapper {
 					@include prefix(transform, translateX(0));
 					.dash-title {
@@ -250,6 +253,23 @@ section.sub_heading.media_sub {
 	.media_sub_content {
 		position: relative;
 		width: 50%;
+		
+		&.waypoint {
+			p span {
+				@include prefix(transform, translateX(10px));
+				opacity: 0;
+			}
+			
+			h3 {
+				@include prefix(transform, scale(0.8) translateX(-50%));
+				opacity: 0;
+				letter-spacing: 1px;
+				
+				&:after {
+					@include prefix(transform, scaleX(0));
+				}
+			}
+		}
 		p {
 			max-width: 370px;
 			margin: 0 auto;
@@ -259,6 +279,21 @@ section.sub_heading.media_sub {
 			color: #7e7e7e;
 			line-height: 30px;
 			@include prefix(transform, translateX(45px));
+			
+			span {
+				@include prefix(transform, translateX(0px));
+				@include easeout(1200ms);
+				opacity: 1;
+				display: inline-block;
+				@for $ii from 1 through 600 {
+					&:nth-child(#{$ii}){
+						$num : ($ii + 1) * 0.75;
+						$delay : (20 * $num) + 300;
+						transition-delay: #{$delay}ms;
+					}
+				}
+			}
+			
 		}
 		h3 {
 			position: absolute;
@@ -267,7 +302,8 @@ section.sub_heading.media_sub {
 			left: 0;
 			margin: auto;
 			z-index: 9999;
-			@include prefix(transform, translateX(-50%));
+			@include prefix(transform, scale(1) translateX(-50%));
+			transform-origin: left;
 			font-size: 36px;
 			font-weight: bold;
 			line-height: 28px;
@@ -275,6 +311,9 @@ section.sub_heading.media_sub {
 			max-width: 277px;
 			text-align: center;
 			@include max-content(height);
+			opacity: 1;
+			@include easeout(1000ms);
+
 		}
 		h3:after {
 			content:"";
@@ -287,6 +326,9 @@ section.sub_heading.media_sub {
 			left: 0;
 			right: 0;
 			margin: auto;
+			@include prefix(transform, scale(1));
+			@include easeout(700ms);
+			transition-delay: 800ms;
 		}
 	}
 }
@@ -379,6 +421,19 @@ section.media_suggestion {
 		width: 31%;
 		position: relative;
 		margin-bottom: 15px;
+		@include easeout(1000ms);
+		opacity: 1;
+		@include prefix(transform, translateX(0px));
+		z-index: 9;
+		
+		&.waypoint {
+			opacity: 0;
+			@include prefix(transform, translateX(25px));
+			
+			&:after {
+				@include prefix(transform, scaleX(0));
+			}
+		}
 		h3 {
 			font-size: 36px;
 			font-weight: bold;
@@ -402,15 +457,35 @@ section.media_suggestion {
 		bottom: 0;
 		margin: auto;
 		z-index: 99;
+		@include prefix(transform, scaleX(1));
+		@include easeout(1000ms);
+		transition-delay: 500ms;
+		transform-origin:  left;
 	}
 }
 .suggestion_form.contact_form {
 	background-color: #ebebeb;
 	width: 69%;
 	padding: 100px 0 90px;
+	@include prefix(transform, translateX(0px));
+	@include easeout(1000ms);
+	opacity: 1;
+	
+	&.waypoint {
+		@include prefix(transform, translateX(50px));
+		opacity: 0;
+		form {
+			opacity: 0;
+			@include prefix(transform, translateX(15px));
+		}
+	}
 	form {
 		width: 63%;
 		position: relative;
+		opacity: 1;
+		@include easeout(1500ms);
+		transition-delay: 400ms;
+		@include prefix(transform, translateX(0px));
 		
 		label {
 			color: $black;

@@ -71,16 +71,21 @@
 		}
 
 	// Loop: Create Container, Begin Loop, and Create Items
-		echo "<div class='gridlock-container $gutter'>";
+		echo "<div class='gridlock-container $gutter collection-grid'>";
 			while( $query->have_posts() ) : $query->the_post(); 
 			
 				// Establish Some item-specific variables first
-					$title = get_the_title();
+					$title = offering_title();
 					$image_file = get_field('featured_image');
 					$image = $image_file['sizes']['large'];
 					$link  = get_permalink();
 				
 				// Output elements	
-					echo "<a href='$link' class='grid-item $display_class $gutter' style='background-image: url($image)'></a>";
+					echo "<a href='$link' class='grid-item $display_class $gutter waypoint' data-padding='100' style='background-image: url($image)'>
+							<div class='item-content dash-title'>
+								<h3>$title</h3>
+								<div class='trigger video_trigger'>View More</div>
+							</div>
+						  </a>";
 			endwhile;
 		echo "</div>";

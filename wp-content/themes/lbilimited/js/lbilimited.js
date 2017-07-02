@@ -726,14 +726,16 @@ function next_trigger_id(id, imgClass){
 	
 	// Featured Media
 	if($('.media_carousel').length){
-		$('.media_carousel').owlCarousel({
+		owl = $('.media_carousel');
+		owl.owlCarousel({
 			items: 1,
 			nav: false,
 			dots: true,
 			dotsEach: true,
+			dotsSpeed: 800
 		});
 		
-		$('.media_carousel').on('translate.owl.carousel', function(e){
+		owl.on('translate.owl.carousel', function(e){
 	        idx = e.item.index;
 	        $('.owl-item .prev').removeClass('prev');
 	        $('.owl-item .next').removeClass('next');
@@ -741,6 +743,35 @@ function next_trigger_id(id, imgClass){
 	        $('.owl-item').eq(idx-1).find('.featured_media_wrapper').addClass('prev');
 	        $('.owl-item').eq(idx+1).find('.featured_media_wrapper').addClass('next');
 	    });
+	    
+	    $('.featured_media_wrapper').click(function(){
+		    if($(this).hasClass('next')){
+			    owl.trigger('next.owl', [800]);
+		    }
+		    if($(this).hasClass('prev')){
+			    owl.trigger('prev.owl', [800]);
+		    }
+	    });
+	    var throttle = false;
+	    
+	    owl.on('mousewheel', '.owl-stage', function (e) {
+			
+			if(!throttle){
+				console.log(e.deltaX);
+				if (e.deltaX>0) {
+			        owl.trigger('next.owl', [800]);
+			    } else {
+			        owl.trigger('prev.owl', [800]);
+			    }
+			    setTimeout(function(){
+				    throttle = false;
+			    }, 900);
+			}
+		    
+		    throttle = true;
+		    
+// 		    e.preventDefault();
+		});
 	}
 	
 }(jQuery));
@@ -870,20 +901,43 @@ function open_lightbox(lightbox_id){
 		
 		$(document).keyup(function(e) {
 		     if (e.keyCode == 27 && $('.lbi_lightbox').hasClass('visible')) { // escape key maps to keycode `27`
-		       if( $('.search_form_container.lbi_lightbox').hasClass('visible')){ 
-					// Animate Off
-					focusField.focusout();
-				}
-				
-				$('.lbi_lightbox.visible').removeClass('visible');
-				closeTrigger.removeClass('open').text('click to search');
-					
-				iframe.attr('src',''); // stop video from playing
-				$('body').removeClass('noscroll');
+		       exit_lightbox();
 		    }
 		});
 		
+		$('.lbi_lightbox .ribbon').click(function(){
+			exit_lightbox();
+			console.log('ribbon click');
+		});
+		
 }(jQuery));
+
+function exit_lightbox(){
+	var $ = jQuery,
+		closeTrigger = $('.nav-wrapper .search_trigger'),
+		focusField = $('#focus_field'),
+		iframe = $('#iframe_wrapper iframe');
+		
+	if( $('.search_form_container.lbi_lightbox').hasClass('visible')){ 
+		// Animate Off
+		focusField.focusout();
+	}
+	
+	$('.lbi_lightbox.visible').removeClass('visible');
+	closeTrigger.removeClass('open').text('click to search');
+		
+	if(iframe.length){
+		iframe.attr('src',''); // stop video from playing
+	}	
+	$('body').removeClass('noscroll');
+	
+	
+	if($('.featured_image_showcase').length){
+		$('.featured_image_showcase').removeClass('in_lightbox');
+		$('.jspContainer').height($('.featured_image_showcase .featured_slide').height() + 8); // height isn't resetting properly so we need to force it before we reinitialize
+		$('.featured_image_showcase .featured_image_slider_container').jScrollPane();		
+	}
+}
 
 // Contact Form 7 doesn't support adding custom attributes to fields, so we'll need to add an event listener to our textareas
 (function addKeyUp($){
@@ -1493,4 +1547,43 @@ function throttle(fn, wait) {
       time = Date.now();
     }
   }
+}
+
+function projectHover(event, elem){
+	if(mobile()==false){
+		
+		var projectBox = elem, 
+			projectBackground = document.getElementById('project-background'),
+			boxOffsetHeight = projectBox.getBoundingClientRect().top, // offset from top edge to window edge
+			boxOffsetWidth = projectBox.getBoundingClientRect().left, // ofset from left edge to window edge
+			boxHeight = projectBox.offsetHeight, // height of box
+			boxWidth = projectBox.offsetWidth, // width of box
+			adjustCoefficient = 0.5, // divide height & width and use to measure box in 4 equal Quadrants
+			widthAdjust = boxWidth * adjustCoefficient, // use this to adjust and get % of mouse X position
+			heightAdjust = boxHeight * adjustCoefficient, // use this to adjust and get % of mouseY position
+			mouseX = parseInt(event.clientX - boxOffsetWidth) - widthAdjust, // 0 = middle of box on X axis
+		    mouseY = parseInt(event.clientY - boxOffsetHeight) - heightAdjust, // 0 = middle of box on Y axis
+			percentX = (mouseX / widthAdjust), // precent mouse position on the X axis ( 1 - right : -1 = left )
+			percentY = mouseY / heightAdjust, // precent mouse position on Y axis ( 1 = bottom : -1 = top )
+			rotateValue = 0.000055, // the maxiumum value the container can rotate in any direction (using matrix3D, this would be the depth rating)
+			shadowValue = 8, // the max distance the dropshadow can offset
+			shadowX = (percentX * shadowValue) * -1,
+			shadowY = (percentY * shadowValue) * -1,
+			rotateX = (percentX * rotateValue),
+			rotateY = (percentY * rotateValue);
+		
+		
+	
+		projectBox.style.transform = 'matrix3d(0.98,0,0.17,'+ rotateX +',0.00,0.98,0.17,' + rotateY + ',-0.17,-0.17,0.9603999999999999,0,0,0,0,1) translate3d(0,0,0)';
+		jQuery('#project-background').css({'-webkit-transform':'matrix3d(0.98,0,0.17,'+ rotateX +',0.00,0.98,0.17,' + rotateY + ',-0.17,-0.17,0.9603999999999999,0,0,0,0,1)'});
+		projectBox.style['box-shadow'] = shadowX + 'px ' + shadowY + 'px 26px rgba(22, 22, 22, 0.5)';
+
+
+	}
+}
+function projectReset(elem){
+	var projectBackground = elem;
+	
+		projectBackground.style.transform = 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)';
+		projectBackground.style['box-shadow'] ='0px 6px 26px rgba(22, 22, 22, 0.5)';	
 }

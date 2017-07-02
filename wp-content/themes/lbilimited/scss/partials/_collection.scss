@@ -1,0 +1,96 @@
+.collection-grid{
+	.grid-item {
+		$easeTiming : 600ms;
+		overflow: hidden;
+		cursor: pointer;
+		text-decoration: none;
+		@include easeout(1000ms);
+		@include prefix(transform, translateY(0px));
+		opacity: 1;
+		
+		&.waypoint {
+			opacity: 0;
+			@include prefix(transform, translateY(25px));
+		}
+		.item-content {
+			position: relative;
+			@include max-content(width);
+			margin: 20px 0 0 20px;
+			max-width: 50%;
+			z-index: 9;
+			opacity: 0;
+			@include easeout($easeTiming);
+			h3 {
+				font-size: 2em !important;
+				text-transform: uppercase;
+				color: $white;
+				letter-spacing: 1px;
+				margin: 0;
+				line-height: 30px !important;
+				span {
+					display: block;
+					position: relative;
+					@include prefix(transform, translateX(30px));
+					@include easeout($easeTiming);
+					@for $ii from 1 through 3 {
+						&:nth-child(#{$ii}){
+							$num : ($ii + 1) * 0.55;
+							$delay : (40 * $num);
+							transition-delay: #{$delay}ms;
+						}
+					}
+				}
+			}
+			.trigger {
+				color: $white;
+				text-transform: uppercase;
+				font-weight: 500;
+				font-size: 11px;
+				letter-spacing: 3px;
+				@include prefix(transform, translateX(10px));
+				@include easeout($easeTiming);
+
+			}
+			
+			&:after {
+				height: 100%;
+				@include easeout($easeTiming);
+				@include prefix(transform, skew(-24deg) scaleY(0));
+				right: -70px;
+				transform-origin: top;
+				top: 3px;
+			}
+		}
+		&:before {
+			content: "";
+			height: 100%;
+			width: 100%;
+			background-color: rgba(0,0,0,0.7);
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			opacity: 0;
+			@include easeout($easeTiming);
+		}		
+		&:hover {
+			.item-content {
+				opacity: 1;
+				
+				h3,.trigger {
+					@include prefix(transform, translateX(0));
+					span {
+						@include prefix(transform, translateX(0));
+					}
+				}
+				
+				&:after {
+					@include prefix(transform, skew(-24deg) scaleY(1));
+				}
+			}
+			&:before {
+				opacity: 1;
+			}
+		}
+	}
+}

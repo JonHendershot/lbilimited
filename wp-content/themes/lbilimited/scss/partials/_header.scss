@@ -313,14 +313,22 @@
 		z-index: 9999;
 		margin-left: 20%;
 	
-		
+		&:not(.home){
+			h1 {
+				span:not(:first-child){
+					text-indent: 0px;
+				}
+			}
+		}
 		&.off {
 			.geo_elem {
 				@include prefix(transform, translate3d(-77px, -10px,0) skew(-15deg) scaleX(0) !important);
 			}
 			h1 {
-				@include prefix(transform, translateY(3px));
-				opacity: 0;
+				span {
+					@include prefix(transform, translateX(-20px));
+					opacity: 0;
+				}
 			}
 			p {
 				@include prefix(transform, translateY(8px));
@@ -329,9 +337,18 @@
 			a {
 				@include prefix(transform, translateY(10px) !important);
 				opacity: 0 !important;
+				&:after {
+					@include prefix(transform, skew(0deg) scaleY(0));
+					background-color: blue;
+				}
+				span {
+					@include prefix(transform, translateY(10px));
+					opacity: 0;
+				}
 			}
 		}
 		h1 {
+			$baseDelay: 250;
 			color: $white;
 			font-size: 64px;
 			letter-spacing: 3px;
@@ -341,13 +358,24 @@
 			text-indent: -50px;
 			margin: 0;
 			position: relative;
-			@include easeout(1200ms);
+			
 			@include prefix(transform, translateY(0));
-			transition-delay: 600ms;
+			transition-delay: #{$baseDelay}ms;
 			opacity: 1;
 			
 			span {
 				display: block;
+				opacity: 1;
+				@include easeout(1200ms);
+				@include prefix(transform, translateX(0px));
+				
+				@for $ii from 1 through 75 {
+					&:nth-child(#{$ii}){
+						$num : ($ii + 1) * 0.85;
+						$delay : (140 * $num) + $baseDelay;
+						transition-delay: #{$delay}ms;
+					}
+				}
 			}
 		}
 		p {
@@ -365,10 +393,30 @@
 			opacity: 1;
 		}
 		a {
+			$baseDelay : 1200;
 			@include prefix(transform, translateY(0px));
 			opacity: 1;
 			@include easeout(1200ms);
-			transition-delay: 900ms;
+			transition-delay: #{$baseDelay}ms;
+			&:after {
+				transition-delay: #{$baseDelay}ms;
+				@include easeout(1000ms);
+// 				@include prefix(transform, skew(0deg) scaleY(1));
+				display: inline-block;
+			}
+			span {
+				@include easeout(1000ms);
+				@include prefix(transform, translateY(0px));
+				opacity: 1;
+				display: inline-block;
+				@for $ii from 1 through 75 {
+					&:nth-child(#{$ii}){
+						$num : ($ii + 1) * 0.65;
+						$delay : (40 * $num) + $baseDelay;
+						transition-delay: #{$delay}ms;
+					}
+				}
+			}
 		}
 	}
 	.header-content.search {

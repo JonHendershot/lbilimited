@@ -56,6 +56,9 @@
 	// Specialists Variables & Loop Prep
 		$specialists_title = get_field('specialists_title');
 		$specialists_sub_title = get_field('specialists_subtitle');
+		$specialists_header_bg = get_field('specialist_background_photo');
+		$specialists_bg_url = $specialists_header_bg['sizes']['large'];
+		$specialists_bg_alt = $specialists_header_bg['alt'];
 		$args = array(
 			'post_type' => 'specialists',
 			'order' => 'ASC',
@@ -63,12 +66,15 @@
 			'orderby' => 'menu_order'
 		);
 		$query = new WP_Query( $args );
+		
+		$specialists_title = span_per_letter($specialists_title);
 	
 	// Begin Specialists Section
 		echo "<section class='specialists'>
-			  <header>
+			  <header class='waypoint' data-padding='200'>
 			  	<h2>$specialists_title</h2>
 			  	<p>$specialists_sub_title</p>
+			  	<img src='$specialists_bg_url' alt='$specialists_bg_alt' />
 			  </header>
 			  <div class='specialists_grid_container'>";
 			  

@@ -102,6 +102,9 @@
 				$media_overlay = "<span class='media_overlay'></span>";
 			}	
 		
+	// Edit Title
+		$title = span_per_word($title);
+	
 	// Render Content
 		if( is_single() ){ 
 			
@@ -186,6 +189,7 @@
 					  	echo "<p>$subtitle</p>";
 				  	}
 				  	if($link && $link_text){
+					  	$link_text = span_per_letter($link_text);
 					  	echo "<a href='$link' class='main-btn'>$link_text</a>";
 				  	}
 				  	if($media_btn && $media_embed){

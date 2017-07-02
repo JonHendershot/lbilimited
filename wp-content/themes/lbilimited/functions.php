@@ -111,7 +111,7 @@ function lbilimited_scripts() {
 	
 	// Regist Scripts
 	wp_register_script('owl_carousel', get_template_directory_uri() . '/inc/js/owl.carousel.min.js', array(), '2.2.1', true);
-	wp_register_script('mousewheel',get_template_directory_uri() . '/inc/js/jquery.mousewheel.js', array(), '1.0.1', true);
+	wp_register_script('mousewheel',get_template_directory_uri() . '/inc/js/jquery.mousewheel.min.js', array(), '1.0.1', true);
 	wp_register_script('scroller',get_template_directory_uri() . '/inc/js/jquery.jscrollpane.min.js', array('mousewheel'), '1.0.1', true);
 	wp_register_script('packery_layout',get_template_directory_uri() . '/inc/js/node_modules/packery/dist/packery.pkgd.min.js', array(), '1.0.1', true);
 
@@ -784,7 +784,7 @@ function span_per_letter($input){
  /// Function to replace an input with words wrapped in span tags ///
 //////////////////////////////////////////////////////////////////////
 function span_per_word($input){
-	$output = preg_replace('([a-zA-Z.,!?0-9]+(?![^<]*>))', '<span>$0</span>', $input);
+	$output = preg_replace('([a-zA-Z.,!?0-9]+(?![^<]*>))', '<span class="word">$0</span>', $input);
 	
 	return $output;
 }
