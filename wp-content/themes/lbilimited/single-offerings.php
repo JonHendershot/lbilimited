@@ -313,14 +313,17 @@
 										$audio_url = $startup_audio['url'];
 										$audio_type = $startup_audio['mime_type'];
 									// Build startup audio button
-									echo "<div class='startup_trigger btn' data-src='$audio_url'>
+									echo "<div class='audio_control_wrapper'>
+										 <div class='startup_trigger startup_trigger_wrapper btn' data-src='$audio_url'>
 											<audio controls id='startup_audio'>
 												<source src='$audio_url' type='$audio_type' />
 											</audio>
 											<span>hear startup</span>
+										  </div>
 											<div class='audio_controls'>
-												<i class='fa fa-play visible' aria-hidden='true'></i>
-												<i class='fa fa-pause' aria-hidden='true'></i>
+												<i class='fa fa-backward'></i>
+												<i class='fa fa-play startup_trigger' aria-hidden='true'></i>
+												<i class='fa fa-pause startup_trigger' aria-hidden='true'></i>
 											</div>
 										  </div>";
 								}

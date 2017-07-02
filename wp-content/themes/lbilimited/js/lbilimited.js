@@ -480,23 +480,26 @@ function next_trigger_id(id, imgClass){
 		trigger.click(function(){
 			
 			if(!audioTrack.paused && !audioTrack.ended){
-				
-				console.log('pause it');
 				// Audio is playing
 				audioTrack.pause();
+				console.log('pause it');
 				
-				$(this).removeClass('playing').addClass('paused');
+				$('.audio_control_wrapper').removeClass('playing').addClass('paused');
 			}else {
 				// Audio is not playing
 				audioTrack.play();
 				
-				$(this).removeClass('paused').addClass('playing');
+				$('.audio_control_wrapper').removeClass('paused').addClass('playing');
 			}
 		});
 		
+		$('.fa-backward').click(function(){
+			console.log('rewind');
+			audioTrack.currentTime = 0;
+		});
+		
 		audioTrack.addEventListener('ended', function(){
-			trigger.removeClass('playing').removeClass('paused');
-			console.log('audio complete');
+			$('.audio_control_wrapper').removeClass('playing').removeClass('paused');
 		});
 	}
 }(jQuery));

@@ -10005,51 +10005,43 @@ body.single .contact_form:after {
           color: #fff;
           padding: 10px 55px 10px 58px;
           cursor: pointer; }
-        #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger {
-          position: relative; }
-          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger span {
-            display: block;
-            transform: translateX(0px);
-            -webkit-transform: translateX(0px);
-            -moz-transform: translateX(0px);
-            -ms-transform: translateX(0px);
-            -o-transform: translateX(0px);
-            -webkit-transition: all 500ms cubic-bezier(0.375, 0.005, 0, 1);
-            -moz-transition: all 500ms cubic-bezier(0.375, 0.005, 0, 1);
-            -o-transition: all 500ms cubic-bezier(0.375, 0.005, 0, 1);
-            transition: all 500ms cubic-bezier(0.375, 0.005, 0, 1);
-            /* custom */ }
-          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger audio {
+        #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper {
+          position: relative;
+          font-size: 10px;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+          color: #fff; }
+          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper audio {
             visibility: hidden;
             opacity: 0;
             display: none; }
-          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger:hover .audio_controls, #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger.playing .audio_controls, #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger.paused .audio_controls {
+          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper:hover .audio_controls, #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper.playing .audio_controls, #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper.paused .audio_controls {
             opacity: 1;
             visibility: visible;
-            transform: translateX(15px);
-            -webkit-transform: translateX(15px);
-            -moz-transform: translateX(15px);
-            -ms-transform: translateX(15px);
-            -o-transform: translateX(15px); }
-          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger:hover span, #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger.playing span, #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger.paused span {
+            transform: translateX(25px);
+            -webkit-transform: translateX(25px);
+            -moz-transform: translateX(25px);
+            -ms-transform: translateX(25px);
+            -o-transform: translateX(25px); }
+          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper:hover span, #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper.playing span, #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper.paused span {
             transform: translateX(-5px);
             -webkit-transform: translateX(-5px);
             -moz-transform: translateX(-5px);
             -ms-transform: translateX(-5px);
             -o-transform: translateX(-5px); }
-          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger.playing .audio_controls i.fa-play {
+          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper.playing .audio_controls i.fa-play {
             visibility: hidden;
             opacity: 0; }
-          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger.playing .audio_controls i.fa-pause {
+          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper.playing .audio_controls i.fa-pause {
             visibility: visible;
             opacity: 1; }
-          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger.paused .audio_controls i.fa-play {
+          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper.paused .audio_controls i.fa-play {
             visibility: visible;
             opacity: 1; }
-          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger.paused .audio_controls i.fa-pause {
+          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper.paused .audio_controls i.fa-pause {
             visibility: hidden;
             opacity: 0; }
-          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger .audio_controls {
+          #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper .audio_controls {
             position: absolute;
             top: 0;
             right: 55px;
@@ -10059,11 +10051,11 @@ body.single .contact_form:after {
             height: -webkit-max-content;
             height: -moz-max-content;
             height: -moz-fit-content;
-            transform: translateX(25px);
-            -webkit-transform: translateX(25px);
-            -moz-transform: translateX(25px);
-            -ms-transform: translateX(25px);
-            -o-transform: translateX(25px);
+            transform: translateX(35px);
+            -webkit-transform: translateX(35px);
+            -moz-transform: translateX(35px);
+            -ms-transform: translateX(35px);
+            -o-transform: translateX(35px);
             -webkit-transition: all 500ms cubic-bezier(0.375, 0.005, 0, 1);
             -moz-transition: all 500ms cubic-bezier(0.375, 0.005, 0, 1);
             -o-transition: all 500ms cubic-bezier(0.375, 0.005, 0, 1);
@@ -10072,14 +10064,24 @@ body.single .contact_form:after {
             opacity: 0;
             visibility: hidden;
             backface-visibility: hidden; }
-            #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger .audio_controls i {
+            #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper .audio_controls i {
               visibility: hidden;
               opacity: 0;
-              backface-visibility: hidden; }
-              #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger .audio_controls i.fa-play {
+              backface-visibility: hidden;
+              cursor: pointer;
+              color: rgba(255, 255, 255, 0.7);
+              transition: 0.4s all ease-in-out;
+              -webkit-transition: 0.4s all ease-in-out;
+              -moz-transition: 0.4s all ease-in-out;
+              -ms-transition: 0.4s all ease-in-out;
+              -o-transition: 0.4s all ease-in-out; }
+              #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper .audio_controls i:hover {
+                opacity: 1;
+                color: white; }
+              #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper .audio_controls i.fa-play, #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper .audio_controls i.fa-backward {
                 visibility: visible;
                 opacity: 1; }
-              #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger .audio_controls i.fa-pause {
+              #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper .audio_controls i.fa-pause, #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper .audio_controls i.fa-backward {
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -10090,6 +10092,24 @@ body.single .contact_form:after {
                 -moz-transform: translateY(2px);
                 -ms-transform: translateY(2px);
                 -o-transform: translateY(2px); }
+              #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .audio_control_wrapper .audio_controls i.fa-backward {
+                transform: translateX(-110%) translateY(2px);
+                -webkit-transform: translateX(-110%) translateY(2px);
+                -moz-transform: translateX(-110%) translateY(2px);
+                -ms-transform: translateX(-110%) translateY(2px);
+                -o-transform: translateX(-110%) translateY(2px); }
+        #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper .startup_trigger_wrapper span {
+          display: block;
+          transform: translateX(0px);
+          -webkit-transform: translateX(0px);
+          -moz-transform: translateX(0px);
+          -ms-transform: translateX(0px);
+          -o-transform: translateX(0px);
+          -webkit-transition: all 500ms cubic-bezier(0.375, 0.005, 0, 1);
+          -moz-transition: all 500ms cubic-bezier(0.375, 0.005, 0, 1);
+          -o-transition: all 500ms cubic-bezier(0.375, 0.005, 0, 1);
+          transition: all 500ms cubic-bezier(0.375, 0.005, 0, 1);
+          /* custom */ }
   #offering_content .offering_details_container {
     position: relative; }
     #offering_content .offering_details_container:before {
