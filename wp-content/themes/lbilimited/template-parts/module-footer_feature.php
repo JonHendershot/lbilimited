@@ -15,11 +15,13 @@
 			$overlay_slug = $slug . '-overlay';
 			$overlay_toggle = $options[$overlay_slug];
 			$photo = $options[$photo_slug];
+			$photo_id = get_image_id($photo);
+			$photo_url = wp_get_attachment_image_url($photo_id, 'large');
 			if($key <= 1){
 				
 		?>
 		
-		<a href="<?php echo home_url() . '/' . $slug; ?>" class="feature" style="background-image:url(<?php echo $photo; ?>);">
+		<a href="<?php echo home_url() . '/' . $slug; ?>" class="feature" style="background-image:url(<?php echo $photo_url; ?>);">
 			<div class="content-wrapper dash-title">
 				<div class="featured-heading"><?php echo $title; ?></div>
 				<div class="featured-link">Click to View</div>
