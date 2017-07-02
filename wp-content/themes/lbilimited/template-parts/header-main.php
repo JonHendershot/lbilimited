@@ -103,7 +103,9 @@
 			}	
 		
 	// Edit Title
+	if(!is_single()){
 		$title = span_per_word($title);
+	}
 	
 	// Render Content
 		if( is_single() ){ 

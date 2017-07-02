@@ -471,16 +471,34 @@ function next_trigger_id(id, imgClass){
 //////////////////
 
 (function hearStartup($){
-	var trigger = $('.startup_trigger'),
-		src = trigger.data('src');
+	if($('.startup_trigger').length){
 		
-	trigger.click(function(){
+		var trigger = $('.startup_trigger'),
+			src = trigger.data('src'),
+			audioTrack = document.getElementById('startup_audio');
 		
+		trigger.click(function(){
+			
+			if(!audioTrack.paused && !audioTrack.ended){
+				
+				console.log('pause it');
+				// Audio is playing
+				audioTrack.pause();
+				
+				$(this).removeClass('playing').addClass('paused');
+			}else {
+				// Audio is not playing
+				audioTrack.play();
+				
+				$(this).removeClass('paused').addClass('playing');
+			}
+		});
 		
-		var audio = new Audio(src);
-		
-		audio.onload = audio.play();
-	});
+		audioTrack.addEventListener('ended', function(){
+			trigger.removeClass('playing').removeClass('paused');
+			console.log('audio complete');
+		});
+	}
 }(jQuery));
   /////////////
  // Masonry //

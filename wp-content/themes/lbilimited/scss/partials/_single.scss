@@ -735,6 +735,84 @@ body.single {
 					padding: 10px 55px 10px 58px;
 					cursor: pointer;
 				}
+				.startup_trigger {
+					position: relative;
+					span {
+						display: block;
+						@include prefix(transform, translateX(0px));
+						@include easeout(500ms);
+					}
+					audio {
+						visibility: hidden;
+						opacity: 0;
+						display: none;
+					}
+					&:hover, &.playing, &.paused {
+						.audio_controls {
+							opacity: 1;
+							visibility: visible;
+							@include prefix(transform, translateX(15px));
+						}
+						span {
+							@include prefix(transform, translateX(-5px));
+						}
+					}
+					&.playing {
+						.audio_controls {
+							i.fa-play {
+								visibility: hidden;
+								opacity: 0;
+							}
+							i.fa-pause {
+								visibility: visible;
+								opacity: 1;
+							}
+						}
+					}
+					&.paused {
+						.audio_controls {
+							i.fa-play {
+								visibility: visible;
+								opacity: 1;
+							}
+							i.fa-pause {
+								visibility: hidden;
+								opacity: 0;
+							}
+						}
+					}
+					
+					.audio_controls {
+						position: absolute;
+						top: 0;
+						right: 55px;
+						bottom: 0;
+						margin: auto;
+						@include max-content(height);
+						@include prefix(transform, translateX(25px));
+						@include easeout(500ms);
+						opacity: 0;
+						visibility: hidden;
+						backface-visibility: hidden;
+						i {
+							visibility: hidden;
+							opacity: 0; 
+							backface-visibility: hidden;
+							&.fa-play {
+								visibility: visible;
+								opacity: 1;
+							}
+							&.fa-pause{
+								position: absolute;
+								top: 0;
+								right: 0;
+								bottom: 0;
+								margin: auto;
+								@include prefix(transform, translateY(2px));
+							}
+						}
+					}
+				}
 			}			
 		}
 	}

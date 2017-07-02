@@ -311,8 +311,18 @@
 								if( $startup_audio ){
 									// variable
 										$audio_url = $startup_audio['url'];
+										$audio_type = $startup_audio['mime_type'];
 									// Build startup audio button
-									echo "<div class='startup_trigger btn' data-src='$audio_url'>hear startup</div>";
+									echo "<div class='startup_trigger btn' data-src='$audio_url'>
+											<audio controls id='startup_audio'>
+												<source src='$audio_url' type='$audio_type' />
+											</audio>
+											<span>hear startup</span>
+											<div class='audio_controls'>
+												<i class='fa fa-play visible' aria-hidden='true'></i>
+												<i class='fa fa-pause' aria-hidden='true'></i>
+											</div>
+										  </div>";
 								}
 								if( have_rows($documents_repeater) ){
 									// Build documents trigger button
