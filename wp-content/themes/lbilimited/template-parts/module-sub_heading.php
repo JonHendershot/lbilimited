@@ -7,6 +7,8 @@
 		$photo_position = get_field('photo_position');	
 		$objectClass    = "$orientation sub__heading";
 		$imageClass     = "$photo_position pgram__image";
+		$btn_text	    = get_field('sb_button_text');
+		$btn_link 	    = get_field('sb_button_link');
 	
 	// Only render the content if the proper information exists
 		if($heading && $body) :
@@ -16,6 +18,10 @@
 			<div class="sub__heading-content waypoint" data-padding="100">
 				<h2><?php echo $heading; ?></h2>
 				<p><?php echo $body; ?></p>
+				<?php if($btn_text){
+					echo "<a href='$btn_link' class='main-btn'>$btn_text</a>";
+				}
+				?>
 			</div>
 			<div class="pgram__container waypoint" data-padding="200">
 				<div class="pgram__frame">

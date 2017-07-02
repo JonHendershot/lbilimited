@@ -2011,6 +2011,15 @@ body.page-template-media_house .site-header .main-btn {
         margin: 0;
         padding-left: 2px;
         opacity: 1; }
+      .sub__heading article .sub__heading-content a {
+        display: inline-block;
+        margin-top: 20px;
+        opacity: 1;
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        -o-transform: translateY(0px); }
       .sub__heading article .sub__heading-content.waypoint h2 {
         transform: translateY(15px);
         -webkit-transform: translateY(15px);
@@ -2024,6 +2033,13 @@ body.page-template-media_house .site-header .main-btn {
         -moz-transform: translateY(30px);
         -ms-transform: translateY(30px);
         -o-transform: translateY(30px);
+        opacity: 0; }
+      .sub__heading article .sub__heading-content.waypoint a {
+        transform: translateY(40px);
+        -webkit-transform: translateY(40px);
+        -moz-transform: translateY(40px);
+        -ms-transform: translateY(40px);
+        -o-transform: translateY(40px);
         opacity: 0; }
     .sub__heading article .pgram__container {
       position: relative;

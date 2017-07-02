@@ -37,6 +37,12 @@ $skew_distance : 15deg;
 				padding-left: 2px;
 				opacity: 1;
 			}
+			a {
+				display: inline-block;
+				margin-top: 20px;
+				opacity: 1;
+				@include prefix(transform, translateY(0px));
+			}
 			&.waypoint {
 				h2 {
 					@include prefix(transform, translateY(15px));
@@ -44,6 +50,10 @@ $skew_distance : 15deg;
 				}
 				p {
 					@include prefix(transform, translateY(30px));
+					opacity: 0;
+				}
+				a {
+					@include prefix(transform, translateY(40px));
 					opacity: 0;
 				}
 			}
