@@ -750,10 +750,10 @@ body.single {
 						.audio_controls {
 							opacity: 1;
 							visibility: visible;
-							@include prefix(transform, translateX(25px));
+							@include prefix(transform, translateX(18px));
 						}
 						span {
-							@include prefix(transform, translateX(-5px));
+							@include prefix(transform, translateX(-14px));
 						}
 					}
 					&.playing {
@@ -788,7 +788,7 @@ body.single {
 						bottom: 0;
 						margin: auto;
 						@include max-content(height);
-						@include prefix(transform, translateX(35px));
+						@include prefix(transform, translateX(25px));
 						@include easeout(500ms);
 						opacity: 0;
 						visibility: hidden;
