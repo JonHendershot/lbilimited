@@ -301,8 +301,13 @@ function lbi_contact($form_array, $id){
 // easiest way to accomplish this is to create a shortcode that can be embedded anywhere
 // in the post content. We'll do that here. 
 
-function lbi_single_gallery(){
-	$gallery = get_field('post_gallery');
+function lbi_single_gallery( $atts ){
+	if( ! empty( $atts['id'] ) ){
+		$gallery_id = $atts['id'];
+		$gallery_slug = "post_gallery_$gallery_id";
+	}
+	
+	$gallery = get_field($gallery_slug);
 	$first_image = $gallery[0]['url'];
 	$first_alt = $gallery[0]['alt'];
 	$loop_index = 0;
