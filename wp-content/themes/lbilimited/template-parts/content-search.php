@@ -53,12 +53,12 @@ if(in_array($post_type, $display_posts)) :
 				 
 				
 				if($post_type == 'offerings'){
-					if( in_category('current-offerings') ){
+					if( has_term(264,'offering_type') ){
 						$cat_title = 'Current Offerings';
 						$cat_uri = 'current-offerings';
-					}else if( in_category('past-offerings') ){
+					}else if( has_term(265,'offering_type') ){
 						$cat_title = 'Past Offerings';
-						$cat_url = 'past-offerings';
+						$cat_uri = 'past-offerings';
 					}
 				}else if($post_type == 'collection'){
 					$cat_title = 'LBI Collection';

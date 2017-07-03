@@ -17,7 +17,7 @@
 		
 		// Check what type of page we're loading and set $content_class accordingly so we can dynamically style the content
 		if( is_search() ){
-			$title = 'Results:';
+			$title = '<span class="word">Results:</span>';
 			$subtitle = get_search_query();
 			$content_class .= ' search';
 			$header_img = $options['results_header'];
@@ -103,7 +103,7 @@
 			}	
 		
 	// Edit Title
-	if(!is_single()){
+	if(!is_single() && !is_search() ){
 		$title = span_per_word($title);
 	}
 	
