@@ -393,7 +393,7 @@
 			opacity: 1;
 		}
 		a {
-			$baseDelay : 1200;
+			$baseDelay : 2000;
 			@include prefix(transform, translateY(0px));
 			opacity: 1;
 			@include easeout(1200ms);
@@ -444,6 +444,7 @@
 		    
 		    p {
 			    margin: 0;
+			    transition-delay: 1500ms;
 		    }
 		    a {
 			    margin: 10px 0 0 0;
@@ -590,6 +591,7 @@
 			height: 100%;
 			overflow: hidden;
 			cursor: pointer;
+			backface-visibility: hidden;
 		}
 		
 		video {

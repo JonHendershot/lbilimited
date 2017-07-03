@@ -24,7 +24,15 @@ jQuery(window).load(function(){
 		}, 500);
 		setTimeout(function(){
 			$('.site-header').removeClass('timing');
-		},1200)
+		},2000)
+	}
+	if( $('.home_shade').length){
+		setTimeout(function(){
+			$('.home_shade').addClass('off');
+		}, 4000);
+		setTimeout(function(){
+			$('body').removeClass('hide_header');
+		}, 5500);
 	}
 	
 });

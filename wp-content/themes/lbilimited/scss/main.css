@@ -1325,9 +1325,9 @@ h4.tilt_title.flip:after {
       -o-transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
       transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
       /* custom */
-      transition-delay: 1200ms; }
+      transition-delay: 2000ms; }
       .site-header .header-content a:after {
-        transition-delay: 1200ms;
+        transition-delay: 2000ms;
         -webkit-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
         -moz-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
         -o-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
@@ -1348,155 +1348,155 @@ h4.tilt_title.flip:after {
         opacity: 1;
         display: inline-block; }
         .site-header .header-content a span:nth-child(1) {
-          transition-delay: 1252ms; }
+          transition-delay: 2052ms; }
         .site-header .header-content a span:nth-child(2) {
-          transition-delay: 1278ms; }
+          transition-delay: 2078ms; }
         .site-header .header-content a span:nth-child(3) {
-          transition-delay: 1304ms; }
+          transition-delay: 2104ms; }
         .site-header .header-content a span:nth-child(4) {
-          transition-delay: 1330ms; }
+          transition-delay: 2130ms; }
         .site-header .header-content a span:nth-child(5) {
-          transition-delay: 1356ms; }
+          transition-delay: 2156ms; }
         .site-header .header-content a span:nth-child(6) {
-          transition-delay: 1382ms; }
+          transition-delay: 2182ms; }
         .site-header .header-content a span:nth-child(7) {
-          transition-delay: 1408ms; }
+          transition-delay: 2208ms; }
         .site-header .header-content a span:nth-child(8) {
-          transition-delay: 1434ms; }
+          transition-delay: 2234ms; }
         .site-header .header-content a span:nth-child(9) {
-          transition-delay: 1460ms; }
+          transition-delay: 2260ms; }
         .site-header .header-content a span:nth-child(10) {
-          transition-delay: 1486ms; }
+          transition-delay: 2286ms; }
         .site-header .header-content a span:nth-child(11) {
-          transition-delay: 1512ms; }
+          transition-delay: 2312ms; }
         .site-header .header-content a span:nth-child(12) {
-          transition-delay: 1538ms; }
+          transition-delay: 2338ms; }
         .site-header .header-content a span:nth-child(13) {
-          transition-delay: 1564ms; }
+          transition-delay: 2364ms; }
         .site-header .header-content a span:nth-child(14) {
-          transition-delay: 1590ms; }
+          transition-delay: 2390ms; }
         .site-header .header-content a span:nth-child(15) {
-          transition-delay: 1616ms; }
+          transition-delay: 2416ms; }
         .site-header .header-content a span:nth-child(16) {
-          transition-delay: 1642ms; }
+          transition-delay: 2442ms; }
         .site-header .header-content a span:nth-child(17) {
-          transition-delay: 1668ms; }
+          transition-delay: 2468ms; }
         .site-header .header-content a span:nth-child(18) {
-          transition-delay: 1694ms; }
+          transition-delay: 2494ms; }
         .site-header .header-content a span:nth-child(19) {
-          transition-delay: 1720ms; }
+          transition-delay: 2520ms; }
         .site-header .header-content a span:nth-child(20) {
-          transition-delay: 1746ms; }
+          transition-delay: 2546ms; }
         .site-header .header-content a span:nth-child(21) {
-          transition-delay: 1772ms; }
+          transition-delay: 2572ms; }
         .site-header .header-content a span:nth-child(22) {
-          transition-delay: 1798ms; }
+          transition-delay: 2598ms; }
         .site-header .header-content a span:nth-child(23) {
-          transition-delay: 1824ms; }
+          transition-delay: 2624ms; }
         .site-header .header-content a span:nth-child(24) {
-          transition-delay: 1850ms; }
+          transition-delay: 2650ms; }
         .site-header .header-content a span:nth-child(25) {
-          transition-delay: 1876ms; }
+          transition-delay: 2676ms; }
         .site-header .header-content a span:nth-child(26) {
-          transition-delay: 1902ms; }
+          transition-delay: 2702ms; }
         .site-header .header-content a span:nth-child(27) {
-          transition-delay: 1928ms; }
+          transition-delay: 2728ms; }
         .site-header .header-content a span:nth-child(28) {
-          transition-delay: 1954ms; }
+          transition-delay: 2754ms; }
         .site-header .header-content a span:nth-child(29) {
-          transition-delay: 1980ms; }
+          transition-delay: 2780ms; }
         .site-header .header-content a span:nth-child(30) {
-          transition-delay: 2006ms; }
+          transition-delay: 2806ms; }
         .site-header .header-content a span:nth-child(31) {
-          transition-delay: 2032ms; }
+          transition-delay: 2832ms; }
         .site-header .header-content a span:nth-child(32) {
-          transition-delay: 2058ms; }
+          transition-delay: 2858ms; }
         .site-header .header-content a span:nth-child(33) {
-          transition-delay: 2084ms; }
+          transition-delay: 2884ms; }
         .site-header .header-content a span:nth-child(34) {
-          transition-delay: 2110ms; }
+          transition-delay: 2910ms; }
         .site-header .header-content a span:nth-child(35) {
-          transition-delay: 2136ms; }
+          transition-delay: 2936ms; }
         .site-header .header-content a span:nth-child(36) {
-          transition-delay: 2162ms; }
+          transition-delay: 2962ms; }
         .site-header .header-content a span:nth-child(37) {
-          transition-delay: 2188ms; }
+          transition-delay: 2988ms; }
         .site-header .header-content a span:nth-child(38) {
-          transition-delay: 2214ms; }
+          transition-delay: 3014ms; }
         .site-header .header-content a span:nth-child(39) {
-          transition-delay: 2240ms; }
+          transition-delay: 3040ms; }
         .site-header .header-content a span:nth-child(40) {
-          transition-delay: 2266ms; }
+          transition-delay: 3066ms; }
         .site-header .header-content a span:nth-child(41) {
-          transition-delay: 2292ms; }
+          transition-delay: 3092ms; }
         .site-header .header-content a span:nth-child(42) {
-          transition-delay: 2318ms; }
+          transition-delay: 3118ms; }
         .site-header .header-content a span:nth-child(43) {
-          transition-delay: 2344ms; }
+          transition-delay: 3144ms; }
         .site-header .header-content a span:nth-child(44) {
-          transition-delay: 2370ms; }
+          transition-delay: 3170ms; }
         .site-header .header-content a span:nth-child(45) {
-          transition-delay: 2396ms; }
+          transition-delay: 3196ms; }
         .site-header .header-content a span:nth-child(46) {
-          transition-delay: 2422ms; }
+          transition-delay: 3222ms; }
         .site-header .header-content a span:nth-child(47) {
-          transition-delay: 2448ms; }
+          transition-delay: 3248ms; }
         .site-header .header-content a span:nth-child(48) {
-          transition-delay: 2474ms; }
+          transition-delay: 3274ms; }
         .site-header .header-content a span:nth-child(49) {
-          transition-delay: 2500ms; }
+          transition-delay: 3300ms; }
         .site-header .header-content a span:nth-child(50) {
-          transition-delay: 2526ms; }
+          transition-delay: 3326ms; }
         .site-header .header-content a span:nth-child(51) {
-          transition-delay: 2552ms; }
+          transition-delay: 3352ms; }
         .site-header .header-content a span:nth-child(52) {
-          transition-delay: 2578ms; }
+          transition-delay: 3378ms; }
         .site-header .header-content a span:nth-child(53) {
-          transition-delay: 2604ms; }
+          transition-delay: 3404ms; }
         .site-header .header-content a span:nth-child(54) {
-          transition-delay: 2630ms; }
+          transition-delay: 3430ms; }
         .site-header .header-content a span:nth-child(55) {
-          transition-delay: 2656ms; }
+          transition-delay: 3456ms; }
         .site-header .header-content a span:nth-child(56) {
-          transition-delay: 2682ms; }
+          transition-delay: 3482ms; }
         .site-header .header-content a span:nth-child(57) {
-          transition-delay: 2708ms; }
+          transition-delay: 3508ms; }
         .site-header .header-content a span:nth-child(58) {
-          transition-delay: 2734ms; }
+          transition-delay: 3534ms; }
         .site-header .header-content a span:nth-child(59) {
-          transition-delay: 2760ms; }
+          transition-delay: 3560ms; }
         .site-header .header-content a span:nth-child(60) {
-          transition-delay: 2786ms; }
+          transition-delay: 3586ms; }
         .site-header .header-content a span:nth-child(61) {
-          transition-delay: 2812ms; }
+          transition-delay: 3612ms; }
         .site-header .header-content a span:nth-child(62) {
-          transition-delay: 2838ms; }
+          transition-delay: 3638ms; }
         .site-header .header-content a span:nth-child(63) {
-          transition-delay: 2864ms; }
+          transition-delay: 3664ms; }
         .site-header .header-content a span:nth-child(64) {
-          transition-delay: 2890ms; }
+          transition-delay: 3690ms; }
         .site-header .header-content a span:nth-child(65) {
-          transition-delay: 2916ms; }
+          transition-delay: 3716ms; }
         .site-header .header-content a span:nth-child(66) {
-          transition-delay: 2942ms; }
+          transition-delay: 3742ms; }
         .site-header .header-content a span:nth-child(67) {
-          transition-delay: 2968ms; }
+          transition-delay: 3768ms; }
         .site-header .header-content a span:nth-child(68) {
-          transition-delay: 2994ms; }
+          transition-delay: 3794ms; }
         .site-header .header-content a span:nth-child(69) {
-          transition-delay: 3020ms; }
+          transition-delay: 3820ms; }
         .site-header .header-content a span:nth-child(70) {
-          transition-delay: 3046ms; }
+          transition-delay: 3846ms; }
         .site-header .header-content a span:nth-child(71) {
-          transition-delay: 3072ms; }
+          transition-delay: 3872ms; }
         .site-header .header-content a span:nth-child(72) {
-          transition-delay: 3098ms; }
+          transition-delay: 3898ms; }
         .site-header .header-content a span:nth-child(73) {
-          transition-delay: 3124ms; }
+          transition-delay: 3924ms; }
         .site-header .header-content a span:nth-child(74) {
-          transition-delay: 3150ms; }
+          transition-delay: 3950ms; }
         .site-header .header-content a span:nth-child(75) {
-          transition-delay: 3176ms; }
+          transition-delay: 3976ms; }
   .site-header .header-content.search p {
     font-family: "heading", serif;
     font-size: 48px;
@@ -1525,7 +1525,8 @@ h4.tilt_title.flip:after {
     -ms-transform: translateX(225px);
     -o-transform: translateX(225px); }
     .site-header .header-content.home .sub_heading p {
-      margin: 0; }
+      margin: 0;
+      transition-delay: 1500ms; }
     .site-header .header-content.home .sub_heading a {
       margin: 10px 0 0 0; }
   .site-header .header-content.home h1 {
@@ -1683,7 +1684,8 @@ h4.tilt_title.flip:after {
       width: 100%;
       height: 100%;
       overflow: hidden;
-      cursor: pointer; }
+      cursor: pointer;
+      backface-visibility: hidden; }
     .site-header.single .featured-media-wrapper video {
       z-index: 9; }
     .site-header.single .featured-media-wrapper img, .site-header.single .featured-media-wrapper video {
@@ -5362,6 +5364,34 @@ span.wpcf7-not-valid-tip:before {
 /*************************************
   - - - - - - TEMPLATES - - - - - - -
 **************************************/
+body.page-template-home.hide_header .nav-wrapper {
+  z-index: 999; }
+
+body.page-template-home .home_shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #191B1C;
+  -webkit-transition: all 1400ms cubic-bezier(0.375, 0.005, 0, 1);
+  -moz-transition: all 1400ms cubic-bezier(0.375, 0.005, 0, 1);
+  -o-transition: all 1400ms cubic-bezier(0.375, 0.005, 0, 1);
+  transition: all 1400ms cubic-bezier(0.375, 0.005, 0, 1);
+  /* custom */
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  z-index: 9999; }
+  body.page-template-home .home_shade.off {
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%); }
+
 body.page-template-home .home_cta_container .home_cta_wrapper {
   display: flex;
   display: -webkit-flex;

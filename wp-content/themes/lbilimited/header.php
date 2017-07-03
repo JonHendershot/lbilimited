@@ -23,6 +23,11 @@
 	}
 	$header_class .= " $header_type $post_type";
 	
+	if( is_front_page() ){
+		$hide_header = 'hide_header';
+	}else {
+		$hide_header = '';
+	}
 	
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -34,7 +39,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( " $hide_header " ); ?>>
 	<div id="pre_loader">
 		<div class="ribbon"></div>
 		<img src="<?php echo $loading_icon; ?>" />
