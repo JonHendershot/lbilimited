@@ -304,7 +304,17 @@ function lbi_contact($form_array, $id){
 function lbi_single_gallery( $atts ){
 	if( ! empty( $atts['id'] ) ){
 		$gallery_id = $atts['id'];
-		$gallery_slug = "post_gallery_$gallery_id";
+		
+		if($gallery_id == 1){
+			// A multi-gallery feature was implemented late, so the numbering system for gallery loops
+			// wasn't a core feature of this site. But, we need to keep the field name for each of the
+			// existing first galleries the same as to not break meta-data information, so we'll need to
+			// simply detect if were calling the first gallery and, if not, append the gallery number to the
+			// slug so that this function calls the proper gallery. 
+			$gallery_slug = "post_gallery";
+		}else {
+			$gallery_slug = "post_gallery_$gallery_id";
+		}
 	}
 	
 	$gallery = get_field($gallery_slug);

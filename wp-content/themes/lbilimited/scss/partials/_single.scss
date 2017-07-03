@@ -396,6 +396,7 @@ body.single {
 					left: 0;
 					height: 100%;
 					width: 100%;
+					margin: 0;
 					object-fit: cover; // no IE support - need a fallback for IE
 				}
 			}
@@ -900,6 +901,11 @@ body.single {
 	article.post_content {
 		max-width: 880px;
 		margin: 0 auto;
+		
+		img {
+			display: block;
+			margin: 40px auto;
+		}
 		
 		p {
 			color: $blog_body;
