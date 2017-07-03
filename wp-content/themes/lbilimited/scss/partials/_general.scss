@@ -110,6 +110,7 @@ span.media_overlay {
 	text-decoration: none;
 	position: relative;
 	z-index: 8;
+	cursor: pointer;
 	
 	&:after {
 		content: "";

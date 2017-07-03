@@ -128,7 +128,8 @@ span.media_overlay {
   padding: 10px 30px 10px 33px;
   text-decoration: none;
   position: relative;
-  z-index: 8; }
+  z-index: 8;
+  cursor: pointer; }
   .main-btn:after, input[type="submit"]:after {
     content: "";
     position: absolute;
