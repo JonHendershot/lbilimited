@@ -111,12 +111,15 @@
 					if( $loop_index === 2 ){
 						$display_class='next';
 					}
+				
+				
 					
 
 					
 			
 				// Render content here
 					echo "<div class='featured_media_wrapper $display_class'  style='background-image: url($background_image)'>
+							<div class='reveal_ribbon waypoint' data-padding='100'></div>
 							<div class='featured_media_title dash-title'>
 								<h3>$title</h3>
 							</div>

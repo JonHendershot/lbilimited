@@ -121,7 +121,7 @@
 
 				
 				// Output elements	
-					echo "<div class='grid-item $trigger_class $display_class $gutter' style='background-image: url($background_image)' data-item='$item_json'>
+					echo "<div class='grid-item $trigger_class $display_class $gutter waypoint' data-padding='100' style='background-image: url($background_image)' data-item='$item_json'>
 							<div class='item-content dash-title'>
 								<h3>$title</h3>
 								<div class='trigger video_trigger'>$trigger_text</div>
