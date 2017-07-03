@@ -10378,13 +10378,17 @@ body.single .contact_form:after {
           padding: 7px 0 6px;
           text-transform: uppercase;
           text-decoration: none;
-          color: #464647;
-          border: 1px solid #464647;
+          border: 1px solid #191B1C;
           display: block;
           font-size: 10px;
           letter-spacing: 3px;
           background-color: transparent;
-          font-weight: 300; }
+          font-weight: 300;
+          -webkit-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+          -moz-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+          -o-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+          transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+          /* custom */ }
   .search_results .posts-navigation {
     width: 100%; }
     .search_results .posts-navigation a {

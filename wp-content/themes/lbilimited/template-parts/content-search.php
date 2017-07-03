@@ -77,7 +77,7 @@ if(in_array($post_type, $display_posts)) :
 	
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
-			<a href="<?php the_permalink(); ?>" class="main-btn">Read More</a>
+			<a href="<?php the_permalink(); ?>" class="s_btn black">Read More</a>
 		</div><!-- .entry-summary -->
 	</div>
 	
