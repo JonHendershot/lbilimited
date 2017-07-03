@@ -54,6 +54,52 @@ span.media_overlay {
 	}
 }
 
+.s_btn {
+	position: relative;
+	overflow: hidden;
+	z-index: 9;
+	
+	&:after {
+		content: "";
+		position: absolute;
+		width: 120%;
+		height: 100%;
+		top: 0;
+		left: -10%;
+		@include prefix(transform, skew(-24deg) scaleX(0));
+		@include easeout(400ms);
+		z-index: -1;
+	}
+	
+	&:hover {
+		&:after {
+			@include prefix(transform, skew(-24deg) scaleX(1));
+		}
+	}
+	
+	&.white {
+		color: $white;
+		border-color: $white;
+		&:after {
+			background-color: $white;
+		}
+		&:hover {
+			color: $black;
+		}
+	}
+	
+	&.black {
+		color: $black;
+		border-color: $black;
+		&:after {
+			background-color: $black;
+		}
+		&:hover {
+			color: $white;
+		}
+	}
+}
+
 .main-btn, input[type="submit"] {
 	color: $white;
 	letter-spacing: 3px;

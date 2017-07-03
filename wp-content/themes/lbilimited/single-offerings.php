@@ -313,7 +313,7 @@
 										$audio_url = $startup_audio['url'];
 										$audio_type = $startup_audio['mime_type'];
 									// Build startup audio button
-									echo "<div class='audio_control_wrapper'>
+									echo "<div class='audio_control_wrapper s_btn white'>
 										 <div class='startup_trigger startup_trigger_wrapper btn' data-src='$audio_url'>
 											<audio controls id='startup_audio'>
 												<source src='$audio_url' type='$audio_type' />
@@ -329,7 +329,7 @@
 								}
 								if( have_rows($documents_repeater) ){
 									// Build documents trigger button
-									echo "<div class='documents_trigger btn'>view documents</div>";
+									echo "<div class='documents_trigger btn s_btn white'>view documents</div>";
 								}
 								
 								

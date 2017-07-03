@@ -29,7 +29,7 @@
 							$prev_post = get_previous_post();
 								
 							// Only export page navigations if we have more than one page					
-							echo "<div class='posts-navigation'>";
+							echo "<div class='posts-navigation waypoint' data-padding='20'>";
 							  		if($prev_post){
 								  		// Variables 
 								  			$prev_url = get_permalink($prev_post->ID);
@@ -40,7 +40,7 @@
 								  		echo '<a class="posts-nav-link disabled" disabled>Previous Post</a>';
 							  		}
 							  		
-							  		echo "<a href='$archive_link#post-$anchor' class='btn'>Back to Archive</a>";
+							  		echo "<a href='$archive_link#post-$anchor' class='btn s_btn black'>Back to Archive</a>";
 							  		
 							  		if($next_post){
 								  		// Variables 

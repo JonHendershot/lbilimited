@@ -161,8 +161,11 @@
 			echo "<div class='b_image_wrapper'>
 				  	<img src='$header_thumb' class='blur $featured_image_frame' />
 				  	<img data-src='$header_img' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' class='full_size lazy-load $featured_image_frame' />
-				  	$media_overlay
-				  </div>";
+				  	$media_overlay";
+				  	if(is_front_page()){
+					  	echo "<div class='home_shade'></div>";
+				  	}
+			echo "</div>";
 			
 			if( $header_video ){
 				$file_type = $header_video['mime_type'];

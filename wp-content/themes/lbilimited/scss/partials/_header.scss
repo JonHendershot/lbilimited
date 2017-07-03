@@ -221,7 +221,7 @@
 		.search_menu_container {
 			@include flexbox(center,center);
 			@include easeout(600ms);
-			.search {
+			.search, .menu_trigger {
 				font-size: 8px;
 				text-transform: uppercase;
 				letter-spacing: 3px;
@@ -229,28 +229,27 @@
 				padding: 10px 23px 10px 26px;
 				@include max-content(width);
 				@include transition(0.3s, all, ease-in-out);
-				color: $white;
+// 				color: $white;
 				font-weight: 300;
 				background-color: transparent;
 				cursor: pointer;
 				margin: 0;
 				
 				&:hover, &.open {
-					background-color: $white;	
+					border-color: rgba(255,255,255,1);	
 					color: $black;
+					&:after {
+						@include prefix(transform, skew(-24deg) scaleX(1));
+					}
 				}
 			}
-			.search:hover, .search.open {
-				
-			}
 			.menu_trigger {
-				width: 34px;
-				height: 34px;
-				border: 1px solid rgba(255,255,255,0.5);
+
+// 				border: 1px solid rgba(255,255,255,0.5);
 				margin-left: 16px;
-				@include flexbox(center,center);
-				cursor: pointer;
-				
+				padding: 10px 15px 10px 18px;
+
+/*
 				.dot-container {
 					width: 18px;
 					height: 18px;
@@ -265,6 +264,7 @@
 						display: block;
 					}	
 				}
+*/
 			}
 		}
 	}

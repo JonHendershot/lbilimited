@@ -528,8 +528,10 @@ function next_trigger_id(id, imgClass){
 			menu.removeClass('menu_visible');
 			setTimeout(function(){ menu.removeClass('open') },900);
 			$('body').removeClass('noscroll');
+			$(this).removeClass('open');
 		}else {
 			menu.addClass('open');
+			$(this).addClass('open');
 			setTimeout(function(){ menu.addClass('menu_visible') },500);
 			$('body').addClass('noscroll');
 			

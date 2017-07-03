@@ -67,13 +67,15 @@
 					}
 					?>
 					<div class="search_menu_container">
-						<p class="search search_trigger header">Click to search</p>
-						<div class="menu_trigger">
+						<p class="search search_trigger header s_btn white">Click to search</p>
+						<div class="menu_trigger s_btn white">Menu
+<!--
 							<div class="dot-container">
 								<?php for($i = 1; $i <= 9; $i++){
 									echo "<span class='menu-dot'></span>"; 
 								} ?>
 							</div>
+-->
 						</div>
 					</div>
 				</div>
