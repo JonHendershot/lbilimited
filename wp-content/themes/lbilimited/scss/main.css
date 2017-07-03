@@ -10312,7 +10312,31 @@ body.single .contact_form:after {
     -webkit-align-items: center;
     justify-content: flex-start;
     -webkit-justify-content: flex-start;
-    margin: 0; }
+    margin: 0;
+    -webkit-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+    -moz-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+    -o-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+    transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+    /* custom */
+    opacity: 1;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px); }
+    .search_results article.waypoint {
+      transform: translateY(15px);
+      -webkit-transform: translateY(15px);
+      -moz-transform: translateY(15px);
+      -ms-transform: translateY(15px);
+      -o-transform: translateY(15px);
+      opacity: 0; }
+      .search_results article.waypoint .post_archive_link:after {
+        transform: scaleX(0) !important;
+        -webkit-transform: scaleX(0) !important;
+        -moz-transform: scaleX(0) !important;
+        -ms-transform: scaleX(0) !important;
+        -o-transform: scaleX(0) !important; }
     .search_results article:nth-of-type(1) {
       border-top: 1px solid #7c7c7c; }
     .search_results article .article_image {
@@ -10360,11 +10384,27 @@ body.single .contact_form:after {
             width: 97%;
             margin: 0 auto;
             height: 1px;
+            display: block;
             background-color: #962F32;
             position: absolute;
             bottom: 0;
             left: 0;
-            right: 0; }
+            right: 0;
+            transform: scaleX(1);
+            -webkit-transform: scaleX(1);
+            -moz-transform: scaleX(1);
+            -ms-transform: scaleX(1);
+            -o-transform: scaleX(1);
+            -webkit-transition: all 700ms cubic-bezier(0.375, 0.005, 0, 1);
+            -moz-transition: all 700ms cubic-bezier(0.375, 0.005, 0, 1);
+            -o-transition: all 700ms cubic-bezier(0.375, 0.005, 0, 1);
+            transition: all 700ms cubic-bezier(0.375, 0.005, 0, 1);
+            /* custom */
+            transition-delay: 200ms;
+            -webkit-transition-delay: 200ms;
+            -moz-transition-delay: 200ms;
+            -ms-transition-delay: 200ms;
+            -o-transition-delay: 200ms; }
       .search_results article .article_content .entry-summary {
         color: #7c7c7c;
         font-size: 13px;

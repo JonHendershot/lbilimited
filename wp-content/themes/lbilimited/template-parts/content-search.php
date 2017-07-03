@@ -17,7 +17,7 @@ $display_posts = array(
 if(in_array($post_type, $display_posts)) :
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'waypoint' ); ?> data-padding="50">
 	<div class="article_image">
 		<?php
 			

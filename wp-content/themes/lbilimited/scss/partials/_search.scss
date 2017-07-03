@@ -26,6 +26,18 @@
 		padding: 30px 0;
 		@include flexbox(center,flex-start);
 		margin: 0;
+		@include easeout(1000ms);
+		opacity: 1;
+		@include prefix(transform, translateY(0px));
+		
+		&.waypoint {
+			@include prefix(transform, translateY(15px));
+			opacity: 0;
+			
+			.post_archive_link:after {
+				@include prefix(transform, scaleX(0) !important);
+			}
+		}
 		
 		
 		&:nth-of-type(1) {
@@ -77,11 +89,15 @@
 						width: 97%;
 						margin: 0 auto;
 						height: 1px;
+						display: block;
 						background-color: $mainred;
 						position: absolute;
 						bottom: 0;
 						left: 0;
 						right: 0;
+						@include prefix(transform, scaleX(1));
+						@include easeout(700ms);
+						@include prefix(transition-delay, 200ms);
 					}
 				}	
 			}
