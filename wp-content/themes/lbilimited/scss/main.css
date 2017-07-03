@@ -7643,7 +7643,8 @@ section.featured_gallery {
         width: 100%;
         height: 100%;
         z-index: 99999;
-        overflow: hidden; }
+        overflow: hidden;
+        display: none; }
         section.featured_gallery .media_carousel .featured_media_wrapper .reveal_ribbon.waypoint:after {
           transform: skew(-24deg) translateX(-49%);
           -webkit-transform: skew(-24deg) translateX(-49%);

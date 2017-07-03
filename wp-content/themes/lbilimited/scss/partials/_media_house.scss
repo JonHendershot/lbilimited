@@ -107,6 +107,8 @@ section.featured_gallery {
 				height: 100%;
 				z-index: 99999;
 				overflow: hidden;
+				
+				display: none;
 		
 		
 				&.waypoint {
