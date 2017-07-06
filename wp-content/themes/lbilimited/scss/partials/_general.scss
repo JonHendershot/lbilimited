@@ -48,9 +48,11 @@ span.media_overlay {
     background-color: rgba(0,0,0,0.2);
     z-index: 99;
     @include easeout(700ms);
+    visibility: visible;
 
 	&.hide {
 		opacity: 0 !important;
+		visibility: hidden;
 	}
 }
 
@@ -112,7 +114,7 @@ span.media_overlay {
 	z-index: 8;
 	cursor: pointer;
 	
-	&:after {
+	&:not(.price):after {
 		content: "";
 		position: absolute;
 		top: 0;

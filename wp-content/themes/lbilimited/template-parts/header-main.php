@@ -109,7 +109,7 @@
 	
 	// Render Content
 		if( is_single() ){ 
-			
+			$sound_trigger = false;
 			/////////////////////////
 			/// SINGLE POST PAGE ///
 			///////////////////////
@@ -123,7 +123,10 @@
 			
 	
 			if($file_type == 'video'){
-				echo "<video class='' autoplay loop muted>
+				
+				$sound_trigger = true;
+				
+				echo "<video id='header_video' autoplay loop muted>
 					 	<source src='$header_img' />
 					 </video>";
 			}
@@ -131,8 +134,16 @@
 				echo "<img src='$featured_img_url' class='' alt='$feat_alt' />";	
 			}
 			
-			echo "</div>
-				  <div class='$content_class'>
+			echo "</div>";
+			
+			if( $sound_trigger ){
+				echo "<div class='sound_trigger off waypoint' data-padding='0'>
+					  	<i class='fa fa-volume-off'></i>
+					  	<i class='fa fa-volume-up'></i>
+					  </div>";
+			}
+			
+			echo "<div class='$content_class'>
 				  	<span class='geo_elem'></span>
 				  	<h1>$title</h1>";
 				  	if($price){

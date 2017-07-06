@@ -264,6 +264,38 @@ function waypoint(elem, scrollY){
 }(jQuery));
 
 
+  ///////////////////
+ // SOUND TRIGGER //
+///////////////////
+(function soundTrigger($){
+	var soundTrigger = $('.sound_trigger'),
+		headerVideo = document.getElementById('header_video');
+	
+	if( soundTrigger.length ){
+		soundTrigger.click(function(){
+			if( $(this).hasClass('off') ){
+				// Audio is muted
+				
+				// Toggle audio trigger
+				// This is controlled with a css3 class
+				$(this).removeClass('off').addClass('on');
+				
+				// Unmute the video audio
+				headerVideo.muted = false;
+			}else {
+				// Audio is playing
+				
+				// Toggle audio trigger
+				// This is controlled with a css3 class
+				$(this).addClass('off').removeClass('on');
+				
+				// Mute the video
+				headerVideo.muted = true;	
+			}
+		});
+	}
+}(jQuery));
+
   ////////////////////////
  // SPECIALISTS EXPAND //
 ////////////////////////
