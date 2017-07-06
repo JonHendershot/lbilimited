@@ -440,6 +440,33 @@ function updateSpecialist(specialist){
 		
 		next_img(img);
 	});
+	
+	// Arrow Key Navigation
+	$(document).keyup( function(e){
+		if( lightbox.hasClass('visible') ){
+	
+
+			var nav = false;
+			
+			if( e.keyCode == 37 ){
+				// left arrowkey, get previous image
+				var data = $('.prev_img.light_nav').attr('data-img'),
+					nav = true;
+			}
+			if( e.keyCode == 39 ){
+				// right arrowkey, get next image
+				var data = $('.next_img.light_nav').attr('data-img'),
+					nav = true;
+			}
+			
+			
+			if( nav ){
+				next_img(data);
+			}
+
+		}
+	});
+	
 }(jQuery));
 function next_img(id){
 	var $ = jQuery,
@@ -925,15 +952,14 @@ function open_lightbox(lightbox_id){
 		timeout = 0,
 		navWrapper = $('.nav-wrapper'), // need to make sure it's visible because lightboxes are hidden in nav wrapper for z-index issues
 		closeTrigger = $('.nav-wrapper .search_trigger'); // this will change to a close lightbox trigger any time a lightbox is opened
-;
+
 	if( navWrapper.hasClass('hidden') ){
 		navWrapper.removeClass('hidden');
 
 	}
 	if( !lightbox_id.hasClass('visible') ){
 		lightbox_id.addClass('visible');
-		closeTrigger.text('Click to close').addClass('open');
-		
+		closeTrigger.text('Click to close').addClass('open');	
 	}
 	$('body').addClass('noscroll');
 	
@@ -1178,18 +1204,24 @@ function setMaxHeight(elemclass){
 
 		var down = [];
 		$(document).keydown(function(e) {
-			var currentField = parseInt($('.ppsection.visible').data('part'));
-		    down[e.keyCode] = true;
-		    if (down[16] && down[39]) {
-		        var nextField = currentField + 1;
+			if( $('.ppsection.visible').length ){
+				
+				var currentField = parseInt($('.ppsection.visible').data('part'));
+			    down[e.keyCode] = true;
+			    if (down[16] && down[39]) {
+			        var nextField = currentField + 1;
+			    }
+			    if (down[16] && down[37]){
+				    var nextField = currentField - 1;
+			    }
+			    ppNextField(currentField, nextField);
 		    }
-		    if (down[16] && down[37]){
-			    var nextField = currentField - 1;
-		    }
-		    ppNextField(currentField, nextField);
 		}).keyup(function(e) {
 		    
+		    if( $('.ppsection.visible').length ){
+
 		    down[e.keyCode] = false;
+		    }
 		});
 	
 	// Checkboxes 
