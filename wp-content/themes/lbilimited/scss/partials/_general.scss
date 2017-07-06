@@ -62,10 +62,10 @@ span.media_overlay {
 	&:after {
 		content: "";
 		position: absolute;
-		width: 120%;
+		width: 130%;
 		height: 100%;
 		top: 0;
-		left: -10%;
+		left: -15%;
 		@include prefix(transform, skew(-24deg) scaleX(0));
 		@include easeout(400ms);
 		z-index: -1;

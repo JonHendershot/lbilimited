@@ -12,32 +12,56 @@
 		
 	// Call to action
 		// Variables
-			$photo = get_field('a_spot_photo');
-			$title = get_field('a_spot_title');
-			$subtitle = get_field('a_spot_subtitle');
-			$btn_text = get_field('a_spot_btn');
-			$cat = get_field('a_spot_category');
+			$offering_title = get_field('offerings_title');
+			$offering_subtitle = get_field('offerings_subtitle');
+			$offering_btn = get_field('offerings_btn');
+			$offering_link = get_field('offerings_link');
+			
+			$cs_title = get_field('coming_soon_title');
+			$cs_subtitle = get_field('coming_soon_subtitle');
+			$cs_btn = get_field('coming_soon_btn');
+			$cs_link = get_field('coming_soon_link');
+			
 		
-		// First, we'll use the post selection to establish the proper page link
-			if($cat == 'current-offerings' || $cat == 'past-offerings'){
-				$link = home_url() . "/$cat";
-			}else if($cat == 'collection'){
-				$link = home_url() . "/lbi-collection";
-			}else{
-				$link = home_url() . "/" . get_permalink( get_option('page_for_posts') );
-			}
-		
-		// Now we'll use the post selection to establish the proper query 
-			if($cat == 'current-offerings' || $cat == 'past-offerings'){
-				$post_type = 'offerings';
+		// We're going to use cateogry IDs to check if there are any cars in the "coming soon" category
+			$post_threshold = 1; // at least this many posts
+			$cs_id = 269; // coming soon id
+			$tax = 'offering_type';
+			
+			// Check if there are posts in the provided args
+			$has_posts = tax_has_posts($cs_id, $tax, $post_threshold);
+			
+			// If there are, use that tax query, if not - revert to current offerings
+			if($has_posts){
+				// set Taxonomy ID
+				$tax_id = $cs_id; // coming soon id
+				
+				// Establish proper Display Content
+				$title = $cs_title;
+				$subtitle = $cs_subtitle;
+				$link = $cs_link;
+				$btn_text = $cs_btn;
 			}else {
-				$post_type = $cat;
+				$tax_id = 264; // current offerings id
+				
+				// Establish proper Display Content
+				$title = $offering_title;
+				$subtitle = $offering_subtitle;
+				$link = $offering_link;
+				$btn_text = $offering_btn;
 			}
+
 			$args = array(
-				'post_type' => $post_type,
+				'post_type' => 'offerings',
 				'posts_per_page' => 3,
 				'orderby' => 'menu_order',
-				'order' => 'ASC'
+				'order' => 'ASC',
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'offering_type',
+						'terms' => $tax_id	
+					)
+				)
 			);
 			$query = new WP_Query( $args );
 			$post_display = '';
@@ -46,34 +70,21 @@
 			
 			while( $query->have_posts() ) : $query->the_post();
 			
-				if($post_type == 'offerings'){
-						// Variables
-							$post_title = offering_title();
-							$post_link = get_the_permalink();
-							
-							if( get_field('featured_image') ){
-								$image = get_field('featured_image');
-								$image_url = $image['sizes']['medium_large'];
-								$full_img = $image['url'];
-							}else {
-								$image_url = get_the_post_thumbnail_url('medium_large');
-								$full_img = get_the_post_thumbnail_url('full');
-							}
+	
+				// Variables
+					$post_title = offering_title();
+					$post_link = get_the_permalink();
 					
-				}else {
-					// Variables
-						$post_title = get_the_title();
-						$post_link = get_the_permalink();
-						
-						if( get_field('featured_image') ){
-							$image = get_field('featured_image');
-							$image_url = $image['sizes']['medium_large'];
-							$full_img = $image['url'];
-						}else {
-							$image_url = get_the_post_thumbnail_url('medium_large');
-							$full_img = get_the_post_thumbnail_url('full');
-						}		
-				}
+					if( get_field('featured_image') ){
+						$image = get_field('featured_image');
+						$image_url = $image['sizes']['medium_large'];
+						$full_img = $image['url'];
+					}else {
+						$image_url = get_the_post_thumbnail_url('medium_large');
+						$full_img = get_the_post_thumbnail_url('full');
+					}
+					
+				
 				
 				
 			
@@ -89,9 +100,7 @@
 				$post_data = array_map('utf8_encode', $post_info);
 				$post_json = json_encode($post_data);
 				
-				$post_display .= "<a href='$post_link' class='featured_post' data-self='$post_json'>
-									<img class='object-fit' src='$image_url' />
-								  </a>";
+				$post_display .= "<a href='$post_link' class='featured_post' data-self='$post_json'>$post_title</a>";
 			$ii++;		
 			endwhile;
 			wp_reset_query();
@@ -101,24 +110,29 @@
 ?>
 		<section class="home_cta_container">
 			<div class="home_cta_wrapper">
-				<div class="home_cta_image">
-					<img src="<?php echo $photo['url']; ?>" />	
+				<div class="home_cta_image">	
 					<?php foreach($full_imgs as $index=>$img){
 						
 						$src = $img['img'];
 						$post_title = $img['title'];
+						if( $index == 0 ){
+							$display_class = 'feat-visible';
+						}else {
+							$display_class = '';
+						}
 						
-						echo "<img src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' data-src='$src' class='lazy-load post-$index feat_full' />
-							  <h2 class='post-$index'>$post_title</h2>";
+						echo "<img src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' data-src='$src' class='lazy-load post-$index feat_full $display_class' data-slide='$index' />";
 					} ?>
 				</div>
 				<div class="home_cta_content">
 					<h3><?php echo $title; ?></h3>
 					<p><?php echo $subtitle; ?></p>
 					
+<!--
 					<div class="featured_posts">
 						<?php echo $post_display; ?>
 					</div>
+-->
 					<?php echo "<a class='main-btn' href='$link'>$btn_text</a>"; ?>
 				</div>
 				<span class="slant"></span>

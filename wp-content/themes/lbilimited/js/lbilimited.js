@@ -473,6 +473,55 @@ function next_trigger_id(id, imgClass){
 	
 }
 
+  /////////////////////////
+ // HOME FEATURE SLIDER //
+/////////////////////////
+(function featureSlider($){
+	
+	setTimeout(function(){
+			
+		console.log('featured slider');
+	
+		var activeSlide = $('.home_cta_image .feat_full.feat-visible'),
+			activeID = parseInt( activeSlide.data('slide') ),
+			nextID = activeID + 1;
+			
+			
+			
+			// Reduce Z-index of current slide to ensure the next slide shows up over top of it
+			activeSlide.css({ 'z-index' : '1' }).addClass('remove_stage');
+			
+			// Stage the next slide depending on if the next slide value element exists or not
+			if( $('.home_cta_image .feat_full.post-' + nextID).length ){
+				
+				var nextSlide = $('.home_cta_image .feat_full.post-' + nextID);
+				
+			}else {
+				
+				var nextSlide = $('.home_cta_image .feat_full.post-0');
+				
+			}
+			
+			// Animate next slide in
+			nextSlide.css({ 'z-index' : 2 }).addClass( 'feat-visible' );
+			
+			// Pull previous active slide off after the new active slide has animated in
+			setTimeout(function(){
+				$('.home_cta_image .feat_full.remove_stage').removeClass('feat-visible remove_stage');
+			}, 1000);
+			
+			
+			// Call this function again to make it loop 
+			featureSlider($);
+		
+	}, 5000);
+		
+		
+		
+		
+		
+}(jQuery));
+
 
   //////////////////
  // HEAR STARTUP //

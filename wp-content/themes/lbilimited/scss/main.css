@@ -83,10 +83,10 @@ span.media_overlay {
   .s_btn:after {
     content: "";
     position: absolute;
-    width: 120%;
+    width: 130%;
     height: 100%;
     top: 0;
-    left: -10%;
+    left: -15%;
     transform: skew(-24deg) scaleX(0);
     -webkit-transform: skew(-24deg) scaleX(0);
     -moz-transform: skew(-24deg) scaleX(0);
@@ -5409,7 +5409,8 @@ body.page-template-home .home_cta_container .home_cta_wrapper {
     width: 55.55%;
     z-index: 10;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    padding-bottom: 37%; }
     body.page-template-home .home_cta_container .home_cta_wrapper .home_cta_image img {
       display: block; }
     body.page-template-home .home_cta_container .home_cta_wrapper .home_cta_image img.feat_full {
@@ -5420,10 +5421,10 @@ body.page-template-home .home_cta_container .home_cta_wrapper {
       -moz-transform: translateX(-100%);
       -ms-transform: translateX(-100%);
       -o-transform: translateX(-100%);
-      -webkit-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
-      -moz-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
-      -o-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
-      transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+      -webkit-transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
+      -moz-transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
+      -o-transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
+      transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
       /* custom */
       width: 100%;
       height: 100%;
@@ -5434,6 +5435,12 @@ body.page-template-home .home_cta_container .home_cta_wrapper {
         -moz-transform: translateX(0px);
         -ms-transform: translateX(0px);
         -o-transform: translateX(0px); }
+      body.page-template-home .home_cta_container .home_cta_wrapper .home_cta_image img.feat_full.remove_stage {
+        transform: translateX(10%);
+        -webkit-transform: translateX(10%);
+        -moz-transform: translateX(10%);
+        -ms-transform: translateX(10%);
+        -o-transform: translateX(10%); }
     body.page-template-home .home_cta_container .home_cta_wrapper .home_cta_image h2 {
       position: absolute;
       text-transform: uppercase;

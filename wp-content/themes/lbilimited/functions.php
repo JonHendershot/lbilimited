@@ -930,3 +930,20 @@ function ajax_load_more_handler(){
  
 add_action('wp_ajax_loadmore', 'ajax_load_more_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'ajax_load_more_handler'); // wp_ajax_nopriv_{action}
+
+
+  ////////////////////////////////////////////////////////////
+ /// Function to check if taxonomy has posts inside of it ///
+////////////////////////////////////////////////////////////
+function tax_has_posts($id, $taxonomy, $threshold){
+	$term = get_term_by('id', $id, $taxonomy);
+	$has_posts = false;
+	
+	if($term != false){
+		if( $term->count >= $threshold){
+			// the post type has more than one post! 
+			$has_posts = true;
+		}
+	}
+	return $has_posts;
+}
