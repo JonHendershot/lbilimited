@@ -91,9 +91,16 @@ jQuery(window).load(function(){
  // SCROLL EVENTS //
 ///////////////////
 (function stickyMenu($){
+	
+	if( $('body.single-offerings').length ){
+		var windowCo = 0.15;
+	}else {
+		var windowCo = 0.5;
+	}
+	
 	var nav = $('.nav-wrapper'),
 		menu = $('#main_menu'),
-		windowHeight = (window.innerHeight * 0.5),
+		windowHeight = (window.innerHeight * windowCo),
 		lastScrollTop = window.pageYOffset,
 		titleSpans = $('header .header-content h1 span');
 	
@@ -126,7 +133,7 @@ jQuery(window).load(function(){
 			var percentScrolled = ( scrollDistance / windowHeight ) * 2,
 				percentAnimate = (1 -  percentScrolled);
 			
-			if( percentAnimate > 0.4 ){
+			if( percentAnimate > 0.7 ){
 				if( scrollDistance < lastScrollTop && $('header .header-content').hasClass('hide') ){
 					$('header .header-content, header .featured-media .media_overlay').removeClass('hide');
 				}
@@ -160,6 +167,12 @@ jQuery(window).load(function(){
 				
 			}
 			
+			
+/* HARD THRESHOLD
+			if( scrollDistance > 20 ){
+				$('header .header-content, header .featured-media .media_overlay').addClass('hide');
+			}
+*/
 			
 		}
 		lastScrollTop = scrollDistance;
