@@ -10139,22 +10139,8 @@ body.single .contact_form:after {
       .featured_image_showcase.reg #image_filters .featured_image_filter_wrapper {
         flex-direction: row-reverse; }
         .featured_image_showcase.reg #image_filters .featured_image_filter_wrapper ul.filter {
-          flex-direction: row-reverse;
           margin-right: 30px;
           margin-left: 0px; }
-          .featured_image_showcase.reg #image_filters .featured_image_filter_wrapper ul.filter li:not(:last-child):after {
-            content: none; }
-          .featured_image_showcase.reg #image_filters .featured_image_filter_wrapper ul.filter li:not(:last-child):before {
-            content: "|";
-            margin: 0 10px;
-            display: inline-block;
-            color: #b9b9b9;
-            font-family: "open_sans", sans-serif;
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 4px;
-            line-height: 19px;
-            padding-bottom: 2px; }
       .featured_image_showcase.reg #image_filters .glam_trigger:before {
         content: "\f060";
         margin-right: 8px; }

@@ -164,9 +164,12 @@
 					</ul>
 				</div>
 				<div class="show_filter_trigger">
+<!--
 					<i class="fa fa-square-o"></i>
 					<i class="fa fa-square-o"></i>
 					<i class="fa fa-square-o"></i>
+-->
+					<span class="msg">show more</span>
 					<i class="fa fa-chevron-up arrow"></i>
 				</div>
 				<?php if( $regs_have_photos ) : ?>
@@ -265,10 +268,13 @@
 					</ul>
 				</div>
 	
-				<div class="show_filter_trigger" alt="Show image thumbnails">
+				<div class="show_filter_trigger">
+<!--
 					<i class="fa fa-square-o"></i>
 					<i class="fa fa-square-o"></i>
 					<i class="fa fa-square-o"></i>
+-->
+					<span class="msg">See More</span>
 					<i class="fa fa-chevron-up arrow"></i>
 				</div>
 				<?php if( $glams_have_photos ) : ?>

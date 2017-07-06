@@ -994,7 +994,9 @@ function open_lightbox(lightbox_id){
 	// If image scroller exists, and we triggered it, we need to clone it into the proper lightbox! 
 	if( $('.featured_image_showcase').length && lightbox_id.hasClass('media_lightbox') ){
 		
-		$('.featured_image_showcase').addClass('in_lightbox');
+		$('.featured_image_showcase').addClass('in_lightbox showing');
+		$('.show_filter_trigger').addClass('showing');
+		$('.featured_image_showcase .msg').text('hide');
 		
 		// reinitialize the jscroller to account for the new window width
 		$('.featured_image_showcase .featured_image_slider_container').jScrollPane();		
@@ -1006,12 +1008,17 @@ function open_lightbox(lightbox_id){
 /////////////////////////////
 (function show_lightbox_filter($){
 	$('.show_filter_trigger').click(function(){
+		
+		var that = $(this);
+		
 		if($(this).hasClass('showing')){
 			$('.show_filter_trigger').removeClass('showing');
 			$('.featured_image_showcase').removeClass('showing');
+			$('.featured_image_showcase .msg').text('show more');
 		}else {
 			$('.show_filter_trigger').addClass('showing');
 			$('.featured_image_showcase').addClass('showing');
+			$('.featured_image_showcase .msg').text('hide');
 		}
 	});
 }(jQuery));
