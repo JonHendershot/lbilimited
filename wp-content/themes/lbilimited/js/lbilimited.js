@@ -467,6 +467,34 @@ function updateSpecialist(specialist){
 		}
 	});
 	
+	// Swipe on desktop 
+	var throttle = false;
+	$('.media_lightbox').on('mousewheel',function(e){
+	
+		
+		e.preventDefault();
+		
+		
+		if(!throttle){
+				console.log(e.deltaX);
+				if (e.deltaX>0) {
+			        var data = $('.next_img.light_nav').attr('data-img');
+			    } else {
+					var data = $('.prev_img.light_nav').attr('data-img');
+			    }
+			    
+			    next_img(data);
+			    console.log('get next');
+			    
+			    setTimeout(function(){
+				    throttle = false;
+			    }, 900);
+		}
+	    
+	    throttle = true;
+		
+	});
+	
 }(jQuery));
 function next_img(id){
 	var $ = jQuery,
