@@ -65,7 +65,11 @@
 						}else {
 							echo "<p class='title'>$title</p>";
 						}
-						echo "<p class='price'>$price</p>";
+						echo "<p class='price'>
+								<span class='p_ribbon'></span>
+								<span class='p_price'>$price</span>
+							  </p>";
+								
 						
 								
 						echo "</div>";

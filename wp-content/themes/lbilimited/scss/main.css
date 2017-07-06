@@ -866,6 +866,19 @@ h4.tilt_title.flip:after {
     -moz-transform: translateY(19px) !important;
     -ms-transform: translateY(19px) !important;
     -o-transform: translateY(19px) !important; }
+    .nav-wrapper.sticky .header_meta .p_ribbon {
+      transform: skew(-15deg) scaleX(1) !important;
+      -webkit-transform: skew(-15deg) scaleX(1) !important;
+      -moz-transform: skew(-15deg) scaleX(1) !important;
+      -ms-transform: skew(-15deg) scaleX(1) !important;
+      -o-transform: skew(-15deg) scaleX(1) !important; }
+    .nav-wrapper.sticky .header_meta .p_price {
+      opacity: 1 !important;
+      transform: translateX(0px) !important;
+      -webkit-transform: translateX(0px) !important;
+      -moz-transform: translateX(0px) !important;
+      -ms-transform: translateX(0px) !important;
+      -o-transform: translateX(0px) !important; }
   .nav-wrapper.hidden {
     visibility: hidden; }
     .nav-wrapper.hidden .nav-bar, .nav-wrapper.hidden:after {
@@ -946,8 +959,52 @@ h4.tilt_title.flip:after {
         margin: 0;
         display: inline-block;
         color: white;
-        background-color: #962F32;
-        padding: 2px 20px; }
+        padding: 2px 20px;
+        position: relative; }
+        .nav-wrapper .nav-bar .header_meta p.price .p_ribbon {
+          position: absolute;
+          top: 0;
+          left: -5%;
+          width: 110%;
+          height: 100%;
+          background-color: #962F32;
+          transform: skew(-15deg) scaleX(0);
+          -webkit-transform: skew(-15deg) scaleX(0);
+          -moz-transform: skew(-15deg) scaleX(0);
+          -ms-transform: skew(-15deg) scaleX(0);
+          -o-transform: skew(-15deg) scaleX(0);
+          -webkit-transition: all 700ms cubic-bezier(0.375, 0.005, 0, 1);
+          -moz-transition: all 700ms cubic-bezier(0.375, 0.005, 0, 1);
+          -o-transition: all 700ms cubic-bezier(0.375, 0.005, 0, 1);
+          transition: all 700ms cubic-bezier(0.375, 0.005, 0, 1);
+          /* custom */
+          transition-delay: 400ms;
+          -webkit-transition-delay: 400ms;
+          -moz-transition-delay: 400ms;
+          -ms-transition-delay: 400ms;
+          -o-transition-delay: 400ms;
+          z-index: -1;
+          transform-origin: left; }
+        .nav-wrapper .nav-bar .header_meta p.price .p_price {
+          opacity: 0;
+          -webkit-transition: all 800ms cubic-bezier(0.375, 0.005, 0, 1);
+          -moz-transition: all 800ms cubic-bezier(0.375, 0.005, 0, 1);
+          -o-transition: all 800ms cubic-bezier(0.375, 0.005, 0, 1);
+          transition: all 800ms cubic-bezier(0.375, 0.005, 0, 1);
+          /* custom */
+          transition-delay: 500ms;
+          -webkit-transition-delay: 500ms;
+          -moz-transition-delay: 500ms;
+          -ms-transition-delay: 500ms;
+          -o-transition-delay: 500ms;
+          transform: translateX(10px);
+          -webkit-transform: translateX(10px);
+          -moz-transform: translateX(10px);
+          -ms-transform: translateX(10px);
+          -o-transform: translateX(10px);
+          position: relative;
+          z-index: 1;
+          display: block; }
     .nav-wrapper .nav-bar .header-logo {
       width: 163px;
       height: auto;
@@ -1309,7 +1366,11 @@ h4.tilt_title.flip:after {
       -o-transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
       transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
       /* custom */
-      /* 			@include prefix(transform, translateY(0)); */
+      transform: translateY(0);
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
       transition-delay: 600ms;
       opacity: 1; }
     .site-header .header-content a {

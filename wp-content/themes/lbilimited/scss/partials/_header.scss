@@ -143,6 +143,14 @@
 		}
 		.header_meta {
 			@include prefix(transform, translateY(19px) !important);
+			
+			.p_ribbon {
+				@include prefix(transform, skew(-15deg) scaleX(1) !important);
+			}
+			.p_price {
+				opacity: 1 !important; 
+				@include prefix(transform, translateX(0px) !important);
+			}
 		}
 
 	}
@@ -198,8 +206,31 @@
 			    margin: 0;
 				display: inline-block;
 			    color: white;
-			    background-color: $mainred;
 			    padding: 2px 20px;
+			    position: relative;
+			    
+			    .p_ribbon {
+				    position: absolute;
+				    top: 0;
+				    left: -5%;
+				    width: 110%;
+				    height: 100%;
+				    background-color: $mainred;
+				    @include prefix(transform, skew(-15deg) scaleX(0));
+				    @include easeout(700ms);
+				    @include prefix(transition-delay, 400ms);
+				    z-index: -1;
+				    transform-origin: left;
+			    }
+			    .p_price {
+				    opacity: 0;
+				    @include easeout(800ms);
+				    @include prefix(transition-delay, 500ms);
+				    @include prefix(transform, translateX(10px));
+				    position: relative;
+				    z-index: 1;
+				    display: block;
+			    }
 
 		    }
 
@@ -388,7 +419,7 @@
 			margin-left: 20px;
 			max-width: 350px;
 			@include easeout(1200ms);
-/* 			@include prefix(transform, translateY(0)); */
+			@include prefix(transform, translateY(0));
 			transition-delay: 600ms;
 			opacity: 1;
 		}
