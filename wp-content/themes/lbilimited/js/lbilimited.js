@@ -1779,3 +1779,16 @@ function projectReset(elem){
 		projectBackground.style.transform = 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)';
 		projectBackground.style['box-shadow'] ='0px 6px 26px rgba(22, 22, 22, 0.5)';	
 }
+(function anchorClick($){
+	$('a.anchor').click(function(e){
+		e.preventDefault();
+		var dataID = $(this).data('cid');
+		scrollToAnchor(dataID);
+
+	});
+}(jQuery));
+function scrollToAnchor(aid){
+    var aTag = jQuery("#"+ aid);
+    jQuery('html,body').animate({scrollTop: ( aTag.offset().top - 150 )},'slow');
+    console.log(aid);
+}

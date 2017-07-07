@@ -725,6 +725,19 @@ body.single {
 						@include easeout(600ms);
 					}
 				}
+				.main-btn {
+					font-weight: 500;
+					&:after {
+						@include prefix(transform,  scaleX(1) );
+						@include ease(600ms);
+						transform-origin: left;
+					}
+					&.waypoint {
+						&:after {
+							@include prefix(transform,  scaleX(0) );
+						}
+					}
+				}
 				.audio_control_wrapper {
 					position: relative;
 					font-size: 10px;

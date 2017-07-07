@@ -273,7 +273,7 @@ function lbi_contact($form_array, $id){
 		}
 	
 	// Build front end of the section frame
-		$output .= "<section class='contact_form form_$id' data-car='$offering_title'>
+		$output .= "<section class='contact_form form_$id' data-car='$offering_title' id='inquire'>
 					<h4 class='$heading_class'>$form_heading</h4>";
 
 	// Build form section for each form passed
