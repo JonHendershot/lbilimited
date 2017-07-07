@@ -11,8 +11,9 @@
 		$options = get_option('lbilimited_options');
 		$feat_img = get_field('featured_image'); // we're using a custom field for the featured image so that we can have the featured image and image framing options in the same place in the dashboard. Thus, we'll call the featured image like this rather than using the_post_featured_image_url();
 		if($feat_img){
-			$feat_img_url = $feat_img['url'];
+			$feat_img_url = $feat_img['sizes']['large'];
 		}else {
+			// placeholder
 			$feat_img_url = $options['blog_img'];
 		}
 		if( get_field('framing') ){

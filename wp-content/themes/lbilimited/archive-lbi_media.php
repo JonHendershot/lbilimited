@@ -154,7 +154,7 @@
 	 // Content Filter //
 	////////////////////
 	
-		get_template_part('template-parts/module', 'search_bar');
+// 		get_template_part('template-parts/module', 'search_bar');
 
 	  //////////////////
 	 // Content Loop //
