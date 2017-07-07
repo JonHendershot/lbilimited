@@ -162,6 +162,7 @@ section.specialists {
 	}
 	// Arrow to link header to content? 
 				
+/*
 		header:after {
 			content: "";
 			width: 20px;
@@ -175,6 +176,7 @@ section.specialists {
 			margin: 0 auto;
 			z-index: 9999;
 		}
+*/
 		
 	// Specialists Grid
 	.specialists_grid_container {
@@ -229,7 +231,9 @@ section.specialists {
 		.specialists_wrapper {
 			position: relative;
 			@include flexbox(center,space-between);
-			background-color: $black;
+			margin-bottom: 0px !important;
+			padding-bottom: 4px;
+// 			background-color: $black;
 			
 			.owl-item {
 				float: left;

@@ -12,7 +12,7 @@
 	// Settings :: Used to create number of elements and create a ceiling 
 		$iterations = $query->post_count; // Max Number
 		$post_num = $query->post_count; // Number of Elements 
-		$gutter = 'gutter-0px'; // Set gutter distance with "gutter-XXpx" where XX is the distance you want between items, in px
+		$gutter = 'gutter-8px'; // Set gutter distance with "gutter-XXpx" where XX is the distance you want between items, in px
 
 	
 	// Preparation :: Setup Grid Numbers to ensure the last row is full [used for evaluation in Display Logic]
