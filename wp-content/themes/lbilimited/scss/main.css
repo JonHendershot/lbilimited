@@ -7024,7 +7024,8 @@ section.specialists {
               -webkit-transform: translateX(0);
               -moz-transform: translateX(0);
               -ms-transform: translateX(0);
-              -o-transform: translateX(0); }
+              -o-transform: translateX(0);
+              z-index: 9; }
         section.specialists .specialists_grid_container .specialist_expand_container .specialist_expand_wrapper .specialist_expand_image {
           width: 340px;
           height: 340px;
@@ -7122,13 +7123,20 @@ section.specialists {
             color: #fff;
             cursor: pointer;
             position: absolute;
-            bottom: -30px;
-            left: 0; }
+            bottom: -45px;
+            left: 0;
+            padding: 6px 25px;
+            border: 1px solid #fff; }
             section.specialists .specialists_grid_container .specialist_expand_container .specialist_expand_wrapper .specialist_expand_content .close_expand span {
               font-size: 10px;
               text-transform: uppercase;
               font-weight: 500;
-              display: block; }
+              display: block;
+              -webkit-transition: all 400ms cubic-bezier(0.375, 0.005, 0, 1);
+              -moz-transition: all 400ms cubic-bezier(0.375, 0.005, 0, 1);
+              -o-transition: all 400ms cubic-bezier(0.375, 0.005, 0, 1);
+              transition: all 400ms cubic-bezier(0.375, 0.005, 0, 1);
+              /* custom */ }
               section.specialists .specialists_grid_container .specialist_expand_container .specialist_expand_wrapper .specialist_expand_content .close_expand span:before {
                 content: "\f060";
                 font-family: 'fontawesome';
@@ -7146,12 +7154,15 @@ section.specialists {
                 -o-transition: all 400ms cubic-bezier(0.375, 0.005, 0, 1);
                 transition: all 400ms cubic-bezier(0.375, 0.005, 0, 1);
                 /* custom */ }
-            section.specialists .specialists_grid_container .specialist_expand_container .specialist_expand_wrapper .specialist_expand_content .close_expand:hover span:before {
-              transform: translate3d(-5px, -1px, 0);
-              -webkit-transform: translate3d(-5px, -1px, 0);
-              -moz-transform: translate3d(-5px, -1px, 0);
-              -ms-transform: translate3d(-5px, -1px, 0);
-              -o-transform: translate3d(-5px, -1px, 0); }
+            section.specialists .specialists_grid_container .specialist_expand_container .specialist_expand_wrapper .specialist_expand_content .close_expand:hover {
+              color: #191B1C; }
+              section.specialists .specialists_grid_container .specialist_expand_container .specialist_expand_wrapper .specialist_expand_content .close_expand:hover span:before {
+                transform: translate3d(-5px, -1px, 0);
+                -webkit-transform: translate3d(-5px, -1px, 0);
+                -moz-transform: translate3d(-5px, -1px, 0);
+                -ms-transform: translate3d(-5px, -1px, 0);
+                -o-transform: translate3d(-5px, -1px, 0);
+                color: #191B1C; }
   section.specialists .specialists_quotes_container {
     padding: 30px 0 40px; }
     section.specialists .specialists_quotes_container .specialist_quote_wrapper {

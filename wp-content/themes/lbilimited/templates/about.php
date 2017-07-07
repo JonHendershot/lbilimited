@@ -105,7 +105,7 @@
 						    <div class='content'>
 						    	<p></p>
 						    </div>
-						     <div class='close_expand'><span>go back</span></div>
+						     <div class='close_expand s_btn white'><span>go back</span></div>
 						</div>
 						
 				    </div>

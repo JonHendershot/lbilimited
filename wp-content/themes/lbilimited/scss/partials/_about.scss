@@ -356,6 +356,7 @@ section.specialists {
 						
 						span {
 							@include prefix(transform, translateX(0));
+							z-index: 9;
 						}
 					}
 				}
@@ -447,33 +448,37 @@ section.specialists {
 						color: $white;
 						cursor: pointer;
 						position: absolute;
-						bottom: -30px;
+						bottom: -45px;
 						left: 0;
+						padding: 6px 25px;
+						border: 1px solid $white;
 						
-						
-					span {
-						font-size: 10px;
-						text-transform: uppercase;
-						font-weight: 500;
-						display: block;
-						&:before {
-							content: "\f060";
-							font-family: 'fontawesome';
-							display: inline-block;
-							font-size: 9px;
-							color: $white;
-							margin-right: 5px;
-							@include prefix(transform, translate3d(0,-1px,0));
-							@include easeout(400ms);
+						span {
+							font-size: 10px;
+							text-transform: uppercase;
+							font-weight: 500;
+							display: block;
+							@include easeout(400ms);							
+							&:before {
+								content: "\f060";
+								font-family: 'fontawesome';
+								display: inline-block;
+								font-size: 9px;
+								color: $white;
+								margin-right: 5px;
+								@include prefix(transform, translate3d(0,-1px,0));
+								@include easeout(400ms);
+							}
+	
 						}
-
-					}
-					&:hover {
-						span:before {
-							@include prefix(transform, translate3d(-5px,-1px,0));
+						&:hover {
+							color: $black;
+							span:before {
+								@include prefix(transform, translate3d(-5px,-1px,0));
+								color: $black;
+							}
 						}
 					}
-				}
 				}
 			}
 			
