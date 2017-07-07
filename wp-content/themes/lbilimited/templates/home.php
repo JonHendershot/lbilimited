@@ -100,7 +100,13 @@
 				$post_data = array_map('utf8_encode', $post_info);
 				$post_json = json_encode($post_data);
 				
-				$post_display .= "<a href='$post_link' class='featured_post' data-self='$post_json'>$post_title</a>";
+				if( $ii < 1){
+					$car_visiblity = 'visible';
+				}else {
+					$car_visiblity = '';
+				}
+				
+				$post_display .= "<a href='$post_link' class='featured_post post-title-$ii $car_visiblity' data-self='$post_json'>$post_title</a>";
 			$ii++;		
 			endwhile;
 			wp_reset_query();
@@ -128,11 +134,9 @@
 					<h3><?php echo $title; ?></h3>
 					<p><?php echo $subtitle; ?></p>
 					
-<!--
 					<div class="featured_posts">
 						<?php echo $post_display; ?>
 					</div>
--->
 					<?php echo "<a class='main-btn' href='$link'>$btn_text</a>"; ?>
 				</div>
 				<span class="slant"></span>

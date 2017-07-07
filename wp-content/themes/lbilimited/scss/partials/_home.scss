@@ -125,6 +125,7 @@ body.page-template-home {
 					display: block;
 					@include max-content(width);
 				}
+/*
 				.featured_posts	{
 					@include flexbox(center,space-between);
 					@include max-content(width);
@@ -152,6 +153,41 @@ body.page-template-home {
 						
 							
 						}
+					}
+				}
+*/
+				.featured_posts {
+					position: relative;
+				}
+				a.featured_post {
+					color: $white;
+					text-decoration: none;
+					font-size: 18px;
+					opacity: 0;
+					@include easeout(600ms);
+					@include prefix(transform, translateY(5px));
+					visibility: hidden;
+					display: block;
+					margin: auto;
+					text-align: center;
+					
+					&:not(:first-child){
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+					}
+					
+					&.visible {
+						opacity: 1;
+						@include prefix(transform, translateY(0px));
+						visibility: visible;
+					}
+					
+					
+					span {
+						margin: 0 5px;
 					}
 				}
 			}
