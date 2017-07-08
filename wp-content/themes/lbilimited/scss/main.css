@@ -5657,7 +5657,7 @@ body.page-template-home .home_cta_container .home_cta_wrapper {
       text-align: center;
       max-width: 250px;
       margin: 0px auto 25px; }
-    body.page-template-home .home_cta_container .home_cta_wrapper .home_cta_content a.main-btn {
+    body.page-template-home .home_cta_container .home_cta_wrapper .home_cta_content .main-btn {
       margin: 35px auto 0;
       display: block;
       width: max-content;

@@ -41,6 +41,11 @@
 				$subtitle = $cs_subtitle;
 				$link = $cs_link;
 				$btn_text = $cs_btn;
+				
+				// Since we'll be displaying a preview of posts that don't actually exist yet, we'll need to adjust
+				// the call to action dynamically. 
+				// This one will open a lightbox with a contact form
+				$call_to_action = "<div class='main-btn inquiry_trigger'>$btn_text</div>";
 			}else {
 				$tax_id = 264; // current offerings id
 				
@@ -49,6 +54,11 @@
 				$subtitle = $offering_subtitle;
 				$link = $offering_link;
 				$btn_text = $offering_btn;
+				
+				// Since we'll be displaying a preview of posts that don't actually exist yet, we'll need to adjust
+				// the call to action dynamically. 
+				// This one will lead to the current offerings page				
+				$call_to_action = "<a class='main-btn' href='$link'>$btn_text</a>";
 			}
 
 			$args = array(
@@ -95,7 +105,8 @@
 					'title' => $post_title
 				);
 				$post_info = array(
-					'post_id' => $ii
+					'post_id' => $ii,
+					'post_title' => 'car title'
 				);
 				$post_data = array_map('utf8_encode', $post_info);
 				$post_json = json_encode($post_data);
@@ -157,7 +168,7 @@
 							}
 						?>
 					</div>
-					<?php echo "<a class='main-btn' href='$link'>$btn_text</a>"; ?>
+					<?php echo $call_to_action; ?>
 				</div>
 				<span class="slant"></span>
 				<span class="corners"></span>

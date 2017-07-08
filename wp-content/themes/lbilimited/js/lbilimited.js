@@ -624,6 +624,18 @@ function next_trigger_id(id, imgClass){
 		
 		console.log('click slide');
 	});
+	
+	// Inquiry trigger
+	$('.home_cta_container .inquiry_trigger').click(function(){
+		var lightbox = $('.lbi_lightbox.notify_lightbox'),
+			vehicleTitle = $(this).data('title');
+		
+		// Update Inquiry Form
+		$('.lbi_lightbox.inquiry').find('input[name="offering-name"]').val(vehicleTitle).attr('disabled',true).parent().parent().addClass('filled_out');
+		
+		// Open it up
+		open_lightbox(lightbox);
+	});
 
 	
 
@@ -632,7 +644,7 @@ function showNextSlide(nextID){
 	
 	var	$ = jQuery,
 		activeSlide = $('.home_cta_image .feat_full.feat-visible'),
-		activeTitle = $('.home_cta_content a.featured_post.visible');
+		activeTitle = $('.home_cta_content .featured_post.visible');
 		
 	// Reduce Z-index of current slide to ensure the next slide shows up over top of it
 	activeSlide.css({ 'z-index' : '1' }).addClass('remove_stage');
@@ -641,16 +653,28 @@ function showNextSlide(nextID){
 	if( $('.home_cta_image .feat_full.post-' + nextID).length ){
 		
 		var nextSlide = $('.home_cta_image .feat_full.post-' + nextID),
-			nextTitle = $('.home_cta_content a.featured_post.post-title-' + nextID),
+			nextTitle = $('.home_cta_content .featured_post.post-title-' + nextID),
 			nextSlideID = nextID;
 		
 	}else {
 		
 		var nextSlide = $('.home_cta_image .feat_full.post-0'),
-			nextTitle = $('.home_cta_content a.featured_post.post-title-0'),
+			nextTitle = $('.home_cta_content .featured_post.post-title-0'),
 			nextSlideID = 0;
 		
 	}
+	
+	// If we're showing Coming Soon items, we need to update the launch trigger metadata
+	// so that it will properly autofill the car title field when clicked
+	if( $('.inquiry_trigger').length ){
+		// Get next slide object
+		var nextSlideData = nextTitle.data('self');
+		
+		// Update launch button data
+		$('.inquiry_trigger').attr('data-title',nextSlideData.post_title);
+	}
+	
+	
 	
 	// Animate next slide in
 	nextSlide.css({ 'z-index' : 2 }).addClass( 'feat-visible' );
@@ -660,7 +684,7 @@ function showNextSlide(nextID){
 	// Update Bubbles
 	$('.feat_post_nav .feat_bubble.active').removeClass('active');
 	$('.feat_post_nav .feat_bubble.bubble-' + nextSlideID).addClass('active');
-	
+
 	// Pull previous active slide off after the new active slide has animated in
 	setTimeout(function(){
 		$('.home_cta_image .feat_full.remove_stage').removeClass('feat-visible remove_stage');
@@ -1061,6 +1085,13 @@ function open_lightbox(lightbox_id){
 		$('.featured_image_showcase .featured_image_slider_container').jScrollPane();		
 			
 	}
+	
+	// If we're opening the inquiry trigger, we need to update the vehicle field
+/*
+	if( lightbox_id.hasClass('inquiry') ){
+		
+	}
+*/
 }
   /////////////////////////////
  // SHOW FILTER IN LIGHTBOX //

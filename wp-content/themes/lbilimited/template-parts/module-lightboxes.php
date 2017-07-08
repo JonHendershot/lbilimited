@@ -43,3 +43,6 @@
 	if( is_page_template('templates/contact.php') ){
 		get_template_part('template-parts/contact', 'consignment_lightbox');
 	}
+	if( is_front_page() ){
+		get_template_part('template-parts/module', 'inquiry_lightbox');
+	}
