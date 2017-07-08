@@ -72,6 +72,7 @@ jQuery(window).load(function(){
   ////////////////////////
  // Home Page Envelope //
 ////////////////////////
+/*
 (function homeEnvelope($){
 	if($('.home_cta_content').length){
 		var hoverTrigger = $('.featured_post');
@@ -86,6 +87,7 @@ jQuery(window).load(function(){
 		});
 	}
 }(jQuery));
+*/
 
   ///////////////////
  // SCROLL EVENTS //
