@@ -159,7 +159,7 @@ body.page-template-home {
 				.featured_posts {
 					position: relative;
 				}
-				a.featured_post {
+				.featured_post {
 					color: $white;
 					text-decoration: none;
 					font-size: 18px;
@@ -188,6 +188,26 @@ body.page-template-home {
 					
 					span {
 						margin: 0 5px;
+					}
+				}
+				
+				.feat_post_nav {
+					@include flexbox(center, space-between);
+					@include max-content(width);
+					margin: 10px auto 0;
+					
+					.feat_bubble {
+						height: 8px;
+						width: 8px;
+						background-color: $gray;
+						cursor: pointer;
+						margin: 0 4px;
+						@include easeout(500ms);
+						border-radius: 4px;
+						
+						&.active, &:hover {
+							background-color: $white;
+						}
 					}
 				}
 			}

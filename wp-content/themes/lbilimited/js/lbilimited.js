@@ -579,51 +579,94 @@ function next_trigger_id(id, imgClass){
  // HOME FEATURE SLIDER //
 /////////////////////////
 (function featureSlider($){
+	// Establish a timeout variable outside of the loop function scope so that
+	// we can clear it later when necessary without interfering with its functionality
+	var scrollerTimeout;
 	
-	setTimeout(function(){
-			
-		if( $('.home_cta_image').length ){
-				console.log('featured slider');
-			
-				var activeSlide = $('.home_cta_image .feat_full.feat-visible'),
-					activeTitle = $('.home_cta_content a.featured_post.visible'),
-					activeID = parseInt( activeSlide.data('slide') ),
-					nextID = activeID + 1;
-					
-					
-					
-					// Reduce Z-index of current slide to ensure the next slide shows up over top of it
-					activeSlide.css({ 'z-index' : '1' }).addClass('remove_stage');
-					
-					// Stage the next slide depending on if the next slide value element exists or not
-					if( $('.home_cta_image .feat_full.post-' + nextID).length ){
+	// Function to loop the slider displays
+	function autoTimer(){
+
+		scrollerTimeout = setTimeout(function(){
+				
+			if( $('.home_cta_image').length ){
+				
+					var	activeSlide = $('.home_cta_image .feat_full.feat-visible'),
+						activeID = parseInt( activeSlide.data('slide') ),
+						nextID = activeID + 1;
 						
-						var nextSlide = $('.home_cta_image .feat_full.post-' + nextID),
-							nextTitle = $('.home_cta_content a.featured_post.post-title-' + nextID);
 						
-					}else {
+						// Show Next Slide
+						showNextSlide(nextID);
+						console.log('auto slide');
 						
-						var nextSlide = $('.home_cta_image .feat_full.post-0'),
-							nextTitle = $('.home_cta_content a.featured_post.post-title-0');
-						
-					}
-					
-					// Animate next slide in
-					nextSlide.css({ 'z-index' : 2 }).addClass( 'feat-visible' );
-					activeTitle.removeClass('visible');
-					nextTitle.addClass('visible');
-					
-					// Pull previous active slide off after the new active slide has animated in
-					setTimeout(function(){
-						$('.home_cta_image .feat_full.remove_stage').removeClass('feat-visible remove_stage');
-					}, 1000);
-					
-					
-					// Call this function again to make it loop 
-					featureSlider($);
-		}
-	}, 5000);
+						// Call this function again to make it loop 
+						autoTimer();
+			}
+		}, 5000);
+	}
+	
+	// Call the loop function for the first time to start it
+	autoTimer();
+	
+	// Button Clicks
+	var navBtn = $('.feat_post_nav .feat_bubble');
+	
+	navBtn.click(function(){
+		// Get the ID of which element is being requested
+		var calledID = parseInt( $(this).data('index') );
+		
+		// Show the next slide
+		showNextSlide(calledID);
+		
+		// Stop & start the auto slider to reset the timeout Interval
+		clearTimeout( scrollerTimeout );
+		autoTimer();
+		
+		console.log('click slide');
+	});
+
+	
+
 }(jQuery));
+function showNextSlide(nextID){
+	
+	var	$ = jQuery,
+		activeSlide = $('.home_cta_image .feat_full.feat-visible'),
+		activeTitle = $('.home_cta_content a.featured_post.visible');
+		
+	// Reduce Z-index of current slide to ensure the next slide shows up over top of it
+	activeSlide.css({ 'z-index' : '1' }).addClass('remove_stage');
+	
+	// Stage the next slide depending on if the next slide value element exists or not
+	if( $('.home_cta_image .feat_full.post-' + nextID).length ){
+		
+		var nextSlide = $('.home_cta_image .feat_full.post-' + nextID),
+			nextTitle = $('.home_cta_content a.featured_post.post-title-' + nextID),
+			nextSlideID = nextID;
+		
+	}else {
+		
+		var nextSlide = $('.home_cta_image .feat_full.post-0'),
+			nextTitle = $('.home_cta_content a.featured_post.post-title-0'),
+			nextSlideID = 0;
+		
+	}
+	
+	// Animate next slide in
+	nextSlide.css({ 'z-index' : 2 }).addClass( 'feat-visible' );
+	activeTitle.removeClass('visible');
+	nextTitle.addClass('visible');
+	
+	// Update Bubbles
+	$('.feat_post_nav .feat_bubble.active').removeClass('active');
+	$('.feat_post_nav .feat_bubble.bubble-' + nextSlideID).addClass('active');
+	
+	// Pull previous active slide off after the new active slide has animated in
+	setTimeout(function(){
+		$('.home_cta_image .feat_full.remove_stage').removeClass('feat-visible remove_stage');
+	}, 1000);
+	
+}
 
 
   //////////////////

@@ -106,7 +106,13 @@
 					$car_visiblity = '';
 				}
 				
-				$post_display .= "<a href='$post_link' class='featured_post post-title-$ii $car_visiblity' data-self='$post_json'>$post_title</a>";
+				// If we're in the coming soon category, we can't display the titles as links. We'll control that logic here
+				if( has_term($cs_id, 'offering_type') ){
+					$post_display .= "<div class='featured_post post-title-$ii $car_visiblity' data-self='$post_json'>$post_title</div>";
+				}else {
+					$post_display .= "<a href='$post_link' class='featured_post post-title-$ii $car_visiblity' data-self='$post_json'>$post_title</a>";
+				}
+				
 			$ii++;		
 			endwhile;
 			wp_reset_query();
@@ -136,6 +142,20 @@
 					
 					<div class="featured_posts">
 						<?php echo $post_display; ?>
+					</div>
+					<div class="feat_post_nav">
+						<?php 
+							foreach($full_imgs as $index=>$image){
+								
+								if( $index < 1){
+									$active = 'active';
+								}else {
+									$active = '';
+								}
+								
+								echo "<div class='feat_bubble bubble-$index $active' data-index='$index'></div>";
+							}
+						?>
 					</div>
 					<?php echo "<a class='main-btn' href='$link'>$btn_text</a>"; ?>
 				</div>
