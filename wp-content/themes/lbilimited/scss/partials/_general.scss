@@ -393,6 +393,30 @@ h4.tilt_title.flip:after {
  //  NOTIFY LIGHTBOX //
 //////////////////////
 .notify_lightbox {
+	
+	&.inquiry {
+		.contact_form {
+			form {
+				.field_row {
+					flex-wrap: wrap;
+					
+					.field {
+						width: 48%;
+						margin: 10px 0;
+						
+					}
+				}
+				.message {
+					.field {
+						textarea {
+							margin-top: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+	
 	.contact_form {
 		background-color: transparent;
 		z-index: 99;
