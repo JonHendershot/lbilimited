@@ -435,6 +435,7 @@ input[type="reset"]:hover,
 input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
 }
+/*
 
 button:focus,
 input[type="button"]:focus,
@@ -446,6 +447,7 @@ input[type="reset"]:active,
 input[type="submit"]:active {
 	border-color: #aaa #bbb #bbb;
 }
+*/
 
 input[type="text"],
 input[type="email"],
@@ -473,6 +475,7 @@ select {
 	border: 1px solid #ccc;
 }
 
+/*
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -491,6 +494,7 @@ input[type="color"]:focus,
 textarea:focus {
 	color: #111;
 }
+*/
 
 textarea {
 	width: 100%;

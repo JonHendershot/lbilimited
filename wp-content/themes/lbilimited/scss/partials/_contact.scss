@@ -255,7 +255,7 @@
 				}
 				
 				&.waypoint {
-					@include prefix(transform, translateY(20px));
+					@include prefix(transform, translateY(20px) rotate(15deg));
 					opacity: 0;
 					
 					.social_logo {
@@ -330,7 +330,7 @@
 			resize: none;
 			padding: 0 0 4px;
 			margin: 0;
-			color: rgba(255,255,255,0.44);
+			color: $white;
 			font-size: 16px;
 			font-weight: 500;
 			z-index: 99;

@@ -6340,11 +6340,11 @@ body.page-template-home .social_cta {
         .social_links .tilt_wrapper .tilt_content .social_follow_container.youtube:hover a.social_follow_btn {
           background-color: #cd201f; }
         .social_links .tilt_wrapper .tilt_content .social_follow_container.waypoint {
-          transform: translateY(20px);
-          -webkit-transform: translateY(20px);
-          -moz-transform: translateY(20px);
-          -ms-transform: translateY(20px);
-          -o-transform: translateY(20px);
+          transform: translateY(20px) rotate(15deg);
+          -webkit-transform: translateY(20px) rotate(15deg);
+          -moz-transform: translateY(20px) rotate(15deg);
+          -ms-transform: translateY(20px) rotate(15deg);
+          -o-transform: translateY(20px) rotate(15deg);
           opacity: 0; }
           .social_links .tilt_wrapper .tilt_content .social_follow_container.waypoint .social_logo {
             transform: translateY(20px);
@@ -6414,7 +6414,7 @@ body.page-template-home .social_cta {
       resize: none;
       padding: 0 0 4px;
       margin: 0;
-      color: rgba(255, 255, 255, 0.44);
+      color: #fff;
       font-size: 16px;
       font-weight: 500;
       z-index: 99;
