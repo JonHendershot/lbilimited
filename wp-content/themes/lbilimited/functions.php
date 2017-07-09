@@ -449,7 +449,16 @@ function offering_title(){
 		}
 		
 		return $title;
-	
+}
+
+function clean_offering_title(){
+		$year = get_field('year');
+		$make = get_field('make');
+		$model = get_field('model');
+		
+		$title = "$year $make $model";
+		
+		return $title;
 }
 
   //////////////////////////////////////////////////////////////////////////

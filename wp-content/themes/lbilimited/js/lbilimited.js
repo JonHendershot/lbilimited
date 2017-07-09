@@ -625,13 +625,20 @@ function next_trigger_id(id, imgClass){
 		console.log('click slide');
 	});
 	
+	// Update inquiry trigger on page load so that the first car name value will be set on the button
+	$(window).load(function(){
+		var vehicleData = $('.featured_post.visible').data('self');
+			
+		document.getElementById('inquiry_trigger').setAttribute('data-title',vehicleData.post_title);
+	});
+	
 	// Inquiry trigger
 	$('.home_cta_container .inquiry_trigger').click(function(){
 		var lightbox = $('.lbi_lightbox.notify_lightbox'),
-			vehicleTitle = $(this).data('title');
+			vehicleTitle = $('#inquiry_trigger').attr('data-title');
 		
 		// Update Inquiry Form
-		$('.lbi_lightbox.inquiry').find('input[name="offering-name"]').val(vehicleTitle).attr('disabled',true).parent().parent().addClass('filled_out');
+		$('.lbi_lightbox.inquiry').find('input[name="offering-name"]').attr('value', vehicleTitle).attr('disabled',true).parent().parent().addClass('filled_out');
 		
 		// Open it up
 		open_lightbox(lightbox);
@@ -671,7 +678,7 @@ function showNextSlide(nextID){
 		var nextSlideData = nextTitle.data('self');
 		
 		// Update launch button data
-		$('.inquiry_trigger').attr('data-title',nextSlideData.post_title);
+		document.getElementById('inquiry_trigger').setAttribute('data-title',nextSlideData.post_title);
 	}
 	
 	

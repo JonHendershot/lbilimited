@@ -45,7 +45,7 @@
 				// Since we'll be displaying a preview of posts that don't actually exist yet, we'll need to adjust
 				// the call to action dynamically. 
 				// This one will open a lightbox with a contact form
-				$call_to_action = "<div class='main-btn inquiry_trigger'>$btn_text</div>";
+				$call_to_action = "<div class='main-btn inquiry_trigger' id='inquiry_trigger' data-title=''>$btn_text</div>";
 			}else {
 				$tax_id = 264; // current offerings id
 				
@@ -83,6 +83,7 @@
 	
 				// Variables
 					$post_title = offering_title();
+					$clean_title = clean_offering_title();
 					$post_link = get_the_permalink();
 					
 					if( get_field('featured_image') ){
@@ -106,7 +107,7 @@
 				);
 				$post_info = array(
 					'post_id' => $ii,
-					'post_title' => 'car title'
+					'post_title' => $clean_title
 				);
 				$post_data = array_map('utf8_encode', $post_info);
 				$post_json = json_encode($post_data);
