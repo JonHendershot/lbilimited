@@ -8,7 +8,7 @@
 			</div>
 			<span class="next_img light_nav force_show" data-img=""><i class="fa fa-chevron-right"></i></span>
 			<span class="prev_img light_nav force_show" data-img=""><i class="fa fa-chevron-left"></i></span>
-			
+			<?php get_template_part('template-parts/module', 'loader'); ?>
 		</div>
 		<div class="featured_image_showcase_lightbox">
 			<div class="featured_image_slider_container_lightbox">

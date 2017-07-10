@@ -537,6 +537,9 @@ function load_img(data){
 			
 		// Hide Images
 			lightbox.find('img').removeClass('visible');
+		
+		// Show loading Icon
+			$('.cube_load_container').addClass('visible');
 			
 		// Apply Img URLs 
 			blur_img.src = blur;
@@ -547,7 +550,9 @@ function load_img(data){
 			img.src = full;
 			img.onload = function(){
 				lightbox.find('.full_res').attr('src',full).addClass('visible');
-				console.log('loaded');
+				
+				// Hide loading icon
+				$('.cube_load_container').removeClass('visible');
 			};
 			
 			
@@ -1348,7 +1353,7 @@ function preload() {
 		images[i] = new Image();
 		images[i].src = preload.arguments[i];
 		
-		console.log( 'Image load fired for: ' + preload.arguments[i] );
+/* 		console.log( 'Image load fired for: ' + preload.arguments[i] ); */
 	}
 }
 
