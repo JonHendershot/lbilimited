@@ -10,7 +10,7 @@
 	}else {
 		$wpLoad_URL = '/~lbi/wp-load.php';
 	}
-// 	require($_SERVER['DOCUMENT_ROOT'].$wpLoad_URL);
+	require($_SERVER['DOCUMENT_ROOT'].$wpLoad_URL);
 	
 	// Variables
 	$uploaded = array();
