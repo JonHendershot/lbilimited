@@ -580,6 +580,18 @@ function next_trigger_id(id, imgClass){
 		$('.media_lightbox .light_nav.next_img').attr('data-img',nextSlideID + '-' + imgClass);
 		$('.media_lightbox .light_nav.prev_img').attr('data-img',prevSlideID + '-' + imgClass);
 	
+	// Use slide IDs to preload the next and previous images
+		var next_image = $('.featured_slide.slide-' + nextSlideID + '-' + imgClass).data('image'),
+			prev_image = $('.featured_slide.slide-' + prevSlideID + '-' + imgClass).data('image'),
+			nextblur = next_image.blur_url,
+			nextfull = next_image.full_url,
+			prevblur = prev_image.blur_url,
+			prevfull = prev_image.full_url;
+			
+		// preload images
+		preload(nextblur, nextfull, prevblur, prevfull);
+			
+	
 }
 
   /////////////////////////
@@ -1330,7 +1342,15 @@ function setMaxHeight(elemclass){
 
 
 
-
+function preload() {
+	var images = new Array();
+	for (i = 0; i < preload.arguments.length; i++) {
+		images[i] = new Image();
+		images[i].src = preload.arguments[i];
+		
+		console.log( 'Image load fired for: ' + preload.arguments[i] );
+	}
+}
 
 
 (function projectPlanner($){
