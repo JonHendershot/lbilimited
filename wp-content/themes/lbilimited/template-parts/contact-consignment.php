@@ -17,6 +17,7 @@
 					$form_content = get_field("option_description_$ii");
 					$form_shortcode = get_field("option_form_shortcode_$ii");
 					
+					
 				// Update $form_array
 					$form_array[] = array(
 						'title' => 'general_contact',
@@ -27,7 +28,7 @@
 				echo "<div class='option_$ii form_option'>
 						<h2 class='option_title'>$form_title</h2>
 						<p class='option_description'>$form_content</p>
-						<div class='option_form_trigger' data-form-id='form-$ii'>Launch Form</div>
+						<div class='option_form_trigger' data-form-id='form-$ii' data-form-title='$form_title'>Launch Form</div>
 					  </div>";
 			}	
 		

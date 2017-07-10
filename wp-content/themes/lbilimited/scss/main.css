@@ -4794,7 +4794,16 @@ body.page-template-media_house .site-header .main-btn {
   position: relative;
   margin: auto;
   transition: all 1000ms ease-in-out;
-  min-height: 25vh; }
+  height: 60vh;
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  flex-direction: column; }
   .project-planner-container input:active, .project-planner-container input:focus {
     color: #fff !important; }
   .project-planner-container .field_row .field {
@@ -4817,362 +4826,99 @@ body.page-template-media_house .site-header .main-btn {
     .project-planner-container .planner-meta .section-number .current-field {
       color: rgba(255, 255, 255, 0.3); }
     .project-planner-container .planner-meta .section-number .total-fields {
-      color: #A82F32; }
+      color: #fff; }
     .project-planner-container .planner-meta .current-title {
       font-family: "open_sans", sans-serif;
       color: #fff;
-      font-weight: 300;
-      letter-spacing: 3px; }
-  .project-planner-container #project-planner br {
-    display: none; }
-  .project-planner-container #project-planner form {
-    max-width: none;
-    width: 100%; }
-    .project-planner-container #project-planner form textarea {
-      margin-top: 0;
-      color: #fff; }
-  .project-planner-container #project-planner .ppsection {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    height: max-content;
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: -moz-fit-content;
-    -webkit-transform: translate3d(150%, 0, 0);
-    -moz-transform: translate3d(150%, 0, 0);
-    -ms-transform: translate3d(150%, 0, 0);
-    transform: translate3d(150%, 0, 0);
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: all 1000ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    -moz-transition: all 1000ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    -o-transition: all 1000ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    transition: all 1000ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    /* custom */
-    -webkit-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    -moz-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    -o-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    /* custom */ }
-    .project-planner-container #project-planner .ppsection input[type=number].no-spin::-webkit-inner-spin-button,
-    .project-planner-container #project-planner .ppsection input[type=number].no-spin::-webkit-outer-spin-button,
-    .project-planner-container #project-planner .ppsection input[type=date]::-webkit-inner-spin-button,
-    .project-planner-container #project-planner .ppsection input[type=date]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0; }
-    .project-planner-container #project-planner .ppsection .instruct {
-      font-family: "heading", serif;
-      color: #A82F32;
-      font-size: 20px;
-      letter-spacing: 2px;
-      text-transform: "uppercase"; }
-    .project-planner-container #project-planner .ppsection .budget-space input[type="number"] {
-      font-size: 46px !important;
-      width: 165px !important;
-      border: none !important;
-      text-align: center;
-      font-family: "heading", serif;
+      font-weight: 500;
+      letter-spacing: 1px;
+      font-size: 15px;
+      display: inline-block;
+      margin-left: 15px; }
+    .project-planner-container .planner-meta .form_title {
       color: #fff;
-      background-color: transparent; }
-    .project-planner-container #project-planner .ppsection .budget-space input:before {
-      content: '$';
-      position: relative; }
-    .project-planner-container #project-planner .ppsection .budget-space .budget {
-      position: relative; }
-      .project-planner-container #project-planner .ppsection .budget-space .budget .currency {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: max-content;
-        width: -webkit-max-content;
-        width: -moz-max-content;
-        width: -moz-fit-content;
-        font-size: 33px;
-        color: #464647;
-        font-family: "heading", serif;
-        margin: auto;
-        -webkit-transform: translate3d(-10px, 0, 0);
-        -moz-transform: translate3d(-10px, 0, 0);
-        -ms-transform: translate3d(-10px, 0, 0);
-        transform: translate3d(-10px, 0, 0); }
-    .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox {
-      display: flex;
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      align-items: center;
-      -webkit-align-items: center;
-      justify-content: space-between;
-      -webkit-justify-content: space-between;
-      width: 100%;
-      margin-top: 15px; }
-      .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item {
-        background-color: transparent;
-        border: 1px solid #464647;
-        position: relative;
-        padding: 0 20px 4px;
-        transition: all 300ms ease-in-out;
-        -webkit-transition: all 300ms ease-in-out;
-        -moz-transition: all 300ms ease-in-out;
-        -ms-transition: all 300ms ease-in-out;
-        -o-transition: all 300ms ease-in-out;
-        cursor: pointer;
-        margin: 0; }
-        .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item input[type="checkbox"] {
-          visibility: hidden;
-          display: none; }
-        .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item .wpcf7-list-item-label {
-          color: #464647;
-          text-transform: uppercase;
-          font-size: 10px;
-          font-weight: 600;
-          letter-spacing: 2px;
-          transition: all 300ms ease-in-out;
-          -webkit-transition: all 300ms ease-in-out;
-          -moz-transition: all 300ms ease-in-out;
-          -ms-transition: all 300ms ease-in-out;
-          -o-transition: all 300ms ease-in-out; }
-        .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item .wpcf7-list-item-label:before {
-          content: 'x';
-          position: absolute;
-          display: block;
-          top: 0;
-          bottom: 0;
-          left: 8px;
-          height: 50%;
-          margin: auto;
-          opacity: 0; }
-      .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item:hover {
-        border-color: #A82F32; }
-        .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item:hover .wpcf7-list-item-label {
-          color: #A82F32; }
-      .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item.checked {
-        border-color: #A82F32;
-        background-color: #A82F32; }
-        .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item.checked .wpcf7-list-item-label {
-          color: #fff; }
-    .project-planner-container #project-planner .ppsection .service-select {
-      -webkit-transform: translate3d(0, 50%, 0);
-      -moz-transform: translate3d(0, 50%, 0);
-      -ms-transform: translate3d(0, 50%, 0);
-      transform: translate3d(0, 50%, 0);
-      -webkit-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
-      -moz-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
-      -o-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
-      transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
-      /* custom */ }
-    .project-planner-container #project-planner .ppsection .service-select.elaborate {
-      -webkit-transform: translate3d(0, -10%, 0);
-      -moz-transform: translate3d(0, -10%, 0);
-      -ms-transform: translate3d(0, -10%, 0);
-      transform: translate3d(0, -10%, 0); }
-    .project-planner-container #project-planner .ppsection .elaboration {
-      visibility: hidden;
+      font-size: 26px;
+      margin: 0; }
+  .project-planner-container #project-planner {
+    width: 100%; }
+    .project-planner-container #project-planner br {
+      display: none; }
+    .project-planner-container #project-planner form {
+      max-width: none;
+      width: 100%; }
+      .project-planner-container #project-planner form textarea {
+        margin-top: 0;
+        color: #fff; }
+    .project-planner-container #project-planner .ppsection {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      height: max-content;
+      height: -webkit-max-content;
+      height: -moz-max-content;
+      height: -moz-fit-content;
+      -webkit-transform: translate3d(150%, 0, 0);
+      -moz-transform: translate3d(150%, 0, 0);
+      -ms-transform: translate3d(150%, 0, 0);
+      transform: translate3d(150%, 0, 0);
       opacity: 0;
-      /*
-					position: absolute;
-					bottom: 0;
-*/
-      -webkit-transform: translate3d(0, -20%, 0);
-      -moz-transform: translate3d(0, -20%, 0);
-      -ms-transform: translate3d(0, -20%, 0);
-      transform: translate3d(0, -20%, 0);
-      -webkit-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
-      -moz-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
-      -o-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
-      transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+      visibility: hidden;
+      -webkit-transition: all 1000ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+      -moz-transition: all 1000ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+      -o-transition: all 1000ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+      transition: all 1000ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+      /* custom */
+      -webkit-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+      -moz-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+      -o-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+      transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
       /* custom */ }
-      .project-planner-container #project-planner .ppsection .elaboration .song-count .number-songs {
-        margin: 0 5px; }
-        .project-planner-container #project-planner .ppsection .elaboration .song-count .number-songs input {
-          background-color: transparent;
-          color: #464647;
-          font-family: "heading", serif;
-          font-size: 46px;
-          border: none;
-          width: 60px;
-          text-align: center;
-          font-weight: 800; }
-    .project-planner-container #project-planner .ppsection .elaboration.elaborate {
-      visibility: visible;
-      opacity: 1;
-      -webkit-transform: translate3d(0, 10%, 0);
-      -moz-transform: translate3d(0, 10%, 0);
-      -ms-transform: translate3d(0, 10%, 0);
-      transform: translate3d(0, 10%, 0); }
-    .project-planner-container #project-planner .ppsection .date-explain {
-      font-family: "heading", serif;
-      color: #A82F32;
-      font-size: 20px;
-      letter-spacing: 2px;
-      text-transform: "uppercase"; }
-    .project-planner-container #project-planner .ppsection .date-range {
-      color: #464647;
-      font-family: "heading", serif;
-      font-size: 46px;
-      letter-spacing: 2px; }
-      .project-planner-container #project-planner .ppsection .date-range span {
-        display: block; }
-      .project-planner-container #project-planner .ppsection .date-range input {
-        background-color: transparent;
-        border: none;
-        box-shadow: none;
-        color: #464647;
+      .project-planner-container #project-planner .ppsection input[type=number].no-spin::-webkit-inner-spin-button,
+      .project-planner-container #project-planner .ppsection input[type=number].no-spin::-webkit-outer-spin-button,
+      .project-planner-container #project-planner .ppsection input[type=date]::-webkit-inner-spin-button,
+      .project-planner-container #project-planner .ppsection input[type=date]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0; }
+      .project-planner-container #project-planner .ppsection .instruct {
         font-family: "heading", serif;
-        font-size: 46px;
-        letter-spacing: 2px; }
-      .project-planner-container #project-planner .ppsection .date-range .range-to {
         color: #A82F32;
-        font-family: "heading", serif;
         font-size: 20px;
         letter-spacing: 2px;
         text-transform: "uppercase"; }
-  .project-planner-container #project-planner .ppsection.visible {
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
-    opacity: 1; }
-  .project-planner-container #project-planner .ppsection.prev {
-    -webkit-transform: translate3d(-150%, 0, 0);
-    -moz-transform: translate3d(-150%, 0, 0);
-    -ms-transform: translate3d(-150%, 0, 0);
-    transform: translate3d(-150%, 0, 0); }
-  .project-planner-container #project-planner .prev-material #file-upload-hidden {
-    display: none;
-    visibility: hidden; }
-  .project-planner-container #project-planner .prev-material .band-file {
-    display: none; }
-  .project-planner-container #project-planner .prev-material #dropzone.uploading {
-    width: 60%; }
-  .project-planner-container #project-planner .prev-material #dropzone {
-    background-color: #fff;
-    border-radius: 5px;
-    width: 100%;
-    display: flex;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    align-items: center;
-    -webkit-align-items: center;
-    justify-content: center;
-    -webkit-justify-content: center;
-    padding: 20px;
-    box-shadow: 0px 6px 28px rgba(17, 17, 17, 0.1);
-    -webkit-transition: all 800ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    -moz-transition: all 800ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    -o-transition: all 800ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    transition: all 800ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    /* custom */
-    -webkit-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    -moz-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    -o-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-    /* custom */
-    z-index: 9999;
-    position: relative; }
-    .project-planner-container #project-planner .prev-material #dropzone .container {
-      border: 2px dashed #818181;
-      border-radius: 5px;
-      padding: 150px 0;
-      width: 100%;
-      transition: 0.3s all ease-in-out;
-      -webkit-transition: 0.3s all ease-in-out;
-      -moz-transition: 0.3s all ease-in-out;
-      -ms-transition: 0.3s all ease-in-out;
-      -o-transition: 0.3s all ease-in-out; }
-      .project-planner-container #project-planner .prev-material #dropzone .container span {
-        color: #9b9b9b;
+      .project-planner-container #project-planner .ppsection .budget-space input[type="number"] {
+        font-size: 46px !important;
+        width: 165px !important;
+        border: none !important;
         text-align: center;
-        font-size: 12px;
-        width: 60%;
-        margin: 0 auto;
-        display: block;
-        font-family: "open_sans", sans-serif;
-        letter-spacing: 0px;
-        font-weight: 400;
-        transition: 0.3s opacity ease-in-out;
-        -webkit-transition: 0.3s opacity ease-in-out;
-        -moz-transition: 0.3s opacity ease-in-out;
-        -ms-transition: 0.3s opacity ease-in-out;
-        -o-transition: 0.3s opacity ease-in-out;
-        max-width: 233px; }
-        .project-planner-container #project-planner .prev-material #dropzone .container span .browse-trigger {
-          color: #A82F32;
-          cursor: pointer;
-          display: inline; }
-  .project-planner-container #project-planner .prev-material #dropzone.drag_over .container {
-    border-color: #A82F32; }
-    .project-planner-container #project-planner .prev-material #dropzone.drag_over .container span {
-      opacity: 0.25; }
-  .project-planner-container #project-planner .prev-material #filenames input[type="text"] {
-    visibility: hidden;
-    display: none; }
-  .project-planner-container #project-planner .prev-material #uploaded-files {
-    width: 40%;
-    padding: 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    border-radius: 5px;
-    height: max-content;
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: -moz-fit-content;
-    z-index: 99; }
-    .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file {
-      width: 100%;
-      visibility: hidden;
-      display: none;
-      opacity: 0;
-      padding: 15px;
-      background-color: #eeeeee;
-      border-bottom-right-radius: 5px;
-      border-top-right-radius: 5px;
-      margin: 5px 0;
-      position: relative; }
-      .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .progress-bar {
-        width: 100%;
-        background-color: #191B1C;
-        height: 4px;
-        border-radius: 2px;
-        position: relative;
-        overflow: hidden; }
-        .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .progress-bar .progress {
+        font-family: "heading", serif;
+        color: #fff;
+        background-color: transparent; }
+      .project-planner-container #project-planner .ppsection .budget-space input:before {
+        content: '$';
+        position: relative; }
+      .project-planner-container #project-planner .ppsection .budget-space .budget {
+        position: relative; }
+        .project-planner-container #project-planner .ppsection .budget-space .budget .currency {
           position: absolute;
+          bottom: 0;
           left: 0;
-          top: 0;
-          height: 4px;
-          border-radius: 2px;
-          background: linear-gradient(to right, #ff8479 0%, #ffb087 100%);
-          width: 100%;
-          -webkit-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          -moz-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          -o-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          /* custom */
-          -webkit-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          -moz-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          -o-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          /* custom */
-          -ms-transform: scaleX(0);
-          /* IE 9 */
-          -webkit-transform: scaleX(0);
-          /* Chrome, Safari, Opera */
-          -moz-transform: scaleX(0);
-          /* Mozilla ? */
-          transform: scaleX(0);
-          transform-origin: left; }
-      .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info {
+          right: 0;
+          width: max-content;
+          width: -webkit-max-content;
+          width: -moz-max-content;
+          width: -moz-fit-content;
+          font-size: 33px;
+          color: #464647;
+          font-family: "heading", serif;
+          margin: auto;
+          -webkit-transform: translate3d(-10px, 0, 0);
+          -moz-transform: translate3d(-10px, 0, 0);
+          -ms-transform: translate3d(-10px, 0, 0);
+          transform: translate3d(-10px, 0, 0); }
+      .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox {
         display: flex;
         display: -webkit-flex;
         display: -moz-flex;
@@ -5181,107 +4927,379 @@ body.page-template-media_house .site-header .main-btn {
         -webkit-align-items: center;
         justify-content: space-between;
         -webkit-justify-content: space-between;
-        margin-top: 5px; }
-        .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info .file-name {
-          font-size: 11px;
-          -webkit-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          -moz-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          -o-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          /* custom */
-          -webkit-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          -moz-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          -o-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          /* custom */ }
-        .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info .file-name.error {
-          font-style: italic;
-          color: red; }
-        .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info .file-name.loaded {
-          -webkit-transform: translate3d(16px, 0, 0);
-          -moz-transform: translate3d(16px, 0, 0);
-          -ms-transform: translate3d(16px, 0, 0);
-          transform: translate3d(16px, 0, 0); }
-        .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info .file-name:before {
-          content: '';
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          background-image: url("../inc/images/checkmark.png");
-          background-size: contain;
-          background-position: center center;
-          background-repeat: no-repeat;
-          height: 100%;
-          width: 9px;
-          -webkit-transform: translate3d(-18px, 0px, 0);
-          -moz-transform: translate3d(-18px, 0px, 0);
-          -ms-transform: translate3d(-18px, 0px, 0);
-          transform: translate3d(-18px, 0px, 0);
-          display: block;
-          opacity: 0;
-          visibility: hidden;
-          -webkit-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          -moz-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          -o-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          /* custom */
-          -webkit-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          -moz-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          -o-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
-          /* custom */ }
-        .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info .file-name.loaded:before {
-          visibility: visible;
-          opacity: 1;
-          -webkit-transform: translate3d(-13px, 0, 0);
-          -moz-transform: translate3d(-13px, 0, 0);
-          -ms-transform: translate3d(-13px, 0, 0);
-          transform: translate3d(-13px, 0, 0); }
-        .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info .remove-file {
-          color: #FFAF86;
-          font-size: 14px;
-          cursor: pointer; }
-        .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info .error-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          position: absolute;
-          top: 0;
-          right: 0;
-          background-color: #fff;
-          color: #464647;
-          border-radius: 4px;
-          padding: 10px;
-          font-size: 9px;
-          z-index: 9999;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          margin: auto;
-          width: max-content;
-          width: -webkit-max-content;
-          width: -moz-max-content;
-          width: -moz-fit-content;
-          height: max-content;
-          height: -webkit-max-content;
-          height: -moz-max-content;
-          height: -moz-fit-content;
-          opacity: 0;
-          visibility: hidden;
-          transition: 500ms all ease-in-out;
-          -webkit-transition: 500ms all ease-in-out;
-          -moz-transition: 500ms all ease-in-out;
-          -ms-transition: 500ms all ease-in-out;
-          -o-transition: 500ms all ease-in-out; }
-      .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info.errors .error-list {
+        width: 100%;
+        margin-top: 15px; }
+        .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item {
+          background-color: transparent;
+          border: 1px solid #464647;
+          position: relative;
+          padding: 0 20px 4px;
+          transition: all 300ms ease-in-out;
+          -webkit-transition: all 300ms ease-in-out;
+          -moz-transition: all 300ms ease-in-out;
+          -ms-transition: all 300ms ease-in-out;
+          -o-transition: all 300ms ease-in-out;
+          cursor: pointer;
+          margin: 0; }
+          .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item input[type="checkbox"] {
+            visibility: hidden;
+            display: none; }
+          .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item .wpcf7-list-item-label {
+            color: #464647;
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: all 300ms ease-in-out;
+            -webkit-transition: all 300ms ease-in-out;
+            -moz-transition: all 300ms ease-in-out;
+            -ms-transition: all 300ms ease-in-out;
+            -o-transition: all 300ms ease-in-out; }
+          .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item .wpcf7-list-item-label:before {
+            content: 'x';
+            position: absolute;
+            display: block;
+            top: 0;
+            bottom: 0;
+            left: 8px;
+            height: 50%;
+            margin: auto;
+            opacity: 0; }
+        .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item:hover {
+          border-color: #A82F32; }
+          .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item:hover .wpcf7-list-item-label {
+            color: #A82F32; }
+        .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item.checked {
+          border-color: #A82F32;
+          background-color: #A82F32; }
+          .project-planner-container #project-planner .ppsection .services .wpcf7-checkbox .wpcf7-list-item.checked .wpcf7-list-item-label {
+            color: #fff; }
+      .project-planner-container #project-planner .ppsection .service-select {
+        -webkit-transform: translate3d(0, 50%, 0);
+        -moz-transform: translate3d(0, 50%, 0);
+        -ms-transform: translate3d(0, 50%, 0);
+        transform: translate3d(0, 50%, 0);
+        -webkit-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+        -moz-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+        -o-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+        transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+        /* custom */ }
+      .project-planner-container #project-planner .ppsection .service-select.elaborate {
+        -webkit-transform: translate3d(0, -10%, 0);
+        -moz-transform: translate3d(0, -10%, 0);
+        -ms-transform: translate3d(0, -10%, 0);
+        transform: translate3d(0, -10%, 0); }
+      .project-planner-container #project-planner .ppsection .elaboration {
+        visibility: hidden;
+        opacity: 0;
+        /*
+					position: absolute;
+					bottom: 0;
+*/
+        -webkit-transform: translate3d(0, -20%, 0);
+        -moz-transform: translate3d(0, -20%, 0);
+        -ms-transform: translate3d(0, -20%, 0);
+        transform: translate3d(0, -20%, 0);
+        -webkit-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+        -moz-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+        -o-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+        transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+        /* custom */ }
+        .project-planner-container #project-planner .ppsection .elaboration .song-count .number-songs {
+          margin: 0 5px; }
+          .project-planner-container #project-planner .ppsection .elaboration .song-count .number-songs input {
+            background-color: transparent;
+            color: #464647;
+            font-family: "heading", serif;
+            font-size: 46px;
+            border: none;
+            width: 60px;
+            text-align: center;
+            font-weight: 800; }
+      .project-planner-container #project-planner .ppsection .elaboration.elaborate {
+        visibility: visible;
         opacity: 1;
-        visibility: visible; }
-    .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file.visible {
-      opacity: 1;
+        -webkit-transform: translate3d(0, 10%, 0);
+        -moz-transform: translate3d(0, 10%, 0);
+        -ms-transform: translate3d(0, 10%, 0);
+        transform: translate3d(0, 10%, 0); }
+      .project-planner-container #project-planner .ppsection .date-explain {
+        font-family: "heading", serif;
+        color: #A82F32;
+        font-size: 20px;
+        letter-spacing: 2px;
+        text-transform: "uppercase"; }
+      .project-planner-container #project-planner .ppsection .date-range {
+        color: #464647;
+        font-family: "heading", serif;
+        font-size: 46px;
+        letter-spacing: 2px; }
+        .project-planner-container #project-planner .ppsection .date-range span {
+          display: block; }
+        .project-planner-container #project-planner .ppsection .date-range input {
+          background-color: transparent;
+          border: none;
+          box-shadow: none;
+          color: #464647;
+          font-family: "heading", serif;
+          font-size: 46px;
+          letter-spacing: 2px; }
+        .project-planner-container #project-planner .ppsection .date-range .range-to {
+          color: #A82F32;
+          font-family: "heading", serif;
+          font-size: 20px;
+          letter-spacing: 2px;
+          text-transform: "uppercase"; }
+    .project-planner-container #project-planner .ppsection.visible {
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
       visibility: visible;
-      display: block; }
+      opacity: 1; }
+    .project-planner-container #project-planner .ppsection.prev {
+      -webkit-transform: translate3d(-150%, 0, 0);
+      -moz-transform: translate3d(-150%, 0, 0);
+      -ms-transform: translate3d(-150%, 0, 0);
+      transform: translate3d(-150%, 0, 0); }
+    .project-planner-container #project-planner .prev-material #file-upload-hidden {
+      display: none;
+      visibility: hidden; }
+    .project-planner-container #project-planner .prev-material .band-file {
+      display: none; }
+    .project-planner-container #project-planner .prev-material #dropzone.uploading {
+      width: 60%; }
+    .project-planner-container #project-planner .prev-material #dropzone {
+      background-color: #fff;
+      border-radius: 5px;
+      width: 100%;
+      display: flex;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      align-items: center;
+      -webkit-align-items: center;
+      justify-content: center;
+      -webkit-justify-content: center;
+      padding: 20px;
+      box-shadow: 0px 6px 28px rgba(17, 17, 17, 0.1);
+      -webkit-transition: all 800ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+      -moz-transition: all 800ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+      -o-transition: all 800ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+      transition: all 800ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+      /* custom */
+      -webkit-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+      -moz-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+      -o-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+      transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+      /* custom */
+      z-index: 9999;
+      position: relative; }
+      .project-planner-container #project-planner .prev-material #dropzone .container {
+        border: 2px dashed #818181;
+        border-radius: 5px;
+        padding: 150px 0;
+        width: 100%;
+        transition: 0.3s all ease-in-out;
+        -webkit-transition: 0.3s all ease-in-out;
+        -moz-transition: 0.3s all ease-in-out;
+        -ms-transition: 0.3s all ease-in-out;
+        -o-transition: 0.3s all ease-in-out; }
+        .project-planner-container #project-planner .prev-material #dropzone .container span {
+          color: #9b9b9b;
+          text-align: center;
+          font-size: 12px;
+          width: 60%;
+          margin: 0 auto;
+          display: block;
+          font-family: "open_sans", sans-serif;
+          letter-spacing: 0px;
+          font-weight: 400;
+          transition: 0.3s opacity ease-in-out;
+          -webkit-transition: 0.3s opacity ease-in-out;
+          -moz-transition: 0.3s opacity ease-in-out;
+          -ms-transition: 0.3s opacity ease-in-out;
+          -o-transition: 0.3s opacity ease-in-out;
+          max-width: 233px; }
+          .project-planner-container #project-planner .prev-material #dropzone .container span .browse-trigger {
+            color: #A82F32;
+            cursor: pointer;
+            display: inline; }
+    .project-planner-container #project-planner .prev-material #dropzone.drag_over .container {
+      border-color: #A82F32; }
+      .project-planner-container #project-planner .prev-material #dropzone.drag_over .container span {
+        opacity: 0.25; }
+    .project-planner-container #project-planner .prev-material #filenames input[type="text"] {
+      visibility: hidden;
+      display: none; }
+    .project-planner-container #project-planner .prev-material #uploaded-files {
+      width: 40%;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      border-radius: 5px;
+      height: max-content;
+      height: -webkit-max-content;
+      height: -moz-max-content;
+      height: -moz-fit-content;
+      z-index: 99; }
+      .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file {
+        width: 100%;
+        visibility: hidden;
+        display: none;
+        opacity: 0;
+        padding: 15px;
+        background-color: #eeeeee;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        margin: 5px 0;
+        position: relative; }
+        .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .progress-bar {
+          width: 100%;
+          background-color: #191B1C;
+          height: 4px;
+          border-radius: 2px;
+          position: relative;
+          overflow: hidden; }
+          .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .progress-bar .progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 4px;
+            border-radius: 2px;
+            background: linear-gradient(to right, #ff8479 0%, #ffb087 100%);
+            width: 100%;
+            -webkit-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            -moz-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            -o-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            /* custom */
+            -webkit-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            -moz-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            -o-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            /* custom */
+            -ms-transform: scaleX(0);
+            /* IE 9 */
+            -webkit-transform: scaleX(0);
+            /* Chrome, Safari, Opera */
+            -moz-transform: scaleX(0);
+            /* Mozilla ? */
+            transform: scaleX(0);
+            transform-origin: left; }
+        .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info {
+          display: flex;
+          display: -webkit-flex;
+          display: -moz-flex;
+          display: -ms-flex;
+          align-items: center;
+          -webkit-align-items: center;
+          justify-content: space-between;
+          -webkit-justify-content: space-between;
+          margin-top: 5px; }
+          .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info .file-name {
+            font-size: 11px;
+            -webkit-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            -moz-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            -o-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            /* custom */
+            -webkit-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            -moz-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            -o-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            /* custom */ }
+          .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info .file-name.error {
+            font-style: italic;
+            color: red; }
+          .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info .file-name.loaded {
+            -webkit-transform: translate3d(16px, 0, 0);
+            -moz-transform: translate3d(16px, 0, 0);
+            -ms-transform: translate3d(16px, 0, 0);
+            transform: translate3d(16px, 0, 0); }
+          .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info .file-name:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url("../inc/images/checkmark.png");
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 9px;
+            -webkit-transform: translate3d(-18px, 0px, 0);
+            -moz-transform: translate3d(-18px, 0px, 0);
+            -ms-transform: translate3d(-18px, 0px, 0);
+            transform: translate3d(-18px, 0px, 0);
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            -moz-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            -o-transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            transition: all 400ms cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            /* custom */
+            -webkit-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            -moz-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            -o-transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            transition-timing-function: cubic-bezier(0.74, 0.005, 0.24, 0.995);
+            /* custom */ }
+          .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info .file-name.loaded:before {
+            visibility: visible;
+            opacity: 1;
+            -webkit-transform: translate3d(-13px, 0, 0);
+            -moz-transform: translate3d(-13px, 0, 0);
+            -ms-transform: translate3d(-13px, 0, 0);
+            transform: translate3d(-13px, 0, 0); }
+          .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info .remove-file {
+            color: #FFAF86;
+            font-size: 14px;
+            cursor: pointer; }
+          .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info .error-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #fff;
+            color: #464647;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 9px;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: max-content;
+            width: -webkit-max-content;
+            width: -moz-max-content;
+            width: -moz-fit-content;
+            height: max-content;
+            height: -webkit-max-content;
+            height: -moz-max-content;
+            height: -moz-fit-content;
+            opacity: 0;
+            visibility: hidden;
+            transition: 500ms all ease-in-out;
+            -webkit-transition: 500ms all ease-in-out;
+            -moz-transition: 500ms all ease-in-out;
+            -ms-transition: 500ms all ease-in-out;
+            -o-transition: 500ms all ease-in-out; }
+        .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file .upload-info.errors .error-list {
+          opacity: 1;
+          visibility: visible; }
+      .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file.visible {
+        opacity: 1;
+        visibility: visible;
+        display: block; }
   .project-planner-container .btns {
     width: 100%;
     display: flex;
@@ -5292,9 +5310,7 @@ body.page-template-media_house .site-header .main-btn {
     -webkit-align-items: center;
     justify-content: space-between;
     -webkit-justify-content: space-between;
-    position: absolute;
-    bottom: -75px;
-    left: 0;
+    position: relative;
     transition: 800ms all ease-in-out; }
     .project-planner-container .btns .nav-hint {
       font-family: "heading", serif;
@@ -5350,6 +5366,22 @@ body.page-template-media_house .site-header .main-btn {
       visibility: visible;
       padding: 7px 23px 7px 26px;
       font-size: 8px; }
+      .project-planner-container .btns .main-btn:after {
+        background-color: #962F32; }
+      .project-planner-container .btns .main-btn.submit {
+        background-color: transparent; }
+        .project-planner-container .btns .main-btn.submit:after {
+          background-color: #fff; }
+        .project-planner-container .btns .main-btn.submit:hover span {
+          color: #962F32 !important; }
+      .project-planner-container .btns .main-btn:hover span {
+        color: #fff; }
+      .project-planner-container .btns .main-btn span {
+        -webkit-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+        -moz-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+        -o-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+        transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
+        /* custom */ }
     .project-planner-container .btns .main-btn.next-field, .project-planner-container .btns .main-btn.submit {
       right: 0; }
     .project-planner-container .btns .main-btn.prev-field {
@@ -6567,9 +6599,18 @@ body.page-template-home .social_cta {
         background-color: #191B1C; }
 
 .form_consignment {
-  margin-top: 120px;
+  margin-top: 75px;
   padding: 0;
   overflow: visible; }
+
+.ppsection {
+  visibility: hidden !important; }
+
+.consignment_lightbox.visible .planner-meta, .consignment_lightbox.visible .general_contact-container {
+  visibility: visible; }
+
+.consignment_lightbox.visible .ppsection.visible {
+  visibility: visible !important; }
 
 section.lbi_values header {
   background-position: center center;

@@ -3,7 +3,9 @@
 		position: relative;
 		margin: auto;
 		transition: all 1000ms ease-in-out;
-		min-height: 25vh;
+		height: 60vh;
+		@include flexbox(center, space-between);
+		flex-direction: column;
 		
 		input:active, input:focus {
 			color: $white !important;
@@ -33,18 +35,27 @@
 					color: $overlay_w;
 				}
 				.total-fields {
-					color: $altred;
+					color: $white;
 				}	
 			}
 			
 			.current-title {
 				font-family: $body_font;
 				color: $white;
-				font-weight: 300;
-				letter-spacing: 3px;
+				font-weight: 500;
+				letter-spacing: 1px;
+				font-size: 15px;
+				display: inline-block;
+				margin-left: 15px;
+			}
+			.form_title {
+				color: $white;
+				font-size: 26px;
+				margin: 0;
 			}
 		}
 		#project-planner {
+			width: 100%;
 			br {
 				display: none;
 			}
@@ -468,9 +479,7 @@
 		.btns {
 			width: 100%;
 			@include flexbox(center,space-between);
-			position: absolute;
-			bottom: -75px;
-			left: 0;
+			position: relative;
 			transition: 800ms all ease-in-out;
 			.nav-hint {
 				font-family: $heading_font;
@@ -513,6 +522,30 @@
 				visibility: visible;
 				padding: 7px 23px 7px 26px;
 				font-size: 8px;
+				
+				&:after {
+					background-color: $mainred;
+				}
+				&.submit {
+					background-color: transparent;
+					&:after {
+						background-color: $white;
+					}
+					&:hover {
+						span {
+							color: $mainred !important;
+						}
+					}
+				}
+				
+				&:hover {
+					span {
+						color: $white;
+					}
+				}
+				span {
+					@include easeout(600ms);
+				}
 			}
 			.main-btn.next-field, .main-btn.submit {
 				right: 0;

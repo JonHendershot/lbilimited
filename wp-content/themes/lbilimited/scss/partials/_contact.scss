@@ -473,7 +473,18 @@
 	}
 }
 .form_consignment {
-	margin-top: 120px;
+	margin-top: 75px;
 	padding: 0;
 	overflow: visible;
+}
+.ppsection {
+	visibility: hidden !important;
+}
+.consignment_lightbox.visible {
+	.planner-meta, .general_contact-container {
+		visibility: visible;
+	}
+	.ppsection.visible {
+		visibility: visible !important;
+	}
 }

@@ -408,6 +408,8 @@ function updateSpecialist(specialist){
 		lightbox = $('.lbi_lightbox.consignment_lightbox');
 	
 	option_trigger.click(function(){
+		var form_title = $(this).attr('data-form-title');
+		$('.lbi_lightbox.form_consignment .planner-meta h3').text(form_title);
 		open_lightbox(lightbox);
 	});
 }(jQuery));
@@ -627,9 +629,11 @@ function next_trigger_id(id, imgClass){
 	
 	// Update inquiry trigger on page load so that the first car name value will be set on the button
 	$(window).load(function(){
-		var vehicleData = $('.featured_post.visible').data('self');
-			
-		document.getElementById('inquiry_trigger').setAttribute('data-title',vehicleData.post_title);
+		if($('.home_cta_content').length){
+			var vehicleData = $('.featured_post.visible').data('self');
+				
+			document.getElementById('inquiry_trigger').setAttribute('data-title',vehicleData.post_title);
+		}
 	});
 	
 	// Inquiry trigger
@@ -1093,6 +1097,13 @@ function open_lightbox(lightbox_id){
 			
 	}
 	
+	if( lightbox_id.hasClass('consignment_lightbox') || lightbox_id.hasClass('notify_lightbox')){
+		setTimeout(function(){
+			$('.lbi_lightbox form input').first().focus();
+			console.log('focus it');
+		},2000);
+	}
+	
 	// If we're opening the inquiry trigger, we need to update the vehicle field
 /*
 	if( lightbox_id.hasClass('inquiry') ){
@@ -1334,26 +1345,86 @@ function setMaxHeight(elemclass){
 	
 	// Keypress
 
-		var down = [];
+		var shiftKey = false;
+		
 		$(document).keydown(function(e) {
 			if( $('.ppsection.visible').length ){
 				
 				var currentField = parseInt($('.ppsection.visible').data('part'));
-			    down[e.keyCode] = true;
-			    if (down[16] && down[39]) {
-			        var nextField = currentField + 1;
+				
+				if( e.keyCode === 16 ){
+					shiftKey = true;
+				}
+				
+				if( $('.ppsection.visible input').is(':focus') || $('.ppsection.visible textarea').is(':focus')  ){
+					// We're in an input, so tabbing through is appropriate
+					if( e.keyCode === 9 ){
+						
+					
+						
+						// if the tab key was pressed, we need to check which input we're on
+						// if it's the last one in the field, we need to advance the page - if not, let it
+						// do its default functionality
+						var	currentInput = $('.ppsection.visible input:focus, .ppsection.visible textarea:focus').parent().parent();
+							if( ! currentInput.next().length && !shiftKey ){
+								
+								// Going forward in the form
+								
+								var nextField = currentField + 1;
+								ppNextField(currentField, nextField);
+								
+							}
+							
+							if( ! currentInput.prev().length && shiftKey ){
+								
+								
+								
+								// Going backwards in the form
+								
+								var nextField = currentField - 1;
+								ppNextField(currentField, nextField);
+								
+								// Set next field to active
+							/*
+	setTimeout(function(){
+									$('.ppsection.visible .field:last-child input').focus();
+								}, 2000);
+*/
+								
+							}
+					}
+				}else {
+					// We're not in an input, so we'll check if the key is an arrow and navigate accordingly
+					if( e.keyCode === 37 ){
+						// navigate left
+						var nextField = currentField - 1;
+						ppNextField(currentField, nextField);
+					}
+					if( e.keyCode === 39 ){
+						// navigate right
+						var nextField = currentField + 1;
+						ppNextField(currentField, nextField);
+					}
+				}
+			   
+			   
+			   
+			   
+			   /*
+ if( e.keyCode === 91 && ) {
+			        
 			    }
 			    if (down[16] && down[37]){
 				    var nextField = currentField - 1;
 			    }
 			    ppNextField(currentField, nextField);
+*/
 		    }
-		}).keyup(function(e) {
-		    
-		    if( $('.ppsection.visible').length ){
-
-		    down[e.keyCode] = false;
-		    }
+		});
+		$(document).keyup(function(e){
+			if(e.keyCode === 16 && shiftKey){
+				shiftKey = false;
+			}
 		});
 	
 	// Checkboxes 

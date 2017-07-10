@@ -5,13 +5,11 @@
 		<div class="general_contact-container consignment_form ">
 			<div class="project-planner-container contact-form-cont contact-project">
 				<div class="planner-meta preblur blurtrans">
+					<h3 class="form_title">Form Title</h3>
 					<div class="section-number">
-						
 						<span class="current-field">01</span>
 						<span class="total-fields">/ 05</span>
-					</div>
-					<div class="current-title">
-						Contact Information
+						<div class="current-title">Contact Info</div>
 					</div>
 				</div>
 				<div id="project-planner"><?php echo do_shortcode($project_planner); ?></div>
@@ -21,7 +19,7 @@
 				</div>
 				<div class="btns preblur blurtrans">
 					<div class="nav-hint visible">
-						Press [ SHIFT ] + [ LEFT ] & [ RIGHT ] arrow keys or click to continue
+						Use the [ TAB ] key to navigate the form.
 					</div>
 					<div class="main-btn prev-field orange hidden">
 						<span>previous</span>
