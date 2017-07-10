@@ -1552,15 +1552,17 @@ function setMaxHeight(elemclass){
 						
 						var home_url = window.location.origin;
 						
-						if( home_url.includes('localhost') ){
-							// we're in the local environment, so we need to adjust the filepath a little bit
+						if( home_url.includes('localhost') || home_url.includes('132') ){
+							// we're either the local environment, so we need to adjust the filepath a little bit
 							var uploadFilepath = home_url + '/lbi/wp-content/plugins/dragDrop/upload_file.php';
-						}else {
-							// we're likely in a live environment
+						}else if( home_url.includes('132') ){
+							// we're in the staging environemnt, so we need to adjust the filepath a little bit
+							var uploadFilepath = home_url + '/~lbi/wp-content/plugins/dragDrop/upload_file.php';
+						}else{
+							// we're likely in a live environment, smooth sailing to the upload file :)
 							var uploadFilepath = home_url + '/wp-content/plugins/dragDrop/upload_file.php';
 						}
-						
-						console.log(window.location);
+
 						xhr.open('post',uploadFilepath); // fix this static link!
 						xhr.send(formData);	
 					}
