@@ -1552,7 +1552,7 @@ function setMaxHeight(elemclass){
 						
 						var home_url = window.location.origin;
 						
-						if( home_url.includes('localhost') || home_url.includes('132') ){
+						if( home_url.includes('localhost') ){
 							// we're either the local environment, so we need to adjust the filepath a little bit
 							var uploadFilepath = home_url + '/lbi/wp-content/plugins/dragDrop/upload_file.php';
 						}else if( home_url.includes('132') ){
