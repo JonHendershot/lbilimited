@@ -17,7 +17,7 @@
 */
 
 	$parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
-	require_once( 'http://132.148.86.26/~lbi/wp-load.php' );
+	include( '../../../wp-load.php' );
 	
 	
 	// Variables
