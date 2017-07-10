@@ -1366,7 +1366,10 @@ function setMaxHeight(elemclass){
 						// if it's the last one in the field, we need to advance the page - if not, let it
 						// do its default functionality
 						var	currentInput = $('.ppsection.visible input:focus, .ppsection.visible textarea:focus').parent().parent();
+							
 							if( ! currentInput.next().length && !shiftKey ){
+								// Prevent default tab function to override and resolve any functionality conflicts
+								e.preventDefault();
 								
 								// Going forward in the form
 								
@@ -1376,11 +1379,10 @@ function setMaxHeight(elemclass){
 							}
 							
 							if( ! currentInput.prev().length && shiftKey ){
-								
-								
-								
+								// Prevent default tab function to override and resolve any functionality conflicts
+								e.preventDefault();
+
 								// Going backwards in the form
-								
 								var nextField = currentField - 1;
 								ppNextField(currentField, nextField);
 								
