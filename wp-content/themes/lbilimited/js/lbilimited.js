@@ -1562,7 +1562,7 @@ function setMaxHeight(elemclass){
 							// we're likely in a live environment, smooth sailing to the upload file :)
 							var uploadFilepath = home_url + '/wp-content/plugins/dragDrop/upload_file.php';
 						}
-
+						console.log(uploadFilepath);
 						xhr.open('post',uploadFilepath); // fix this static link!
 						xhr.send(formData);	
 					}
