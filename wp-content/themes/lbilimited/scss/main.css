@@ -9544,7 +9544,7 @@ section.sub_heading.media_sub {
         transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
         /* custom */ }
       .lbi_media_container .grid-item .item-content:after {
-        height: 150%;
+        height: 100%;
         -webkit-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
         -moz-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
         -o-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
@@ -9554,7 +9554,8 @@ section.sub_heading.media_sub {
         -webkit-transform: skew(-24deg) scaleY(0);
         -moz-transform: skew(-24deg) scaleY(0);
         -ms-transform: skew(-24deg) scaleY(0);
-        -o-transform: skew(-24deg) scaleY(0); }
+        -o-transform: skew(-24deg) scaleY(0);
+        top: 3px; }
     .lbi_media_container .grid-item:before {
       content: "";
       height: 100%;

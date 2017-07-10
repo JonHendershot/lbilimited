@@ -430,9 +430,10 @@ section.sub_heading.media_sub {
 			}
 			
 			&:after {
-				height: 150%;
+				height: 100%;
 				@include easeout($easeTiming);
 				@include prefix(transform, skew(-24deg) scaleY(0));
+				top: 3px;
 			}
 		}
 		&:before {
