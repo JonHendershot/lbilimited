@@ -10,7 +10,7 @@
 		// Get File
 		require($_SERVER['DOCUMENT_ROOT'].$wpLoad_URL);
 	}else {
-		$wpLoad_URL = '/wp-load.php';
+		$wpLoad_URL = '/~lbi/wp-load.php';
 		require($_SERVER['HTTP_HOST'].$wpLoad_URL);
 	}
 	
