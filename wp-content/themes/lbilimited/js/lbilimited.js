@@ -453,7 +453,12 @@ function updateSpecialist(specialist){
 		
 	});
 	navbtn.click(function(){
+		
+		// remove the classname that is forcing the arrows to be visible once they're used
+		navbtn.removeClass('force_show');
+		
 		var img = $(this).attr('data-img');
+
 		
 		next_img(img);
 	});

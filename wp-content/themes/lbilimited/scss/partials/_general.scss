@@ -335,7 +335,9 @@ h4.tilt_title.flip:after {
 			opacity: 0.75;
 			cursor: pointer;
 			@include easeout(600ms);
-			
+			&.force_show{
+				@include prefix(transform, translateX(0px) !important);
+			}
 			&.next_img {
 				right: 0;
 				padding: 3px 0 0 3px;

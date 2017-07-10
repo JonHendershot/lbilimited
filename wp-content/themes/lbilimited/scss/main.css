@@ -385,6 +385,12 @@ h4.tilt_title.flip:after {
     -o-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
     transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
     /* custom */ }
+    .media_lightbox .image_container .light_nav.force_show {
+      transform: translateX(0px) !important;
+      -webkit-transform: translateX(0px) !important;
+      -moz-transform: translateX(0px) !important;
+      -ms-transform: translateX(0px) !important;
+      -o-transform: translateX(0px) !important; }
     .media_lightbox .image_container .light_nav.next_img {
       right: 0;
       padding: 3px 0 0 3px;

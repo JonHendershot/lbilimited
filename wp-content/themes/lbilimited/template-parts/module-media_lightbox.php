@@ -6,8 +6,8 @@
 			</div>
 			<div class="image_filter_container">
 			</div>
-			<span class="next_img light_nav" data-img=""><i class="fa fa-chevron-right"></i></span>
-			<span class="prev_img light_nav" data-img=""><i class="fa fa-chevron-left"></i></span>
+			<span class="next_img light_nav force_show" data-img=""><i class="fa fa-chevron-right"></i></span>
+			<span class="prev_img light_nav force_show" data-img=""><i class="fa fa-chevron-left"></i></span>
 			
 		</div>
 		<div class="featured_image_showcase_lightbox">
