@@ -7,7 +7,7 @@
 	background-color: rgba(0,0,0,0.6);
 	@include easeout(400ms);
 	@include flexbox(center,center);
-	z-index: 9;
+	z-index: 99;
 	visibility: hidden;
 	opacity: 0;
 	

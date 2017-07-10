@@ -319,15 +319,19 @@ function lbi_single_gallery( $atts ){
 	
 	$gallery = get_field($gallery_slug);
 	$first_image = $gallery[0]['url'];
+	$first_blur = $gallery[0]['sizes']['blur'];
 	$first_alt = $gallery[0]['alt'];
+	$loading_animation = load_template_part('template-parts/module','loader');
 	$loop_index = 0;
 	$output = '';
 	
 	// Build the post Gallery and put the first image in the viewer
 	$output .= "<div class='post_gallery_wrapper featured_image_showcase visible margin'>
 					<div class='post_gallery'>
-						<div class='image_viewer'>
-							<img src='$first_image' alt='$first_alt' />
+						<div class='image_viewer image_viewer-gallery-$gallery_id'>
+							<img data-src='$first_image' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='$first_alt' class='full_res visible lazy-load' />
+							<img src='$first_blur' class='blur_image visible' />
+							$loading_animation
 						</div>
 						<div class='featured_image_slider_container'>
 							<div class='featured_image_slider_wrapper'>";
@@ -345,7 +349,8 @@ function lbi_single_gallery( $atts ){
 				'medium_url' => $med_url,
 				'blur_url' => $blur_url,
 				'full_url' => $full_url,
-				'photo_id' => $loop_index
+				'photo_id' => $loop_index,
+				'img_class' => "gallery-$gallery_id"
 			);
 			
 			// Translate array into a JSON object to be stored in the markup
@@ -360,7 +365,7 @@ function lbi_single_gallery( $atts ){
 				}
 			
 			// Add the image object to $output
-			$output .= "<div class='featured_slide slide-$loop_index' data-image='$img_json' data-id='$loop_index'>$img</div>";
+			$output .= "<div class='featured_slide slide-$loop_index-gallery-$gallery_id lbi_gallery_slide' data-image='$img_json' data-id='$loop_index'>$img</div>";
 						
 			// Increment $loop_index to control lazyloading
 			$loop_index++;
@@ -955,4 +960,12 @@ function tax_has_posts($id, $taxonomy, $threshold){
 		}
 	}
 	return $has_posts;
+}
+
+function load_template_part($template_name, $part_name=null) {
+    ob_start();
+    get_template_part($template_name, $part_name);
+    $var = ob_get_contents();
+    ob_end_clean();
+    return $var;
 }

@@ -438,19 +438,27 @@ function updateSpecialist(specialist){
 			closeTrigger.text('click to close').addClass('open');
 	});
 	offeringTrigger.click(function(){
-		// Setup Variables
-			var data = $(this).data('image');
+		if( ! $(this).hasClass('lbi_gallery_slide') ){
+				var lightbox = $('.media_lightbox');
+			}else {
+				var galleryID = $(this).data('image').img_class,
+					lightbox = $('.image_viewer-' + galleryID);
 			
-			load_img(data);
-			
-		// Open Lightbox
-			if( !lightbox.hasClass('visible') ){
-				open_lightbox(lightbox);
 			}
 		
-		// Update Lightbox Triger
-			closeTrigger.text('click to close').addClass('open');
-		
+			// Setup Variables
+				var data = $(this).data('image');
+				load_img(data, lightbox);
+				
+			// Open Lightbox
+				if( !lightbox.hasClass('visible') && ! $(this).hasClass('lbi_gallery_slide') ){
+					open_lightbox(lightbox);
+					// Update Lightbox Triger
+					closeTrigger.text('click to close').addClass('open');
+				}
+			
+			
+	
 	});
 	navbtn.click(function(){
 		
@@ -520,11 +528,12 @@ function updateSpecialist(specialist){
 }(jQuery));
 function next_img(id){
 	var $ = jQuery,
-		data = $('.featured_slide.slide-' + id).data('image');
+		data = $('.featured_slide.slide-' + id).data('image'),
+		lightbox = $('.media_lightbox');
 		
-		load_img(data);	
+		load_img(data, lightbox);	
 }
-function load_img(data){
+function load_img(data, lightbox){
 	// Setup Variables
 	var $ = jQuery,		
 		blur = data.blur_url,
@@ -532,11 +541,11 @@ function load_img(data){
 		imgClass = data.img_class,
 		id = parseInt(data.photo_id),
 		blur_img = new Image(),
-		img = new Image(),
-		lightbox = $('.media_lightbox');	
-			
+		img = new Image();
+					
 		// Hide Images
 			lightbox.find('img').removeClass('visible');
+			
 		
 		// Show loading Icon
 			$('.cube_load_container').addClass('visible');

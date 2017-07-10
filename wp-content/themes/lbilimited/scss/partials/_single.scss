@@ -935,12 +935,30 @@ body.single {
 						height: 0;
 						padding-bottom: 45%;
 						position: relative;
+						z-index: 0;
+						overflow: hidden;
 						
 						img {
 							position: absolute;
 							width: 100%;
 							height: 100%;
 							object-fit: cover;
+							visibility: hidden;
+							opacity: 0;
+							margin: 0;
+							
+							&.visible {
+								opacity: 1;
+								visibility: visible;
+							}
+							
+							&.blur_image {
+								@include prefix(filter, blur(20px));
+								z-index: 1;
+							}
+							&.full_res {
+								z-index: 4;
+							}
 						}
 					}
 				}

@@ -5546,7 +5546,7 @@ span.wpcf7-not-valid-tip:before {
   -webkit-align-items: center;
   justify-content: center;
   -webkit-justify-content: center;
-  z-index: 9;
+  z-index: 99;
   visibility: hidden;
   opacity: 0; }
   .cube_load_container.visible {
@@ -10752,12 +10752,29 @@ body.single .contact_form:after {
           width: 100%;
           height: 0;
           padding-bottom: 45%;
-          position: relative; }
+          position: relative;
+          z-index: 0;
+          overflow: hidden; }
           .post_wrapper article.post_content .post_gallery_wrapper .post_gallery .image_viewer img {
             position: absolute;
             width: 100%;
             height: 100%;
-            object-fit: cover; }
+            object-fit: cover;
+            visibility: hidden;
+            opacity: 0;
+            margin: 0; }
+            .post_wrapper article.post_content .post_gallery_wrapper .post_gallery .image_viewer img.visible {
+              opacity: 1;
+              visibility: visible; }
+            .post_wrapper article.post_content .post_gallery_wrapper .post_gallery .image_viewer img.blur_image {
+              filter: blur(20px);
+              -webkit-filter: blur(20px);
+              -moz-filter: blur(20px);
+              -ms-filter: blur(20px);
+              -o-filter: blur(20px);
+              z-index: 1; }
+            .post_wrapper article.post_content .post_gallery_wrapper .post_gallery .image_viewer img.full_res {
+              z-index: 4; }
     .post_wrapper article.post_content .iframe_wrapper {
       width: 80%;
       padding-bottom: 45%; }
