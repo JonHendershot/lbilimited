@@ -1099,9 +1099,10 @@ function open_lightbox(lightbox_id){
 	
 	if( lightbox_id.hasClass('consignment_lightbox') || lightbox_id.hasClass('notify_lightbox')){
 		setTimeout(function(){
-			$('.lbi_lightbox form input').first().focus();
+			lightbox_id.find('input:not([type="hidden"])').first().focus();
 			console.log('focus it');
-		},2000);
+			
+		},400);
 	}
 	
 	// If we're opening the inquiry trigger, we need to update the vehicle field
@@ -1549,8 +1550,18 @@ function setMaxHeight(elemclass){
 							
 						}
 						
-						var home_url = $('.consignment_lightbox').data('url');
-						xhr.open('post',home_url + '/wp-content/plugins/dragDrop/upload_file.php'); // fix this static link!
+						var home_url = window.location.origin;
+						
+						if( home_url.includes('localhost') ){
+							// we're in the local environment, so we need to adjust the filepath a little bit
+							var uploadFilepath = home_url + '/lbi/wp-content/plugins/dragDrop/upload_file.php';
+						}else {
+							// we're likely in a live environment
+							var uploadFilepath = home_url + '/wp-content/plugins/dragDrop/upload_file.php';
+						}
+						
+						console.log(window.location);
+						xhr.open('post',uploadFilepath); // fix this static link!
 						xhr.send(formData);	
 					}
 				}
@@ -1766,18 +1777,20 @@ function ppNextField(currentFieldID, nextFieldID){
 		partNumber = $('.ppsection.part-' + nextFieldID).data('part'),
 		input = $('.ppsection.part-' + nextFieldID + ' input, .ppsection.part-' + nextFieldID + ' textarea' ).first();
 		
+	
 	// HANDLE BUTTONS
 	
 	if(nextFieldID < currentFieldID && nextFieldID > 1){ // going back to a previous field in the form
 		// Manage Buttons
 		submitButton.addClass('hidden');
 		nextButton.removeClass('hidden');
+	
 	}
 	if(nextFieldID > currentFieldID && nextFieldID < fieldCount){ // going forward to next field
 		// Manage Buttons
 		prevButton.removeClass('hidden');
 		$('.nav-hint').removeClass('visible');
-		
+	
 	}
 	if(nextFieldID == 1){ // first field
 		// Manage Buttons
@@ -1796,11 +1809,18 @@ function ppNextField(currentFieldID, nextFieldID){
 		// Animate Fields
 		$('.ppsection.part-' + nextFieldID).addClass('visible');
 		$('.ppsection.part-' + currentFieldID).removeClass('visible').addClass('prev');
+		
+		// Setup input function
+		var focusInput = $('.ppsection.part-' + nextFieldID + ' input, .ppsection.part-' + nextFieldID + ' textarea' ).first();
 	}
 	if(nextFieldID < currentFieldID && $('.ppsection.part-' + nextFieldID).length){ // Move Backwards
 		// Animate Fields
 		$('.ppsection.part-' + nextFieldID).addClass('visible').removeClass('prev');
 		$('.ppsection.part-' + currentFieldID).removeClass('visible');
+
+		// Setup input function
+		var focusInput = $('.ppsection.part-' + nextFieldID + ' input, .ppsection.part-' + nextFieldID + ' textarea' ).last();
+	
 	}
 	
 	// UPDATE PROJECT PLANNER META
@@ -1812,11 +1832,10 @@ function ppNextField(currentFieldID, nextFieldID){
 	}
 	
 	// Activate first field of the section if it's a typing field
-	if(input.length && input.val() == ''){
-		
+	if(focusInput.length && focusInput.val() == ''){		
 		setTimeout(function(){
 			// put in set timeout because focus won't fire before animation has completed
-			input.focus();
+			focusInput.focus();
 		},1000);
 	}
 	
