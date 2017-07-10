@@ -5,12 +5,14 @@
 	header('HTTP/1.1 200 OK', 'Content-Type: application/json');
 	
 	// Dynamic require URL to grab wp-load.php in both local and production environments
+/*
 	if($_SERVER['DOCUMENT_ROOT']=='/Applications/MAMP/htdocs/Sites' || $_SERVER['DOCUMENT_ROOT']=='/Applications/MAMP/htdocs'){
 		$wpLoad_URL = '/lbi/wp-load.php';
 	}else {
 		$wpLoad_URL = '/~lbi/wp-load.php';
 	}
-	require($_SERVER['DOCUMENT_ROOT'].$wpLoad_URL);
+*/
+	require_once('../../../wp-load.php');
 	
 	// Variables
 	$uploaded = array();
