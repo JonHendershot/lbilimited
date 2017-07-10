@@ -40,7 +40,6 @@
 </head>
 
 <body <?php body_class( " $hide_header " ); ?>>
-	<h1><?php echo $_SERVER['HTTP_HOST']; ?></h1>
 	<div id="pre_loader">
 		<div class="ribbon"></div>
 		<img src="<?php echo $loading_icon; ?>" />
