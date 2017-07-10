@@ -2030,7 +2030,7 @@ body.page-template-media_house .site-header .main-btn {
 
 .site-footer .newsletter-cta {
   background-size: cover;
-  background-position: center bottom;
+  background-position: center center;
   background-repeat: no-repeat;
   padding: 180px 0 220px;
   text-align: center;
