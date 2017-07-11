@@ -315,7 +315,7 @@ function lbi_single_gallery( $atts ){
 		}else {
 			$gallery_slug = "post_gallery_$gallery_id";
 		}
-	}
+	
 	
 	$gallery = get_field($gallery_slug);
 	$first_image = $gallery[0]['url'];
@@ -377,6 +377,7 @@ function lbi_single_gallery( $atts ){
 	
 	// Output $output
 	return $output;
+	}
 }
 add_shortcode('photos', 'lbi_single_gallery');
 
