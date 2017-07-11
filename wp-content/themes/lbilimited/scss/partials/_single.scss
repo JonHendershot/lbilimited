@@ -211,20 +211,38 @@
 		margin-top: 50px;
 		max-height: 60vh;
 		overflow: scroll;
-		a {
-			text-decoration: none;
-			text-transform: uppercase;
-			color: white;
-			font-size: 60px;
-			font-weight: 700;
-			text-align: left;
-			line-height: 64px;
+		list-style: none;
+		padding: 0;
+		padding-left: 25px;
+		li {
+			position: relative;
+			margin: 5px 0;
 			opacity: 0.65;
-			@include transition(0.3s, all, ease-in-out);
+			@include easeout(500ms);
+			&:before {
+				content: '';
+				display: block;
+				height: 8px;
+				width: 8px;
+				background-color: $white;
+				position: absolute;
+				top: 18px;
+				left: -25px;
+				margin: auto;
+			}
 			
 			&:hover {
 				opacity: 1;
 			}
+		}
+		a {
+			text-decoration: none;
+			text-transform: uppercase;
+			color: white;
+			font-size: 48px;
+			font-weight: 700;
+			text-align: left;
+			line-height: 45px;
 		}
 	}
 	&.visible {

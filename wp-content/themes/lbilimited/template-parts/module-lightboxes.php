@@ -19,7 +19,7 @@
 						echo "<div class='documents_lightbox lbi_lightbox'>
 								<div class='ribbon'></div>
 								<h3>$post_title</h3>
-								<div class='document_links lightbox_content'>";
+								<ul class='document_links lightbox_content'>";
 						
 							while( have_rows($documents_repeater) ) : the_row();
 								// Varialbes
@@ -28,9 +28,9 @@
 									$document_path = $document_file['url'];
 									
 								// Build Links
-									echo "<a href='$document_path' target='_blank'>$title</a>";
+									echo "<li><a href='$document_path' target='_blank'>$title</a></li>";
 							endwhile;
-						echo "</div></div>";						
+						echo "</ul></div>";						
 				endif;
 	}
 	if( is_page_template('archive-lbi_media.php') || is_page_template('templates/about.php') ){
