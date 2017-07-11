@@ -329,9 +329,10 @@ function lbi_single_gallery( $atts ){
 	$output .= "<div class='post_gallery_wrapper featured_image_showcase visible margin'>
 					<div class='post_gallery'>
 						<div class='image_viewer image_viewer-gallery-$gallery_id'>
-							<img data-src='$first_image' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='$first_alt' class='full_res visible lazy-load' />
+							<img data-src='$first_image' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='$first_alt' class='full_res visible lazy-load' id='gallery_full' />
 							<img src='$first_blur' class='blur_image visible' />
 							$loading_animation
+							<span class='click_message'>Click to view full image</span>
 						</div>
 						<div class='featured_image_slider_container'>
 							<div class='featured_image_slider_wrapper'>";

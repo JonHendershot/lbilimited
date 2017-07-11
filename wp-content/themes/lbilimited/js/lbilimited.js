@@ -413,6 +413,7 @@ function updateSpecialist(specialist){
 		open_lightbox(lightbox);
 	});
 }(jQuery));
+
   ///////////////////////
  // OFFERING LIGHTBOX //
 ///////////////////////
@@ -608,6 +609,28 @@ function next_trigger_id(id, imgClass){
 	
 }
 
+// Function to handle when a slideshow gallery image is clicked to show the full aspect ratio of the image
+var slideShowImage = jQuery('.image_viewer');
+	
+slideShowImage.click(function(){
+	var activeImage = jQuery(this).find('#gallery_full'),
+		imageWidth = activeImage.get(0).naturalWidth,
+		imageHeight = activeImage.get(0).naturalHeight,
+		imagePadding = ( imageHeight / imageWidth ) * 100,
+		initialPadding = "45%";
+			
+		if( ! jQuery(this).hasClass('show_full') ){
+			this.style.paddingBottom = imagePadding + '%';
+			jQuery(this).addClass('show_full');
+			jQuery('span.click_message').text('Click to crop image');
+		}else {
+			this.style.paddingBottom = initialPadding;
+			jQuery(this).removeClass('show_full');
+			jQuery('span.click_message').text('Click to view full image');
+
+		}
+});
+
   /////////////////////////
  // HOME FEATURE SLIDER //
 /////////////////////////
@@ -738,7 +761,6 @@ function showNextSlide(nextID){
   //////////////////
  // HEAR STARTUP //
 //////////////////
-
 (function hearStartup($){
 	if($('.startup_trigger').length){
 		
@@ -772,6 +794,7 @@ function showNextSlide(nextID){
 		});
 	}
 }(jQuery));
+
   /////////////
  // Masonry //
 /////////////
@@ -785,6 +808,7 @@ function showNextSlide(nextID){
 		});
 	}
 }(jQuery));
+
   //////////////////
  // Menu Trigger //
 //////////////////
@@ -812,7 +836,6 @@ function showNextSlide(nextID){
 		}
 	});
 }(jQuery));
-
 
 (function offering_video($){
 	$('.offering').hover(function(){
@@ -1143,6 +1166,7 @@ function open_lightbox(lightbox_id){
 	}
 */
 }
+
   /////////////////////////////
  // SHOW FILTER IN LIGHTBOX //
 /////////////////////////////

@@ -18,6 +18,7 @@
 	left: 0;
 	background-color: rgba(255,255,255,0.85);
 	@include transition(0.3s,background-color,ease-in-out);
+	z-index: 8;
 	&:hover {
 		background-color: rgba(255,255,255,1);
 	}
@@ -926,6 +927,7 @@ body.single {
 			position: relative;
 			$margin :  calc( ((100vw - 100%) / 2) * -1 );
 			@include prefix(transform, translateX($margin));
+			z-index: 9;
 			
 				.post_gallery {
 					width: 100vw;
@@ -937,6 +939,7 @@ body.single {
 						position: relative;
 						z-index: 0;
 						overflow: hidden;
+						cursor: pointer;
 						
 						img {
 							position: absolute;
@@ -959,6 +962,42 @@ body.single {
 							&.full_res {
 								z-index: 4;
 							}
+						}
+						
+						&:after {
+							content: '';
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							display: block;
+							z-index: 9;
+							background-color: rgba(0,0,0,0.35);
+							@include easeout(600ms);
+							opacity: 0;					
+						}
+						span.click_message {
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							display: block;
+							z-index: 10;
+							@include easeout(600ms);
+							@include flexbox(center,center);
+							text-transform: uppercase;
+							color: $white;
+							font-size: 11px;
+							font-weight: 500;
+							letter-spacing: 3px;
+							@include prefix(transform, translateY(15px));
+							opacity: 0;
+						}
+						&:hover span.click_message, &:hover:after {
+							opacity: 1;
+							@include prefix(transform, translateY(0px));
 						}
 					}
 				}
