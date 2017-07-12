@@ -21,11 +21,12 @@
 				
 		?>
 		
-		<a href="<?php echo home_url() . '/' . $slug; ?>" class="feature" style="background-image:url(<?php echo $photo_url; ?>);">
+		<a href="<?php echo home_url() . '/' . $slug; ?>" class="feature waypoint" data-padding="100"> <!-- style="background-image:url(<?php echo $photo_url; ?>);" -->
 			<div class="content-wrapper dash-title">
 				<div class="featured-heading"><?php echo $title; ?></div>
 				<div class="featured-link">Click to View</div>
 			</div>
+			<img src="<?php echo $photo_url; ?>" class="footer_feature_image" />
 			<?php if($overlay_toggle == 'On'){
 				echo "<span class='media_overlay'></span>";
 				}

@@ -2002,7 +2002,14 @@ body.page-template-media_house .site-header .main-btn {
     padding: 48px;
     height: 0;
     padding-bottom: 32.7%;
-    position: relative; }
+    position: relative;
+    -webkit-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+    -moz-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+    -o-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+    transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+    /* custom */
+    opacity: 1;
+    overflow: hidden; }
     .site-footer .featured-posts .feature .content-wrapper {
       position: relative;
       width: max-content;
@@ -2032,6 +2039,32 @@ body.page-template-media_house .site-header .main-btn {
         width: -moz-max-content;
         width: -moz-fit-content;
         margin-top: 2px; }
+    .site-footer .featured-posts .feature img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transform: scale(1);
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      -webkit-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+      -moz-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+      -o-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+      transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+      /* custom */ }
+    .site-footer .featured-posts .feature.waypoint {
+      opacity: 1; }
+      .site-footer .featured-posts .feature.waypoint img {
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1); }
 
 .site-footer .newsletter-cta {
   background-size: cover;
