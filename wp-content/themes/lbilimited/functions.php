@@ -333,47 +333,12 @@ function lbi_single_gallery( $atts ){
 							<img src='$first_blur' class='blur_image visible' />
 							$loading_animation
 							<span class='click_message'>Click to view full image</span>
-						</div>
-						<div class='featured_image_slider_container'>
-							<div class='featured_image_slider_wrapper'>";
+						</div>";
 	
-	// Loop through gallery array and add an image object to $output for each photo
-	foreach($gallery as $key=>$photo){
-		// Variables
-			$med_url = $photo['sizes']['medium_large'];
-			$blur_url = $photo['sizes']['blur'];
-			$full_url = $photo['url'];
-			$alt = $photo['alt'];
-			
-			// Store Variables in an array
-			$img_info = array(
-				'medium_url' => $med_url,
-				'blur_url' => $blur_url,
-				'full_url' => $full_url,
-				'photo_id' => $loop_index,
-				'img_class' => "gallery-$gallery_id"
-			);
-			
-			// Translate array into a JSON object to be stored in the markup
-			$img_data = array_map('utf8_encode', $img_info);
-			$img_json = json_encode($img_data);
-			
-			// In case a lot of images are uploaded to this gallery, we'll dynamically control the <img> for lazy-loading, 	
-				if($loop_index > 7){
-					$img = "<img src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' data-src='$med_url' alt='$alt' class='lazy-load' />";
-				}else {
-					$img = "<img src='$med_url' alt='$alt' />";
-				}
-			
-			// Add the image object to $output
-			$output .= "<div class='featured_slide slide-$loop_index-gallery-$gallery_id lbi_gallery_slide' data-image='$img_json' data-id='$loop_index'>$img</div>";
-						
-			// Increment $loop_index to control lazyloading
-			$loop_index++;
-	}
+	$output .= gallery_slider( $gallery, $gallery_id, 7 );
 					
 	// Close the .image_slider, .post_gallery, and .post_gallery_wrapper
-	$output .= "</div></div></div></div>";
+	$output .= "</div></div>";
 	
 	// Output $output
 	return $output;
@@ -381,7 +346,65 @@ function lbi_single_gallery( $atts ){
 }
 add_shortcode('photos', 'lbi_single_gallery');
 
+function gallery_slider( $gallery, $gallery_id, $lazyThreshold, $special_classes, $item_classes ){
+	
+	$loop_index = 0;
+	$classes = 'featured_image_slider_container';
+	if( ! empty($special_classes) ){
+		foreach( $special_classes as $class ){
+			$classes .= " $class ";
+		}
+	}
+	
+	if( ! empty($item_classes) ){
+		$item_class = $item_classes;
+	}else {
+		$item_class = '';
+	}
+	
+	$output = "<div class='$classes'>
+					<div class='featured_image_slider_wrapper'>";
 
+					// Loop through gallery array and add an image object to $output for each photo
+					foreach($gallery as $key=>$photo){
+						// Variables
+						$med_url = $photo['sizes']['medium_large'];
+						$blur_url = $photo['sizes']['blur'];
+						$full_url = $photo['url'];
+						$alt = $photo['alt'];
+						
+						// Store Variables in an array
+						$img_info = array(
+							'medium_url' => $med_url,
+							'blur_url' => $blur_url,
+							'full_url' => $full_url,
+							'photo_id' => $loop_index,
+							'img_class' => "gallery-$gallery_id"
+						);
+						
+						// Translate array into a JSON object to be stored in the markup
+						$img_data = array_map('utf8_encode', $img_info);
+						$img_json = json_encode($img_data);
+						
+						// In case a lot of images are uploaded to this gallery, we'll dynamically control the <img> for lazy-loading, 	
+							if($loop_index > $lazyThreshold){
+								$img = "<img src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' data-src='$med_url' alt='$alt' class='lazy-load' />";
+							}else {
+								$img = "<img src='$med_url' alt='$alt' />";
+							}
+						
+						// Add the image object to $output
+						$output .= "<div class='featured_slide slide-$loop_index-gallery-$gallery_id lbi_gallery_slide gallery-$gallery_id $item_class' data-image='$img_json' data-id='$loop_index'>$img</div>";
+									
+						// Increment $loop_index to control lazyloading
+						$loop_index++;
+					}
+
+
+	$output .= "</div></div>";
+	
+	return $output;
+}
 
 
   //////////////////////////////////////////////////////

@@ -439,7 +439,7 @@ function updateSpecialist(specialist){
 			closeTrigger.text('click to close').addClass('open');
 	});
 	offeringTrigger.click(function(){
-		if( ! $(this).hasClass('lbi_gallery_slide') ){
+		if( ! $(this).hasClass('lbi_gallery_slide') ||  $(this).hasClass('media_house_gallery') ){
 				var lightbox = $('.media_lightbox');
 			}else {
 				var galleryID = $(this).data('image').img_class,
@@ -567,6 +567,7 @@ function load_img(data, lightbox){
 			
 			
 		// Update Image Triggers 
+// 			alert(id + ' ' + imgClass);
 			next_trigger_id(id, imgClass);
 		
 }
@@ -595,9 +596,11 @@ function next_trigger_id(id, imgClass){
 		$('.media_lightbox .light_nav.next_img').attr('data-img',nextSlideID + '-' + imgClass);
 		$('.media_lightbox .light_nav.prev_img').attr('data-img',prevSlideID + '-' + imgClass);
 	
+// 	alert( '.featured_slide.slide-' + prevSlideID + '-' + imgClass );
+	
 	// Use slide IDs to preload the next and previous images
 		var next_image = $('.featured_slide.slide-' + nextSlideID + '-' + imgClass).data('image'),
-			prev_image = $('.featured_slide.slide-' + prevSlideID + '-' + imgClass).data('image'),
+			prev_image = $('.featured_slide.slide-' + prevSlideID + '-' + imgClass).data('image'),			
 			nextblur = next_image.blur_url,
 			nextfull = next_image.full_url,
 			prevblur = prev_image.blur_url,
@@ -878,14 +881,22 @@ function showNextSlide(nextID){
 		
 	}
 */
+/*
+	if($('.media_house_sliders').length){
+		$(window).load(function(){
+			$('.media_house_sliders .featured_image_slider_container').css({'display':'none'});
+		});
+	}
+*/
 	$('.photo_trigger').click(function(){
 		var data = $(this).data('item'),
 			img = data[0]['full_url'],
 			lightbox = $('.media_lightbox'),
-			closeTrigger = $('.nav-wrapper .search_trigger');
+			closeTrigger = $('.nav-wrapper .search_trigger'),
+			gallery_ID = parseInt( $(this).attr('data-id') );
 			
 			console.log(data[0]);
-			load_img(data[0]);
+			load_img(data[0], lightbox);
 		
 		// Open Lightbox
 		if( !lightbox.hasClass('visible') ){
@@ -893,8 +904,22 @@ function showNextSlide(nextID){
 		}
 		
 		// Update Lightbox Triger
-			closeTrigger.text('click to close').addClass('open');
-			
+		closeTrigger.text('click to close').addClass('open');
+		
+		// Show relative gallery slider
+		
+		$('.media_house_sliders .featured_image_slider_container.gallery-' + gallery_ID).addClass('visible');
+		$('.show_filter_trigger').addClass('showing');
+		$('.featured_image_showcase .msg').text('hide');
+		
+		
+		// Delay the display of the slider to animate on after lightbox has opened and to resolve a clunky animation trying to animate 
+		// the elemnts on to screen while they're being switched from display:none
+		setTimeout(function(){
+			$('.media_house_sliders').addClass('visible').find('.featured_image_showcase').addClass('showing');
+			$('.media_house_sliders .featured_image_showcase .featured_image_slider_container.gallery-' + gallery_ID).jScrollPane();
+		}, 500);
+		
 	});
 		
 		
@@ -1140,7 +1165,7 @@ function open_lightbox(lightbox_id){
 	$('body').addClass('noscroll');
 	
 	// If image scroller exists, and we triggered it, we need to clone it into the proper lightbox! 
-	if( $('.featured_image_showcase').length && lightbox_id.hasClass('media_lightbox') ){
+	if( $('.featured_image_showcase').length && lightbox_id.hasClass('media_lightbox') && ! $('.media_house_sliders').length ){
 		
 		$('.featured_image_showcase').addClass('in_lightbox showing');
 		$('.show_filter_trigger').addClass('showing');
@@ -1211,6 +1236,15 @@ function open_lightbox(lightbox_id){
 					
 				iframe.attr('src',''); // stop video from playing
 				$('body').removeClass('noscroll');
+				
+				// Reset photo sliders on media page
+				if( $('.media_house_sliders').length ){
+					$('.media_house_sliders').removeClass('visible').find('.featured_image_showcase').removeClass('showing');
+					// Set slider to display:none on a timeout so it animates out first
+					setTimeout(function(){
+						$('.media_house_sliders .featured_image_slider_container.visible').removeClass('visible');
+					}, 800);
+				}
 			}else {
 				// Display Search Form
 				$('.search_form_container').addClass('visible');
@@ -1225,13 +1259,10 @@ function open_lightbox(lightbox_id){
 				}
 			}
 			
-			if($('.featured_image_showcase').length){
+			if( $('.featured_image_showcase').length && ! $('.media_house_sliders').length ){
 				$('.featured_image_showcase').removeClass('in_lightbox');
 				$('.jspContainer').height($('.featured_image_showcase .featured_slide').height() + 8); // height isn't resetting properly so we need to force it before we reinitialize
 				$('.featured_image_showcase .featured_image_slider_container').jScrollPane();	
-
-				
-				
 			}
 		});
 		

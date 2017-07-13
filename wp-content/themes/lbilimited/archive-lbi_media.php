@@ -88,6 +88,7 @@
 						
 						$item_info = array();
 						
+/*
 						foreach( $gallery as $key=>$photo ){
 							$blur_url = $photo['sizes']['blur'];
 							$full_url = $photo['sizes']['large'];
@@ -95,9 +96,18 @@
 							$item_info[] = array(
 								'full_url' => $full_url,
 								'blur_url' => $blur_url,
-								'photo_id' => $key
+								'photo_id' => $key,
+								'img_class' => $post_ID
 							);
 						}
+*/
+						
+						$item_info[] = array(
+							'full_url' => $gallery[0]['sizes']['large'],
+							'blur_url' => $gallery[0]['sizes']['blur'],
+							'photo_id' => 0,
+							'img_class' => "gallery-$post_ID"
+						);
 						
 						$trigger_class = 'photo_trigger';
 						$trigger_text = 'View Photos';
@@ -111,14 +121,12 @@
 					if( $loop_index === 2 ){
 						$display_class='next';
 					}
-				
-				
-					
+										
 
 					
 			
 				// Render content here
-					echo "<div class='featured_media_wrapper $display_class'  style='background-image: url($background_image)'>
+					echo "<div class='featured_media_wrapper $display_class post-$post_ID'  style='background-image: url($background_image)'>
 							<div class='reveal_ribbon waypoint' data-padding='100'></div>
 							<div class='featured_media_title dash-title'>
 								<h3>$title</h3>
@@ -181,6 +189,17 @@
 			  	</div>
 			  </section>";
 			  
+			  
+	// Add gallery sliders to end of page		  
+			  	// Load gallery images into a specific slider -- all to be lazyloaded
+				// this could get really bloaded - load test this
+/*
+				$gallery_classes = array(
+					'gallery-$post_id'
+				);
+				$gallery_slider = gallery_slider( $gallery, $post_ID, 0, $gallery_classes);
+				echo $gallery_slider;	
+*/	  
 	// Invoke site footer
 		get_footer();
 ?>

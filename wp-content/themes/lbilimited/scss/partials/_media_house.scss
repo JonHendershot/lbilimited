@@ -465,6 +465,48 @@ section.sub_heading.media_sub {
 			}
 		}
 	}
+	
+	.media_house_sliders {
+		
+		#image_filters {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			visibility: hidden;
+			opacity: 0;
+			@include easeout(600ms);
+		}
+		
+		&.visible {
+			#image_filters {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+
+		
+		.featured_image_showcase {
+			@include prefix(transform, translateY(101%));
+			@include easeout(800ms);
+			visibility: hidden;
+			
+			
+			
+			&.showing {
+				@include prefix(transform, translateY(0%));
+				visibility: visible;
+			}
+			
+			.featured_image_slider_container {
+				display: none;
+				
+				&.visible {
+					display: block;
+				}
+			}
+		}
+	}
 }
 
 

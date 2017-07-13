@@ -8,6 +8,7 @@
 				'posts_per_page' => -1
 			);
 		$query = new WP_Query( $args );
+		$galleries = array();
 	
 	// Settings :: Used to create number of elements and create a ceiling 
 		$iterations = $query->post_count; // Max Number
@@ -79,6 +80,7 @@
 					$media_type = get_field('media_type');
 					$post_ID = get_the_ID();
 					$background_image = get_the_post_thumbnail_url();
+					$item_info = array();
 					
 					
 				// Check what type of media it is and establish the triggers and json info accordingly
@@ -98,8 +100,24 @@
 					}else {
 						$gallery = get_field('photo_gallery');
 						
-						$item_info = array();
+						// Setup array information to store gallery sliders at the end of the page
+						$post_info = array(
+							'gallery' => $gallery,
+							'gallery_id' => $post_ID
+						);
 						
+						// Store gallery in galleries array to build the sliders later
+						$galleries[] = $post_info;
+						
+						
+						// Setup first photo information to store in the trigger json to launch the lightbox 
+						$item_info[] = array(
+							'full_url' => $gallery[0]['sizes']['large'],
+							'blur_url' => $gallery[0]['sizes']['blur'],
+							'photo_id' => 0,
+							'img_class' => "gallery-$post_ID"
+						);
+/*
 						foreach( $gallery as $key=>$photo ){
 							$blur_url = $photo['sizes']['blur'];
 							$full_url = $photo['sizes']['large'];
@@ -110,7 +128,9 @@
 								'photo_id' => $key
 							);
 						}
-						
+*/
+
+						// Set display content
 						$trigger_class = 'photo_trigger';
 						$trigger_text = 'View Photos';
 					}
@@ -121,7 +141,7 @@
 
 				
 				// Output elements	
-					echo "<div class='grid-item $trigger_class $display_class $gutter waypoint' data-padding='100' style='background-image: url($background_image)' data-item='$item_json'>
+					echo "<div class='grid-item $trigger_class $display_class $gutter waypoint' data-padding='100' style='background-image: url($background_image)' data-item='$item_json' data-id='$post_ID'>
 							<div class='item-content dash-title'>
 								<h3>$title</h3>
 								<div class='trigger video_trigger'>$trigger_text</div>
@@ -129,3 +149,35 @@
 						  </div>";
 			endwhile;
 		echo "</div>";
+		
+		
+		// build display gallery sliders
+		// - - figure out a way to offload this to the end of the page so that all of this content is rendered last - -
+		if( ! empty($galleries) ){
+			echo "<div class='featured_image_slider vhfix media_house_sliders'>
+					<div class='featured_image_showcase visible in_lightbox'>
+						<div id='image_filters'>
+							<div class='show_filter_trigger'>
+								<span class='msg'>show more</span>
+								<i class='fa fa-chevron-up arrow'></i>
+							</div>
+						</div>";
+						foreach( $galleries as $key=>$gallery ){
+							
+							$gal = $gallery['gallery'];
+							$gal_ID = $gallery['gallery_id'];
+							$gal_Class = array(
+								"gallery-$gal_ID",
+								"media_house_gallery"
+							);
+							$item_class = 'media_house_gallery';
+							
+							$build_gallery = gallery_slider( $gal, $gal_ID, -1, $gal_Class, $item_class);
+							
+							// Render the gallery slider
+							echo $build_gallery;
+							
+						}
+						
+			echo "</div></div>";
+		}

@@ -21,7 +21,7 @@
 				
 		?>
 		
-		<a href="<?php echo home_url() . '/' . $slug; ?>" class="feature waypoint" data-padding="100"> <!-- style="background-image:url(<?php echo $photo_url; ?>);" -->
+		<a href="<?php echo home_url() . '/' . $slug; ?>" class="feature waypoint" data-padding="0"> <!-- style="background-image:url(<?php echo $photo_url; ?>);" -->
 			<div class="content-wrapper dash-title">
 				<div class="featured-heading"><?php echo $title; ?></div>
 				<div class="featured-link">Click to View</div>
