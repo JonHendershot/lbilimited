@@ -839,8 +839,9 @@ function span_per_letter($input){
 //////////////////////////////////////////////////////////////////////
 function span_per_word($input){
 	
-// 	$output = preg_replace('~&(?:#[0-9]+|[a-zA-Z]+);(*SKIP)(*FAIL)|;~', '<span class="word">$0</span>', $input); // ([a-zA-Z.,!?0-9]+(?![^<]*>))
+	$output = preg_replace('([a-zA-Z.,!?0-9]+(?![^<]*>))', '<span class="word">$0</span>', $input); // 
 	
+/*
 	$output = '';
 
 	$explode = explode(' ', $input);
@@ -848,6 +849,7 @@ function span_per_word($input){
 	foreach($explode as $key=>$word){
 		$output .= "<span class='word word-$key'>$word</span>";
 	}
+*/
 	
 	return $output;
 }
