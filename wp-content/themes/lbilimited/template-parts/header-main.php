@@ -219,12 +219,12 @@
 			
 			
 			// Scroll Down Hint
-			if( ! is_front_page() ){
+// 			if( ! is_front_page() ){
 			  	echo "<div class='scroll_hint_container'>
 			  			<span class='dot dot-1'></span>
 			  			<span class='dot dot-2'></span>
 			  			<span class='dot dot-3'></span>
 			  		  </div>";
-		  	}
+// 		  	}
 		
 		}
