@@ -1299,8 +1299,16 @@ function exit_lightbox(){
 	}	
 	$('body').removeClass('noscroll');
 	
+	// Reset photo sliders on media page
+	if( $('.media_house_sliders').length ){
+		$('.media_house_sliders').removeClass('visible').find('.featured_image_showcase').removeClass('showing');
+		// Set slider to display:none on a timeout so it animates out first
+		setTimeout(function(){
+			$('.media_house_sliders .featured_image_slider_container.visible').removeClass('visible');
+		}, 800);
+	}
 	
-	if($('.featured_image_showcase').length){
+	if($('.featured_image_showcase').length && ! $('.media_house_sliders').length){
 		$('.featured_image_showcase').removeClass('in_lightbox');
 		$('.jspContainer').height($('.featured_image_showcase .featured_slide').height() + 8); // height isn't resetting properly so we need to force it before we reinitialize
 		$('.featured_image_showcase .featured_image_slider_container').jScrollPane();		
