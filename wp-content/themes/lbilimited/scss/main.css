@@ -5655,6 +5655,9 @@ span.wpcf7-not-valid-tip:before {
 body.page-template-home.hide_header .nav-wrapper {
   z-index: 999; }
 
+body.page-template-home .scroll_hint_container {
+  bottom: 50px; }
+
 body.page-template-home .home_shade {
   position: absolute;
   top: 0;
