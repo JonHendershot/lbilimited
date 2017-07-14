@@ -404,7 +404,7 @@ section.sub_heading.media_sub {
 			position: relative;
 			@include max-content(width);
 			margin: 20px 0 0 20px;
-			max-width: 50%;
+			max-width: 55%;
 			z-index: 9;
 			opacity: 0;
 			@include easeout($easeTiming);
