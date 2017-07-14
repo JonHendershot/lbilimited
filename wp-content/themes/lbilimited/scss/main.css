@@ -1952,7 +1952,7 @@ body.page-template-media_house .site-header .main-btn {
   position: absolute;
   bottom: 20px;
   left: 20%;
-  z-index: 9;
+  z-index: 99;
   width: 10px; }
   .scroll_hint_container .dot {
     height: 10px;
