@@ -5978,8 +5978,6 @@ body.page-template-home .social_cta {
     opacity: 0; }
   body.page-template-home .social_cta.waypoint p {
     opacity: 0; }
-  body.page-template-home .social_cta.waypoint .featured_media img, body.page-template-home .social_cta.waypoint .featured_media video {
-    opacity: 0; }
   body.page-template-home .social_cta h3 {
     font-weight: normal;
     font-style: italic;
@@ -6237,13 +6235,7 @@ body.page-template-home .social_cta {
     width: 100%;
     z-index: 0;
     object-fit: cover;
-    top: 0;
-    opacity: 1;
-    -webkit-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
-    -moz-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
-    -o-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
-    transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
-    /* custom */ }
+    top: 0; }
 
 .newsletter_optin .wpcf7-list-item {
   margin-top: 30px;

@@ -298,11 +298,6 @@ body.page-template-home {
 			p {
 				opacity: 0;
 			}
-			.featured_media {
-				img,video {
-					opacity: 0;
-				}
-			}
 		}
 		
 		h3 {
@@ -363,8 +358,6 @@ body.page-template-home {
 				z-index: 0;
 				object-fit: cover;
 				top: 0;
-				opacity: 1;
-				@include easeout(1000ms);
 			}
 			
 		}
