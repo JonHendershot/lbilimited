@@ -85,12 +85,23 @@
 					$post_title = offering_title();
 					$clean_title = clean_offering_title();
 					$post_link = get_the_permalink();
+					$framing = 'center';
 					
+					if( get_field('3d_image') ){
+						// If this post has an image specified for the 3d slider element on the home page, use it.
+						$image = get_field('3d_image');
+						$image_url = $image['sizes']['medium_large'];
+						$full_img = $image['url'];
+						$framing = get_field('3d_framing');
+						
+					}else
 					if( get_field('featured_image') ){
+						// If not, use the specified featured image
 						$image = get_field('featured_image');
 						$image_url = $image['sizes']['medium_large'];
 						$full_img = $image['url'];
 					}else {
+						// If that's not set, we'll check if there's an image set with wordpress' default field
 						$image_url = get_the_post_thumbnail_url('medium_large');
 						$full_img = get_the_post_thumbnail_url('full');
 					}
@@ -103,7 +114,8 @@
 				// a bunch of the markup surrounding it here.
 				$full_imgs[] = array(
 					'img' => $full_img,
-					'title' => $post_title
+					'title' => $post_title,
+					'framing' => $framing
 				);
 				$post_info = array(
 					'post_id' => $ii,
@@ -139,10 +151,10 @@
 						
 						$src = $img['img'];
 						$post_title = $img['title'];
+						$photo_frame = $img['framing'];
+						$display_class = "$photo_frame ";
 						if( $index == 0 ){
-							$display_class = 'feat-visible';
-						}else {
-							$display_class = '';
+							$display_class .= 'feat-visible';
 						}
 						
 						echo "<img src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' data-src='$src' class='lazy-load post-$index feat_full $display_class' data-slide='$index' />";

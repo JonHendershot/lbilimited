@@ -5719,6 +5719,12 @@ body.page-template-home .home_cta_container .home_cta_wrapper {
       width: 100%;
       height: 100%;
       object-fit: cover; }
+      body.page-template-home .home_cta_container .home_cta_wrapper .home_cta_image img.feat_full.right {
+        object-position: right center; }
+      body.page-template-home .home_cta_container .home_cta_wrapper .home_cta_image img.feat_full.left {
+        object-position: left center; }
+      body.page-template-home .home_cta_container .home_cta_wrapper .home_cta_image img.feat_full.center {
+        object-position: center center; }
       body.page-template-home .home_cta_container .home_cta_wrapper .home_cta_image img.feat_full.feat-visible {
         transform: translateX(0px);
         -webkit-transform: translateX(0px);

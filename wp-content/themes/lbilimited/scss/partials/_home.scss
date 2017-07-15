@@ -49,6 +49,16 @@ body.page-template-home {
 					height: 100%;
 					object-fit: cover;
 					
+					&.right {
+						object-position: right center;
+					}
+					&.left {
+						object-position: left center;
+					}
+					&.center {
+						object-position: center center;
+					}
+					
 					&.feat-visible {
 						@include prefix(transform, translateX(0px));
 					}
