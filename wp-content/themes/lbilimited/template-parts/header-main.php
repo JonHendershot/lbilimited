@@ -28,7 +28,7 @@
 		}else if( is_front_page() ){
 			$content_class .= ' home';
 			$title      = get_field('header_title');
-			$subtitle = 'Offering the finest services in classic car sales, brokerage, and collection management';
+			$subtitle = get_field('page_subtitle');
 			$link_text  = get_field('call_to_action_text');
 			$link       = get_field('call_to_action_link');
 			$header_img = get_the_post_thumbnail_url($post->ID, 'large');

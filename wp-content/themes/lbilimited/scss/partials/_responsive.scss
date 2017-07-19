@@ -181,6 +181,12 @@
 		}
 	}
 
+	#pre_loader {
+		.ribbon {
+			width: 200vw;
+			left: -50vw;
+		}
+	}
 }
 
 // Mobile Tablets
@@ -368,11 +374,17 @@
 		
 		.site-header {
 			.header-content.home {
+/*
 				h1 {
 					font-size: 34px;
 					text-align: center;
 					max-width: 85%;
 					margin: 0 auto 25px;
+				}
+*/
+				.sub_heading {
+					bottom: -51px;
+					@include prefix(transform, translateX(70px));
 				}
 			}
 		}

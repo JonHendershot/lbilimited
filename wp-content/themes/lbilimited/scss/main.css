@@ -11324,7 +11324,10 @@ body.single .contact_form:after {
               margin-top: 15px; }
           section.specialists .specialists_grid_container .specialist_expand_container .specialist_expand_wrapper .specialist_expand_content .specialist_content .content {
             margin-top: 30px;
-            padding: 0; } }
+            padding: 0; }
+  #pre_loader .ribbon {
+    width: 200vw;
+    left: -50vw; } }
 
 @media (max-width: 900px) {
   #main_menu .menu_section .menu_items_wrapper a span {
@@ -11433,11 +11436,22 @@ body.single .contact_form:after {
       width: 75%; }
   body.page-template-home .home_cta_container .slant, body.page-template-home .home_cta_container .corners, body.page-template-home .home_cta_container .home_cta_image {
     display: none; }
-  body.page-template-home .site-header .header-content.home h1 {
-    font-size: 34px;
-    text-align: center;
-    max-width: 85%;
-    margin: 0 auto 25px; }
+  body.page-template-home .site-header .header-content.home {
+    /*
+				h1 {
+					font-size: 34px;
+					text-align: center;
+					max-width: 85%;
+					margin: 0 auto 25px;
+				}
+*/ }
+    body.page-template-home .site-header .header-content.home .sub_heading {
+      bottom: -51px;
+      transform: translateX(70px);
+      -webkit-transform: translateX(70px);
+      -moz-transform: translateX(70px);
+      -ms-transform: translateX(70px);
+      -o-transform: translateX(70px); }
   .value_wrapper .value_content p {
     text-align: center; }
   .offerings-container article.offering {
