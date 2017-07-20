@@ -335,7 +335,7 @@ function lbi_single_gallery( $atts ){
 							<span class='click_message'>Click to view full image</span>
 						</div>";
 	
-	$output .= gallery_slider( $gallery, $gallery_id, 7 );
+	$output .= gallery_slider( $gallery, $gallery_id, 7, '', '' );
 					
 	// Close the .image_slider, .post_gallery, and .post_gallery_wrapper
 	$output .= "</div></div>";
