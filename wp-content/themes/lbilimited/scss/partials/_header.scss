@@ -279,7 +279,10 @@
 // 				border: 1px solid rgba(255,255,255,0.5);
 				margin-left: 16px;
 				padding: 10px 15px 10px 18px;
-
+				
+				.mobile_trigger_wrapper {
+					display: none;					
+				}
 /*
 				.dot-container {
 					width: 18px;

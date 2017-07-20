@@ -77,14 +77,14 @@
 					?>
 					<div class="search_menu_container">
 						<p class="search search_trigger header s_btn white">Click to search</p>
-						<div class="menu_trigger s_btn white">Menu
-<!--
-							<div class="dot-container">
-								<?php for($i = 1; $i <= 9; $i++){
-									echo "<span class='menu-dot'></span>"; 
-								} ?>
-							</div>
--->
+						<div class="menu_trigger s_btn white">
+							<span class="text_trigger">Menu</span>
+							<span class="mobile_trigger_wrapper">
+								<span class="line_1 menu_line"></span>
+								<span class="line_2 menu_line"></span>
+								<span class="line_3 menu_line"></span>
+								<span class="line_4 menu_line"></span>
+							</span>
 						</div>
 					</div>
 				</div>

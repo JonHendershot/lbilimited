@@ -60,14 +60,15 @@ span.media_overlay {
 	position: relative;
 	overflow: hidden;
 	z-index: 9;
+	backface-visibility: hidden;
 	
 	&:after {
 		content: "";
 		position: absolute;
-		width: 130%;
+		width: 150%;
 		height: 100%;
 		top: 0;
-		left: -15%;
+		left: -25%;
 		@include prefix(transform, skew(-24deg) scaleX(0));
 		@include easeout(400ms);
 		z-index: -1;
