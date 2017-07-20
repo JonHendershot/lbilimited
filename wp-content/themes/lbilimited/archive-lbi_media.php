@@ -52,7 +52,7 @@
 	
 		// Begin Loop Wrappers
 			echo "<section class='featured_gallery'>
-					<div class='tilt_title_wrapper'><h4 class='tilt_title flip'><span>featured gallery</span></h4></div>
+					<div class='tilt_title_wrapper waypoint' data-padding='100'><h4 class='tilt_title flip'><span>featured gallery</span></h4></div>
 					<div class='owl-carousel media_carousel featured_media'>";
 					
 		// Begin Loop

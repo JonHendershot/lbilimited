@@ -381,13 +381,20 @@ div.nav-wrapper {
 				&:after {
 					top: auto;
 					left: 0;
-					@include prefix(transform, rotate(90deg) translateX(15%));
+					@include prefix(transform, rotate(90deg) translateX(-40%));
+				}
+				
+				&.waypoint {
+					@include prefix(transform, translateY(25px));
 				}
 			}
 			.suggestion_form.contact_form {
 				width: 100%;
 				form {
 					width: 90%;
+				}
+				&.waypoint {
+					@include prefix(transform, translateY(50px));
 				}
 			}
 		}
@@ -935,7 +942,7 @@ div.nav-wrapper {
 			}
 		}
 		.site-header.single {
-			height: 48vh;
+			height: 48vh !important;
 			&.offerings {
 				margin-bottom: 100px !important;
 				
@@ -1001,7 +1008,7 @@ div.nav-wrapper {
 								
 							}
 						}
-						.video_trigger {
+						.video_trigger, .photo_trigger {
 							bottom: -67px;
 							left: 0;
 							right: auto;

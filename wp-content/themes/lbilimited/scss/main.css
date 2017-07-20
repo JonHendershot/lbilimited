@@ -1176,21 +1176,21 @@ h4.tilt_title.flip:after {
       -ms-transform: translateY(8px);
       -o-transform: translateY(8px);
       opacity: 0; }
-    .site-header .header-content.off a {
+    .site-header .header-content.off .main-btn {
       transform: translateY(10px) !important;
       -webkit-transform: translateY(10px) !important;
       -moz-transform: translateY(10px) !important;
       -ms-transform: translateY(10px) !important;
       -o-transform: translateY(10px) !important;
       opacity: 0 !important; }
-      .site-header .header-content.off a:after {
+      .site-header .header-content.off .main-btn:after {
         transform: skew(0deg) scaleY(0);
         -webkit-transform: skew(0deg) scaleY(0);
         -moz-transform: skew(0deg) scaleY(0);
         -ms-transform: skew(0deg) scaleY(0);
         -o-transform: skew(0deg) scaleY(0);
         background-color: blue; }
-      .site-header .header-content.off a span {
+      .site-header .header-content.off .main-btn span {
         transform: translateY(10px);
         -webkit-transform: translateY(10px);
         -moz-transform: translateY(10px);
@@ -1397,7 +1397,7 @@ h4.tilt_title.flip:after {
       -o-transform: translateY(0);
       transition-delay: 600ms;
       opacity: 1; }
-    .site-header .header-content a {
+    .site-header .header-content .main-btn {
       transform: translateY(0px);
       -webkit-transform: translateY(0px);
       -moz-transform: translateY(0px);
@@ -1410,7 +1410,7 @@ h4.tilt_title.flip:after {
       transition: all 1200ms cubic-bezier(0.375, 0.005, 0, 1);
       /* custom */
       transition-delay: 2000ms; }
-      .site-header .header-content a:after {
+      .site-header .header-content .main-btn:after {
         transition-delay: 2000ms;
         -webkit-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
         -moz-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
@@ -1418,7 +1418,7 @@ h4.tilt_title.flip:after {
         transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
         /* custom */
         display: inline-block; }
-      .site-header .header-content a span {
+      .site-header .header-content .main-btn span {
         -webkit-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
         -moz-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
         -o-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
@@ -1431,155 +1431,155 @@ h4.tilt_title.flip:after {
         -o-transform: translateY(0px);
         opacity: 1;
         display: inline-block; }
-        .site-header .header-content a span:nth-child(1) {
+        .site-header .header-content .main-btn span:nth-child(1) {
           transition-delay: 2052ms; }
-        .site-header .header-content a span:nth-child(2) {
+        .site-header .header-content .main-btn span:nth-child(2) {
           transition-delay: 2078ms; }
-        .site-header .header-content a span:nth-child(3) {
+        .site-header .header-content .main-btn span:nth-child(3) {
           transition-delay: 2104ms; }
-        .site-header .header-content a span:nth-child(4) {
+        .site-header .header-content .main-btn span:nth-child(4) {
           transition-delay: 2130ms; }
-        .site-header .header-content a span:nth-child(5) {
+        .site-header .header-content .main-btn span:nth-child(5) {
           transition-delay: 2156ms; }
-        .site-header .header-content a span:nth-child(6) {
+        .site-header .header-content .main-btn span:nth-child(6) {
           transition-delay: 2182ms; }
-        .site-header .header-content a span:nth-child(7) {
+        .site-header .header-content .main-btn span:nth-child(7) {
           transition-delay: 2208ms; }
-        .site-header .header-content a span:nth-child(8) {
+        .site-header .header-content .main-btn span:nth-child(8) {
           transition-delay: 2234ms; }
-        .site-header .header-content a span:nth-child(9) {
+        .site-header .header-content .main-btn span:nth-child(9) {
           transition-delay: 2260ms; }
-        .site-header .header-content a span:nth-child(10) {
+        .site-header .header-content .main-btn span:nth-child(10) {
           transition-delay: 2286ms; }
-        .site-header .header-content a span:nth-child(11) {
+        .site-header .header-content .main-btn span:nth-child(11) {
           transition-delay: 2312ms; }
-        .site-header .header-content a span:nth-child(12) {
+        .site-header .header-content .main-btn span:nth-child(12) {
           transition-delay: 2338ms; }
-        .site-header .header-content a span:nth-child(13) {
+        .site-header .header-content .main-btn span:nth-child(13) {
           transition-delay: 2364ms; }
-        .site-header .header-content a span:nth-child(14) {
+        .site-header .header-content .main-btn span:nth-child(14) {
           transition-delay: 2390ms; }
-        .site-header .header-content a span:nth-child(15) {
+        .site-header .header-content .main-btn span:nth-child(15) {
           transition-delay: 2416ms; }
-        .site-header .header-content a span:nth-child(16) {
+        .site-header .header-content .main-btn span:nth-child(16) {
           transition-delay: 2442ms; }
-        .site-header .header-content a span:nth-child(17) {
+        .site-header .header-content .main-btn span:nth-child(17) {
           transition-delay: 2468ms; }
-        .site-header .header-content a span:nth-child(18) {
+        .site-header .header-content .main-btn span:nth-child(18) {
           transition-delay: 2494ms; }
-        .site-header .header-content a span:nth-child(19) {
+        .site-header .header-content .main-btn span:nth-child(19) {
           transition-delay: 2520ms; }
-        .site-header .header-content a span:nth-child(20) {
+        .site-header .header-content .main-btn span:nth-child(20) {
           transition-delay: 2546ms; }
-        .site-header .header-content a span:nth-child(21) {
+        .site-header .header-content .main-btn span:nth-child(21) {
           transition-delay: 2572ms; }
-        .site-header .header-content a span:nth-child(22) {
+        .site-header .header-content .main-btn span:nth-child(22) {
           transition-delay: 2598ms; }
-        .site-header .header-content a span:nth-child(23) {
+        .site-header .header-content .main-btn span:nth-child(23) {
           transition-delay: 2624ms; }
-        .site-header .header-content a span:nth-child(24) {
+        .site-header .header-content .main-btn span:nth-child(24) {
           transition-delay: 2650ms; }
-        .site-header .header-content a span:nth-child(25) {
+        .site-header .header-content .main-btn span:nth-child(25) {
           transition-delay: 2676ms; }
-        .site-header .header-content a span:nth-child(26) {
+        .site-header .header-content .main-btn span:nth-child(26) {
           transition-delay: 2702ms; }
-        .site-header .header-content a span:nth-child(27) {
+        .site-header .header-content .main-btn span:nth-child(27) {
           transition-delay: 2728ms; }
-        .site-header .header-content a span:nth-child(28) {
+        .site-header .header-content .main-btn span:nth-child(28) {
           transition-delay: 2754ms; }
-        .site-header .header-content a span:nth-child(29) {
+        .site-header .header-content .main-btn span:nth-child(29) {
           transition-delay: 2780ms; }
-        .site-header .header-content a span:nth-child(30) {
+        .site-header .header-content .main-btn span:nth-child(30) {
           transition-delay: 2806ms; }
-        .site-header .header-content a span:nth-child(31) {
+        .site-header .header-content .main-btn span:nth-child(31) {
           transition-delay: 2832ms; }
-        .site-header .header-content a span:nth-child(32) {
+        .site-header .header-content .main-btn span:nth-child(32) {
           transition-delay: 2858ms; }
-        .site-header .header-content a span:nth-child(33) {
+        .site-header .header-content .main-btn span:nth-child(33) {
           transition-delay: 2884ms; }
-        .site-header .header-content a span:nth-child(34) {
+        .site-header .header-content .main-btn span:nth-child(34) {
           transition-delay: 2910ms; }
-        .site-header .header-content a span:nth-child(35) {
+        .site-header .header-content .main-btn span:nth-child(35) {
           transition-delay: 2936ms; }
-        .site-header .header-content a span:nth-child(36) {
+        .site-header .header-content .main-btn span:nth-child(36) {
           transition-delay: 2962ms; }
-        .site-header .header-content a span:nth-child(37) {
+        .site-header .header-content .main-btn span:nth-child(37) {
           transition-delay: 2988ms; }
-        .site-header .header-content a span:nth-child(38) {
+        .site-header .header-content .main-btn span:nth-child(38) {
           transition-delay: 3014ms; }
-        .site-header .header-content a span:nth-child(39) {
+        .site-header .header-content .main-btn span:nth-child(39) {
           transition-delay: 3040ms; }
-        .site-header .header-content a span:nth-child(40) {
+        .site-header .header-content .main-btn span:nth-child(40) {
           transition-delay: 3066ms; }
-        .site-header .header-content a span:nth-child(41) {
+        .site-header .header-content .main-btn span:nth-child(41) {
           transition-delay: 3092ms; }
-        .site-header .header-content a span:nth-child(42) {
+        .site-header .header-content .main-btn span:nth-child(42) {
           transition-delay: 3118ms; }
-        .site-header .header-content a span:nth-child(43) {
+        .site-header .header-content .main-btn span:nth-child(43) {
           transition-delay: 3144ms; }
-        .site-header .header-content a span:nth-child(44) {
+        .site-header .header-content .main-btn span:nth-child(44) {
           transition-delay: 3170ms; }
-        .site-header .header-content a span:nth-child(45) {
+        .site-header .header-content .main-btn span:nth-child(45) {
           transition-delay: 3196ms; }
-        .site-header .header-content a span:nth-child(46) {
+        .site-header .header-content .main-btn span:nth-child(46) {
           transition-delay: 3222ms; }
-        .site-header .header-content a span:nth-child(47) {
+        .site-header .header-content .main-btn span:nth-child(47) {
           transition-delay: 3248ms; }
-        .site-header .header-content a span:nth-child(48) {
+        .site-header .header-content .main-btn span:nth-child(48) {
           transition-delay: 3274ms; }
-        .site-header .header-content a span:nth-child(49) {
+        .site-header .header-content .main-btn span:nth-child(49) {
           transition-delay: 3300ms; }
-        .site-header .header-content a span:nth-child(50) {
+        .site-header .header-content .main-btn span:nth-child(50) {
           transition-delay: 3326ms; }
-        .site-header .header-content a span:nth-child(51) {
+        .site-header .header-content .main-btn span:nth-child(51) {
           transition-delay: 3352ms; }
-        .site-header .header-content a span:nth-child(52) {
+        .site-header .header-content .main-btn span:nth-child(52) {
           transition-delay: 3378ms; }
-        .site-header .header-content a span:nth-child(53) {
+        .site-header .header-content .main-btn span:nth-child(53) {
           transition-delay: 3404ms; }
-        .site-header .header-content a span:nth-child(54) {
+        .site-header .header-content .main-btn span:nth-child(54) {
           transition-delay: 3430ms; }
-        .site-header .header-content a span:nth-child(55) {
+        .site-header .header-content .main-btn span:nth-child(55) {
           transition-delay: 3456ms; }
-        .site-header .header-content a span:nth-child(56) {
+        .site-header .header-content .main-btn span:nth-child(56) {
           transition-delay: 3482ms; }
-        .site-header .header-content a span:nth-child(57) {
+        .site-header .header-content .main-btn span:nth-child(57) {
           transition-delay: 3508ms; }
-        .site-header .header-content a span:nth-child(58) {
+        .site-header .header-content .main-btn span:nth-child(58) {
           transition-delay: 3534ms; }
-        .site-header .header-content a span:nth-child(59) {
+        .site-header .header-content .main-btn span:nth-child(59) {
           transition-delay: 3560ms; }
-        .site-header .header-content a span:nth-child(60) {
+        .site-header .header-content .main-btn span:nth-child(60) {
           transition-delay: 3586ms; }
-        .site-header .header-content a span:nth-child(61) {
+        .site-header .header-content .main-btn span:nth-child(61) {
           transition-delay: 3612ms; }
-        .site-header .header-content a span:nth-child(62) {
+        .site-header .header-content .main-btn span:nth-child(62) {
           transition-delay: 3638ms; }
-        .site-header .header-content a span:nth-child(63) {
+        .site-header .header-content .main-btn span:nth-child(63) {
           transition-delay: 3664ms; }
-        .site-header .header-content a span:nth-child(64) {
+        .site-header .header-content .main-btn span:nth-child(64) {
           transition-delay: 3690ms; }
-        .site-header .header-content a span:nth-child(65) {
+        .site-header .header-content .main-btn span:nth-child(65) {
           transition-delay: 3716ms; }
-        .site-header .header-content a span:nth-child(66) {
+        .site-header .header-content .main-btn span:nth-child(66) {
           transition-delay: 3742ms; }
-        .site-header .header-content a span:nth-child(67) {
+        .site-header .header-content .main-btn span:nth-child(67) {
           transition-delay: 3768ms; }
-        .site-header .header-content a span:nth-child(68) {
+        .site-header .header-content .main-btn span:nth-child(68) {
           transition-delay: 3794ms; }
-        .site-header .header-content a span:nth-child(69) {
+        .site-header .header-content .main-btn span:nth-child(69) {
           transition-delay: 3820ms; }
-        .site-header .header-content a span:nth-child(70) {
+        .site-header .header-content .main-btn span:nth-child(70) {
           transition-delay: 3846ms; }
-        .site-header .header-content a span:nth-child(71) {
+        .site-header .header-content .main-btn span:nth-child(71) {
           transition-delay: 3872ms; }
-        .site-header .header-content a span:nth-child(72) {
+        .site-header .header-content .main-btn span:nth-child(72) {
           transition-delay: 3898ms; }
-        .site-header .header-content a span:nth-child(73) {
+        .site-header .header-content .main-btn span:nth-child(73) {
           transition-delay: 3924ms; }
-        .site-header .header-content a span:nth-child(74) {
+        .site-header .header-content .main-btn span:nth-child(74) {
           transition-delay: 3950ms; }
-        .site-header .header-content a span:nth-child(75) {
+        .site-header .header-content .main-btn span:nth-child(75) {
           transition-delay: 3976ms; }
   .site-header .header-content.search p {
     font-family: "heading", serif;
@@ -1611,11 +1611,11 @@ h4.tilt_title.flip:after {
     .site-header .header-content.home .sub_heading p {
       margin: 0;
       transition-delay: 1500ms; }
-    .site-header .header-content.home .sub_heading a {
+    .site-header .header-content.home .sub_heading .main-btn {
       margin: 10px 0 0 0; }
   .site-header .header-content.home h1 {
     text-indent: 0px; }
-  .site-header .header-content.home a {
+  .site-header .header-content.home .main-btn {
     display: block;
     width: max-content;
     width: -webkit-max-content;
@@ -7913,18 +7913,31 @@ section.offerings-container article.offering {
     position: absolute;
     left: 0;
     width: 100%;
-    height: auto;
-    min-height: 100%;
-    display: block;
-    z-index: 1; }
-  section.offerings-container article.offering .offering-fmedia.top {
-    top: 0; }
-  section.offerings-container article.offering .offering-fmedia.bottom {
-    bottom: 0; }
-  section.offerings-container article.offering .offering-fmedia.center {
+    height: 100%;
     top: 0;
-    bottom: 0;
-    margin: auto; }
+    object-fit: cover;
+    -webkit-object-fit: cover;
+    -moz-object-fit: cover;
+    -ms-object-fit: cover;
+    -o-object-fit: cover; }
+  section.offerings-container article.offering .offering-fmedia.top {
+    object-position: center top;
+    -webkit-object-position: center top;
+    -moz-object-position: center top;
+    -ms-object-position: center top;
+    -o-object-position: center top; }
+  section.offerings-container article.offering .offering-fmedia.bottom {
+    object-position: center bottom;
+    -webkit-object-position: center bottom;
+    -moz-object-position: center bottom;
+    -ms-object-position: center bottom;
+    -o-object-position: center bottom; }
+  section.offerings-container article.offering .offering-fmedia.center {
+    object-position: center center;
+    -webkit-object-position: center center;
+    -moz-object-position: center center;
+    -ms-object-position: center center;
+    -o-object-position: center center; }
 
 section.offerings-container article.offering a:after {
   content: "";
@@ -7997,11 +8010,30 @@ section.featured_gallery {
     width: 360px;
     height: 64px;
     z-index: 99;
+    -webkit-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+    -moz-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+    -o-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+    transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+    /* custom */
     transform: skew(-20deg);
     -webkit-transform: skew(-20deg);
     -moz-transform: skew(-20deg);
     -ms-transform: skew(-20deg);
     -o-transform: skew(-20deg); }
+    section.featured_gallery .tilt_title_wrapper.waypoint {
+      visibility: hidden;
+      transform: skew(-20deg) translateY(15px);
+      -webkit-transform: skew(-20deg) translateY(15px);
+      -moz-transform: skew(-20deg) translateY(15px);
+      -ms-transform: skew(-20deg) translateY(15px);
+      -o-transform: skew(-20deg) translateY(15px);
+      opacity: 0; }
+      section.featured_gallery .tilt_title_wrapper.waypoint:before {
+        transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -o-transform: translateY(-15px); }
     section.featured_gallery .tilt_title_wrapper h4.tilt_title {
       text-transform: uppercase;
       font-size: 20px;
@@ -8027,7 +8059,13 @@ section.featured_gallery {
       left: 16px;
       width: 100%;
       height: 100%;
-      background-color: rgba(73, 73, 73, 0.4); }
+      background-color: rgba(73, 73, 73, 0.4);
+      -webkit-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+      -moz-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+      -o-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+      transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
+      /* custom */
+      transition-delay: 200ms; }
   section.featured_gallery .video_wrapper {
     width: 100%;
     background-color: #191B1C;
@@ -11473,15 +11511,27 @@ body.single .contact_form:after {
       body.page-template-archive-lbi_media .media_suggestion .suggestion_title:after {
         top: auto;
         left: 0;
-        transform: rotate(90deg) translateX(15%);
-        -webkit-transform: rotate(90deg) translateX(15%);
-        -moz-transform: rotate(90deg) translateX(15%);
-        -ms-transform: rotate(90deg) translateX(15%);
-        -o-transform: rotate(90deg) translateX(15%); }
+        transform: rotate(90deg) translateX(-40%);
+        -webkit-transform: rotate(90deg) translateX(-40%);
+        -moz-transform: rotate(90deg) translateX(-40%);
+        -ms-transform: rotate(90deg) translateX(-40%);
+        -o-transform: rotate(90deg) translateX(-40%); }
+      body.page-template-archive-lbi_media .media_suggestion .suggestion_title.waypoint {
+        transform: translateY(25px);
+        -webkit-transform: translateY(25px);
+        -moz-transform: translateY(25px);
+        -ms-transform: translateY(25px);
+        -o-transform: translateY(25px); }
     body.page-template-archive-lbi_media .media_suggestion .suggestion_form.contact_form {
       width: 100%; }
       body.page-template-archive-lbi_media .media_suggestion .suggestion_form.contact_form form {
         width: 90%; }
+      body.page-template-archive-lbi_media .media_suggestion .suggestion_form.contact_form.waypoint {
+        transform: translateY(50px);
+        -webkit-transform: translateY(50px);
+        -moz-transform: translateY(50px);
+        -ms-transform: translateY(50px);
+        -o-transform: translateY(50px); }
   footer.site-footer .featured-posts a.feature {
     padding: 25px;
     padding-bottom: 37.5%; }
@@ -11788,7 +11838,7 @@ body.single .contact_form:after {
     width: 100%;
     padding-bottom: 56.25%; }
   body.single .site-header.single {
-    height: 48vh; }
+    height: 48vh !important; }
     body.single .site-header.single.offerings {
       margin-bottom: 100px !important; }
       body.single .site-header.single.offerings p.price {
@@ -11832,7 +11882,7 @@ body.single .contact_form:after {
         .page-template-archive-lbi_media section.featured_gallery .media_carousel .owl-item .featured_media_wrapper .featured_media_title h3 {
           font-size: 22px;
           line-height: 24px; }
-      .page-template-archive-lbi_media section.featured_gallery .media_carousel .owl-item .featured_media_wrapper .video_trigger {
+      .page-template-archive-lbi_media section.featured_gallery .media_carousel .owl-item .featured_media_wrapper .video_trigger, .page-template-archive-lbi_media section.featured_gallery .media_carousel .owl-item .featured_media_wrapper .photo_trigger {
         bottom: -67px;
         left: 0;
         right: auto;

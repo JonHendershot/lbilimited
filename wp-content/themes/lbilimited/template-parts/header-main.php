@@ -209,6 +209,7 @@
 					  	echo "<a href='$link' class='main-btn'>$link_text</a>";
 				  	}
 				  	if($media_btn && $media_embed){
+					  	$media_btn = span_per_letter($media_btn);
 					  	echo "<div class='main-btn video_trigger' data-item='$media_json'>$media_btn</div>";
 				  	}
 				  	if(is_front_page()){

@@ -171,21 +171,18 @@ section.offerings-container {
 				position: absolute;
 				left: 0;
 				width: 100%;
-				height: auto;
-				min-height: 100%;
-				display: block;
-				z-index: 1;
+				height: 100%;
+				top: 0;
+				@include prefix(object-fit, cover);
 			}
 			.offering-fmedia.top {
-				top: 0;
+				@include prefix(object-position, center top);
 			}
 			.offering-fmedia.bottom {
-				bottom: 0;
+				@include prefix(object-position, center bottom);
 			}
 			.offering-fmedia.center {
-				top: 0;
-				bottom: 0;
-				margin: auto;
+				@include prefix(object-position, center center);
 			}
 		}
 		article.offering a:after {
