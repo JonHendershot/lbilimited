@@ -839,17 +839,38 @@ function span_per_letter($input){
 //////////////////////////////////////////////////////////////////////
 function span_per_word($input){
 	
-	$output = preg_replace('([a-zA-Z.,!?0-9]+(?![^<]*>))', '<span class="word">$0</span>', $input); // 
+	$output = preg_replace('([a-zA-Z.,!?0-9]+(?![^<]*>))', '<span class="word">$0</span>', $input); 
 	
-/*
+	return $output;
+}
+function span_per_word_title($input){
+		
 	$output = '';
+	$min_characters = 2; 
 
 	$explode = explode(' ', $input);
+	$word_count = count( $explode );
 	
-	foreach($explode as $key=>$word){
-		$output .= "<span class='word word-$key'>$word</span>";
+	for( $ii = 0; $ii < $word_count; $ii++ ){
+		
+		$word = html_entity_decode( $explode[$ii] ); // prevent special characters from being converted to ASCII
+		$strlen = strlen($word);
+		
+		
+		if( $strlen > $min_characters ){
+			$output .= "<span class='word word-$ii' data-length='$strlen'>$word</span>";
+		}else {
+			
+			$next_id = $ii + 1;
+			$next_word = $explode[$next_id];
+			
+
+			$output .= "<span class='word word-$ii' data-length='$strlen'>$word $next_word</span>";
+			
+			// increment counter to pass over next word in array
+			$ii++;
+		}
 	}
-*/
 	
 	return $output;
 }

@@ -104,7 +104,7 @@
 		
 	// Edit Title
 	if(!is_single() && !is_search() ){
-		$title = span_per_word($title);
+		$title = span_per_word_title($title);
 	}
 	
 	// Render Content
