@@ -1069,6 +1069,7 @@ function vehicle_details(){
 					endif;
 				
 					// Buttons for documents and startup sound
+					if( $startup_audio || have_rows($documents_repeater) ){
 					$output .= "<div class='overview_buttons_wrapper waypoint' data-padding='100'>";
 					
 						if( $startup_audio ){
@@ -1103,6 +1104,7 @@ function vehicle_details(){
 				$output .= "</div>
 							</div>
 							</div>"; // .overview_buttons_wrapper
+			} // endif
 		} // end if				
 		return $output;
 }
