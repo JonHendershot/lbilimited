@@ -4633,7 +4633,8 @@ body.page-template-media_house .site-header .main-btn {
       height: -o-calc(100% -  97px);
       height: -moz-calc(100% -  97px);
       height: -webkit-calc(100% -  97px);
-      height: calc(100% -  97px); }
+      height: calc(100% -  97px);
+      position: relative; }
       #main_menu .menu_section .menu_items_wrapper a {
         height: 33.333%;
         display: flex;
@@ -11721,7 +11722,9 @@ body.single .contact_form:after {
       -moz-transform: translateX(70px);
       -ms-transform: translateX(70px);
       -o-transform: translateX(70px); }
-  .value_wrapper .value_content p {
+  section.lbi_values .value_wrapper article.value {
+    padding: 100px 40px; }
+  section.lbi_values .value_wrapper .value_content p {
     text-align: center; }
   .offerings-container article.offering {
     padding-bottom: 45% !important; }
@@ -12087,29 +12090,41 @@ body.single .contact_form:after {
       letter-spacing: 1px; }
   .page-template-about section.specialists header {
     padding: 40px 0; }
+    .page-template-about section.specialists header h2 {
+      font-size: 29px; }
     .page-template-about section.specialists header p {
-      max-width: 80%; }
-  .page-template-about section.specialists .specialists_wrapper .owl-item {
-    float: left; }
-    .page-template-about section.specialists .specialists_wrapper .owl-item .specialist_item {
-      width: 100% !important;
-      padding-bottom: 100% !important; }
-      .page-template-about section.specialists .specialists_wrapper .owl-item .specialist_item:after {
-        opacity: 1 !important;
-        background-color: transparent;
-        transition: 0s all linear;
-        -webkit-transition: 0s all linear;
-        -moz-transition: 0s all linear;
-        -ms-transition: 0s all linear;
-        -o-transition: 0s all linear;
-        background: linear-gradient(rgba(27, 27, 28, 0) 45%, #1b1b1c 100%); }
-      .page-template-about section.specialists .specialists_wrapper .owl-item .specialist_item .specialist_content {
+      max-width: 80%;
+      font-size: 11px; }
+  .page-template-about section.specialists .specialists_wrapper.gridlock_2-container {
+    width: 100%;
+    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 0; }
+    .page-template-about section.specialists .specialists_wrapper.gridlock_2-container .owl-item {
+      float: left; }
+      .page-template-about section.specialists .specialists_wrapper.gridlock_2-container .owl-item .specialist_item {
+        width: 100% !important;
+        padding-bottom: 100% !important;
         margin: 0;
-        padding: 30px 0 0 30px; }
-        .page-template-about section.specialists .specialists_wrapper .owl-item .specialist_item .specialist_content:after {
-          top: 31px; }
-    .page-template-about section.specialists .specialists_wrapper .owl-item.active .specialist_item {
-      /*
+        margin-left: 0;
+        margin-right: 0; }
+        .page-template-about section.specialists .specialists_wrapper.gridlock_2-container .owl-item .specialist_item:after {
+          opacity: 1 !important;
+          background-color: transparent;
+          transition: 0s all linear;
+          -webkit-transition: 0s all linear;
+          -moz-transition: 0s all linear;
+          -ms-transition: 0s all linear;
+          -o-transition: 0s all linear;
+          background: linear-gradient(rgba(27, 27, 28, 0) 45%, #1b1b1c 100%); }
+        .page-template-about section.specialists .specialists_wrapper.gridlock_2-container .owl-item .specialist_item .specialist_content {
+          margin: 0;
+          padding: 30px 0 0 30px; }
+          .page-template-about section.specialists .specialists_wrapper.gridlock_2-container .owl-item .specialist_item .specialist_content:after {
+            top: 31px; }
+      .page-template-about section.specialists .specialists_wrapper.gridlock_2-container .owl-item.active .specialist_item {
+        /*
 							.dash-title {
 								h3,p {
 									opacity: 1;
@@ -12120,13 +12135,13 @@ body.single .contact_form:after {
 								}
 							}
 */
-      /*
+        /*
 							.view_more {
 								opacity: 1;
 							}
 */ }
-      .page-template-about section.specialists .specialists_wrapper .owl-item.active .specialist_item:after {
-        opacity: 1 !important; }
+        .page-template-about section.specialists .specialists_wrapper.gridlock_2-container .owl-item.active .specialist_item:after {
+          opacity: 1 !important; }
   section.offerings-container article.offering {
     padding-bottom: 60% !important; }
     section.offerings-container article.offering:after {

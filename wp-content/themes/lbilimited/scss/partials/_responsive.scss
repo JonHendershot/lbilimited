@@ -472,13 +472,19 @@ div.nav-wrapper {
 	  ///////////
 	 // ABOUT //
 	///////////
-	.value_wrapper {
-		.value_content {
-			p {
-				text-align: center;
+	section.lbi_values{
+		.value_wrapper {
+			article.value {
+				padding: 100px 40px;
+			}
+			.value_content {
+				p {
+					text-align: center;
+				}
 			}
 		}
 	}
+	
 	
 	  ///////////////////////
 	 // CURRENT OFFERINGS //
@@ -1101,17 +1107,30 @@ div.nav-wrapper {
 			header {
 				padding: 40px 0;
 				
+				h2 {
+					font-size: 29px;
+				}
+				
 				p {
 					max-width: 80%;
+					font-size: 11px;
 				}
 			}
-			.specialists_wrapper {
+			.specialists_wrapper.gridlock_2-container  {
+				width: 100%;
+				margin: 0;
+				margin-left: 0;
+				margin-right: 0;
+				padding-bottom: 0;
 				
 				.owl-item {
 					float: left;
 					.specialist_item {
 						width: 100% !important;
 						padding-bottom: 100% !important;
+						margin: 0;
+						margin-left: 0;
+						margin-right: 0;
 						&:after {
 							opacity: 1 !important;
 							background-color: transparent;
