@@ -11998,13 +11998,13 @@ body.single .contact_form:after {
   body.single .post_wrapper article.post_content .iframe_wrapper {
     width: 100%;
     padding-bottom: 56.25%; }
-  body.single .site-header.single {
-    height: 48vh !important; }
-    body.single .site-header.single.offerings {
+  body.single #masthead.site-header.single {
+    height: 48vh; }
+    body.single #masthead.site-header.single.offerings {
       margin-bottom: 100px !important; }
-      body.single .site-header.single.offerings p.price {
+      body.single #masthead.site-header.single.offerings p.price {
         letter-spacing: 1px; }
-    body.single .site-header.single .featured-media-wrapper h1 {
+    body.single #masthead.site-header.single .featured-media-wrapper h1 {
       word-wrap: break-word;
       max-width: 95% !important;
       text-indent: 0px !important; }

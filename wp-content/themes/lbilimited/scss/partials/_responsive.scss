@@ -950,8 +950,8 @@ div.nav-wrapper {
 				}
 			}
 		}
-		.site-header.single {
-			height: 48vh !important;
+		#masthead.site-header.single {
+			height: 48vh;
 			&.offerings {
 				margin-bottom: 100px !important;
 				
