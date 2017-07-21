@@ -288,6 +288,8 @@
 	<?php endif; ?>
 
 	<section id="offering_content">
+		<?php echo vehicle_details(); ?>
+<!--
 		<div class="offering_overview">
 			<h4 class="tilt_title upside_down">Overview Stats</h4>
 			<div class="overview_wrapper">
@@ -347,6 +349,7 @@
 				?>
 			</div>
 		</div>
+-->
 		<div class="offering_details_container">
 			<div class="offering_details_wrapper">
 				<h4 class="tilt_title">Details</h4>
