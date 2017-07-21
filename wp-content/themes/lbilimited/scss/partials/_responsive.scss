@@ -685,14 +685,14 @@ div.nav-wrapper {
 			
 		}
 		
-	/*
-	&.search {
+		&.search {
 			p {
-				font-size: 32px;
-				line-height: 32px;
+				font-size: 32px !important;
+				line-height: 32px !important;
+				margin-left: 0px !important;
+				max-width: 70vw;
 			}
 		}
-*/
 		
 	}
 
