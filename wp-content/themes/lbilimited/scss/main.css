@@ -12006,7 +12006,7 @@ body.single .contact_form:after {
         letter-spacing: 1px; }
     body.single #masthead.site-header.single .featured-media-wrapper h1 {
       word-wrap: break-word;
-      max-width: 95% !important;
+      max-width: 100% !important;
       text-indent: 0px !important; }
   .page-template-archive-lbi_media section.featured_gallery {
     padding: 100px 0 0; }
