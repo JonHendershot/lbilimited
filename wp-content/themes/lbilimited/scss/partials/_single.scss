@@ -922,7 +922,18 @@ body.single {
 			font-size: 20px;
 			position: relative;
 			display: inline-block;
+			@include prefix(transform, translateX(0px));
+			opacity: 1;
+			@include easeout(1000ms);
 			
+			&.waypoint {
+				@include prefix(transform, translateX(-5px));
+				opacity: 0;
+				&:after {
+					@include prefix(transform, translateX(115%) scaleX(0));
+					visibility: hidden;
+				}
+			}
 			&:after {
 				content: "";
 				position: absolute;
@@ -933,7 +944,10 @@ body.single {
 				height: 1px;
 				margin: auto;
 				background-color: $mainred;
-				@include prefix(transform, translateX(115%));
+				@include prefix(transform, translateX(115%) scaleX(1));
+				@include easeout(1000ms);
+				transform-origin: left; 
+				visibility: visible;
 			}
 		}
 		.offering_overview {
@@ -949,18 +963,47 @@ body.single {
 						margin-top: 20px;
 						font-size: 14px;
 						letter-spacing: 1px;
+						
+						span {
+							@include easeout(1000ms);
+							opacity: 1;
+							@include prefix(transform, translateY(0px));
+							display: block;
+						}
+						
 						&:before {
 							bottom: -10px;
 							top: auto;
 							left: 0;
 							width: 100%;
 							height: 2px;
+							@include easeout(1000ms);
+							@include prefix(transform, scaleX(1));
+							transform-origin: left;
+						}
+						
+						&.waypoint {
+							span {
+								@include prefix(transform, translateY(5px));
+								opacity: 0;
+							}	
+							&:before {
+								@include prefix(transform, scaleX(0));
+							}
 						}
 					}
 				}
 				
 				.overview_buttons_wrapper {
 					margin-top: 50px;
+					@include easeout(1000ms);
+					@include prefix(transform, translateY(0px));
+					opacity: 1;
+					
+					&.waypoint {
+						@include prefix(transform, translateY(10px));
+						opacity: 0;
+					}
 					div.btn {
 						border: 1px solid $black;
 						color: $black;
@@ -996,6 +1039,14 @@ body.single {
 	article.post_content {
 		max-width: 880px;
 		margin: 0 auto;
+		opacity: 1;
+// 		@include prefix(transform, translateY(0px));
+		@include easeout(1000ms);
+		
+		&.waypoint {
+			opacity: 0;
+/* 			@include prefix(transform, translateY(15px)); */
+		}
 		
 		img {
 			display: block;

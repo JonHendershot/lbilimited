@@ -1045,7 +1045,7 @@ function vehicle_details(){
 						if( get_post_type() == 'offerings' ){
 							$output .= "<h4 class='tilt_title upside_down'>Overview Stats</h4>";
 						}else {
-							$output .= "<h4>Overview</h4>";
+							$output .= "<h4 class='waypoint' data-padding='100'>Overview</h4>";
 						}
 						
 		$output .= "<div class='overview_wrapper'>";
@@ -1060,7 +1060,7 @@ function vehicle_details(){
 								// Variables
 									$stat = get_sub_field('offering_statistic');
 								
-								$output .= "<li class='stat'>$stat</li>";
+								$output .= "<li class='stat waypoint' data-padding='100'><span>$stat</span></li>";
 						
 							endwhile;
 							
@@ -1069,7 +1069,7 @@ function vehicle_details(){
 					endif;
 				
 					// Buttons for documents and startup sound
-					$output .= "<div class='overview_buttons_wrapper'>";
+					$output .= "<div class='overview_buttons_wrapper waypoint' data-padding='100'>";
 					
 						if( $startup_audio ){
 							// variable

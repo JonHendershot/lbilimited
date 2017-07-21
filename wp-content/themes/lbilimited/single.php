@@ -13,7 +13,7 @@ wp_reset_query();?>
 <section <?php post_class('post_wrapper'); ?>>
 	<?php 		get_template_part('template-parts/module', 'media_lightbox');
 ?>
-	<article class="post_content">
+	<article class="post_content waypoint" data-padding="100">
 		<?php 
 			// If the post has an excerpt, output it here
 			$excerpt = get_the_excerpt();
