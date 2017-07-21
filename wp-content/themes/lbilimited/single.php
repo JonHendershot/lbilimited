@@ -6,6 +6,10 @@
 get_header(); 
 wp_reset_query();?>
 
+
+<section id="offering_content">
+	<?php echo vehicle_details(); ?>
+</section>
 <section <?php post_class('post_wrapper'); ?>>
 	<?php 		get_template_part('template-parts/module', 'media_lightbox');
 ?>

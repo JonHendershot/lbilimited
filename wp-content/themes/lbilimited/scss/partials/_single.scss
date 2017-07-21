@@ -765,6 +765,7 @@ body.single {
 					letter-spacing: 3px;
 					color: $white;
 					border: 1px solid $white;
+					display: table;
 					audio {
 						visibility: hidden;
 						opacity: 0;
@@ -909,6 +910,83 @@ body.single {
   ///////////////////////
  // BLOG & COLLECTION //
 ///////////////////////
+
+.single-collection {
+	#offering_content {
+		background-color: $white;
+
+		margin: 70px auto 100px;
+		width: 78%;
+		h4 {
+			margin: 0px;
+			font-size: 20px;
+			position: relative;
+			display: inline-block;
+			
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				width: 110%;
+				height: 1px;
+				margin: auto;
+				background-color: $mainred;
+				@include prefix(transform, translateX(115%));
+			}
+		}
+		.offering_overview {
+			padding: 25px 0 0;
+			.overview_wrapper {
+				width: 100%;
+				.overview_stats {
+					padding-left: 0px;
+					li {
+						color: $black;
+						width: 48%;
+						padding-left: 2px;
+						margin-top: 20px;
+						font-size: 14px;
+						letter-spacing: 1px;
+						&:before {
+							bottom: -10px;
+							top: auto;
+							left: 0;
+							width: 100%;
+							height: 2px;
+						}
+					}
+				}
+				
+				.overview_buttons_wrapper {
+					margin-top: 50px;
+					div.btn {
+						border: 1px solid $black;
+						color: $black;
+						
+						&:after {
+							background-color: $black;
+						}
+						&:hover {
+							color: $white !important;
+							span {
+								color: $white;
+							}
+						}
+						.audio_controls i {
+							color: $white;
+						}
+					}
+				}
+			}
+			
+			
+		}
+		
+		
+	}
+}
 .post_wrapper {
 	width: 78%;
 	margin: 50px auto;
