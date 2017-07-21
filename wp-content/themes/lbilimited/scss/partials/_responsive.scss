@@ -15,6 +15,7 @@
 		height: 85vh;
 		.featured-media-wrapper {
 			padding-bottom: 63.865%;
+			top: 180px;
 		}
 	}
 }
@@ -334,6 +335,11 @@ div.nav-wrapper {
 	header.site-header:not(.single){
 		height: 75vh;
 	}
+	.overview_stats {
+		.stat {
+			width: 100% !important;
+		}
+	}
 	
 	  ////////////////
 	 // MEDIA PAGE //
@@ -621,10 +627,13 @@ div.nav-wrapper {
 			}
 		}
 	}
-	.site-header.main .header-content:not(.home):before, .site-header.single .header-content:not(.home):before{
-			height: 200px;
-			width: 130px;
-			@include prefix(transform, translate3d(-36px, -10px, 0) skew(-15deg));
+	.site-header.main .header-content .geo_elem, .site-header.single .header-content .geo_elem{
+			height: 160px !important;
+			width: 105px !important;
+			@include prefix(transform, translate3d(-50px, -3px, 0) skew(-15deg) scaleX(1));
+	}
+	.site-header.main .header-content.off .geo_elem, .site-header.single .header-content.off .geo_elem{
+			@include prefix(transform, translate3d(-50px, -3px, 0) skew(-15deg) scaleX(0) !important);
 	}
 	.header-content {
 		&.home {
@@ -634,8 +643,8 @@ div.nav-wrapper {
 			}
 		}
 		h1 {
-			font-size: 40px !important;
-			line-height: 40px !important;
+			font-size: 31px !important;
+			line-height: 31px !important;
 			letter-spacing: 1px !important;
 			text-indent: -20px !important;
 			@include prefix(transform, translateX(-20px) !important);
@@ -954,6 +963,8 @@ div.nav-wrapper {
 // 				@include translate(0,145px,0);
 				h1  {
 					word-wrap: break-word;
+					max-width: 95% !important;
+					text-indent: 0px !important;
 				}
 			}
 		}

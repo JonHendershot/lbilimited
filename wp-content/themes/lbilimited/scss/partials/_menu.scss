@@ -15,6 +15,7 @@
 			$margin-top: 74px;
 			margin-top: 74px;
 			@include calc(height, "100% - "$margin-top);
+			position: relative;
 
 		}
 	}
@@ -122,9 +123,9 @@
 	}
 	
 	// Psuedo Borders
-	.section_1:after, .section_2:after {
+	.section_1 .menu_items_wrapper:after, .section_2 .menu_items_wrapper:after {
 		content: "";
-		@include calc(height,"100% - 97px");
+		height: 100%;
 		width: 1px;
 		position: absolute;
 		right: 0;
@@ -174,7 +175,7 @@
 	}
 	// Borders
 	&.menu_visible {
-		.section_1:after, .section_2:after {
+		.section_1 .menu_items_wrapper:after, .section_2 .menu_items_wrapper:after {
 			@include prefix(transform, scaleY(1));
 		}
 		.section_3 a:before {
