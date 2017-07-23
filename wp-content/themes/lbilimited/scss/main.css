@@ -11861,6 +11861,8 @@ body.single .contact_form:after {
       width: calc(100% - 50px);
       margin: 30px auto 0;
       flex-direction: column; }
+      body.blog #content section#archive-wrapper article .post-content .post-title {
+        max-width: 92% !important; }
       body.blog #content section#archive-wrapper article .post-content h2 {
         font-size: 24px;
         line-height: 25px; }
@@ -11868,7 +11870,7 @@ body.single .contact_form:after {
         font-size: 14px;
         line-height: 15px;
         margin-top: 5px; }
-      body.blog #content section#archive-wrapper article .post-content .post-meta .expan {
+      body.blog #content section#archive-wrapper article .post-content .post-meta .expand {
         font-size: 10px;
         margin-top: 5px;
         letter-spacing: 2px;
