@@ -19,7 +19,7 @@
 				<h2><?php echo $heading; ?></h2>
 				<p><?php echo $body; ?></p>
 				<?php if($btn_text){
-					echo "<a href='$btn_link' class='main-btn'>$btn_text</a>";
+					echo "<a href='$btn_link' data-padding='100' class='main-btn waypoint'>$btn_text</a>";
 				}
 				?>
 			</div>
