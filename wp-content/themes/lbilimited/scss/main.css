@@ -7680,18 +7680,35 @@ body.blog #content {
         body.blog #content section.archive-wrapper article.news-post a.post-link img {
           position: absolute;
           left: 0;
+          top: 0;
           width: 100%;
+          height: 100%;
+          object-fit: cover;
+          -webkit-object-fit: cover;
+          -moz-object-fit: cover;
+          -ms-object-fit: cover;
+          -o-object-fit: cover;
           z-index: 1;
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden; }
         body.blog #content section.archive-wrapper article.news-post a.post-link img.top {
-          top: 0; }
+          object-position: center top;
+          -webkit-object-position: center top;
+          -moz-object-position: center top;
+          -ms-object-position: center top;
+          -o-object-position: center top; }
         body.blog #content section.archive-wrapper article.news-post a.post-link img.bottom {
-          bottom: 0; }
+          object-position: center bottom;
+          -webkit-object-position: center bottom;
+          -moz-object-position: center bottom;
+          -ms-object-position: center bottom;
+          -o-object-position: center bottom; }
         body.blog #content section.archive-wrapper article.news-post a.post-link img.center {
-          top: 0;
-          bottom: 0;
-          margin: auto; }
+          object-position: center center;
+          -webkit-object-position: center center;
+          -moz-object-position: center center;
+          -ms-object-position: center center;
+          -o-object-position: center center; }
       body.blog #content section.archive-wrapper article.news-post a.post-link:after {
         position: absolute;
         content: "";
@@ -11851,32 +11868,34 @@ body.single .contact_form:after {
       align-items: flex-start; }
   body.single-offerings #offering_content .offering_overview .overview_wrapper {
     width: 87%; }
-  body.blog #content section#archive-wrapper article {
-    width: 95%;
-    padding-bottom: 50%; }
-    body.blog #content section#archive-wrapper article .post-content {
-      width: -o-calc(100% - 50px);
-      width: -moz-calc(100% - 50px);
-      width: -webkit-calc(100% - 50px);
-      width: calc(100% - 50px);
-      margin: 30px auto 0;
-      flex-direction: column; }
-      body.blog #content section#archive-wrapper article .post-content .post-title {
-        max-width: 92% !important; }
-      body.blog #content section#archive-wrapper article .post-content h2 {
-        font-size: 24px;
-        line-height: 25px; }
-      body.blog #content section#archive-wrapper article .post-content .post-meta .date {
-        font-size: 14px;
-        line-height: 15px;
-        margin-top: 5px; }
-      body.blog #content section#archive-wrapper article .post-content .post-meta .expand {
-        font-size: 10px;
-        margin-top: 5px;
-        letter-spacing: 2px;
-        text-align: left; }
-  body.blog #content section#archive-wrapper .posts-navigation {
-    width: 95%; }
+  body.blog #content section#archive-wrapper {
+    padding: 0; }
+    body.blog #content section#archive-wrapper article {
+      width: 95%;
+      padding-bottom: 50%; }
+      body.blog #content section#archive-wrapper article .post-content {
+        width: -o-calc(100% - 50px);
+        width: -moz-calc(100% - 50px);
+        width: -webkit-calc(100% - 50px);
+        width: calc(100% - 50px);
+        margin: 30px auto 0;
+        flex-direction: column; }
+        body.blog #content section#archive-wrapper article .post-content .post-title {
+          max-width: 92% !important; }
+        body.blog #content section#archive-wrapper article .post-content h2 {
+          font-size: 24px;
+          line-height: 25px; }
+        body.blog #content section#archive-wrapper article .post-content .post-meta .date {
+          font-size: 14px;
+          line-height: 15px;
+          margin-top: 5px; }
+        body.blog #content section#archive-wrapper article .post-content .post-meta .expand {
+          font-size: 10px;
+          margin-top: 5px;
+          letter-spacing: 2px;
+          text-align: left; }
+    body.blog #content section#archive-wrapper .posts-navigation {
+      width: 95%; }
   .contact_information {
     flex-direction: column; }
     .contact_information .map_img {

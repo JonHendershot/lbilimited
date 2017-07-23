@@ -171,21 +171,22 @@ body.blog {
 					img {
 						position: absolute;
 						left: 0;
+						top: 0;
 						width: 100%;
+						height: 100%;
+						@include prefix(object-fit, cover);
 						z-index: 1;
 						backface-visibility: hidden;
 						-webkit-backface-visibility: hidden;
 					}
 					img.top {
-						top: 0;
+						@include prefix(object-position, center top);
 					}
 					img.bottom {
-						bottom: 0;
+						@include prefix(object-position, center bottom);
 					}
 					img.center {
-						top: 0;
-						bottom: 0;
-						margin: auto;
+						@include prefix(object-position, center center);
 					}
 				}
 				
