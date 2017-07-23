@@ -11771,7 +11771,48 @@ body.single .contact_form:after {
   .specialists_grid_container {
     background-color: #191B1C; }
   .offerings-container article.offering {
-    padding-bottom: 45% !important; }
+    padding-bottom: 0% !important;
+    height: auto !important; }
+    .offerings-container article.offering a {
+      display: flex;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      align-items: flex-start;
+      -webkit-align-items: flex-start;
+      justify-content: flex-start;
+      -webkit-justify-content: flex-start;
+      flex-direction: column-reverse; }
+      .offerings-container article.offering a .media_wrapper {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 60%; }
+      .offerings-container article.offering a .offering-data {
+        width: 100%;
+        max-width: none;
+        position: relative !important;
+        margin: 15px 0 !important; }
+        .offerings-container article.offering a .offering-data .offering-meta {
+          margin: 0px auto !important; }
+        .offerings-container article.offering a .offering-data h2 {
+          color: #191B1C !important; }
+          .offerings-container article.offering a .offering-data h2 span {
+            opacity: 1 !important;
+            transform: translateX(0px) !important;
+            -webkit-transform: translateX(0px) !important;
+            -moz-transform: translateX(0px) !important;
+            -ms-transform: translateX(0px) !important;
+            -o-transform: translateX(0px) !important;
+            display: inline-block !important;
+            margin-right: 6px; }
+        .offerings-container article.offering a .offering-data .offering-price .price, .offerings-container article.offering a .offering-data .offering-price .learn-more {
+          opacity: 1 !important;
+          transform: skew(0deg) !important;
+          -webkit-transform: skew(0deg) !important;
+          -moz-transform: skew(0deg) !important;
+          -ms-transform: skew(0deg) !important;
+          -o-transform: skew(0deg) !important; }
     .offerings-container article.offering video {
       display: none !important; }
     .offerings-container article.offering .offering-meta p {
@@ -12241,7 +12282,7 @@ body.single .contact_form:after {
         .page-template-about section.specialists .specialists_wrapper.gridlock_2-container .owl-item.active .specialist_item:after {
           opacity: 1 !important; }
   section.offerings-container article.offering {
-    padding-bottom: 60% !important; }
+    /* 			padding-bottom: 60% !important; */ }
     section.offerings-container article.offering:after {
       background-color: transparent;
       background: linear-gradient(rgba(27, 27, 28, 0) 30%, rgba(27, 27, 28, 0.8) 70%); }

@@ -47,7 +47,7 @@
 							<span class="learn-more">Learn More +</span>
 						</div>
 					</div>
-					
+					<div class="media_wrapper">
 					<?php
 						
 						if($featured_image){
@@ -66,5 +66,6 @@
 						<?php
 						} // end video if
 					?>
+					</div>
 				</a>
 				</article>	
