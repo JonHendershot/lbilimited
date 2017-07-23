@@ -516,6 +516,9 @@ div.nav-wrapper {
 			}
 		}
 	}
+	.specialists_grid_container {
+		background-color: $black;
+	}
 	
 	
 	  ///////////////////////
@@ -672,6 +675,52 @@ div.nav-wrapper {
 		}
 	}
 	
+
+	  ////////////////
+	 // COLLECTION //
+	////////////////
+	.collection-grid.gridlock-container {
+		.grid-item {
+			@include flexbox(flex-start,flex-start);
+			flex-direction: column-reverse;
+			margin-bottom: 15px !important; 
+			padding-bottom: 10px !important;
+			background-color: transparent;
+			border-bottom: 1px solid $altgray;
+			height: auto;
+			
+			.item-content.dash-title {
+				margin: 0;
+				width: 100%;
+				max-width: none;
+				opacity: 1;
+				
+				h3 {
+					width: 100%;
+					span {
+						@include prefix(transform, translateX(0px));
+						display: inline-block;
+						margin-right: 6px;
+						font-size: 20px;
+						color: $black;
+					}
+				}
+				.trigger {
+					color: $black;
+					font-size: 9px;
+					@include prefix(transform, translateX(3px));
+				}
+			}
+			.image_container {
+				position: relative;
+				padding-bottom: 60%;
+				height: 0;
+				width: 100%;
+				z-index: 1;
+			}
+		}
+	}
+	
 }
 
 // Mobile Phones
@@ -741,9 +790,13 @@ div.nav-wrapper {
 		article {
 			.pgram__container {
 				position: absolute;
-				top: -50px;
+				top: 0px;
 				right: 2.5%;
 				@include prefix(transform, translateX(-25px) !important);
+				
+				&:after {
+					bottom: 0;
+				}
 				.pgram__frame {
 					height: 200px;
 					width: 140px;
@@ -755,7 +808,7 @@ div.nav-wrapper {
 				width: 100%;
 				h2 {
 					line-height: 36px;
-					width: 50%;
+					width: 70%;
 					margin-bottom: 30px;
 				}
 				p {
@@ -1306,7 +1359,8 @@ div.nav-wrapper {
 				flex-direction: column;
 				padding: 100px 0;
 				.social_follow_container {
-					width: 300px;
+					width: 100px;
+					height: 100px;
 					@include flexbox(center,space-between);
 					margin: 10px 0;
 					max-width: none;

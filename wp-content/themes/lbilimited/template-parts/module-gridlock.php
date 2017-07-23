@@ -78,13 +78,17 @@
 					$title = offering_title();
 					$image_file = get_field('featured_image');
 					$image = $image_file['sizes']['large'];
+					$alt = $image_file['alt'];
 					$link  = get_permalink();
 				
 				// Output elements	
-					echo "<a href='$link' class='grid-item $display_class $gutter waypoint' data-padding='100' style='background-image: url($image)'>
+					echo "<a href='$link' class='grid-item $display_class $gutter waypoint' data-padding='100'>
 							<div class='item-content dash-title'>
 								<h3>$title</h3>
 								<div class='trigger video_trigger'>View More</div>
+							</div>
+							<div class='image_container'>
+								<img src='$image' class='image' alt='$alt' />
 							</div>
 						  </a>";
 			endwhile;

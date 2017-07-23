@@ -11411,6 +11411,24 @@ body.single .contact_form:after {
       -o-transform: skew(-24deg) scaleY(1); }
   .collection-grid .grid-item:hover:before {
     opacity: 1; }
+  .collection-grid .grid-item .image_container {
+    z-index: 1; }
+    .collection-grid .grid-item .image_container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      -webkit-object-fit: cover;
+      -moz-object-fit: cover;
+      -ms-object-fit: cover;
+      -o-object-fit: cover;
+      object-position: center center;
+      -webkit-object-position: center center;
+      -moz-object-position: center center;
+      -ms-object-position: center center;
+      -o-object-position: center center; }
 
 /*************************************
   - - - - - - RESPONSIVE - - - - - - -
@@ -11750,6 +11768,8 @@ body.single .contact_form:after {
     padding: 100px 40px; }
   section.lbi_values .value_wrapper .value_content p {
     text-align: center; }
+  .specialists_grid_container {
+    background-color: #191B1C; }
   .offerings-container article.offering {
     padding-bottom: 45% !important; }
     .offerings-container article.offering video {
@@ -11822,7 +11842,53 @@ body.single .contact_form:after {
         flex-direction: column;
         align-items: flex-start;
         -webkit-align-items: flex-start;
-        margin-bottom: 15px; } }
+        margin-bottom: 15px; }
+  .collection-grid.gridlock-container .grid-item {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    flex-direction: column-reverse;
+    margin-bottom: 15px !important;
+    padding-bottom: 10px !important;
+    background-color: transparent;
+    border-bottom: 1px solid #eeeeee;
+    height: auto; }
+    .collection-grid.gridlock-container .grid-item .item-content.dash-title {
+      margin: 0;
+      width: 100%;
+      max-width: none;
+      opacity: 1; }
+      .collection-grid.gridlock-container .grid-item .item-content.dash-title h3 {
+        width: 100%; }
+        .collection-grid.gridlock-container .grid-item .item-content.dash-title h3 span {
+          transform: translateX(0px);
+          -webkit-transform: translateX(0px);
+          -moz-transform: translateX(0px);
+          -ms-transform: translateX(0px);
+          -o-transform: translateX(0px);
+          display: inline-block;
+          margin-right: 6px;
+          font-size: 20px;
+          color: #191B1C; }
+      .collection-grid.gridlock-container .grid-item .item-content.dash-title .trigger {
+        color: #191B1C;
+        font-size: 9px;
+        transform: translateX(3px);
+        -webkit-transform: translateX(3px);
+        -moz-transform: translateX(3px);
+        -ms-transform: translateX(3px);
+        -o-transform: translateX(3px); }
+    .collection-grid.gridlock-container .grid-item .image_container {
+      position: relative;
+      padding-bottom: 60%;
+      height: 0;
+      width: 100%;
+      z-index: 1; } }
 
 @media (max-width: 500px) {
   #main_menu .menu_section .menu_items_wrapper a span {
@@ -11871,13 +11937,15 @@ body.single .contact_form:after {
     z-index: 99; }
     .sub__heading article .pgram__container {
       position: absolute;
-      top: -50px;
+      top: 0px;
       right: 2.5%;
       transform: translateX(-25px) !important;
       -webkit-transform: translateX(-25px) !important;
       -moz-transform: translateX(-25px) !important;
       -ms-transform: translateX(-25px) !important;
       -o-transform: translateX(-25px) !important; }
+      .sub__heading article .pgram__container:after {
+        bottom: 0; }
       .sub__heading article .pgram__container .pgram__frame {
         height: 200px;
         width: 140px;
@@ -11887,7 +11955,7 @@ body.single .contact_form:after {
       width: 100%; }
       .sub__heading article .sub__heading-content h2 {
         line-height: 36px;
-        width: 50%;
+        width: 70%;
         margin-bottom: 30px; }
       .sub__heading article .sub__heading-content p {
         width: 100%; }
@@ -12236,7 +12304,8 @@ body.single .contact_form:after {
     flex-direction: column;
     padding: 100px 0; }
     .social_links .tilt_wrapper .tilt_content .social_follow_container {
-      width: 300px;
+      width: 100px;
+      height: 100px;
       display: flex;
       display: -webkit-flex;
       display: -moz-flex;
