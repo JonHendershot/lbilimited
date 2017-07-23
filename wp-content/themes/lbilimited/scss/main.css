@@ -11819,6 +11819,12 @@ body.single .contact_form:after {
       display: none; }
     .offerings-container article.offering:after {
       opacity: 1 !important; }
+  section.notify_me_container .notify_content h3 {
+    font-size: 24px;
+    line-height: 25px; }
+  section.notify_me_container .notify_content p {
+    font-size: 11px;
+    max-width: 80%; }
   .site-header.single {
     height: 65vh;
     margin-bottom: 80px !important;
