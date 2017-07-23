@@ -11853,16 +11853,26 @@ body.single .contact_form:after {
     width: 87%; }
   body.blog #content section#archive-wrapper article {
     width: 95%;
-    padding-bottom: 33.57%; }
+    padding-bottom: 50%; }
     body.blog #content section#archive-wrapper article .post-content {
       width: -o-calc(100% - 50px);
       width: -moz-calc(100% - 50px);
       width: -webkit-calc(100% - 50px);
       width: calc(100% - 50px);
-      margin: 30px auto 0; }
+      margin: 30px auto 0;
+      flex-direction: column; }
       body.blog #content section#archive-wrapper article .post-content h2 {
-        font-size: 38px;
-        line-height: 37px; }
+        font-size: 24px;
+        line-height: 25px; }
+      body.blog #content section#archive-wrapper article .post-content .post-meta .date {
+        font-size: 14px;
+        line-height: 15px;
+        margin-top: 5px; }
+      body.blog #content section#archive-wrapper article .post-content .post-meta .expan {
+        font-size: 10px;
+        margin-top: 5px;
+        letter-spacing: 2px;
+        text-align: left; }
   body.blog #content section#archive-wrapper .posts-navigation {
     width: 95%; }
   .contact_information {
