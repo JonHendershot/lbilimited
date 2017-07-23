@@ -11542,8 +11542,6 @@ body.single .contact_form:after {
     left: -50vw; } }
 
 @media (max-width: 900px) {
-  *:hover {
-    pointer-events: none !important; }
   div.nav-wrapper .nav-bar .search_menu_container .menu_trigger {
     margin-left: 16px;
     padding: 8px 8px 8px 9px; }
