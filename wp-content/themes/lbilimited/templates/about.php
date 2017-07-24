@@ -59,6 +59,9 @@
 		$specialists_header_bg = get_field('specialist_background_photo');
 		$specialists_bg_url = $specialists_header_bg['sizes']['large'];
 		$specialists_bg_alt = $specialists_header_bg['alt'];
+		$specialists_bg_video = get_field('specialists_background_video');
+		$specialists_bg_video_url = $specialists_bg_video['url'];
+		$video_type = $specialists_bg_video['mime_type'];
 		$args = array(
 			'post_type' => 'specialists',
 			'order' => 'ASC',
@@ -74,8 +77,15 @@
 			  <header class='waypoint' data-padding='200'>
 			  	<h2>$specialists_title</h2>
 			  	<p>$specialists_sub_title</p>
-			  	<img src='$specialists_bg_url' alt='$specialists_bg_alt' />
-			  </header>
+			  	<img src='$specialists_bg_url' alt='$specialists_bg_alt' />";
+			  	
+			  	if($specialists_bg_video){
+				  	echo "<video autoplay loop muted>
+				  			<source src='$specialists_bg_video_url' type='$video_type' />
+				  		  </video>";
+			  	}
+			  	
+		echo "</header>
 			  <div class='specialists_grid_container'>";
 			  
 // CHANGE CONTENT WITH GRIDLOCK
