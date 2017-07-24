@@ -201,12 +201,20 @@
 		$social_bg_opacity = $social_bg_opacity_raw / 100;
 		$social_link = get_field('clickthrough_link');
 		$background = get_media($social_bgmedia,false);
+		$background_image_file = get_field('scta_background_image');
+		$background_image_url = $background_image_file['sizes']['large'];
+		$background_image_alt = $background_image_file['alt'];
 	?>
 	<a href="<?php echo $social_link ?>" target="_blank" class="social_cta waypoint" data-padding="250">
 		<h3><?php echo $social_header; ?></h3>	
 		<p><?php echo $social_sub; ?></p>
 		<span class="background_overlay" style="opacity: <?php echo $social_bg_opacity; ?>"></span>
-		<?php echo $background; ?>
+		<?php echo $background; 
+			if($background_image_file){
+				echo "<img src='$background_image_url' alt='$background_image_alt' />";
+			}
+		?>
+		<
 	</a>
 	<?php
 		
