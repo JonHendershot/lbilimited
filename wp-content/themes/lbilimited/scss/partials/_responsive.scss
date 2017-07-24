@@ -1177,6 +1177,14 @@ div.nav-wrapper {
 	 // MEDIA HOUSE //
 	/////////////////
 	.page-template-archive-lbi_media{
+		.header-content {
+			.main-btn.video_trigger {
+				font-size: 9px;
+				padding: 8px 22px;
+				letter-spacing: 2px;
+				bottom: -50%;
+			}
+		}
 		section.featured_gallery {
 			padding: 120px 0 0;
 			&:before, &:after {

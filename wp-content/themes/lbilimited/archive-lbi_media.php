@@ -127,11 +127,10 @@
 					
 			
 				// Render content here
-					echo "<div class='featured_media_wrapper $display_class post-$post_ID'>
+					echo "<div class='featured_media_wrapper $display_class post-$post_ID waypoint' data-padding='200'>
 							<div class='image_container'>
 								$background_image
 							</div>
-							<div class='reveal_ribbon waypoint' data-padding='100'></div>
 							<div class='featured_media_title dash-title'>
 								<h3>$title</h3>
 							</div>
