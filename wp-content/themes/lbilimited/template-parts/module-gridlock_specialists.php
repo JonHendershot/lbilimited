@@ -91,8 +91,14 @@
 				// Establish Variables for this Specialist
 				$name = get_the_title();
 				$position = get_field('specialist_position');
-				$photo_full = get_the_post_thumbnail_url( $post->ID, 'full');
+				$photo_full = get_the_post_thumbnail_url( $post->ID, 'large');
 				$photo_blur = get_the_post_thumbnail_url( $post->ID, 'blur');
+				$photo_alt_file = get_field('alternate_headshot');
+				if( $photo_alt_file ){
+					$lightbox_photo = $photo_alt_file['sizes']['medium_large'];
+				}else {
+					$lightbox_photo = $photo_full;
+				}
 				$bio = utf8_encode( get_the_content() );
 				$clean_bio = str_replace("'", "\u2019", $bio);
 				$video_iframe = get_field('specialist_video');
@@ -122,7 +128,7 @@
 						'id' => $specialist_id,
 						'name' => $name,
 						'position' => $position,
-						'photo_full' => $photo_full,
+						'photo_full' => $lightbox_photo,
 						'photo_blur' => $photo_blur,
 						'bio' => $bio,
 						'video_iframe' => $video_iframe
