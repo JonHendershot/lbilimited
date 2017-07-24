@@ -5979,6 +5979,23 @@ body.page-template-home .social_cta {
     opacity: 0; }
   body.page-template-home .social_cta.waypoint p {
     opacity: 0; }
+  body.page-template-home .social_cta img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-object-fit: cover;
+    -moz-object-fit: cover;
+    -ms-object-fit: cover;
+    -o-object-fit: cover;
+    object-position: center center;
+    -webkit-object-position: center center;
+    -moz-object-position: center center;
+    -ms-object-position: center center;
+    -o-object-position: center center;
+    display: none; }
   body.page-template-home .social_cta h3 {
     font-weight: normal;
     font-style: italic;
@@ -11821,6 +11838,8 @@ body.single .contact_form:after {
       -o-transform: translateX(70px); }
   body.page-template-home .social_cta #social-video {
     display: none; }
+  body.page-template-home .social_cta img {
+    display: block; }
   section.lbi_values .value_wrapper article.value {
     padding: 100px 40px; }
   section.lbi_values .value_wrapper .value_content p {
