@@ -1178,7 +1178,7 @@ div.nav-wrapper {
 	/////////////////
 	.page-template-archive-lbi_media{
 		section.featured_gallery {
-			padding: 100px 0 0;
+			padding: 120px 0 0;
 			&:before, &:after {
 				bottom: -95px;
 			}
@@ -1198,18 +1198,33 @@ div.nav-wrapper {
 				}
 			}
 			.media_carousel {
+				.owl-stage-outer {
+					margin-bottom: 50px;
+				}
 				.owl-item {			
 					.featured_media_wrapper {
 						width: 95% !important;
-						padding-bottom: 60% !important;
+						padding-bottom: 0% !important;
+						height: auto;
+						
+						.image_container {
+							height: 0px;
+							width: 100%;
+							padding-bottom: 60%;
+							position: relative;
+						}
 						
 						&.next, &.prev {
 							@include prefix(transform, translateX(0));
 						}
 						
 						.featured_media_title {
+							position: relative;
 							top: auto;
-							bottom: -35px;
+							left: auto;
+							bottom: auto;
+							right: auto;
+							margin-top: 7px;
 							@include prefix(transform, translateX(0));
 							
 							&:after {
@@ -1222,16 +1237,17 @@ div.nav-wrapper {
 							}
 						}
 						.video_trigger, .photo_trigger {
-							bottom: -67px;
-							left: 0;
+							position: relative;
+							top: auto;
+							left: auto;
+							bottom: auto;
 							right: auto;
+							margin-top: 7px;
 							@include prefix(transform, translateX(0) !important);
-							padding: 10px 32px 8px;
+							padding: 6px 22px 6px;
+							font-size: 8px
 						}
 					}
-				}
-				.owl-dots {
-					margin-top: 95px;
 				}
 			}
 		}

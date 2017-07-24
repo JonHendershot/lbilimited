@@ -8193,6 +8193,22 @@ section.featured_gallery {
           -moz-transform: skew(-24deg) translateX(115%);
           -ms-transform: skew(-24deg) translateX(115%);
           -o-transform: skew(-24deg) translateX(115%); }
+      section.featured_gallery .media_carousel .featured_media_wrapper .image_container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        -webkit-object-fit: cover;
+        -moz-object-fit: cover;
+        -ms-object-fit: cover;
+        -o-object-fit: cover;
+        object-position: center center;
+        -webkit-object-position: center center;
+        -moz-object-position: center center;
+        -ms-object-position: center center;
+        -o-object-position: center center; }
       section.featured_gallery .media_carousel .featured_media_wrapper .featured_media_title.dash-title {
         position: absolute;
         top: 34px;
@@ -12208,7 +12224,7 @@ body.single .contact_form:after {
       max-width: 100% !important;
       text-indent: 0px !important; }
   .page-template-archive-lbi_media section.featured_gallery {
-    padding: 100px 0 0; }
+    padding: 120px 0 0; }
     .page-template-archive-lbi_media section.featured_gallery:before, .page-template-archive-lbi_media section.featured_gallery:after {
       bottom: -95px; }
     .page-template-archive-lbi_media section.featured_gallery:before {
@@ -12222,9 +12238,17 @@ body.single .contact_form:after {
         width: 300px;
         font-size: 18px;
         top: 0 !important; }
+    .page-template-archive-lbi_media section.featured_gallery .media_carousel .owl-stage-outer {
+      margin-bottom: 50px; }
     .page-template-archive-lbi_media section.featured_gallery .media_carousel .owl-item .featured_media_wrapper {
       width: 95% !important;
-      padding-bottom: 60% !important; }
+      padding-bottom: 0% !important;
+      height: auto; }
+      .page-template-archive-lbi_media section.featured_gallery .media_carousel .owl-item .featured_media_wrapper .image_container {
+        height: 0px;
+        width: 100%;
+        padding-bottom: 60%;
+        position: relative; }
       .page-template-archive-lbi_media section.featured_gallery .media_carousel .owl-item .featured_media_wrapper.next, .page-template-archive-lbi_media section.featured_gallery .media_carousel .owl-item .featured_media_wrapper.prev {
         transform: translateX(0);
         -webkit-transform: translateX(0);
@@ -12232,8 +12256,12 @@ body.single .contact_form:after {
         -ms-transform: translateX(0);
         -o-transform: translateX(0); }
       .page-template-archive-lbi_media section.featured_gallery .media_carousel .owl-item .featured_media_wrapper .featured_media_title {
+        position: relative;
         top: auto;
-        bottom: -35px;
+        left: auto;
+        bottom: auto;
+        right: auto;
+        margin-top: 7px;
         transform: translateX(0);
         -webkit-transform: translateX(0);
         -moz-transform: translateX(0);
@@ -12245,17 +12273,19 @@ body.single .contact_form:after {
           font-size: 22px;
           line-height: 24px; }
       .page-template-archive-lbi_media section.featured_gallery .media_carousel .owl-item .featured_media_wrapper .video_trigger, .page-template-archive-lbi_media section.featured_gallery .media_carousel .owl-item .featured_media_wrapper .photo_trigger {
-        bottom: -67px;
-        left: 0;
+        position: relative;
+        top: auto;
+        left: auto;
+        bottom: auto;
         right: auto;
+        margin-top: 7px;
         transform: translateX(0) !important;
         -webkit-transform: translateX(0) !important;
         -moz-transform: translateX(0) !important;
         -ms-transform: translateX(0) !important;
         -o-transform: translateX(0) !important;
-        padding: 10px 32px 8px; }
-    .page-template-archive-lbi_media section.featured_gallery .media_carousel .owl-dots {
-      margin-top: 95px; }
+        padding: 6px 22px 6px;
+        font-size: 8px; }
   .page-template-archive-lbi_media section.media_sub .media_sub_content {
     padding: 120px 0 80px !important; }
   .page-template-archive-lbi_media .search_bar_container form > div {

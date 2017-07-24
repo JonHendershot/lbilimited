@@ -65,7 +65,8 @@
 					$title = get_the_title();
 					$media_type = get_field('media_type');
 					$post_ID = get_the_ID();
-					$background_image = get_the_post_thumbnail_url();
+// 					$background_image = get_the_post_thumbnail_url();
+					$background_image = get_the_post_thumbnail();
 					
 					$display_class = '';
 					
@@ -126,7 +127,10 @@
 					
 			
 				// Render content here
-					echo "<div class='featured_media_wrapper $display_class post-$post_ID'  style='background-image: url($background_image)'>
+					echo "<div class='featured_media_wrapper $display_class post-$post_ID'>
+							<div class='image_container'>
+								$background_image
+							</div>
 							<div class='reveal_ribbon waypoint' data-padding='100'></div>
 							<div class='featured_media_title dash-title'>
 								<h3>$title</h3>
