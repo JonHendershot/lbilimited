@@ -80,8 +80,8 @@
 			  	<img src='$specialists_bg_url' alt='$specialists_bg_alt' />";
 			  	
 			  	if($specialists_bg_video){
-				  	echo "<video autoplay loop muted>
-				  			<source src='$specialists_bg_video_url' type='$video_type' />
+				  	echo "<video autoplay loop muted id='social-video'>
+				  			<source src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' data-src='$specialists_bg_video_url' type='$video_type' class='lazy-load'>
 				  		  </video>";
 			  	}
 			  	
