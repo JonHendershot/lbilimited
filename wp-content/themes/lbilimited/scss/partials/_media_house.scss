@@ -416,6 +416,7 @@ section.sub_heading.media_sub {
 //////////////////////
 .lbi_media_container {
 	background-color: $black;
+	padding-top: 15px;
 	.grid-item {
 		$easeTiming : 600ms;
 		overflow: hidden;

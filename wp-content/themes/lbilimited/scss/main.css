@@ -9705,7 +9705,8 @@ section.sub_heading.media_sub {
       transition-delay: 800ms; }
 
 .lbi_media_container {
-  background-color: #191B1C; }
+  background-color: #191B1C;
+  padding-top: 15px; }
   .lbi_media_container .grid-item {
     overflow: hidden;
     cursor: pointer;

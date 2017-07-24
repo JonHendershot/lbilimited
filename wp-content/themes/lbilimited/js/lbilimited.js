@@ -801,6 +801,7 @@ function showNextSlide(nextID){
   /////////////
  // Masonry //
 /////////////
+/*
 (function media_masonry($){
 	var mediagrid = $('.lbi_media_container');
 	
@@ -811,6 +812,7 @@ function showNextSlide(nextID){
 		});
 	}
 }(jQuery));
+*/
 
   //////////////////
  // Menu Trigger //
