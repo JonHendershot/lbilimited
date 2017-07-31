@@ -100,6 +100,31 @@
 	max-width: 1250px;
 	.map_img {
 		width: 600px;
+		
+		g {
+			text {
+				fill-opacity: 0;
+				@include easeout(500ms);
+			}
+			
+			&#Detroit, &#Philly {
+				&:hover {
+					text {
+						fill-opacity: 1;
+					}
+				}
+			}
+			
+			.marker {
+				fill-opacity: 1;
+				@include easeout(1000ms);
+			}
+			&.waypoint {
+				.marker {
+					fill-opacity: 0;
+				}
+			}
+		}
 	}
 	.information_wrapper {
 		.header {

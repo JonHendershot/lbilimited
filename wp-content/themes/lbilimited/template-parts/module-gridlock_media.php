@@ -96,6 +96,10 @@
 						
 						$trigger_class = 'video_trigger';
 						$trigger_text = 'Watch Video';
+						$preview_video = get_field('video_thumbnail');
+						$video_type = $preview_video['mime_type'];
+						$video_url = $preview_video['url'];
+						$display_class .= ' video';
 						
 					}else {
 						$gallery = get_field('photo_gallery');
@@ -141,7 +145,16 @@
 
 				
 				// Output elements	
-					echo "<div class='grid-item $trigger_class $display_class $gutter waypoint' data-padding='100' style='background-image: url($background_image)' data-item='$item_json' data-id='$post_ID'>
+					echo "<div class='grid-item $trigger_class $display_class $gutter waypoint' data-padding='200' data-item='$item_json' data-id='$post_ID'>
+							<div class='image_wrapper'>
+								<img src='$background_image' alt='' />";
+								if( $preview_video ){
+									echo "<video id='social-video' class='thumbnail' loop muted>
+											<source data-src='$video_url' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' type='$video_type' class='lazy-load'></source>
+										  </video>";
+								} 
+								
+					echo    "</div>
 							<div class='item-content dash-title'>
 								<h3>$title</h3>
 								<div class='trigger video_trigger'>$trigger_text</div>

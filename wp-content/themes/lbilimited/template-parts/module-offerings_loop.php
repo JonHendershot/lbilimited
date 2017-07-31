@@ -5,7 +5,7 @@
 				$offer_class = "offering";
 				$media_class = "offering-fmedia";
 				$post_id = get_the_ID();
-				
+				$sold_overly = get_field('sold_overlay');
 				
 				// grab the featured file information to dynamically generate display markup
 				$file_framing = get_field('framing');
@@ -36,6 +36,9 @@
 			// Markup for offering display
 ?>				
 				<article class="<?php echo $offer_class; ?>">
+					<?php if($sold_overly == 'on') : ?>
+						<div class="sold_overlay">sold</div>
+					<?php endif; ?>
 					<a href="<?php the_permalink(); ?>" id="<?php echo "post-$post_id"; ?>">
 					<div class="offering-data dash-title">
 						<div class="offering-meta">

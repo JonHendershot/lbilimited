@@ -31,7 +31,7 @@ body.page-template-home {
 			position: relative;
 			
 			.home_cta_image {
-				width: 55.55%;
+				width: 65%;
 				z-index: 10;
 				position: relative;
 				overflow: hidden;
@@ -110,9 +110,10 @@ body.page-template-home {
 				}
 			}
 			.home_cta_content {
-				width: 44.44%;
+				width: 35%;
 				z-index: 9999;
 				position: relative;
+				@include prefix(transform, translateX(25px));
 				
 				h3 {
 					font-size: 36px;
@@ -233,7 +234,7 @@ body.page-template-home {
 				left: 0;
 				
 				margin: auto;
-				@include prefix(transform, skewX(-23deg) translateX(-47%));
+				@include prefix(transform, skewX(-23deg) translateX(-56%));
 				background-color: $black;
 				z-index: 999;
 

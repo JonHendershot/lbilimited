@@ -14,11 +14,11 @@
 		// Featured Media
 			$featured_args = array(
 				'post_type' => 'lbi_media',
-				'cat' => 9,
-				'orderby' => 'menu_order',
-				'order' => 'ASC',
-				'posts_per_page' => -1
+				'orderby' => 'date',
+				'order' => 'DESC',
+				'posts_per_page' => 1
 			);
+			$featured_title = get_field('featured_title');
 	
 		// Sub-Heading
 			$sub_title = get_field('media_sub_title');
@@ -52,8 +52,8 @@
 	
 		// Begin Loop Wrappers
 			echo "<section class='featured_gallery'>
-					<div class='tilt_title_wrapper waypoint' data-padding='100'><h4 class='tilt_title flip'><span>featured gallery</span></h4></div>
-					<div class='owl-carousel media_carousel featured_media'>";
+					<div class='tilt_title_wrapper waypoint' data-padding='100'><h4 class='tilt_title flip'><span>$featured_title</span></h4></div>
+					<div class='media_carousel featured_media'>"; // owl-carousel
 					
 		// Begin Loop
 			$query = new WP_Query($featured_args);
@@ -173,7 +173,6 @@
 
 	// Setup the content section
 		echo "<section class='lbi_media_container'>";
-
 			get_template_part('template-parts/module', 'gridlock_media');	
 			
 		echo "</section>";

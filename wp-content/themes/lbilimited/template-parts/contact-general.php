@@ -23,7 +23,8 @@
 
 	<section class="contact_information">
 		<div class="map_img">
-			<img src="<?php echo get_template_directory_uri() . '/inc/images/map_2.jpg'; ?>" />
+<!-- 			<img src="<?php echo get_template_directory_uri() . '/inc/images/map_2.jpg'; ?>" /> -->
+			<?php get_template_part('template-parts/contact', 'america_map'); ?>
 		</div>
 		<div class="information_wrapper">
 			<div class="header">

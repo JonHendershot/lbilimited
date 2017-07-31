@@ -38,3 +38,15 @@
 
 		endwhile;
 		wp_reset_query();
+?>
+	<div class="loading_notification hidden">
+		<div class="loading_info">
+			<?php get_template_part('template-parts/module', 'loader'); ?>
+			<p>Loading more posts</p>
+		</div>
+		<div class="image_container">
+			<?php the_post_thumbnail('blur'); ?>
+		</div>
+	</div>
+<?php
+		wp_reset_query();

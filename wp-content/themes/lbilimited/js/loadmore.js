@@ -16,6 +16,9 @@
 
 		if( $(document).scrollTop() > ( archiveBottomOffset - bottomOffset ) && canBeLoaded == true ){
 // 			console.log('fired ajax');
+
+			$('#archive-wrapper .loading_notification').removeClass('hidden');
+			
 			$.ajax({
 				url : load_more_params.ajaxurl,
 				data:data,
@@ -27,6 +30,9 @@
 					console.log(data);
 				},
 				success:function(data){
+					
+					$('#archive-wrapper .loading_notification').addClass('hidden');
+					
 					if( data ) {
 						$('#archive-wrapper').find('article:last-of-type').after( data ); // where to insert posts
 						canBeLoaded = true; // the ajax is completed, now we can run it again
