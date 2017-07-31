@@ -331,6 +331,28 @@ section.sub_heading.media_sub {
 		background-size: cover;
 		background-repeat: no-repeat;
 		padding-bottom: 38.25%;
+		position: relative;
+		@include easeout(1400ms);
+		@include prefix(transform, translateX(0px));
+		overflow: hidden;
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 20%;
+			height: 100%;
+			background-color: $white;
+			@include easeout(1400ms);
+			@include prefix(transform, translateX(101%));
+			display: block;
+		}
+		&.waypoint {
+			@include prefix(transform, translateX(-18px));
+			&:after {
+				@include prefix(transform, translateX(0px));
+			}
+		}
 	}
 	.media_sub_content {
 		position: relative;

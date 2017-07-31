@@ -153,7 +153,7 @@
 	
 		$sub_content = span_per_word($sub_content);
 		echo "<section class='sub_heading media_sub'>
-				<div class='media_sub_img' style='background-image:url($sub_photo_url)'></div>
+				<div class='media_sub_img waypoint' data-padding='200' style='background-image:url($sub_photo_url)'></div>
 				<div class='media_sub_content waypoint' data-padding='200'>
 					<h3 class='media_sub_title'>$sub_title</h3>
 					<p>$sub_content</p>
