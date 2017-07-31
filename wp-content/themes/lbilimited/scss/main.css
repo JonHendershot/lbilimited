@@ -8417,7 +8417,7 @@ section.featured_gallery {
         height: 100%;
         top: 4px;
         transform-origin: top;
-        right: -75px;
+        right: -90px;
         transform: skew(-24deg) scaleY(1);
         -webkit-transform: skew(-24deg) scaleY(1);
         -moz-transform: skew(-24deg) scaleY(1);

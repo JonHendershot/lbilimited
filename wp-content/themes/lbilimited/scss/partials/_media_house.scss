@@ -200,7 +200,7 @@ section.featured_gallery {
 				height: 100%;
 				top: 4px;
 				transform-origin: top;
-				right: -75px;
+				right: -90px;
 				@include prefix(transform, skew(-24deg) scaleY(1));
 				@include easeout(800ms);
 			}
