@@ -49,7 +49,7 @@ jQuery(window).load(function(){
 			$('#pre_loader').removeClass('off');
 			setTimeout(function(){
 				window.location = url;
-			},1000);
+			},100);
 		
 		}
 		
@@ -1995,28 +1995,24 @@ function ppNextField(currentFieldID, nextFieldID){
 		// Filter content when a filter item is clicked
 		filter.click(function(){
 			var cat = $(this).data('cat'),
-				photoClass = $(this).data('class'), // need to use this filter to distinguish which class of photos we're filtering, regs or glams
-				showcaseScope = $('.featured_image_showcase.' + photoClass); // using the parent showcase wrappers to establish a scope of action for these filter events
-			
-			// Change slider content
-				if(cat == 'all'){
-					showcaseScope.find('.featured_slide').removeClass('hidden');
-					showcaseScope.find(filter).removeClass('acitve');
-				}else {
-					showcaseScope.find('.featured_slide.' + cat).removeClass('hidden');
-					showcaseScope.find(' .featured_slide:not(.'+cat+')').addClass('hidden');
-				}
-			
-			// Update Filter Information
-				showcaseScope.find(filter).removeClass('active');
-				$(this).addClass('active');
-				$('.jspPane, .jspDrag').css({'left':0}); //reset scroll position of slider
-			
-			// Re-initialize the ScrollPane plugin to update the slider width and scroll information
-				$('.featured_image_showcase.visible .featured_image_slider_container').jScrollPane();
+				photoClass = $(this).data('class'); // need to use this filter to distinguish which class of photos we're filtering, regs or glams
+				
 
+				filterSlider(photoClass, cat);
 
 			});
+			
+		// Use select box to change fields
+		$('.mobile_filter').change(function(e){
+			
+			
+			var selectedClass = e.target.value,
+				photoSet = $('.mobile_filter').find('option.' + selectedClass).attr('data-class');
+				
+				
+				filterSlider(photoSet, selectedClass);
+			
+		});
 		
 		// Change photo gallery 
 		galleryTrigger.click(function(){
@@ -2025,6 +2021,29 @@ function ppNextField(currentFieldID, nextFieldID){
 			$('.featured_image_showcase.visible').removeClass('visible');
 			$('.featured_image_showcase.' + gallery).addClass('visible');
 		});
+	}
+	
+	function filterSlider(photoClass, photoCat){
+		var showcaseScope = $('.featured_image_showcase.' + photoClass); // using the parent showcase wrappers to establish a scope of action for these filter events
+			
+			// Change slider content
+				if(photoCat == 'all'){
+					showcaseScope.find('.featured_slide').removeClass('hidden');
+					showcaseScope.find('ul.filter li span').removeClass('acitve');
+				}else {
+					showcaseScope.find('.featured_slide.' + photoCat).removeClass('hidden');
+					showcaseScope.find(' .featured_slide:not(.'+photoCat+')').addClass('hidden');
+				}
+			
+			// Update Filter Information
+				showcaseScope.find('ul.filter li span').removeClass('active');
+				$(this).addClass('active');
+				$('.jspPane, .jspDrag').css({'left':0}); //reset scroll position of slider
+			
+			// Re-initialize the ScrollPane plugin to update the slider width and scroll information
+				$('.featured_image_showcase.visible .featured_image_slider_container').jScrollPane();
+		
+		
 	}
 }(jQuery));
 
