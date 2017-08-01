@@ -748,9 +748,11 @@ div.nav-wrapper {
 					flex-direction: row;
 				}
 				.show_filter_trigger {
+/*
 					left: auto;
 					right: 5%;
 					@include prefix(transform, translateY(-113%));
+*/
 				}
 			}
 		}
