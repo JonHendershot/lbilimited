@@ -141,6 +141,23 @@
 			<div id="image_filters">
 				<div class="featured_image_filter_wrapper">
 					<i class="fa fa-filter"></i>
+					<select class="mobile_filter">
+						<option value="all" data-class="glam" data-cat="all">All</option>
+						<?php
+						
+							// Only show Filters IF there's more than one category of photos present
+							if( count($categories) > 1) :
+				
+
+							foreach($categories as $category){
+								
+								$cat_id = strtolower( str_replace(" ", "_", $category) );
+								
+								echo "<option class='glam-$cat_id' data-cat='glam-$cat_id' data-class='glam' value='glam-$cat_id'>$category</option>";
+							}	
+							endif;
+						?>
+					</select>
 					<ul class="filter">
 						<li class="cat-all">
 							<span class="active" data-cat="all" data-class="glam">All</span>
@@ -246,6 +263,23 @@
 				
 				<div class="featured_image_filter_wrapper">
 					<i class="fa fa-filter"></i>
+					<select class="mobile_filter">
+						<option value="all" data-class="reg" data-cat="all">All</option>
+						<?php
+						
+							// Only show Filters IF there's more than one category of photos present
+							if( count($categories) > 1) :
+				
+
+							foreach($categories as $category){
+								
+								$cat_id = strtolower( str_replace(" ", "_", $category) );
+								
+								echo "<option class='reg-$cat_id' data-cat='reg-$cat_id' data-class='reg' value='reg-$cat_id'>$category</option>";
+							}	
+							endif;
+						?>
+					</select>
 					<ul class="filter">
 						<li class="cat-all">
 							<span class="active" data-cat="all" data-class="reg">All</span>

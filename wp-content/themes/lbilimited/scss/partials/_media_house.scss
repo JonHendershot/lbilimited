@@ -81,7 +81,7 @@ section.featured_gallery {
 		
 		#iframe_wrapper {
 			width: 75%;
-			padding-bottom: 42.1875%; // 16:9 aspect ratio
+			padding-bottom: 42.1875vw; // 16:9 aspect ratio
 			height: 0;
 			background-color: black;
 			position: relative;
@@ -101,7 +101,7 @@ section.featured_gallery {
 		position: relative;
 		.featured_media_wrapper {
 			width: 50%;
-			padding-bottom: 28.125%; // 16:9 aspect ratio
+			padding-bottom: 28.125vw; // 16:9 aspect ratio
 			height: 0;
 			position: relative;
 			background-position: center center;
@@ -330,7 +330,7 @@ section.sub_heading.media_sub {
 		background-position: center center;
 		background-size: cover;
 		background-repeat: no-repeat;
-		padding-bottom: 38.25%;
+		padding-bottom: 38.25vw;
 		position: relative;
 		@include easeout(1400ms);
 		@include prefix(transform, translateX(0px));
