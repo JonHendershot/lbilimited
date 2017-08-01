@@ -11840,6 +11840,7 @@ body.single .contact_form:after {
           margin: 40px auto; }
           section.specialists .specialists_grid_container .specialist_expand_container .specialist_expand_wrapper .specialist_expand_content .specialist_content .header-content {
             flex-direction: column;
+            -webkit-flex-direction: column;
             align-items: flex-start;
             -webkit-align-items: flex-start; }
             section.specialists .specialists_grid_container .specialist_expand_container .specialist_expand_wrapper .specialist_expand_content .specialist_content .header-content .header {
@@ -11870,6 +11871,7 @@ body.single .contact_form:after {
       justify-content: space-between;
       -webkit-justify-content: space-between;
       flex-direction: column;
+      -webkit-flex-direction: column;
       height: 14px;
       width: 14px;
       position: relative;
@@ -11932,7 +11934,8 @@ body.single .contact_form:after {
       .sub__heading article .pgram__container:before {
         display: none; }
     .sub__heading.left article, .sub__heading.right article {
-      flex-direction: row; }
+      flex-direction: row;
+      -webkit-flex-direction: row; }
       .sub__heading.left article .pgram__container, .sub__heading.right article .pgram__container {
         transform: translate3d(0, 0, 0);
         -webkit-transform: translate3d(0, 0, 0);
@@ -11994,7 +11997,8 @@ body.single .contact_form:after {
       -ms-transform: translateX(0);
       -o-transform: translateX(0); }
   body.page-template-archive-lbi_media .media_suggestion {
-    flex-direction: column; }
+    flex-direction: column;
+    -webkit-flex-direction: column; }
     body.page-template-archive-lbi_media .media_suggestion .suggestion_title {
       width: 100%;
       margin: 0;
@@ -12156,7 +12160,8 @@ body.single .contact_form:after {
       -webkit-align-items: flex-start;
       justify-content: flex-start;
       -webkit-justify-content: flex-start;
-      flex-direction: column-reverse; }
+      flex-direction: column-reverse;
+      -webkit-flex-direction: column-reverse; }
       .offerings-container article.offering a .media_wrapper {
         position: relative;
         width: 100%;
@@ -12238,7 +12243,9 @@ body.single .contact_form:after {
         margin: 0; }
     body.single-offerings .featured_image_showcase #image_filters {
       flex-direction: column;
-      align-items: flex-start; }
+      -webkit-flex-direction: column;
+      align-items: flex-start;
+      -webkit-align-items: flex-start; }
       body.single-offerings .featured_image_showcase #image_filters .gallery_trigger {
         width: 100%;
         text-align: center; }
@@ -12249,7 +12256,8 @@ body.single .contact_form:after {
         display: none; }
       body.single-offerings .featured_image_showcase #image_filters .featured_image_filter_wrapper {
         margin: 0 auto;
-        flex-direction: row; }
+        flex-direction: row;
+        -webkit-flex-direction: row; }
       body.single-offerings .featured_image_showcase #image_filters .show_filter_trigger {
         bottom: 50px; }
         body.single-offerings .featured_image_showcase #image_filters .show_filter_trigger.showing {
@@ -12323,7 +12331,8 @@ body.single .contact_form:after {
         width: -webkit-calc(100% - 50px);
         width: calc(100% - 50px);
         margin: 30px auto 0;
-        flex-direction: column; }
+        flex-direction: column;
+        -webkit-flex-direction: column; }
         body.blog #content section#archive-wrapper article .post-content .post-title {
           max-width: 92% !important; }
         body.blog #content section#archive-wrapper article .post-content h2 {
@@ -12341,7 +12350,8 @@ body.single .contact_form:after {
     body.blog #content section#archive-wrapper .posts-navigation {
       width: 95%; }
   .contact_information {
-    flex-direction: column; }
+    flex-direction: column;
+    -webkit-flex-direction: column; }
     .contact_information .map_img {
       width: 70%;
       margin-bottom: 50px; }
@@ -12351,7 +12361,8 @@ body.single .contact_form:after {
     max-width: none;
     max-height: none; }
   .search_results article {
-    flex-direction: column; }
+    flex-direction: column;
+    -webkit-flex-direction: column; }
     .search_results article .article_image {
       width: 100%;
       padding-bottom: 56.25vw;
@@ -12362,6 +12373,7 @@ body.single .contact_form:after {
       padding-right: 0px; }
       .search_results article .article_content header {
         flex-direction: column;
+        -webkit-flex-direction: column;
         align-items: flex-start;
         -webkit-align-items: flex-start;
         margin-bottom: 15px; }
@@ -12375,6 +12387,7 @@ body.single .contact_form:after {
     justify-content: flex-start;
     -webkit-justify-content: flex-start;
     flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
     margin-bottom: 15px !important;
     padding-bottom: 10px !important;
     background-color: transparent;
@@ -12508,7 +12521,8 @@ body.single .contact_form:after {
     .search_bar_container span.submit:after {
       background-size: 20% !important; }
   .contact_form form .field_row {
-    flex-direction: column; }
+    flex-direction: column;
+    -webkit-flex-direction: column; }
     .contact_form form .field_row .field {
       width: 100% !important;
       margin: 10px 0; }
@@ -12533,7 +12547,8 @@ body.single .contact_form:after {
       .sharedaddy ul li:last-child {
         display: none; }
   .posts-navigation {
-    flex-direction: column; }
+    flex-direction: column;
+    -webkit-flex-direction: column; }
     .posts-navigation a {
       margin: 10px 0;
       width: 100%;
@@ -12576,7 +12591,8 @@ body.single .contact_form:after {
       /* 						width: 12px !important; */
       height: 12px !important; }
   footer.site-footer .featured-posts {
-    flex-direction: column; }
+    flex-direction: column;
+    -webkit-flex-direction: column; }
     footer.site-footer .featured-posts a.feature {
       padding: 25px;
       padding-bottom: 57.5vw;
@@ -12593,7 +12609,8 @@ body.single .contact_form:after {
   footer.site-footer .form-wrap {
     width: 95%; }
   footer.site-footer .footer-meta .container {
-    flex-direction: column; }
+    flex-direction: column;
+    -webkit-flex-direction: column; }
     footer.site-footer .footer-meta .container > div {
       margin: 5px 0; }
     footer.site-footer .footer-meta .container .socials a:last-child {
@@ -12617,12 +12634,14 @@ body.single .contact_form:after {
     body.single.single-offerings #offering_content .offering_overview h4.tilt_title:after {
       background-position: center top !important; }
     body.single.single-offerings #offering_content .offering_overview ul.overview_stats {
-      flex-direction: column; }
+      flex-direction: column;
+      -webkit-flex-direction: column; }
       body.single.single-offerings #offering_content .offering_overview ul.overview_stats li {
         width: 98%;
         margin: 10px auto; }
     body.single.single-offerings #offering_content .offering_overview .overview_buttons_wrapper {
       flex-direction: column;
+      -webkit-flex-direction: column;
       margin-top: 40px; }
       body.single.single-offerings #offering_content .offering_overview .overview_buttons_wrapper .btn {
         padding: 10px 0;
@@ -12823,7 +12842,8 @@ body.single .contact_form:after {
           -ms-transform: skew(0deg);
           -o-transform: skew(0deg); }
   .form_selection_container .form_selection_wrapper {
-    flex-direction: column; }
+    flex-direction: column;
+    -webkit-flex-direction: column; }
     .form_selection_container .form_selection_wrapper .form_option {
       width: 90%;
       margin: 10px auto; }
@@ -12833,6 +12853,7 @@ body.single .contact_form:after {
     width: 100% !important; }
   .contact_information {
     flex-direction: column;
+    -webkit-flex-direction: column;
     width: 90%; }
     .contact_information .map_img {
       width: 70%;
@@ -12844,6 +12865,7 @@ body.single .contact_form:after {
     max-height: none; }
   .social_links .tilt_wrapper .tilt_content {
     flex-direction: column;
+    -webkit-flex-direction: column;
     padding: 100px 0; }
     .social_links .tilt_wrapper .tilt_content .social_follow_container {
       width: 100px;

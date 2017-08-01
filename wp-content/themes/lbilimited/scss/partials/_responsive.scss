@@ -153,6 +153,7 @@
 							
 							.header-content {
 								flex-direction: column;
+								-webkit-flex-direction: column;
 								align-items: flex-start;
 								-webkit-align-items: flex-start;
 								
@@ -208,6 +209,7 @@ div.nav-wrapper {
 				.mobile_trigger_wrapper {
 					@include flexbox(center,space-between);
 					flex-direction: column;
+					-webkit-flex-direction: column;
 					height: 14px;
 					width: 14px;
 					position: relative;
@@ -298,6 +300,7 @@ div.nav-wrapper {
 		&.left, &.right {
 			article {
 				flex-direction: row;
+				-webkit-flex-direction: row;
 				
 				.pgram__container {
 					@include prefix(transform, translate3d(0,0,0));	
@@ -389,6 +392,7 @@ div.nav-wrapper {
 		}
 		.media_suggestion {
 			flex-direction: column;
+			-webkit-flex-direction: column;
 			
 			.suggestion_title {
 				width: 100%;
@@ -612,6 +616,7 @@ div.nav-wrapper {
 			a {
 				@include flexbox(flex-start,flex-start);
 				flex-direction: column-reverse;
+				-webkit-flex-direction: column-reverse;
 				
 				.media_wrapper {
 					position: relative;
@@ -731,7 +736,9 @@ div.nav-wrapper {
 			
 			#image_filters {
 				flex-direction: column;
+				-webkit-flex-direction: column;
 				align-items: flex-start;
+				-webkit-align-items: flex-start;
 				.gallery_trigger {
 					width: 100%;
 					text-align: center;
@@ -746,6 +753,7 @@ div.nav-wrapper {
 				.featured_image_filter_wrapper {
 					margin: 0 auto;
 					flex-direction: row;
+					-webkit-flex-direction: row;
 				}
 				.show_filter_trigger {
 				
@@ -833,6 +841,7 @@ div.nav-wrapper {
 						@include calc(width, "100% - 50px");
 						margin: 30px auto 0;
 						flex-direction: column;
+						-webkit-flex-direction: column;
 						
 						.post-title {
 							max-width: 92% !important;
@@ -872,6 +881,7 @@ div.nav-wrapper {
 	/////////////
 	.contact_information {
 		flex-direction: column;
+		-webkit-flex-direction: column;
 		
 		.map_img {
 			width: 70%;
@@ -897,6 +907,7 @@ div.nav-wrapper {
 	.search_results {
 		article {
 			flex-direction: column;
+			-webkit-flex-direction: column;
 			
 			.article_image {
 				width: 100%;
@@ -910,6 +921,7 @@ div.nav-wrapper {
 				padding-right: 0px;
 				header {
 					flex-direction: column;
+					-webkit-flex-direction: column;
 					align-items: flex-start;
 					-webkit-align-items: flex-start;
 					margin-bottom: 15px;
@@ -927,6 +939,7 @@ div.nav-wrapper {
 		.grid-item {
 			@include flexbox(flex-start,flex-start);
 			flex-direction: column-reverse;
+			-webkit-flex-direction: column-reverse;
 			margin-bottom: 15px !important; 
 			padding-bottom: 10px !important;
 			background-color: transparent;
@@ -1101,6 +1114,7 @@ div.nav-wrapper {
 		form {
 			.field_row {
 				flex-direction: column;
+				-webkit-flex-direction: column;
 				.field {
 					width: 100% !important;
 					margin: 10px 0;
@@ -1132,6 +1146,7 @@ div.nav-wrapper {
 	}
 	.posts-navigation {
 		flex-direction: column;
+		-webkit-flex-direction: column;
 		
 		a {
 			margin: 10px 0;
@@ -1201,6 +1216,7 @@ div.nav-wrapper {
 	footer.site-footer {
 		.featured-posts {
 			flex-direction: column;
+			-webkit-flex-direction: column;
 			a.feature {
 				padding: 25px;
 				padding-bottom: 57.5vw;
@@ -1228,6 +1244,7 @@ div.nav-wrapper {
 		.footer-meta {
 			.container {
 				flex-direction: column;
+				-webkit-flex-direction: column;
 				> div {
 					margin: 5px 0;
 				}
@@ -1289,6 +1306,7 @@ div.nav-wrapper {
 					}
 					ul.overview_stats {
 						flex-direction: column;
+						-webkit-flex-direction: column;
 						li {
 							width: 98%;
 							margin: 10px auto;
@@ -1296,6 +1314,7 @@ div.nav-wrapper {
 					}
 					.overview_buttons_wrapper {
 						flex-direction: column;
+						-webkit-flex-direction: column;
 						margin-top: 40px;
 						.btn {
 							padding: 10px 0;
@@ -1588,6 +1607,7 @@ div.nav-wrapper {
 	.form_selection_container {
 		.form_selection_wrapper {
 			flex-direction: column;
+			-webkit-flex-direction: column;
 			
 			.form_option {
 				width: 90%;
@@ -1609,6 +1629,7 @@ div.nav-wrapper {
 	/////////////
 	.contact_information {
 		flex-direction: column;
+		-webkit-flex-direction: column;
 		width: 90%;
 		
 		.map_img {
@@ -1626,6 +1647,7 @@ div.nav-wrapper {
 			}
 			.tilt_content {
 				flex-direction: column;
+				-webkit-flex-direction: column;
 				padding: 100px 0;
 				.social_follow_container {
 					width: 100px;
