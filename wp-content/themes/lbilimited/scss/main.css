@@ -10560,8 +10560,6 @@ body.single .contact_form:after {
       .featured_image_showcase.in_lightbox #image_filters .show_filter_trigger {
         visibility: visible;
         opacity: 1; }
-      .featured_image_showcase.in_lightbox #image_filters .mobile_filter {
-        display: none; }
     .featured_image_showcase.in_lightbox .jspContainer {
       height: 128px !important; }
       .featured_image_showcase.in_lightbox .jspContainer .featured_slide {
@@ -10655,6 +10653,8 @@ body.single .contact_form:after {
     position: relative;
     overflow: hidden;
     background-color: #eeeeee; }
+    .featured_image_showcase #image_filters .mobile_filter {
+      display: none; }
     .featured_image_showcase #image_filters .featured_image_filter_wrapper {
       display: flex;
       display: -webkit-flex;

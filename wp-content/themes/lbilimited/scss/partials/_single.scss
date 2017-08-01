@@ -379,9 +379,6 @@ body.single {
 				visibility: visible;
 				opacity: 1;
 			}
-			.mobile_filter {
-				display: none;
-			}
 		}
 		.jspContainer {
 			height: 128px !important;
@@ -460,6 +457,10 @@ body.single {
 		overflow: hidden;
 		background-color: $altgray;
 // 		margin-top: 5px;
+
+		.mobile_filter {
+			display: none;
+		}
 		.featured_image_filter_wrapper {
 			@include flexbox(center,flex-start);
 			
