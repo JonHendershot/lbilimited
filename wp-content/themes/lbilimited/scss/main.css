@@ -11963,6 +11963,9 @@ body.single .contact_form:after {
     width: 100% !important; }
   #masthead video {
     display: none; }
+  .media_lightbox .image_container {
+    width: 95%;
+    padding-bottom: 53vw; }
   body.page-template-archive-lbi_media .media_sub .media_sub_img {
     display: none; }
   body.page-template-archive-lbi_media .media_sub .media_sub_content {
@@ -12229,6 +12232,10 @@ body.single .contact_form:after {
     margin: 35px 0 75px; }
   body.single-offerings .featured_image_showcase {
     width: 95%; }
+    body.single-offerings .featured_image_showcase.in_lightbox {
+      width: 100%; }
+      body.single-offerings .featured_image_showcase.in_lightbox #image_filters .featured_image_filter_wrapper {
+        margin: 0; }
     body.single-offerings .featured_image_showcase #image_filters {
       flex-direction: column;
       align-items: flex-start; }
@@ -12243,6 +12250,14 @@ body.single .contact_form:after {
       body.single-offerings .featured_image_showcase #image_filters .featured_image_filter_wrapper {
         margin: 0 auto;
         flex-direction: row; }
+      body.single-offerings .featured_image_showcase #image_filters .show_filter_trigger {
+        left: auto;
+        right: 5%;
+        transform: translateY(-113%);
+        -webkit-transform: translateY(-113%);
+        -moz-transform: translateY(-113%);
+        -ms-transform: translateY(-113%);
+        -o-transform: translateY(-113%); }
   body.single-offerings #offering_content .offering_overview .overview_wrapper {
     width: 87%; }
   body.single-offerings .nav-wrapper.sticky .header_meta {

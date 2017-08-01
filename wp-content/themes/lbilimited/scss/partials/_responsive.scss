@@ -348,6 +348,12 @@ div.nav-wrapper {
 	#masthead video {
 		display: none;
 	}
+	.media_lightbox {
+		.image_container {
+			width: 95%;
+			padding-bottom: 53vw;
+		}
+	}
 	
 	  ////////////////
 	 // MEDIA PAGE //
@@ -713,6 +719,16 @@ div.nav-wrapper {
 			width: 95%;
 // 			margin-top: 0;
 			
+			&.in_lightbox {
+				width: 100%;
+				
+				#image_filters {
+					.featured_image_filter_wrapper {
+						margin: 0;
+					}
+				}
+			}
+			
 			#image_filters {
 				flex-direction: column;
 				align-items: flex-start;
@@ -730,6 +746,11 @@ div.nav-wrapper {
 				.featured_image_filter_wrapper {
 					margin: 0 auto;
 					flex-direction: row;
+				}
+				.show_filter_trigger {
+					left: auto;
+					right: 5%;
+					@include prefix(transform, translateY(-113%));
 				}
 			}
 		}
