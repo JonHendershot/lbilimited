@@ -37,24 +37,29 @@ jQuery(window).load(function(){
 	
 });
 
-(function pageTransition($){
-	$('a').click(function(e){
-		var url = $(this).attr('href'),
-			hostname = window.location.host;
+(function pageTransition(){
+	var links = document.getElementsByTagName('a');
+	
+	for(x = 0; x < links.length; x++){
+		var link = links[x];
 		
+		link.onclick = function(e){
+	
+			var url = this.getAttribute('href'),
+				hostname = window.location.host;
 		
-		if( url.includes(hostname) ){
-			e.preventDefault();
-			
-			$('#pre_loader').removeClass('off');
-			setTimeout(function(){
+			if( url.includes(hostname) ){
+				
+				e.preventDefault();
+				
+				document.getElementById('pre_loader').classList.remove('off');
 				window.location = url;
-			},100);
 		
+			}
 		}
-		
-	});
-}(jQuery));
+	}
+}());
+
 
   //////////////////////
  // Offering Contact //
