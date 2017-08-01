@@ -137,7 +137,7 @@ body.page-template-home {
 				}
 				.main-btn {
 					margin: 35px auto 0;
-					display: block;
+					display: table;
 					@include max-content(width);
 				}
 /*
@@ -344,6 +344,7 @@ body.page-template-home {
 			font-size: 12px;
 			letter-spacing: 0.2px;
 			@include max-content(width);
+			display: table;
 			margin: 20px auto 0;
 			color: #fefefe;
 			text-transform: uppercase;

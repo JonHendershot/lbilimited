@@ -5844,7 +5844,7 @@ body.page-template-home .home_cta_container .home_cta_wrapper {
       margin: 0px auto 25px; }
     body.page-template-home .home_cta_container .home_cta_wrapper .home_cta_content .main-btn {
       margin: 35px auto 0;
-      display: block;
+      display: table;
       width: max-content;
       width: -webkit-max-content;
       width: -moz-max-content;
@@ -6232,6 +6232,7 @@ body.page-template-home .social_cta {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: -moz-fit-content;
+    display: table;
     margin: 20px auto 0;
     color: #fefefe;
     text-transform: uppercase;
@@ -10596,7 +10597,8 @@ body.single .contact_form:after {
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
-        cursor: pointer; }
+        cursor: pointer;
+        flex: 0 0 auto; }
         .featured_image_showcase .featured_image_slider_container .featured_image_slider_wrapper .featured_slide img {
           position: absolute;
           top: 0;
