@@ -47,7 +47,7 @@
 				'Lotus',
 				'Maserati',
 				'Mercedes',
-				'Mg',
+				'MG',
 				'Plymouth',
 				'Porsche',
 				'Toyota'
