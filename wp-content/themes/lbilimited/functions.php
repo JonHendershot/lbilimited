@@ -1109,3 +1109,30 @@ function vehicle_details(){
 		return $output;
 }
 // add_shortcode('details', 'vehicle_details');
+
+
+// attach files to consignment form
+add_action( 'wpcf7_before_send_mail', 'lbi_upload_file' );
+ 
+function lbi_upload_file($cf7) {
+   
+	$formID = $cf7->id();
+	if($formID == 72606){
+		$fileNAME = $_POST['file-name-1']; // '01Deadicated.mp3';
+		$fileNAME2 = $_POST['file-name-2']; // '02SayAnything.mp3';
+		$fileNAME3 = $_POST['file-name-3'];
+		$fileNAME4 = $_POST['file-name-4'];
+		$fileNAME5 = $_POST['file-name-5'];
+		
+		$files = array($fileNAME,$fileNAME2,$fileNAME3,$fileNAME4,$fileNAME5); // json_decode($_POST['file-names'], true);
+		$submission = WPCF7_Submission::get_instance();
+		
+		foreach($files as $key => $file){
+			
+			$upFILE = ABSPATH . 'wp-content/plugins/dragDrop/uploads/' . $file;
+			
+			$submission->add_uploaded_file("file-upload-$key",$upFILE);
+		} 
+	}
+}
+	
