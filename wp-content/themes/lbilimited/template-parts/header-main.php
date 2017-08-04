@@ -37,7 +37,7 @@
 				'Austin',
 				'Healey',
 				'Chevrolet',
-				'Chevy'
+				'Chevy',
 				'Ferrari',
 				'Fiat',
 				'Ford',
