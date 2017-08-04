@@ -27,7 +27,6 @@
 					// you can also add your own preloader here
 					// you see, the AJAX call is in process, we shouldn't run it again until complete
 					canBeLoaded = false; 
-					console.log(data);
 				},
 				success:function(data){
 					
@@ -37,6 +36,12 @@
 						$('#archive-wrapper').find('article:last-of-type').after( data ); // where to insert posts
 						canBeLoaded = true; // the ajax is completed, now we can run it again
 						load_more_params.current_page++;	
+						
+						$('#archive-wrapper .lazy-load').each(function(){
+							lazyLoader( $(this) );
+							console.log('lazy loading ' + $(this).attr('data-src'));
+						});
+						
 					}
 					
 				}

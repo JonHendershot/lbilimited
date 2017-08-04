@@ -1407,11 +1407,10 @@ function lazyLoader(img){
 			if( ! video.classList.contains('thumbnail') ){
 				video.play();
 			}
+		
 		}
-
 		
-		
-	
+		img.removeClass('lazy-load');
 }
 
 function setMaxHeight(elemclass){

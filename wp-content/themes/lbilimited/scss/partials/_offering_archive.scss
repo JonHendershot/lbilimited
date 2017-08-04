@@ -209,6 +209,12 @@ section.offerings-container {
 			.media_wrapper {
 				&> img, video {
 					z-index: 9;
+					opacity: 0;
+					@include easeout(700ms);
+					
+					&.visible {
+						opacity: 1;
+					}
 				}
 				.placeholder {
 					width: 100%;

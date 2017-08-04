@@ -59,7 +59,7 @@
 						if($featured_image){
 							// Display Image background
 
-								echo "<img src='$fimage_url' class='$media_class' />";
+								echo "<img data-src='$fimage_url' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' class='$media_class lazy-load' />";
 							
 						}
 						
