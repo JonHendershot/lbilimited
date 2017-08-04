@@ -7788,7 +7788,16 @@ section.offerings-container article.offering {
   height: 0;
   padding-bottom: 45vw;
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  /*
+&:nth-child(even){
+				.media_wrapper {
+					.placeholder {
+						background-color: rgb(216,216,216);
+					}
+				}
+			}
+*/ }
   section.offerings-container article.offering:hover .offering-data .offering-meta h2 span {
     transform: translate(0px);
     -webkit-transform: translate(0px);
@@ -8045,6 +8054,45 @@ section.offerings-container article.offering {
     -moz-object-position: center center;
     -ms-object-position: center center;
     -o-object-position: center center; }
+  section.offerings-container article.offering .media_wrapper > img, section.offerings-container article.offering .media_wrapper video {
+    z-index: 9; }
+  section.offerings-container article.offering .media_wrapper .placeholder {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#eeeeee 0%, #d8d8d8 100%);
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    z-index: 1; }
+    section.offerings-container article.offering .media_wrapper .placeholder img {
+      width: 15%;
+      height: auto;
+      opacity: 1;
+      transform: translateY(0px);
+      -webkit-transform: translateY(0px);
+      -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+      -o-transform: translateY(0px);
+      -webkit-transition: all 1500ms cubic-bezier(0.375, 0.005, 0, 1);
+      -moz-transition: all 1500ms cubic-bezier(0.375, 0.005, 0, 1);
+      -o-transition: all 1500ms cubic-bezier(0.375, 0.005, 0, 1);
+      transition: all 1500ms cubic-bezier(0.375, 0.005, 0, 1);
+      /* custom */ }
+      section.offerings-container article.offering .media_wrapper .placeholder img.waypoint {
+        opacity: 0;
+        transform: translateY(35px);
+        -webkit-transform: translateY(35px);
+        -moz-transform: translateY(35px);
+        -ms-transform: translateY(35px);
+        -o-transform: translateY(35px); }
 
 section.offerings-container article.offering a:after {
   content: "";
@@ -11532,7 +11580,7 @@ body.single .contact_form:after {
             text-decoration: none; }
         .search_results article .article_content header a.post_archive_link {
           text-transform: uppercase;
-          font-size: 13px;
+          font-size: 11px;
           font-weight: 500;
           color: #191B1C;
           position: relative;

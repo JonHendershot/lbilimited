@@ -51,12 +51,15 @@
 						</div>
 					</div>
 					<div class="media_wrapper">
+						<div class="placeholder">
+							<img class="waypoint" data-padding="100" src="<?php echo get_template_directory_uri() . '/inc/images/icon_placeholder.png'; ?>" />
+						</div>
 					<?php
 						
 						if($featured_image){
 							// Display Image background
 
-								echo "<img src='$fimage_url' class='$media_class' />";
+								echo "<img data-src='$fimage_url' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' class='$media_class lazy-load' />";
 							
 						}
 						
