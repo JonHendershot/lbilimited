@@ -1137,3 +1137,13 @@ function lbi_upload_file($cf7) {
 	}
 }
 	
+	
+	
+// check if string contains a certain word in a given array
+function word_in_array($str, array $arr)
+{
+    foreach($arr as $a) {
+        if (stripos($str,$a) !== false) return $a;
+    }
+    return false;
+}

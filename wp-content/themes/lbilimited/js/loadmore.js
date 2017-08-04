@@ -31,15 +31,15 @@
 				success:function(data){
 					
 					$('#archive-wrapper .loading_notification').addClass('hidden');
-					
+	
 					if( data ) {
 						$('#archive-wrapper').find('article:last-of-type').after( data ); // where to insert posts
 						canBeLoaded = true; // the ajax is completed, now we can run it again
 						load_more_params.current_page++;	
 						
+						
 						$('#archive-wrapper .lazy-load').each(function(){
 							lazyLoader( $(this) );
-							console.log('lazy loading ' + $(this).attr('data-src'));
 						});
 						
 					}

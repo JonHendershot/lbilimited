@@ -20,11 +20,42 @@
 			$title = '<span class="word">Results:</span>';
 			$subtitle = get_search_query();
 			$content_class .= ' search';
-			$header_img = $options['results_header'];
-			$header_img_id = get_image_id($header_img); // we're not retrieving an img object with $header_img here, just the url, so we need to go get the post ID of that image so we can retrieve the blur size
+			$default_img = $options['results_header'];
+			$header_img_id = get_image_id($default_img); // we're not retrieving an img object with $header_img here, just the url, so we need to go get the post ID of that image so we can retrieve the blur size
 			$header_thumb_array = wp_get_attachment_image_src($header_img_id, 'blur'); // retrieves an array of image information for the 'blur' size of the $header_img
-			$header_thumb = $header_thumb_array[0]; // gets the url of the 'blur' image
+			$default_header_thumb = $header_thumb_array[0]; // gets the url of the 'blur' image
 			$featured_image_frame = $options['results_frame'];
+			
+			
+			// if serach query has certain terms, get a specific image
+			
+			// query params
+			$carQuery = array(
+				'acura',
+				'alfa',
+				'austinhealey',
+				'austin',
+				'healey',
+				'chevrolet',
+				'ferrari',
+				'fiat',
+				'ford shelby',
+				'jaguar',
+				'lamborghini',
+				'lancia',
+				'lotus',
+				'maserati',
+				'mercedes',
+				'mg',
+				'plymouth',
+				'porsche',
+				'toyota'
+			);
+			
+			$header_img = word_in_array($subtitle,$carQuery) ? get_template_directory_uri() . '/inc/images/results_headers/full/' . word_in_array($subtitle,$carQuery) . '.jpg' : $default_img; 
+			$header_thumb = word_in_array($subtitle,$carQuery) ? get_template_directory_uri() . '/inc/images/results_headers/blur/' . word_in_array($subtitle,$carQuery) . '.jpg' : $default_header_thumb; 
+			
+			
 		}else if( is_front_page() ){
 			$content_class .= ' home';
 			$title      = get_field('header_title');
