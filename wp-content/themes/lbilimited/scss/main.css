@@ -5491,11 +5491,7 @@ body.page-template-media_house .site-header .main-btn {
   visibility: visible;
   opacity: 1; }
 
-.wpcf7-response-output {
-  border: none;
-  color: #fff;
-  font-weight: 600;
-  font-style: italic;
+#project-planner .wpcf7-response-output {
   position: absolute;
   top: 0;
   padding: 0;
@@ -5505,7 +5501,14 @@ body.page-template-media_house .site-header .main-btn {
   width: max-content;
   width: -webkit-max-content;
   width: -moz-max-content;
-  width: -moz-fit-content;
+  width: -moz-fit-content; }
+
+.wpcf7-response-output {
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  font-style: italic;
+  display: table;
   font-size: 14px; }
 
 .wpcf7-validation-errors::before {

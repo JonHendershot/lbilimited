@@ -605,11 +605,7 @@
 	}
 
 	// Form Response
-	.wpcf7-response-output {
-		border: none;
-	    color: $white;
-	    font-weight: 600;
-	    font-style: italic;
+	#project-planner .wpcf7-response-output {
 	    position: absolute;
 	    top: 0;
 	    padding: 0;
@@ -617,7 +613,14 @@
 	    left: 0;
 	    right: 0;
 	    @include max-content(width);
-	    font-size: 14px;
+	}
+	.wpcf7-response-output {
+		border: none;
+	    color: $white;
+	    font-weight: 600;
+	    font-style: italic;
+	    display: table;
+   	    font-size: 14px;
 	}
 	.wpcf7-validation-errors::before {
 		color: $altred;
