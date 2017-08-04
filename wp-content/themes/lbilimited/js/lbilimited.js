@@ -1771,11 +1771,11 @@ function preload() {
 			fileType = e.dataTransfer.files[0]['type'];
 			
 		// Handle upload event
-			if(fileLength <= 5 && uploads.length < 5){ //  && fileType == 'audio/mp3'
+			if(fileLength <= 5 && uploads.length <= 5){ //  && fileType == 'audio/mp3'
 				// Upload File
 				upload(e.dataTransfer.files);
 				
-			}else if(uploads.length >= 5 || fileLength > 5){
+			}else if(uploads.length > 5 || fileLength > 5){
 				alert("No more than 5 files please");
 			}else {
 				// Instruct user as to what uploads are accepted
