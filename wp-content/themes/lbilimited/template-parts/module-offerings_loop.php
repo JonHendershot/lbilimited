@@ -63,9 +63,11 @@
 						if($featured_image){
 							
 							// Blur placeholder
+/*
 							echo "<div class='blur_img'>
 									<img data-src='$blur_img' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' class='lazy-load' class='$media_class'>
 								  </div>";
+*/
 								  
 							// Display Image background
 								echo "<img data-src='$fimage_url' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' class='$media_class lazy-load' />";

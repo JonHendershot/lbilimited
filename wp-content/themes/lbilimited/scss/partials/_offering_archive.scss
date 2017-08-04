@@ -210,7 +210,6 @@ section.offerings-container {
 				&> img, video {
 					z-index: 9;
 					opacity: 0;
-					@include easeout(700ms);
 					
 					&.visible {
 						opacity: 1;

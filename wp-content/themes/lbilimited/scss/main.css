@@ -8056,12 +8056,7 @@ section.offerings-container article.offering {
     -o-object-position: center center; }
   section.offerings-container article.offering .media_wrapper > img, section.offerings-container article.offering .media_wrapper video {
     z-index: 9;
-    opacity: 0;
-    -webkit-transition: all 700ms cubic-bezier(0.375, 0.005, 0, 1);
-    -moz-transition: all 700ms cubic-bezier(0.375, 0.005, 0, 1);
-    -o-transition: all 700ms cubic-bezier(0.375, 0.005, 0, 1);
-    transition: all 700ms cubic-bezier(0.375, 0.005, 0, 1);
-    /* custom */ }
+    opacity: 0; }
     section.offerings-container article.offering .media_wrapper > img.visible, section.offerings-container article.offering .media_wrapper video.visible {
       opacity: 1; }
   section.offerings-container article.offering .media_wrapper .placeholder {
