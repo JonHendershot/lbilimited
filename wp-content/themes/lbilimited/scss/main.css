@@ -8101,6 +8101,67 @@ section.offerings-container article.offering {
         -moz-transform: translateY(35px);
         -ms-transform: translateY(35px);
         -o-transform: translateY(35px); }
+  section.offerings-container article.offering .media_wrapper .blur_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 7;
+    overflow: hidden; }
+    section.offerings-container article.offering .media_wrapper .blur_img:before {
+      content: "";
+      position: absolute;
+      top: -25%;
+      left: -25%;
+      height: 150%;
+      width: 150%;
+      z-index: 1;
+      background-color: #191B1C; }
+    section.offerings-container article.offering .media_wrapper .blur_img:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      background-color: rgba(0, 0, 0, 0.85); }
+    section.offerings-container article.offering .media_wrapper .blur_img img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      -webkit-object-fit: cover;
+      -moz-object-fit: cover;
+      -ms-object-fit: cover;
+      -o-object-fit: cover;
+      filter: blur(15px);
+      -webkit-filter: blur(15px);
+      -moz-filter: blur(15px);
+      -ms-filter: blur(15px);
+      -o-filter: blur(15px);
+      z-index: 2; }
+      section.offerings-container article.offering .media_wrapper .blur_img img.center {
+        object-position: center center;
+        -webkit-object-position: center center;
+        -moz-object-position: center center;
+        -ms-object-position: center center;
+        -o-object-position: center center; }
+      section.offerings-container article.offering .media_wrapper .blur_img img.bottom {
+        object-position: center bottom;
+        -webkit-object-position: center bottom;
+        -moz-object-position: center bottom;
+        -ms-object-position: center bottom;
+        -o-object-position: center bottom; }
+      section.offerings-container article.offering .media_wrapper .blur_img img.top {
+        object-position: center top;
+        -webkit-object-position: center top;
+        -moz-object-position: center top;
+        -ms-object-position: center top;
+        -o-object-position: center top; }
 
 section.offerings-container article.offering a:after {
   content: "";

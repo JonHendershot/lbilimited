@@ -239,6 +239,58 @@ section.offerings-container {
 						}
 					}
 				}
+				.blur_img {
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: 100%;
+					
+					z-index: 7;
+					overflow: hidden;
+					
+					&:before {
+						content: "";
+						position: absolute;
+						top: -25%;
+						left: -25%;
+						height: 150%;
+						width: 150%;
+						z-index: 1;
+						background-color: $black;
+					}
+					&:after {
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						z-index: 3;
+						background-color: rgba(0,0,0,0.85);
+					}
+					
+					img {
+						position: absolute;
+						top: 0;
+						left: 0;
+						height: 100%;
+						width: 100%;
+						@include prefix(object-fit, cover);
+						@include prefix(filter, blur(15px));
+						z-index: 2;
+						
+						&.center {
+							@include prefix(object-position, center center);
+						}
+						&.bottom {
+							@include prefix(object-position, center bottom);
+						}
+						&.top {
+							@include prefix(object-position, center top);
+						}
+					}
+				}
 			}
 			/*
 &:nth-child(even){
