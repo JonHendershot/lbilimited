@@ -69,7 +69,7 @@ jQuery(window).load(function(){
 	if( $('.offering_contact').length ){
 		var offeringTitle = $('section.contact_form').attr('data-car');
 				
-		$('.offering_contact input[name="offering-name"]').val(offeringTitle).attr('disabled',true).parent().parent().addClass('filled_out');
+		$('.offering_contact input[name="offering-name"]').attr('value',offeringTitle).attr('disabled',true).parent().parent().addClass('filled_out');
 	}
 }(jQuery));
 
