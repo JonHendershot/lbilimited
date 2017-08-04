@@ -45,7 +45,7 @@
 		}
 		
 		.article_image {
-			width: 30%;
+			width: 55%;
 			height: 0;
 			padding-bottom: 19.1vw;
 			position: relative;
@@ -58,12 +58,13 @@
 			}
 		}
 		.article_content {
-			width: 70%;
+			width: 45%;
 			margin-left: 30px;
 			padding-right: 20px;
 			
 			header {
-				@include flexbox(center, space-between);
+				@include flexbox(flex-start, space-between);
+				flex-direction: column;
 				h2 {
 					margin: 0;
 
