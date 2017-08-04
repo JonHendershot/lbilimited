@@ -1131,7 +1131,7 @@ function lbi_upload_file($cf7) {
 			
 			$upFILE = ABSPATH . 'wp-content/plugins/dragDrop/uploads/' . $file;
 			
-			$submission->add_uploaded_file("file-upload-$key",$upFILE);
+			$submission->add_uploaded_file("file_upload_$key",$upFILE);
 		} 
 	}
 }
