@@ -5557,7 +5557,7 @@ span.wpcf7-not-valid-tip:before {
   position: static; }
 
 #project-planner .wpcf7-mail-sent-ok {
-  display: none; }
+  display: none !important; }
 
 .cube_load_container {
   position: absolute;
