@@ -67,9 +67,12 @@ jQuery(window).load(function(){
 (function offeringAutoFill($){
 	
 	if( $('.offering_contact').length ){
-		var offeringTitle = $('section.contact_form').attr('data-car');
+		var offeringTitle = $('section.contact_form').attr('data-car'),
+			titleInput = document.querySelector('input[name="offering-name"]');
+		
+		titleInput.value = offeringTitle;
 				
-		$('.offering_contact input[name="offering-name"]').attr('value',offeringTitle).trigger('change').attr('disabled',true).parent().parent().addClass('filled_out');
+		$('.offering_contact input[name="offering-name"]').parent().parent().addClass('filled_out');
 	}
 }(jQuery));
 
