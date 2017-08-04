@@ -5556,6 +5556,9 @@ span.wpcf7-not-valid-tip:before {
 .service-select .services {
   position: static; }
 
+#project-planner .wpcf7-mail-sent-ok {
+  display: none; }
+
 .cube_load_container {
   position: absolute;
   top: 0;
