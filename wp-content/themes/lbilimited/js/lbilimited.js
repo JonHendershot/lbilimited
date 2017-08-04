@@ -1711,7 +1711,7 @@ function preload() {
 			// Display what's being uploaded for the user
 			var	x;
 			
-			for(x=0; x < data.length; x++){
+			for(x=0; x <= data.length; x++){
 				
 				// Set Variables for sending uploaded file names to hidden inputs
 				var loopNum = x + 1,
@@ -1799,12 +1799,12 @@ function preload() {
 			fileType = this.files[0]['type'];
 			
 		// Handle upload event
-			if(fileLength <= 2 && uploads.length < 2){ //  && fileType == 'audio/mp3'
+			if(fileLength <= 5 && uploads.length < 5){ //  && fileType == 'audio/mp3'
 				// Pass file to upload
 				upload(this.files);
 				
-			}else if(uploads.length >= 2 || fileLength > 2){
-				alert("Sorry, we don't want more than two files.");
+			}else if(uploads.length >= 5 || fileLength > 5){
+				alert("No more than five files, please.");
 			}else {
 				// Instruct user as to what uploads are accepted
 				alert('please upload a single .mp3 file');

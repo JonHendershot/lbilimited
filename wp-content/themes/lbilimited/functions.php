@@ -1118,13 +1118,14 @@ function lbi_upload_file($cf7) {
    
 	$formID = $cf7->id();
 	if($formID == 72606){
-		$fileNAME = $_POST['file-name-1']; // '01Deadicated.mp3';
-		$fileNAME2 = $_POST['file-name-2']; // '02SayAnything.mp3';
+		
+		$fileNAME = $_POST['file-name-1']; 
+		$fileNAME2 = $_POST['file-name-2']; 
 		$fileNAME3 = $_POST['file-name-3'];
 		$fileNAME4 = $_POST['file-name-4'];
 		$fileNAME5 = $_POST['file-name-5'];
 		
-		$files = array($fileNAME,$fileNAME2,$fileNAME3,$fileNAME4,$fileNAME5); // json_decode($_POST['file-names'], true);
+		$files = array($fileNAME,$fileNAME2,$fileNAME3,$fileNAME4,$fileNAME5);
 		$submission = WPCF7_Submission::get_instance();
 		
 		foreach($files as $key => $file){
