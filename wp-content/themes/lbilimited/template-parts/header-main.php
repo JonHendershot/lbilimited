@@ -31,25 +31,26 @@
 			
 			// query params
 			$carQuery = array(
-				'acura',
-				'alfa',
-				'austinhealey',
-				'austin',
-				'healey',
-				'chevrolet',
-				'ferrari',
-				'fiat',
-				'ford shelby',
-				'jaguar',
-				'lamborghini',
-				'lancia',
-				'lotus',
-				'maserati',
-				'mercedes',
-				'mg',
-				'plymouth',
-				'porsche',
-				'toyota'
+				'Acura',
+				'Alfa',
+				'Austinhealey',
+				'Austin',
+				'Healey',
+				'Chevrolet',
+				'Ferrari',
+				'Fiat',
+				'Ford',
+				'Shelby',
+				'Jaguar',
+				'Lamborghini',
+				'Lancia',
+				'Lotus',
+				'Maserati',
+				'Mercedes',
+				'Mg',
+				'Plymouth',
+				'Porsche',
+				'Toyota'
 			);
 			
 			$header_img = word_in_array($subtitle,$carQuery) ? get_template_directory_uri() . '/inc/images/results_headers/full/' . word_in_array($subtitle,$carQuery) . '.jpg' : $default_img; 
