@@ -2110,7 +2110,7 @@ body.page-template-media_house .site-header .main-btn {
     -o-transition: 0.15s all ease-in-out; }
   .site-footer .newsletter-cta form input:focus {
     border-bottom-color: #962F32; }
-  .site-footer .newsletter-cta form div.sumbit-btn {
+  .site-footer .newsletter-cta form .sumbit-btn {
     background-image: url("../inc/images/sharrow.png");
     height: 43px;
     width: 43px;
@@ -2123,7 +2123,9 @@ body.page-template-media_house .site-header .main-btn {
     -webkit-transition: 0.25s all ease-in-out;
     -moz-transition: 0.25s all ease-in-out;
     -ms-transition: 0.25s all ease-in-out;
-    -o-transition: 0.25s all ease-in-out; }
+    -o-transition: 0.25s all ease-in-out;
+    border: none;
+    border-radius: 0px; }
   .site-footer .newsletter-cta form div.submit-btn:hover {
     background-color: #A82F32; }
   .site-footer .newsletter-cta form div.form-wrap {

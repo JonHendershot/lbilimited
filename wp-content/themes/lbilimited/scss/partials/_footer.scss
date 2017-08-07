@@ -111,7 +111,7 @@
 			input:focus {
 				border-bottom-color: $mainred; 
 			}
-			div.sumbit-btn {
+			.sumbit-btn {
 				background-image: url('../inc/images/sharrow.png');
 				height: 43px;
 				width: 43px;
@@ -121,6 +121,8 @@
 				background-repeat: no-repeat;
 				cursor: pointer;
 				@include transition(0.25s,all,ease-in-out);
+				border: none;
+				border-radius: 0px;
 				
 			}
 			div.submit-btn:hover {
