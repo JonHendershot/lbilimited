@@ -323,67 +323,6 @@
 
 	<section id="offering_content">
 		<?php echo vehicle_details(); ?>
-<!--
-		<div class="offering_overview">
-			<h4 class="tilt_title upside_down">Overview Stats</h4>
-			<div class="overview_wrapper">
-				<?php
-				
-				// Build an Unordered List of Stats, if stats exist
-					if( have_rows($stat_repeater) ) :
-					
-						echo "<ul class='overview_stats'>";
-						
-							while( have_rows($stat_repeater) ) : the_row();
-								// Variables
-									$stat = get_sub_field('offering_statistic');
-								
-								echo "<li class='stat'>$stat</li>";
-						
-							endwhile;
-							
-						echo "</ul>";
-					
-					endif;
-				
-					// Buttons for documents and startup sound
-					echo "<div class='overview_buttons_wrapper'>";
-					
-						if( $startup_audio ){
-							// variable
-								$audio_url = $startup_audio['url'];
-								$audio_type = $startup_audio['mime_type'];
-							// Build startup audio button
-							echo "<div class='audio_control_wrapper s_btn white btn'>
-								 <div class='startup_trigger startup_trigger_wrapper' data-src='$audio_url'>
-									<audio controls id='startup_audio'>
-										<source src='$audio_url' type='$audio_type' />
-									</audio>
-									<span>hear startup</span>
-								  </div>
-									<div class='audio_controls'>
-										<i class='fa fa-backward'></i>
-										<i class='fa fa-play startup_trigger' aria-hidden='true'></i>
-										<i class='fa fa-pause startup_trigger' aria-hidden='true'></i>
-									</div>
-								  </div>";
-						}
-						echo "<a href='#inquire' class='btn main-btn white waypoint anchor' data-cid='inquire' data-padding='100'>Inquire Below</a>";
-						if( have_rows($documents_repeater) ){
-							// Build documents trigger button
-							echo "<div class='documents_trigger btn s_btn white'>view documents</div>";
-						}
-						
-						
-						
-					echo "</div>"; // .overview_buttons_wrapper
-					
-					
-					
-				?>
-			</div>
-		</div>
--->
 		<div class="offering_details_container">
 			<div class="offering_details_wrapper">
 				<h4 class="tilt_title">Details</h4>
