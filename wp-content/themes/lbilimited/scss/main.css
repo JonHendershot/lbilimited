@@ -7458,7 +7458,6 @@ section.specialists {
             font-size: 13px;
             letter-spacing: 0.25px;
             line-height: 19px;
-            overflow-y: scroll;
             font-weight: 300;
             margin: 20px 0 0; }
           section.specialists .specialists_grid_container .specialist_expand_container .specialist_expand_wrapper .specialist_expand_content .launch_video {
