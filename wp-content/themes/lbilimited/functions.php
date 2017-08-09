@@ -1136,7 +1136,7 @@ function lbi_upload_file($cf7) {
 	}
 	// having an issue with empty car title fields, so we'll check to see if that string is empty and set it to post title if it is
 	if( $formID === 987 ){
-		global $post;
+// 		global $post;
 		
 		//Get current form
         $wpcf7      = WPCF7_ContactForm::get_current();
