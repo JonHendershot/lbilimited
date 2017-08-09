@@ -64,12 +64,14 @@ jQuery(window).load(function(){
   //////////////////////
  // Offering Contact //
 //////////////////////
+/*
 (function offeringAutoFill($){
 	
 	if( $('.offering_contact').length ){
 		document.querySelector('input[name="offering-name"]').setAttribute('disabled', true);
 	}
 }(jQuery));
+*/
 
 
   ////////////////////////
