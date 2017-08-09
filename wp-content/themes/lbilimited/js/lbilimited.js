@@ -64,14 +64,20 @@ jQuery(window).load(function(){
   //////////////////////
  // Offering Contact //
 //////////////////////
-/*
 (function offeringAutoFill($){
 	
 	if( $('.offering_contact').length ){
-		document.querySelector('input[name="offering-name"]').setAttribute('disabled', true);
+		var offeringName = $('section.contact_form').attr('data-car'),
+			titleDisplay = document.querySelector('input[name="offering-name"]'),
+			titleInput = document.getElementById('offering-title');
+		
+		title.input.value = offeringName;
+		titleDisplay.value = offeringName;
+		titleDisplay.setAttribute('disabled',true);
+				
+		$('.offering_contact input[name="offering-name"]').parent().parent().addClass('filled_out');
 	}
 }(jQuery));
-*/
 
 
   ////////////////////////
