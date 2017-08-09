@@ -71,6 +71,7 @@ jQuery(window).load(function(){
 			titleInput = document.querySelector('input[name="offering-name"]');
 		
 		titleInput.value = offeringTitle;
+		titleInput.setAttribute('disabled',true);
 				
 		$('.offering_contact input[name="offering-name"]').parent().parent().addClass('filled_out');
 	}
