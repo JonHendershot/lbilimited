@@ -1135,6 +1135,7 @@ function lbi_upload_file($cf7) {
 		} 
 	}
 	// having an issue with empty car title fields, so we'll check to see if that string is empty and set it to post title if it is
+/*
 	if( $formID === 987 ){
 		
 		
@@ -1180,9 +1181,17 @@ function lbi_upload_file($cf7) {
             return $wpcf7;
 		}
 	}
+*/
+}	
+	
+	
+function add_offering_form_title(){
+ 
+    global $post;
+    return get_the_title( $post->ID );
 }
-	
-	
+ 
+add_shortcode('add_offering_form_title', 'cf7_add_post_id');
 	
 // check if string contains a certain word in a given array
 function word_in_array($str, array $arr)
