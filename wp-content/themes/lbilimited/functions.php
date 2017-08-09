@@ -1149,7 +1149,7 @@ function lbi_upload_file($cf7) {
 			if(empty($data))
 				return;
 			
-			$vehicleTitle = if($data['offering-name'] !== '') ? $data['offering-name'] : 'testing title hook';
+			$vehicleTitle = ($data['offering-name'] !== '') ? $data['offering-name'] : 'testing title hook';
 			
 			// do some replacements in the cf7 email body
             $mail         = $wpcf7->prop('mail');
