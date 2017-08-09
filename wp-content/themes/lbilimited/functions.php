@@ -1113,9 +1113,7 @@ function vehicle_details(){
 // attach files to consignment form
 add_action( 'wpcf7_before_send_mail', 'lbi_upload_file' );
  
-function lbi_upload_file($cf7) {
-   	global $post;
-	
+function lbi_upload_file($cf7) {	
 	$formID = $cf7->id();
 	
 	if($formID == 72606){
@@ -1146,12 +1144,25 @@ function lbi_upload_file($cf7) {
 
 		
 		if( $submission ){
-			$post_title = $post->ID;
+			
+			// post id isn't availabe in this hook, so we need to hack around a little bit to get the post id
+			$unit_tag = $submission->get_meta( 'unit_tag' );  
+			$explode_unit_tag = explode("-", $unit_tag);  
+  
+            // We're on the viewing request form  
+            $post_id = str_replace("p", "", $explode_unit_tag[2]);
+			
+			// get the title from the db using the post id
+			$post_title = get_the_title($post_id);
 			$title = "$post_title YERRRRRP";
+			
 			$data = $submission->get_posted_data();
 			
 			if(empty($data))
 				return;
+			
+			
+			
 			
 			$vehicleTitle = ($data['offering-name'] !== '') ? $data['offering-name'] : $title;
 			
