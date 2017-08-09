@@ -71,7 +71,7 @@ jQuery(window).load(function(){
 			titleDisplay = document.querySelector('input[name="offering-name"]'),
 			titleInput = document.getElementById('offering-title');
 		
-		title.input.value = offeringName;
+		titleInput.value = offeringName;
 		titleDisplay.value = offeringName;
 		titleDisplay.setAttribute('disabled',true);
 				
