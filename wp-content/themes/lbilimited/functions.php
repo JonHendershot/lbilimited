@@ -1144,7 +1144,7 @@ function lbi_upload_file($cf7) {
 
 		
 		if( $submission ){
-			$post_title = get_the_title($post->ID);
+			$post_title = 'testing post title variable';
 			$data = $submission->get_posted_data();
 			
 			if(empty($data))
