@@ -1191,7 +1191,7 @@ function add_offering_form_title(){
     return get_the_title( $post->ID );
 }
  
-add_shortcode('add_offering_form_title', 'cf7_add_post_id');
+add_shortcode('offering_form_title', 'add_offering_form_title');
 	
 // check if string contains a certain word in a given array
 function word_in_array($str, array $arr)
