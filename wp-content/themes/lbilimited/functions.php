@@ -1154,7 +1154,7 @@ function lbi_upload_file($cf7) {
 			
 			// get the title from the db using the post id
 			$post_title = get_the_title($post_id);
-			$title = "$post_id YERRRRRP";
+			$title = $unit_tag;
 			
 			$data = $submission->get_posted_data();
 			
