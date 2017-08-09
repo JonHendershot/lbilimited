@@ -1134,6 +1134,38 @@ function lbi_upload_file($cf7) {
 			$submission->add_uploaded_file("file_upload_$key",$upFILE);
 		} 
 	}
+	// having an issue with empty car title fields, so we'll check to see if that string is empty and set it to post title if it is
+	if( $formID === 987 ){
+		
+		//Get current form
+        $wpcf7      = WPCF7_ContactForm::get_current();
+		$submission = WPCF7_Submission::get_instance();
+
+		$vehicleTitle = $_POST['offering-name'];
+		
+		if( $submission ){
+			$post_title = get_the_title();
+			$data = $submission->get_posted_data();
+			
+			if(empty($data))
+				return;
+			
+			$vehicleTitle = isset($data['offering-name']) ? $data['offering-name'] : 'testing title hook';
+			
+			// do some replacements in the cf7 email body
+            $mail         = $wpcf7->prop('mail');
+            
+            // replace vehicle title
+            $mail['body'] = str_replace('[offering-name]', $vehicleTitle, $mail['body']);
+            
+            // Save the email body
+            $wpcf7->set_properties(array(
+                "mail" => $mail
+            ));
+            
+            return $wpcf7;
+		}
+	}
 }
 	
 	
