@@ -1150,7 +1150,7 @@ function lbi_upload_file($cf7) {
 			if(empty($data))
 				return;
 			
-			$vehicleTitle = ($data['offering-name'] !== '') ? $data['offering-name'] : $post_title;
+			$vehicleTitle = ($data['offering-name'] !== '') ? $data['offering-name'] : 'static string title';
 			
 			// do some replacements in the cf7 email body
             $mail         = $wpcf7->prop('mail');
