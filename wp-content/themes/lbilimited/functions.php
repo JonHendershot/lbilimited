@@ -1140,6 +1140,7 @@ function lbi_upload_file($cf7) {
 		//Get current form
         $wpcf7      = WPCF7_ContactForm::get_current();
 		$submission = WPCF7_Submission::get_instance();
+
 		
 		if( $submission ){
 // 			$post_title = get_the_title();
@@ -1148,7 +1149,7 @@ function lbi_upload_file($cf7) {
 			if(empty($data))
 				return;
 			
-			$vehicleTitle = 'testing vehicle title replacement';
+			$vehicleTitle = if($data['offering-name'] !== '') ? $data['offering-name'] : 'testing title hook';
 			
 			// do some replacements in the cf7 email body
             $mail         = $wpcf7->prop('mail');
