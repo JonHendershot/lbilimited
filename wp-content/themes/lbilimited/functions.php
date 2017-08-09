@@ -1114,8 +1114,10 @@ function vehicle_details(){
 add_action( 'wpcf7_before_send_mail', 'lbi_upload_file' );
  
 function lbi_upload_file($cf7) {
-   
+   	global $post;
+	
 	$formID = $cf7->id();
+	
 	if($formID == 72606){
 		
 		$fileNAME = $_POST['file-name-1']; 
@@ -1136,7 +1138,7 @@ function lbi_upload_file($cf7) {
 	}
 	// having an issue with empty car title fields, so we'll check to see if that string is empty and set it to post title if it is
 	if( $formID === 987 ){
-		global $post;
+		
 		
 		//Get current form
         $wpcf7      = WPCF7_ContactForm::get_current();
@@ -1144,13 +1146,14 @@ function lbi_upload_file($cf7) {
 
 		
 		if( $submission ){
-			$post_title = 'yes hllo this is title';
+			$post_title = get_the_title( $post->ID );
+			$title = "$post_title YERRRRRP"
 			$data = $submission->get_posted_data();
 			
 			if(empty($data))
 				return;
 			
-			$vehicleTitle = ($data['offering-name'] !== '') ? $data['offering-name'] : $post_title;
+			$vehicleTitle = ($data['offering-name'] !== '') ? $data['offering-name'] : $title;
 			
 			// do some replacements in the cf7 email body
             $mail         = $wpcf7->prop('mail');
