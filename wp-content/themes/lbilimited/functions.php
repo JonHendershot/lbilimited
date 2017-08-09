@@ -1136,7 +1136,7 @@ function lbi_upload_file($cf7) {
 	}
 	// having an issue with empty car title fields, so we'll check to see if that string is empty and set it to post title if it is
 	if( $formID === 987 ){
-// 		global $post;
+		global $post;
 		
 		//Get current form
         $wpcf7      = WPCF7_ContactForm::get_current();
@@ -1144,13 +1144,13 @@ function lbi_upload_file($cf7) {
 
 		
 		if( $submission ){
-			$post_title = 'testing post title variable';
+			$post_title = get_the_title($post->ID);
 			$data = $submission->get_posted_data();
 			
 			if(empty($data))
 				return;
 			
-			$vehicleTitle = ($data['offering-name'] !== '') ? $data['offering-name'] : 'static string title';
+			$vehicleTitle = ($data['offering-name'] !== '') ? $data['offering-name'] : $post_title;
 			
 			// do some replacements in the cf7 email body
             $mail         = $wpcf7->prop('mail');
