@@ -1149,13 +1149,14 @@ function lbi_upload_file($cf7) {
 			
 			if(empty($data))
 				return;
-
+			
+			$vehicleTitle = ($data['offering-name'] !== '') ? $data['offering-name'] : ' title should be going right here ';
 			
 			// do some replacements in the cf7 email body
             $mail         = $wpcf7->prop('mail');
             
             // replace vehicle title
-            $mail['body'] = str_replace('[offering-name]', $post_title, $mail['body']);
+            $mail['body'] = str_replace('[offering-name]', $vehicleTitle, $mail['body']);
             
             // Save the email body
             $wpcf7->set_properties(array(
