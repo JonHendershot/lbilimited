@@ -1134,59 +1134,10 @@ function lbi_upload_file($cf7) {
 			$submission->add_uploaded_file("file_upload_$key",$upFILE);
 		} 
 	}
-	// having an issue with empty car title fields, so we'll check to see if that string is empty and set it to post title if it is
-/*
-	if( $formID === 987 ){
-		
-		
-		//Get current form
-        $wpcf7      = WPCF7_ContactForm::get_current();
-		$submission = WPCF7_Submission::get_instance();
-
-		
-		if( $submission ){
-			
-			// post id isn't availabe in this hook, so we need to hack around a little bit to get the post id
-			$unit_tag = $submission->get_meta( 'unit_tag' );  
-			$explode_unit_tag = explode("-", $unit_tag);  
-  
-            // We're on the viewing request form  
-            $post_id = str_replace("p", "", $explode_unit_tag[2]);
-			
-			// get the title from the db using the post id
-			$post_title = get_the_title($post_id);
-			$title = $unit_tag;
-			
-			$data = $submission->get_posted_data();
-			
-			if(empty($data))
-				return;
-			
-			
-			
-			
-			$vehicleTitle = ($data['offering-name'] !== '') ? $data['offering-name'] : $title;
-			
-			// do some replacements in the cf7 email body
-            $mail         = $wpcf7->prop('mail');
-            
-            // replace vehicle title
-            $mail['body'] = str_replace('[offering-name]', $vehicleTitle, $mail['body']);
-            
-            // Save the email body
-            $wpcf7->set_properties(array(
-                "mail" => $mail
-            ));
-            
-            return $wpcf7;
-		}
-	}
-*/
 }	
 	
-	
+// add shortcoude for cf7 dynamic field to dynamically populate car title for these forms
 function add_offering_form_title(){
- 
     global $post;
     return get_the_title( $post->ID );
 }

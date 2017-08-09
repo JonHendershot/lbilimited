@@ -335,17 +335,9 @@
 			</div>
 		</div>
 	</section>
-	<section class='contact_form form_contact' id='inquire'>
-			<h4 class="tilt_title flip">Inquire Below</h4>
-
-			<div class='offering_contact general_contact-container form-contact'><?= do_shortcode($offering_form); ?></div>
-	
-		
-	</section>
 	<?php
 		// Build an array for the form information and
 		// Call the custom function from functions.php to build the contact form section
-/*
 			$form_array = array();
 			$form_array[] = array(
 				'title' => 'offering_contact general_contact',
@@ -354,7 +346,6 @@
 			
 			lbi_contact($form_array, 'contact');
 	
-*/
 	
 
 	  ///////////////////////////////////
