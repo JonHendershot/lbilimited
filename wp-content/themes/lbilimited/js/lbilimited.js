@@ -64,6 +64,7 @@ jQuery(window).load(function(){
   //////////////////////
  // Offering Contact //
 //////////////////////
+/*
 (function offeringAutoFill($){
 	
 	if( $('.offering_contact').length ){
@@ -76,6 +77,7 @@ jQuery(window).load(function(){
 		$('.offering_contact input[name="offering-name"]').parent().parent().addClass('filled_out');
 	}
 }(jQuery));
+*/
 
 
   ////////////////////////
