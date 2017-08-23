@@ -361,6 +361,8 @@
 					border-radius: 5px;
 					@include max-content(height);
 					z-index: 99;
+					max-height: 95%;
+					overflow-y: scroll;
 
 					
 					.uploaded-file {

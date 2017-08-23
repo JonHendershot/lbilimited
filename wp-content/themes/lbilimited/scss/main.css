@@ -5191,7 +5191,9 @@ body.page-template-media_house .site-header .main-btn {
       height: -webkit-max-content;
       height: -moz-max-content;
       height: -moz-fit-content;
-      z-index: 99; }
+      z-index: 99;
+      max-height: 95%;
+      overflow-y: scroll; }
       .project-planner-container #project-planner .prev-material #uploaded-files .uploaded-file {
         width: 100%;
         visibility: hidden;
