@@ -4886,7 +4886,12 @@ body.page-template-media_house .site-header .main-btn {
       display: none; }
     .project-planner-container #project-planner form {
       max-width: none;
-      width: 100%; }
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
       .project-planner-container #project-planner form textarea {
         margin-top: 0;
         color: #fff; }
@@ -5139,7 +5144,7 @@ body.page-template-media_house .site-header .main-btn {
       .project-planner-container #project-planner .prev-material #dropzone .container {
         border: 2px dashed #818181;
         border-radius: 5px;
-        padding: 150px 0;
+        padding: 15vh 0;
         width: 100%;
         transition: 0.3s all ease-in-out;
         -webkit-transition: 0.3s all ease-in-out;
@@ -5503,7 +5508,13 @@ body.page-template-media_house .site-header .main-btn {
   width: max-content;
   width: -webkit-max-content;
   width: -moz-max-content;
-  width: -moz-fit-content; }
+  width: -moz-fit-content;
+  border: none;
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%); }
 
 .wpcf7-response-output {
   border: none;
@@ -5514,7 +5525,7 @@ body.page-template-media_house .site-header .main-btn {
   font-size: 14px; }
 
 .wpcf7-validation-errors::before {
-  color: #A82F32;
+  color: yellow;
   font-style: italic;
   content: "\f071";
   /*
