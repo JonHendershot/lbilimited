@@ -711,6 +711,7 @@ slideShowImage.click(function(){
 		
 		// Update Inquiry Form
 		$('.lbi_lightbox.inquiry').find('input[name="offering-name"]').attr('value', vehicleTitle).attr('disabled',true).parent().parent().addClass('filled_out');
+		$('.lbi_lightbox.inquiry').find('input[name="offering-title"]').attr('value', vehicleTitle);
 		
 		// Open it up
 		open_lightbox(lightbox);
