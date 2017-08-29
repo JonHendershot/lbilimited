@@ -33,8 +33,9 @@
 			
 			// If there are, use that tax query, if not - revert to current offerings
 			if($has_posts){
-				// set Taxonomy ID
+				// set post params
 				$tax_id = $cs_id; // coming soon id
+				$posts_per_page = -1;
 				
 				// Establish proper Display Content
 				$title = $cs_title;
@@ -48,6 +49,7 @@
 				$call_to_action = "<div class='main-btn inquiry_trigger' id='inquiry_trigger' data-title=''>$btn_text</div>";
 			}else {
 				$tax_id = 264; // current offerings id
+				$posts_per_page = 3;
 				
 				// Establish proper Display Content
 				$title = $offering_title;
@@ -63,7 +65,7 @@
 
 			$args = array(
 				'post_type' => 'offerings',
-				'posts_per_page' => 3,
+				'posts_per_page' => $posts_per_page ? $posts_per_page : 3,
 				'orderby' => 'menu_order',
 				'order' => 'ASC',
 				'tax_query' => array(
