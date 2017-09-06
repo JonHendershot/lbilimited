@@ -11088,7 +11088,7 @@ body.single .contact_form:after {
         list-style: none;
         padding-left: 25px; }
         #offering_content .offering_overview .overview_wrapper ul li {
-          width: 49%;
+          width: 47%;
           margin: 10px 0;
           font-size: 16px;
           letter-spacing: 1.8px;
@@ -11103,7 +11103,7 @@ body.single .contact_form:after {
           background-color: #eeeeee;
           position: absolute;
           top: 6px;
-          left: -25px;
+          left: -6%;
           /* 					@include prefix(transform, skewX(-25deg)); */ }
       #offering_content .offering_overview .overview_wrapper .overview_buttons_wrapper {
         display: flex;
@@ -11376,7 +11376,7 @@ body.single .contact_form:after {
         padding-left: 0px; }
         .single-collection #offering_content .offering_overview .overview_wrapper .overview_stats li {
           color: #191B1C;
-          width: 48%;
+          width: 47%;
           padding-left: 2px;
           margin-top: 20px;
           font-size: 14px;

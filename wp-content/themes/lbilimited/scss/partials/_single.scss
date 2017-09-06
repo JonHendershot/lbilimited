@@ -712,7 +712,7 @@ body.single {
 				padding-left: 25px;
 				
 				li {
-					width: 49%;
+					width: 47%;
 					margin: 10px 0;
 					font-size: 16px;
 					letter-spacing: 1.8px;
@@ -728,7 +728,7 @@ body.single {
 					background-color: $altgray;
 					position: absolute;
 					top: 6px;
-					left: -25px;
+					left: -6%;
 /* 					@include prefix(transform, skewX(-25deg)); */
 				}
 			}
@@ -963,7 +963,7 @@ body.single {
 					padding-left: 0px;
 					li {
 						color: $black;
-						width: 48%;
+						width: 47%;
 						padding-left: 2px;
 						margin-top: 20px;
 						font-size: 14px;
