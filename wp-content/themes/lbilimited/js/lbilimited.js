@@ -1391,18 +1391,18 @@ function lazyLoader(img){
 			loader.src = src; // load the new image with the src
 			
 			loader.onload = function(){ // when the image is loaded, apply the source appropriately to the element
-			
-			if(img.is('img')){
-				img.attr('src',src); 
-			}
-			if( img.is('div') ){
-				img.attr('style','background-image: url(' + src + ')');
-				img.addClass('div_check');
-			}
-
-
-			img.addClass('visible');
-		};
+				
+				if(img.is('img')){
+					img.attr('src',src); 
+				}
+				if( img.is('div') ){
+					img.attr('style','background-image: url(' + src + ')');
+					img.addClass('div_check');
+				}
+	
+	
+				img.addClass('visible');
+			};
 		}
 		if( img.is('source') ){
 			img.attr('src',src);

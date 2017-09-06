@@ -210,6 +210,7 @@ section.offerings-container {
 				&> img, video {
 					z-index: 9;
 					opacity: 0;
+					@include easeout(300ms);
 					
 					&.visible {
 						opacity: 1;
@@ -248,6 +249,7 @@ section.offerings-container {
 					z-index: 7;
 					overflow: hidden;
 					
+/*
 					&:before {
 						content: "";
 						position: absolute;
@@ -258,6 +260,7 @@ section.offerings-container {
 						z-index: 1;
 						background-color: $black;
 					}
+*/
 					&:after {
 						content: "";
 						position: absolute;
@@ -266,7 +269,7 @@ section.offerings-container {
 						width: 100%;
 						height: 100%;
 						z-index: 3;
-						background-color: rgba(0,0,0,0.85);
+						background-color: rgba(0,0,0,0.35);
 					}
 					
 					img {
