@@ -1,3 +1,19 @@
+
+.lbi-approved {
+	position: absolute;
+    top: 2.5vw;
+    right: 2.5vw;
+    z-index: 9999 !important;
+    opacity: 1 !important;
+    max-width: 150px;
+    width: 20%;
+    
+    @media (max-width: 700px) {
+	    width: 15%;
+    }
+    
+}
+
 section.offerings-container {
 	a {
 		text-decoration: none;

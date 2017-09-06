@@ -458,6 +458,20 @@ function LBI_register_settings()
 		    );
 		
 		    add_settings_field( 'blog_img', 'Default Blog Image', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_misc_section', $field_args );
+		    
+		    
+		// LBI Approved Image
+		    $field_args = array(
+		      'type'      => 'text',
+		      'id'        => 'lbi_approved',
+		      'name'      => 'lbi_approved',
+		      'desc'      => '<input data-category="lbi_approved" class="left-float image-trigger" type="button" value="Upload Image"><p>Default image to display as the featured image for blog postse</p>',
+		      'std'       => '',
+		      'label_for' => 'lbi_approved',
+		      'class'     => ' left-float header_image lbi_approved'
+		    );
+		
+		    add_settings_field( 'lbi_approved', 'LBI Approved Image', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_misc_section', $field_args );    
 	
 
 }

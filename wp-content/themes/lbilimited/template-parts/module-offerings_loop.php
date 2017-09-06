@@ -6,6 +6,9 @@
 				$media_class = "offering-fmedia";
 				$post_id = get_the_ID();
 				$sold_overly = get_field('sold_overlay');
+				$approved_overlay = get_field('lbi_approved');
+				$options = get_option('lbilimited_options');
+				$approved_image = $options['lbi_approved'];
 				
 				
 				// grab the featured file information to dynamically generate display markup
@@ -54,6 +57,9 @@
 						</div>
 					</div>
 					<div class="media_wrapper">
+						<?php if($approved_overlay) : ?>
+							<img src="<?= $approved_image; ?>" class="lbi-approved" />
+						<?php endif; ?>
 						<div class="placeholder">
 							<img class="waypoint" data-padding="100" src="<?php echo get_template_directory_uri() . '/inc/images/icon_placeholder.png'; ?>" />
 						</div>
