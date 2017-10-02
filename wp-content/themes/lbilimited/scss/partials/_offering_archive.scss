@@ -4,9 +4,10 @@
     top: 2.5vw;
     right: 2.5vw;
     z-index: 9999 !important;
-    opacity: 1 !important;
+    opacity: 0;
     max-width: 150px;
     width: 20%;
+    @include easeout(800ms);
     
     @media (max-width: 700px) {
 	    width: 15%;
@@ -59,6 +60,9 @@ section.offerings-container {
 						visibility: visible !important;
 						opacity: 1 !important;
 					}
+				}
+				.lbi-approved {
+					opacity: 1;
 				}
 				
 			}
