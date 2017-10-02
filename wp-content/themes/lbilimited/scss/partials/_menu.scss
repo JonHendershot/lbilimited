@@ -43,23 +43,25 @@
 				text-decoration: none;
 				position: relative;
 
-				span {
+				.menu_title {
 					font-family: $heading-font;
 					font-size: 36px;
 					letter-spacing: 1.2px;
 					line-height: 36px;
 					text-align: center;
 					color: $white;
-					opacity: 0.39;
 					text-transform: uppercase;
 					font-weight: bold;
 					margin: 0 auto;
-					word-spacing: 999em;
 					opacity: 0;
 					@include prefix(transform, translateY(5px));
 					@include easeout(1000ms);
 					z-index: 9;
 					width: 100%;
+					
+					span {
+						display: block;
+					}
 					
 					&:after {
 						height: 160px;
@@ -106,7 +108,7 @@
 				}
 */
 				&:hover {
-					span {
+					.menu_title {
 						opacity: 1 !important;
 						
 						&:after {
@@ -162,7 +164,7 @@
 	}
 	@for $ii from 0 through 9 {
 		$delay: ($ii - 1 ) * ( 100 / ( ($ii + 1 ) * 0.4) );
-		.menu_section span.item-#{$ii}{
+		.menu_section .menu_title.item-#{$ii}{
 			transition-delay: #{$delay}ms !important;
 		}
 	}
@@ -181,7 +183,7 @@
 		.section_3 a:before {
 			@include prefix(transform, scaleX(1));
 		}
-		.menu_section .menu_items_wrapper a span {
+		.menu_section .menu_items_wrapper a .menu_title {
 			opacity: 0.39;
 			@include prefix(transform, translateY(0px));
 		}

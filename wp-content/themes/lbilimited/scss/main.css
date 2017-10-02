@@ -4663,18 +4663,16 @@ body.page-template-media_house .site-header .main-btn {
 					@include easeout(400ms);
 				}
 */ }
-        #main_menu .menu_section .menu_items_wrapper a span {
+        #main_menu .menu_section .menu_items_wrapper a .menu_title {
           font-family: "heading", serif;
           font-size: 36px;
           letter-spacing: 1.2px;
           line-height: 36px;
           text-align: center;
           color: #fff;
-          opacity: 0.39;
           text-transform: uppercase;
           font-weight: bold;
           margin: 0 auto;
-          word-spacing: 999em;
           opacity: 0;
           transform: translateY(5px);
           -webkit-transform: translateY(5px);
@@ -4688,7 +4686,9 @@ body.page-template-media_house .site-header .main-btn {
           /* custom */
           z-index: 9;
           width: 100%; }
-          #main_menu .menu_section .menu_items_wrapper a span:after {
+          #main_menu .menu_section .menu_items_wrapper a .menu_title span {
+            display: block; }
+          #main_menu .menu_section .menu_items_wrapper a .menu_title:after {
             height: 160px;
             right: auto;
             top: -10px;
@@ -4724,9 +4724,9 @@ body.page-template-media_house .site-header .main-btn {
             -o-transition: all 800ms cubic-bezier(0.375, 0.005, 0, 1);
             transition: all 800ms cubic-bezier(0.375, 0.005, 0, 1);
             /* custom */ }
-        #main_menu .menu_section .menu_items_wrapper a:hover span {
+        #main_menu .menu_section .menu_items_wrapper a:hover .menu_title {
           opacity: 1 !important; }
-          #main_menu .menu_section .menu_items_wrapper a:hover span:after {
+          #main_menu .menu_section .menu_items_wrapper a:hover .menu_title:after {
             transform: skew(-24deg) scaleY(1);
             -webkit-transform: skew(-24deg) scaleY(1);
             -moz-transform: skew(-24deg) scaleY(1);
@@ -4782,25 +4782,25 @@ body.page-template-media_house .site-header .main-btn {
     transition-delay: 0ms; }
   #main_menu .menu_section.section_4 {
     transition-delay: 0ms; }
-  #main_menu .menu_section span.item-0 {
+  #main_menu .menu_section .menu_title.item-0 {
     transition-delay: -250ms !important; }
-  #main_menu .menu_section span.item-1 {
+  #main_menu .menu_section .menu_title.item-1 {
     transition-delay: 0ms !important; }
-  #main_menu .menu_section span.item-2 {
+  #main_menu .menu_section .menu_title.item-2 {
     transition-delay: 83.33333ms !important; }
-  #main_menu .menu_section span.item-3 {
+  #main_menu .menu_section .menu_title.item-3 {
     transition-delay: 125ms !important; }
-  #main_menu .menu_section span.item-4 {
+  #main_menu .menu_section .menu_title.item-4 {
     transition-delay: 150ms !important; }
-  #main_menu .menu_section span.item-5 {
+  #main_menu .menu_section .menu_title.item-5 {
     transition-delay: 166.66667ms !important; }
-  #main_menu .menu_section span.item-6 {
+  #main_menu .menu_section .menu_title.item-6 {
     transition-delay: 178.57143ms !important; }
-  #main_menu .menu_section span.item-7 {
+  #main_menu .menu_section .menu_title.item-7 {
     transition-delay: 187.5ms !important; }
-  #main_menu .menu_section span.item-8 {
+  #main_menu .menu_section .menu_title.item-8 {
     transition-delay: 194.44444ms !important; }
-  #main_menu .menu_section span.item-9 {
+  #main_menu .menu_section .menu_title.item-9 {
     transition-delay: 200ms !important; }
   #main_menu.open {
     visibility: visible; }
@@ -4822,7 +4822,7 @@ body.page-template-media_house .site-header .main-btn {
     -moz-transform: scaleX(1);
     -ms-transform: scaleX(1);
     -o-transform: scaleX(1); }
-  #main_menu.menu_visible .menu_section .menu_items_wrapper a span {
+  #main_menu.menu_visible .menu_section .menu_items_wrapper a .menu_title {
     opacity: 0.39;
     transform: translateY(0px);
     -webkit-transform: translateY(0px);
@@ -8317,7 +8317,9 @@ section.notify_me_container {
   width: max-content;
   width: -webkit-max-content;
   width: -moz-max-content;
-  width: -moz-fit-content; }
+  width: -moz-fit-content;
+  min-width: 190px;
+  text-align: center; }
 
 section.featured_gallery {
   background-color: #191B1C;

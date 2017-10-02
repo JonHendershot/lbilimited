@@ -8,6 +8,8 @@
 			position: absolute;
 			bottom: -40%;
 			@include max-content(width);
+			min-width: 190px;
+			text-align: center;
 		}
 	}
 }

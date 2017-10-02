@@ -843,36 +843,62 @@ function span_per_word($input){
 	
 	return $output;
 }
-function span_per_word_title($input){
+function span_per_word_title($input, $length = null){
+	
+	/**
+	 *
+	 * @param $input string to be converted into <span> wrapped words
+	 *
+	 */
 		
 	$output = '';
-	$min_characters = 2; 
+	if( isset($length) ){
+		$min_characters = $length;
+	}else {
+		if( is_front_page() ){
+			$min_characters = 2; 
+		}else {
+			$min_characters = 4;
+		}
+	}
+	
 
 	$explode = explode(' ', $input);
 	$word_count = count( $explode );
 	
-	for( $ii = 0; $ii < $word_count; $ii++ ){
-		
-		$word = html_entity_decode( $explode[$ii] ); // prevent special characters from being converted to ASCII
-		$strlen = strlen($word);
+	if( $word_count > 1 ){
 		
 		
-		if( $strlen > $min_characters ){
-			$output .= "<span class='word word-$ii' data-length='$strlen'>$word</span>";
-		}else {
+		for( $ii = 0; $ii < $word_count; $ii++ ){
 			
-			$next_id = $ii + 1;
-			$next_word = $explode[$next_id];
+			$word = html_entity_decode( $explode[$ii] ); // prevent special characters from being converted to ASCII
+			$strlen = strlen($word);
 			
-
-			$output .= "<span class='word word-$ii' data-length='$strlen'>$word $next_word</span>";
 			
-			// increment counter to pass over next word in array
-			$ii++;
+			if( $strlen > $min_characters || $word == 'LBI' ){
+				$output .= "<span class='word word-$ii' data-length='$strlen'>$word</span>";
+			}else {
+				
+				$next_id = $ii + 1;
+				$next_word = $explode[$next_id];
+				
+	
+				$output .= "<span class='word word-$ii' data-length='$strlen'>$word $next_word</span>";
+				
+				// increment counter to pass over next word in array
+				$ii++;
+			}
 		}
+		
+		return $output;
+		
+	} else {
+		
+		return "<span class='word word-1' data-length='none'>$input</span>";
+		
 	}
 	
-	return $output;
+	
 }
 
 

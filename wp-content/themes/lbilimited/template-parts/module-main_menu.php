@@ -22,7 +22,7 @@
 				$image = get_the_post_thumbnail_url($page_ID, 'medium_large');
 			}
 			
-	
+			$display_title = span_per_word_title( $title, 3 );
 	
 		// We need to wrap every 3 elements in a section wrapper
 		if( ($key + 3) % 3 == 0){
@@ -32,7 +32,7 @@
 					<div class='menu_items_wrapper'>";
 		}
 			echo "<a href='$url'>
-				  	<span class='item-$key dash-title'>$title</span>
+				  	<div class='item-$key menu_title dash-title'>$display_title</div>
 				  	<div class='image_wrapper'>
 				  		<img data-src='$image' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' class='object-fit lazy-load' />
 				  	</div>
