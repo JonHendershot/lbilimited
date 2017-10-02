@@ -29,6 +29,10 @@
 		$hide_header = '';
 	}
 	
+// Firs time visitor cookie
+	$first_visit = !isset( $_COOKIE["firstVisit"] );
+	setCookie( "firstVisit", 1, strtotime('+1 month') );
+	
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -40,10 +44,12 @@
 </head>
 
 <body <?php body_class( " $hide_header " ); ?>>
+	<?php if($first_visit) : ?>
 	<div id="pre_loader">
 		<div class="ribbon"></div>
 		<img src="<?php echo $loading_icon; ?>" />
 	</div>
+	<?php endif; ?>
 	<div id="page" class="site">		
 		<header id="masthead" class="<?php echo $header_class; ?>" role="banner">
 			<!-- Fixed nav bar across the top of each page -->

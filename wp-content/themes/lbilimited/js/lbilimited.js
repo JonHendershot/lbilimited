@@ -37,6 +37,7 @@ jQuery(window).load(function(){
 	
 });
 
+/*
 (function pageTransition(){
 	var links = document.getElementsByTagName('a');
 	
@@ -59,6 +60,7 @@ jQuery(window).load(function(){
 		}
 	}
 }());
+*/
 
 
   //////////////////////
