@@ -858,7 +858,7 @@ function span_per_word_title($input, $length = null){
 		if( is_front_page() ){
 			$min_characters = 2; 
 		}else {
-			$min_characters = 4;
+			$min_characters = 3;
 		}
 	}
 	
