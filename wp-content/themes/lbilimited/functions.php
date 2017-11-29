@@ -332,10 +332,9 @@ function lbi_single_gallery( $atts ){
 							<img data-src='$first_image' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='$first_alt' class='full_res visible lazy-load' id='gallery_full' />
 							<img src='$first_blur' class='blur_image visible' />
 							$loading_animation
-							<span class='click_message'>Click to view full image</span>
 						</div>";
 	
-	$output .= gallery_slider( $gallery, $gallery_id, 7, '', '' );
+	$output .= gallery_slider( $gallery, $gallery_id, 7, '', 'ar-trigger' );
 					
 	// Close the .image_slider, .post_gallery, and .post_gallery_wrapper
 	$output .= "</div></div>";

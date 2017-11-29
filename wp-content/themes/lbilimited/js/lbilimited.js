@@ -626,23 +626,34 @@ function next_trigger_id(id, imgClass){
 }
 
 // Function to handle when a slideshow gallery image is clicked to show the full aspect ratio of the image
-var slideShowImage = jQuery('.image_viewer');
+var slideShowImage = jQuery('.ar-trigger');
 	
 slideShowImage.click(function(){
-	var activeImage = jQuery(this).find('#gallery_full'),
+	
+	var activeImage = jQuery(this).find('img'),
 		imageWidth = activeImage.get(0).naturalWidth,
 		imageHeight = activeImage.get(0).naturalHeight,
 		imagePadding = ( imageHeight / imageWidth ) * 100,
+		imageContainerClass = jQuery(this).data('image')['img_class'],
+		imageContainer = jQuery('.image_viewer.image_viewer-' + imageContainerClass),
 		initialPadding = "45%";
+
+
+		console.log(imageContainer);
+
+		imageContainer.css('paddingBottom',  imagePadding + '%');
+
+		
+		
 			
 		if( ! jQuery(this).hasClass('show_full') ){
-			this.style.paddingBottom = imagePadding + '%';
-			jQuery(this).addClass('show_full');
-			jQuery('span.click_message').text('Click to crop image');
+			
+			// jQuery(this).addClass('show_full');
+			// jQuery('span.click_message').text('Click to crop image');
 		}else {
-			this.style.paddingBottom = initialPadding;
-			jQuery(this).removeClass('show_full');
-			jQuery('span.click_message').text('Click to view full image');
+			// this.style.paddingBottom = initialPadding;
+			// jQuery(this).removeClass('show_full');
+			// jQuery('span.click_message').text('Click to view full image');
 
 		}
 });
