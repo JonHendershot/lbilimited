@@ -1178,3 +1178,6 @@ function word_in_array($str, array $arr)
     }
     return false;
 }
+
+// disable jetpack og meta tags
+add_filter( 'jetpack_enable_open_graph', '__return_false' );
