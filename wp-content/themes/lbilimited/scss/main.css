@@ -10621,6 +10621,12 @@ body.single .content_container {
     font-weight: 300;
     max-width: 920px;
     margin: 0 auto; }
+    @media (min-width: 900px) {
+      body.single .content_container .content_wrapper {
+        padding: 0px 70px; } }
+    @media (min-width: 1300px) {
+      body.single .content_container .content_wrapper {
+        padding: 0px; } }
 
 body.single .posts-navigation {
   width: 100%;
