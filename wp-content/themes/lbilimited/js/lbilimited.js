@@ -1999,14 +1999,16 @@ function ppNextField(currentFieldID, nextFieldID){
 (function vhFix($){
 	var vhItem = $('.vhfix');
 	
-	vhItem.each(function(){
-		var height = $(this).height();
-		console.log(height);
-		
-		$(this).css({'height' : height});
-	});
+	if(isMobile){
+		vhItem.each(function(){
+			var height = $(this).height();
+			console.log(height);
+			
+			$(this).css({'height' : height});
+		});
+	}
+	
 }(jQuery));
-
   /////////////////////
  // Offering Filter //
 /////////////////////
