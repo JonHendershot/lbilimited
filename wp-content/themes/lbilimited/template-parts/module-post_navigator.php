@@ -6,17 +6,21 @@
 							if($post_type == 'offerings'){
 								if(has_term('current-offerings','offering_type')){
 									$slug = 'current-offerings';
+									$post_label = 'Current Offerings';
 								}else 
 								if( has_term('past-offerings','offering_type')){
 									$slug = 'past-offerings';
+									$post_label = 'Past Offerings';
 								}
 								
 							}else 
 							if($post_type == 'collection'){
 								$slug = 'lbi-collection';
+								$post_label = 'Collection';
 							}else {							
 								$post_page = get_archive_page_num( $post->ID );
 								$slug = "in-the-news/page/$post_page/";
+								$post_label = 'Posts';
 							}
 							
 							$archive_link = home_url() . "/$slug";
@@ -40,7 +44,7 @@
 								  		echo '<a class="posts-nav-link disabled" disabled>Previous Post</a>';
 							  		}
 							  		
-							  		echo "<a href='$archive_link#post-$anchor' class='btn s_btn black'>Back to Archive</a>";
+							  		echo "<a href='$archive_link#post-$anchor' class='btn s_btn black'>Back to $post_label</a>";
 							  		
 							  		if($next_post){
 								  		// Variables 

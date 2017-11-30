@@ -332,10 +332,9 @@ function lbi_single_gallery( $atts ){
 							<img data-src='$first_image' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='$first_alt' class='full_res visible lazy-load' id='gallery_full' />
 							<img src='$first_blur' class='blur_image visible' />
 							$loading_animation
-							<span class='click_message'>Click to view full image</span>
 						</div>";
 	
-	$output .= gallery_slider( $gallery, $gallery_id, 7, '', '' );
+	$output .= gallery_slider( $gallery, $gallery_id, 7, '', 'ar-trigger' );
 					
 	// Close the .image_slider, .post_gallery, and .post_gallery_wrapper
 	$output .= "</div></div>";
@@ -1179,48 +1178,5 @@ function word_in_array($str, array $arr)
     return false;
 }
 
-// notify users on vehicle submissions
-add_action('publish_post', 'lbi_notification');
-
-function lbi_notification( $post_id ) {
-	global $wpdb;
-	
-	$year = get_field('year', $post_id);
-	$make = get_field('make', $post_id);
-	$model = get_field('model', $post_id);
-	$url = get_the_permalink( $post_id );
-	
-	$notification_requests = $wpdb->get_results("SELECT * FROM `wp_lbi_notify` WHERE `vehicle_year` = '$year' AND `vehicle_make` = '$make' AND `vehicle_model` = '$model'");
-	
-	foreach($notification_requests as $request){
-		
-		$vehicle_year = $request->vehicle_year;
-		$vehicle_make = $request->vehicle_make;
-		$vehicle_model = $request->vehicle_model;
-	
-		$name = $request->name;
-		$email = $request->email;
-		$subject = "$vehicle_year $vehicle_make $vehicle_model - LBI Limited";
-	
-		$headers = array(
-			"Sender: noreply@lbilimited.com",
-			"From: LBI Limited <info@lbilimited.com>",
-			"Reply-To: LBI Limited <info@lbilimited.com>",
-			"To: $name <$email>"
-		);
-	
-		$message = "Hi $name, \n
-		You requested that we give you a heads up when we get our hands on a $vehicle_year $vehicle_make $vehicle_model. Well, today is your lucky day! Check out the vehicle we just posted at the link below. If it's something you'd be interested in, you can reach out to us by simply replying to this email!\n
-		\n
-		$url \n
-		\n
-		Sincerely,\n
-		The LBI Limited Team";
-	
-		$mailer = wp_mail($email, $subject,$message, $headers);
-	
-		echo "<pre>";
-		print_r($mailer . ' ' . $email);
-		echo "</pre>";
-	}
-}
+// disable jetpack og meta tags
+add_filter( 'jetpack_enable_open_graph', '__return_false' );

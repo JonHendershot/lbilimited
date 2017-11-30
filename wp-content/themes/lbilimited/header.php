@@ -28,6 +28,22 @@
 	}else {
 		$hide_header = '';
 	}
+
+	// Set preview image and meta information variables
+	if( get_field('featured_image') ) :
+		$og_image_ob = get_field('featured_image');
+		$og_image = $og_image_ob['sizes']['large'];
+
+
+	elseif( get_the_post_thumbnail_url( 'large' ) !== null ) :
+		$og_image = get_the_post_thumbnail_url( $post->ID, 'large' );
+
+	else :
+		$home_id = get_option('page_on_front');
+		$og_image = get_the_post_thumbnail_url( $home_id, 'large' );
+		
+	endif;
+
 	
 // Firs time visitor cookie
 	$first_visit = !isset( $_COOKIE["firstVisit"] );
@@ -38,6 +54,9 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="<?= $post->post_title; ?>" />
+	<meta property="og:url" content="<?= get_the_permalink(); ?>" />
+	<meta property="og:image" content="<?= $og_image; ?>" />
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	
 	<?php wp_head(); ?>

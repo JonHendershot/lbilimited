@@ -626,23 +626,34 @@ function next_trigger_id(id, imgClass){
 }
 
 // Function to handle when a slideshow gallery image is clicked to show the full aspect ratio of the image
-var slideShowImage = jQuery('.image_viewer');
+var slideShowImage = jQuery('.ar-trigger');
 	
 slideShowImage.click(function(){
-	var activeImage = jQuery(this).find('#gallery_full'),
+	
+	var activeImage = jQuery(this).find('img'),
 		imageWidth = activeImage.get(0).naturalWidth,
 		imageHeight = activeImage.get(0).naturalHeight,
 		imagePadding = ( imageHeight / imageWidth ) * 100,
+		imageContainerClass = jQuery(this).data('image')['img_class'],
+		imageContainer = jQuery('.image_viewer.image_viewer-' + imageContainerClass),
 		initialPadding = "45%";
+
+
+		console.log(imageContainer);
+
+		imageContainer.css('paddingBottom',  imagePadding + '%');
+
+		
+		
 			
 		if( ! jQuery(this).hasClass('show_full') ){
-			this.style.paddingBottom = imagePadding + '%';
-			jQuery(this).addClass('show_full');
-			jQuery('span.click_message').text('Click to crop image');
+			
+			// jQuery(this).addClass('show_full');
+			// jQuery('span.click_message').text('Click to crop image');
 		}else {
-			this.style.paddingBottom = initialPadding;
-			jQuery(this).removeClass('show_full');
-			jQuery('span.click_message').text('Click to view full image');
+			// this.style.paddingBottom = initialPadding;
+			// jQuery(this).removeClass('show_full');
+			// jQuery('span.click_message').text('Click to view full image');
 
 		}
 });
@@ -859,20 +870,24 @@ function showNextSlide(nextID){
 (function offering_video($){
 	$('.offering, .lbi_media_container .grid-item').hover(function(){
 		if( $(this).hasClass('video') ){
-			var video = $(this).find('video').get(0);
+			var video = $(this).find('video');
 			
-			video.play();
-			console.log('play video');
+			video.get(0).play();
+			video.addClass('visible');
+			
 		}
 		
 	},function(){
 		
 		if( $(this).hasClass('video') ){
-			var video = $(this).find('video').get(0);
+			var video = $(this).find('video');
 			
-			video.pause();
-			video.currentTime = 0;
-			console.log('pause video');
+			video.removeClass('visible');
+			setTimeout( function(){
+				video.get(0).pause();
+				video.get(0).currentTime = 0;
+			}, 600);
+			
 		}
 	});
 }(jQuery));
@@ -1984,14 +1999,16 @@ function ppNextField(currentFieldID, nextFieldID){
 (function vhFix($){
 	var vhItem = $('.vhfix');
 	
-	vhItem.each(function(){
-		var height = $(this).height();
-		console.log(height);
-		
-		$(this).css({'height' : height});
-	});
+	if(isMobile){
+		vhItem.each(function(){
+			var height = $(this).height();
+			console.log(height);
+			
+			$(this).css({'height' : height});
+		});
+	}
+	
 }(jQuery));
-
   /////////////////////
  // Offering Filter //
 /////////////////////

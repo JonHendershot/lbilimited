@@ -9,6 +9,8 @@
 				$approved_overlay = get_field('lbi_approved');
 				$options = get_option('lbilimited_options');
 				$approved_image = $options['lbi_approved'];
+				$sold_image = $options['sold_img'];
+				
 				
 				
 				// grab the featured file information to dynamically generate display markup
@@ -42,10 +44,10 @@
 			// Markup for offering display
 ?>				
 				<article class="<?php echo $offer_class; ?>">
-					<?php if($sold_overly == 'on') : ?>
-						<div class="sold_overlay">sold</div>
-					<?php endif; ?>
 					<a href="<?php the_permalink(); ?>" id="<?php echo "post-$post_id"; ?>">
+					<?php if($sold_overly == 'on') : ?>
+						<img src="<?= $sold_image; ?>" class="sold-overlay">
+					<?php endif; ?>
 					<div class="offering-data dash-title">
 						<div class="offering-meta">
 							<h2><?php echo $title; ?></h2>
@@ -81,7 +83,7 @@
 						if($featured_video){
 							// Display Video Background
 						?>
-							<video class="<?php echo $media_class; ?>" controls>
+							<video class="<?php echo $media_class; ?>">
 								<source src="<?php echo $file_url; ?>" type="<?php echo $featured_type; ?>" />
 							</video>
 						<?php
