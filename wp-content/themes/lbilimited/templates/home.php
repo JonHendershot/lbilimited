@@ -72,6 +72,11 @@
 					array(
 						'taxonomy' => 'offering_type',
 						'terms' => $tax_id	
+					),
+					array(
+						'taxonomy' => 'offering_type',
+						'terms' => 265,
+						'operator' => 'NOT IN'
 					)
 				)
 			);
