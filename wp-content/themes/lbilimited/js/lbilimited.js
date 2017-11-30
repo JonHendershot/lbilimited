@@ -870,20 +870,24 @@ function showNextSlide(nextID){
 (function offering_video($){
 	$('.offering, .lbi_media_container .grid-item').hover(function(){
 		if( $(this).hasClass('video') ){
-			var video = $(this).find('video').get(0);
+			var video = $(this).find('video');
 			
-			video.play();
-			console.log('play video');
+			video.get(0).play();
+			video.addClass('visible');
+			
 		}
 		
 	},function(){
 		
 		if( $(this).hasClass('video') ){
-			var video = $(this).find('video').get(0);
+			var video = $(this).find('video');
 			
-			video.pause();
-			video.currentTime = 0;
-			console.log('pause video');
+			video.removeClass('visible');
+			setTimeout( function(){
+				video.get(0).pause();
+				video.get(0).currentTime = 0;
+			}, 600);
+			
 		}
 	});
 }(jQuery));

@@ -83,7 +83,7 @@
 						if($featured_video){
 							// Display Video Background
 						?>
-							<video class="<?php echo $media_class; ?>" controls>
+							<video class="<?php echo $media_class; ?>">
 								<source src="<?php echo $file_url; ?>" type="<?php echo $featured_type; ?>" />
 							</video>
 						<?php
