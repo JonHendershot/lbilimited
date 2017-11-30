@@ -11519,6 +11519,12 @@ body.single .contact_form:after {
     -o-transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
     transition: all 1000ms cubic-bezier(0.375, 0.005, 0, 1);
     /* custom */ }
+    @media (min-width: 900px) {
+      .post_wrapper article.post_content {
+        padding: 0px 70px; } }
+    @media (min-width: 1300px) {
+      .post_wrapper article.post_content {
+        padding: 0px; } }
     .post_wrapper article.post_content.waypoint {
       opacity: 0;
       /* 			@include prefix(transform, translateY(15px)); */ }

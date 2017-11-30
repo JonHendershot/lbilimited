@@ -1076,6 +1076,12 @@ body.single {
 		opacity: 1;
 // 		@include prefix(transform, translateY(0px));
 		@include easeout(1000ms);
+		@media (min-width: 900px){
+			padding: 0px 70px;
+		}
+		@media(min-width: 1300px){
+			padding: 0px;
+		}
 		
 		&.waypoint {
 			opacity: 0;
