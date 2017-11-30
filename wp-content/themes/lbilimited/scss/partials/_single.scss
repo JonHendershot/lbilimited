@@ -200,7 +200,12 @@
 		    text-transform: uppercase;
 		    font-weight: bold;
 		    transition-delay: 3300ms;
-		    @include transition(0.8s, opacity, ease-in-out);
+			@include transition(0.8s, opacity, ease-in-out);
+			@media(max-width: 900px){
+				font-size: 120px;
+				line-height: 120px;
+				left: 0;
+			}
 	}
 	.document_links {
 		@include flexbox(flex-start,flex-start);
@@ -214,6 +219,9 @@
 		list-style: none;
 		padding: 0;
 		padding-left: 25px;
+		@media(max-width:900px){
+			width: 90%;
+		}
 		li {
 			position: relative;
 			margin: 5px 0;
@@ -229,6 +237,9 @@
 				top: 18px;
 				left: -25px;
 				margin: auto;
+				@media(max-width: 900px){
+					top: 8px;
+				}
 			}
 			
 			&:hover {
@@ -243,6 +254,10 @@
 			font-weight: 700;
 			text-align: left;
 			line-height: 45px;
+			@media(max-width: 900px){
+				font-size: 18px;
+				line-height: 20px;
+			}
 		}
 	}
 	&.visible {
