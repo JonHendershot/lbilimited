@@ -351,7 +351,7 @@ function LBI_register_settings()
 	    add_settings_field( 'LBI_f_email', 'Footer Email Address', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_footer_section', $field_args );
     
     
-	////////////////////////////////////
+		////////////////////////////////////
     // - - - - SEARCH OPTIONS - - - - /
     //////////////////////////////////
 	
@@ -382,7 +382,7 @@ function LBI_register_settings()
 		    add_settings_field( 'results_frame', 'Search Results Framing', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_search_section', $field_args );
 		    
     
-	 ///////////////////////////////////
+	 	 ///////////////////////////////////
     // - - - ERROR 404 OPTIONS - - - //
    ///////////////////////////////////
    
@@ -414,9 +414,9 @@ function LBI_register_settings()
 	
 	
 	
-    ////////////////////////////////////
-    // - - - - MISCELLANEOUS - - - - //
-    //////////////////////////////////
+      ///////////////////////////////////
+     // - - - - MISCELLANEOUS - - - - //
+    ///////////////////////////////////
     
     
 	    // Offering Contact Form
@@ -473,7 +473,19 @@ function LBI_register_settings()
 		
 		    add_settings_field( 'lbi_approved', 'LBI Approved Image', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_misc_section', $field_args );    
 	
+		// Sold Overlay .png File
+			$field_args = array(
+				'type'      => 'text',
+				'id'        => 'sold_img',
+				'name'      => 'sold_img',
+				'desc'      => '<input data-category="sold_img" class="left-float image-trigger" type="button" value="Upload Image"><p>Icon to display over Sold Offerings, if applicable</p>',
+				'std'       => '',
+				'label_for' => 'sold_img',
+				'class'     => ' left-float header_image sold_img'
+			);
 
+			add_settings_field( 'sold_img', 'Sold Overlay Icon', 'LBI_display_setting', 'lbilimited_options.php', 'LBI_misc_section', $field_args );
+			
 }
 
 	/**

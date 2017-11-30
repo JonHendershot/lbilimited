@@ -8311,6 +8311,15 @@ section.notify_me_container {
       font-weight: 300;
       padding: 10px 30px 10px 33px; }
 
+.sold-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 9999; }
+
 .page-template-archive-lbi_media .header-content .main-btn {
   position: absolute;
   bottom: -40%;
@@ -11538,22 +11547,6 @@ body.single .contact_form:after {
               z-index: 1; }
             .post_wrapper article.post_content .post_gallery_wrapper .post_gallery .image_viewer img.full_res {
               z-index: 4; }
-          .post_wrapper article.post_content .post_gallery_wrapper .post_gallery .image_viewer:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: block;
-            z-index: 9;
-            background-color: rgba(0, 0, 0, 0.35);
-            -webkit-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
-            -moz-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
-            -o-transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
-            transition: all 600ms cubic-bezier(0.375, 0.005, 0, 1);
-            /* custom */
-            opacity: 0; }
           .post_wrapper article.post_content .post_gallery_wrapper .post_gallery .image_viewer span.click_message {
             position: absolute;
             top: 0;
