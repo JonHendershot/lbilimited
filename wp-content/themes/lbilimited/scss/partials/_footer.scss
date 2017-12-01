@@ -1,4 +1,6 @@
 .site-footer {
+	position: relative;
+	z-index: 9;
 	.featured-posts {
 		@include flexbox(center,center);
 		

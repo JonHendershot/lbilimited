@@ -900,8 +900,7 @@ body.single {
 		position: relative;
 		$containerSpacing: 140px;
 		
-		&:before {
-			
+		&:before {	
 			content: "";
 			width: 110%;
 			position: absolute;
@@ -910,7 +909,9 @@ body.single {
 			@include prefix(transform, skewY(-$skew_deg));
 			@include calc(height, "100% + "$containerSpacing);
 			background-color: $white;
-
+		}
+		&.past-offering-details-container:before {
+			@include calc(height, "100% + 100px + "$containerSpacing);				
 		}
 		
 		.offering_details_wrapper {

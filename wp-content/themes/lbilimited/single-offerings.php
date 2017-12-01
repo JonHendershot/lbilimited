@@ -7,6 +7,13 @@
 		wp_reset_query();
 	
 	// Get and store page content
+
+		// Offering Types
+		$terms = get_the_terms($post->ID, 'offering_type');
+		$types = array();
+		foreach($terms as $type){
+			$types[] = $type->term_id;
+		}
 	
 		// Galleries
 		
@@ -323,7 +330,7 @@
 
 	<section id="offering_content">
 		<?php echo vehicle_details(); ?>
-		<div class="offering_details_container">
+		<div class="offering_details_container <?= (in_array('265', $types)) ? 'past-offering-details-container' : '' ?>">
 			<div class="offering_details_wrapper">
 				<h4 class="tilt_title">Details</h4>
 				<div class="content_container">
@@ -338,6 +345,7 @@
 	<?php
 		// Build an array for the form information and
 		// Call the custom function from functions.php to build the contact form section
+		if( !in_array('265',$types) ) : // do not show contact section for past offerings
 			$form_array = array();
 			$form_array[] = array(
 				'title' => 'offering_contact general_contact',
@@ -345,6 +353,7 @@
 			);
 			
 			lbi_contact($form_array, 'contact');
+		endif;
 	
 	
 
