@@ -1999,7 +1999,7 @@ function ppNextField(currentFieldID, nextFieldID){
 (function vhFix($){
 	var vhItem = $('.vhfix');
 	
-	if(isMobile){
+	if(mobile()){
 		vhItem.each(function(){
 			var height = $(this).height();
 			console.log(height);
