@@ -1,4 +1,8 @@
-## 11-30-2017 - v1.0.2
+## 12-05-2017 - v1.1.1
+### CHANGED
+- Fix isMobile function that breaks certain js triggers
+
+## 11-30-2017 - v1.1.0
 ### CHANGED:
 - Update Plugins
 - Add category labels to footer 'back to' navigation on single pages
