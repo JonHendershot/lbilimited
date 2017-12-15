@@ -1311,6 +1311,9 @@ function lazyLoader(img){
 				
 				if(img.is('img')){
 					img.attr('src',src); 
+					if(!img.parent().hasClass('blur_img')){
+						img.parent().find('.blur_img').addClass('hidden');
+					}	
 				}
 				if( img.is('div') ){
 					img.attr('style','background-image: url(' + src + ')');
