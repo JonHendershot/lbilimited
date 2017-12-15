@@ -62,11 +62,7 @@
 						<?php if($approved_overlay) : ?>
 							<img src="<?= $approved_image; ?>" class="lbi-approved" />
 						<?php endif; ?>
-						<div class="placeholder">
-							<img class="waypoint" data-padding="100" src="<?php echo get_template_directory_uri() . '/inc/images/icon_placeholder.png'; ?>" />
-						</div>
-						
-					<?php
+						<?php
 						
 						if($featured_image){
 							
