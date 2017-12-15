@@ -2,6 +2,7 @@
 ### CHANGED:
 - Hide blur_img on offering pages after image is loaded
 - Add timestamp to ajax query url
+- Switch post population to full ajax
 
 ## 12-05-2017 - v1.1.1
 ### CHANGED
