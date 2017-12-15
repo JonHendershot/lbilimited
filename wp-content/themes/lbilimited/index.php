@@ -20,11 +20,13 @@
 		if ( have_posts() ) :
 
 		// Post Loop
-			while ( have_posts() ) : the_post();
+			// while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/module', 'post_loop' );
+			// 	get_template_part( 'template-parts/module', 'post_loop' );
 
-			endwhile;
+			// endwhile;
+
+			echo "<div class='loading_notification' id='post-loader'>Loading posts...</div>";
 
 // 			get_template_part('template-parts/module', 'page_navigator');			
 			

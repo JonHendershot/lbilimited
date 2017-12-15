@@ -7598,6 +7598,14 @@ body.blog #content {
     justify-content: center;
     -webkit-justify-content: center;
     flex-wrap: wrap; }
+    body.blog #content section.archive-wrapper .loading_notification {
+      opacity: 1;
+      color: #fff;
+      letter-spacing: 1px;
+      font-weight: 100;
+      transition: 0.4s opacity ease-in-out; }
+      body.blog #content section.archive-wrapper .loading_notification.hidden {
+        opacity: 0; }
     body.blog #content section.archive-wrapper .wrapper.no-content {
       width: 65%;
       margin: 25px auto;
@@ -8156,6 +8164,10 @@ section.offerings-container article.offering {
 						background-color: $black;
 					}
 */ }
+    section.offerings-container article.offering .media_wrapper .blur_img.hidden {
+      opacity: 0;
+      visibility: hidden;
+      display: none; }
     section.offerings-container article.offering .media_wrapper .blur_img:after {
       content: "";
       position: absolute;

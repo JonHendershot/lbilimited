@@ -14,6 +14,18 @@ body.blog {
 			background-size: 76%;
 			background-position: center top;
 			margin: 30px 0;
+
+			.loading_notification {
+				opacity: 1;
+				color: $white;
+				letter-spacing: 1px;
+				font-weight: 100;
+				transition: 0.4s opacity ease-in-out;
+
+				&.hidden {
+					opacity: 0;
+				}
+			}
 			
 			// Using a flexbox will remove potential margin collapses on this wrapper's child elements
 			@include flexbox(center,center);
