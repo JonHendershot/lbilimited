@@ -10,6 +10,7 @@
 			'query': load_more_params.posts,
 			'page' : load_more_params.current_page
 		},
+			timestamp = Date.now(),
 			archiveOffset = $('#archive-wrapper').offset().top,
 			archiveBottomOffset = archiveOffset + $('#archive-wrapper').height() - $(window).height(); // subtract window height to detect when the bottom of the wrapper will hit the botom of viewport, not top
 // 		console.log( 'Scrolled: ' +  $(document).scrollTop() + ' | Archive Bottom: ' + archiveBottomOffset );
@@ -20,7 +21,7 @@
 			$('#archive-wrapper .loading_notification').removeClass('hidden');
 			
 			$.ajax({
-				url : load_more_params.ajaxurl,
+				url : load_more_params.ajaxurl + '?' + timestamp,
 				data:data,
 				type:'POST',
 				beforeSend: function( xhr ){
