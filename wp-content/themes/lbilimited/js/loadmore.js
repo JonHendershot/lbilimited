@@ -34,7 +34,7 @@
 					$('#archive-wrapper .loading_notification').addClass('hidden');
 	
 					if( data ) {
-						$('#archive-wrapper').find('article:last-of-type').after( data ); // where to insert posts
+						$('#archive-wrapper').find('#post-loader').before( data ); // where to insert posts
 						canBeLoaded = true; // the ajax is completed, now we can run it again
 						load_more_params.current_page++;	
 						

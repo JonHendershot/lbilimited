@@ -16,30 +16,30 @@
 		$category_id = $category_list[$category];
 	
 	// Now let's set up our loop
-		$args = array(
-			'post_type' => 'offerings',
-			'orderby' => 'menu_order',
-			'order' => 'ASC',
-			'tax_query' => array(
-				array(
-					'taxonomy' => 'offering_type',
-					'terms' => $category_id	
-				)
-			)
-		);
-		$query = new WP_Query( $args );
+		// $args = array(
+		// 	'post_type' => 'offerings',
+		// 	'orderby' => 'menu_order',
+		// 	'order' => 'ASC',
+		// 	'tax_query' => array(
+		// 		array(
+		// 			'taxonomy' => 'offering_type',
+		// 			'terms' => $category_id	
+		// 		)
+		// 	)
+		// );
+		// $query = new WP_Query( $args );
 		
 	// Begin Loop
-		while( $query->have_posts() ) : $query->the_post(); 
+	// 	while( $query->have_posts() ) : $query->the_post(); 
 		
-			get_template_part('template-parts/module', 'offerings_loop');
+	// 		get_template_part('template-parts/module', 'offerings_loop');
 	
-	// End Loop
+	// // End Loop
 
-		endwhile;
-		wp_reset_query();
+	// 	endwhile;
+	// 	wp_reset_query();
 ?>
-	<div class="loading_notification hidden">
+	<div class="loading_notification hidden" id="post-loader">
 		<div class="loading_info">
 			<?php get_template_part('template-parts/module', 'loader'); ?>
 			<p>Loading more posts</p>

@@ -968,7 +968,7 @@ function ajax_load_more() {
 	wp_localize_script( 'load_more', 'load_more_params', array(
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
 		'posts' => serialize( $q->query_vars ), // everything about your loop is here
-		'current_page' => $q->query_vars[ 'paged' ] ? $q->query_vars[ 'paged' ] : 1,
+		'current_page' => $q->query_vars[ 'paged' ] ? $q->query_vars[ 'paged' ] : 0,
 		'max_page' => $q->max_num_pages
 	) );
  
