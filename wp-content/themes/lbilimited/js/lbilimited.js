@@ -845,16 +845,17 @@ function showNextSlide(nextID){
 }(jQuery));
 
 (function offering_video($){
-	$('.offering, .lbi_media_container .grid-item').hover(function(){
+	$(document).on('mouseenter','.offering, .lbi_media_container .grid-item', function(){
 		if( $(this).hasClass('video') ){
 			var video = $(this).find('video');
+			console.log('get video');
 			
 			video.get(0).play();
 			video.addClass('visible');
 			
 		}
 		
-	},function(){
+	}).on('mouseleave','.offering, .lbi_media_container .grid-item',function(){
 		
 		if( $(this).hasClass('video') ){
 			var video = $(this).find('video');
