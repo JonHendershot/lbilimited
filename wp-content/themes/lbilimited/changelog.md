@@ -1,3 +1,8 @@
+## 12-14-2017 - v1.1.2
+### CHANGED:
+- Hide blur_img on offering pages after image is loaded
+- Add timestamp to ajax query url
+
 ## 12-05-2017 - v1.1.1
 ### CHANGED
 - Fix isMobile function that breaks certain js triggers
