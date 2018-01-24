@@ -29,8 +29,8 @@
 						// If we're on the first or last page, we need to disable the 
 						// appropriate navigation button, so we'll check that logic here
 						// and change the variable accordingly
-							$next_post = get_next_post();	
-							$prev_post = get_previous_post();
+							$next_post = get_next_post( true, '', 'offering_type');	
+							$prev_post = get_previous_post( true, '', 'offering_type');
 								
 							// Only export page navigations if we have more than one page					
 							echo "<div class='posts-navigation waypoint' data-padding='20'>";
