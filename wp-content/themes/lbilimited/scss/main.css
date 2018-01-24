@@ -11646,6 +11646,48 @@ body.single .contact_form:after {
       width: 80%;
       padding-bottom: 45vw; }
 
+.detail-repeater-container {
+  margin: 35px 0;
+  display: block; }
+
+.repeater-detail {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  align-items: flex-start;
+  -webkit-align-items: flex-start;
+  justify-content: space-between;
+  -webkit-justify-content: space-between; }
+  @media (max-width: 600px) {
+    .repeater-detail {
+      flex-direction: column; } }
+
+.repeater-detail__title {
+  border-top: 2px solid #191B1C;
+  padding-top: 5px;
+  width: 30%;
+  margin-right: 5%;
+  flex-shrink: 0; }
+  @media (max-width: 600px) {
+    .repeater-detail__title {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 10px; } }
+  .repeater-detail__title .detail-title {
+    font-family: "open_sans", sans-serif;
+    text-transform: uppercase;
+    color: #191B1C;
+    margin: 0; }
+
+.repeater-detail__content {
+  flex-shrink: 1;
+  flex-grow: 1; }
+  @media (min-width: 600px) {
+    .repeater-detail__content {
+      border-top: 1px solid #191B1C;
+      padding: 0px 15px; } }
+
 .search_results {
   max-width: 1000px;
   margin: 0 auto;

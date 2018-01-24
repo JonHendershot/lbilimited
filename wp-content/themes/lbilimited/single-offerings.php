@@ -8,6 +8,9 @@
 	
 	// Get and store page content
 
+		// Details Repeater
+		$details = get_field('details');
+		
 		// Offering Types
 		$terms = get_the_terms($post->ID, 'offering_type');
 		$types = array();
@@ -335,7 +338,34 @@
 				<h4 class="tilt_title">Details</h4>
 				<div class="content_container">
 					<div class="content_wrapper">
-						<?php the_content(); ?>
+						<?php the_content();
+							
+							if( $details ) : ?>
+							<div class="detail-repeater-container">
+							<?php
+/*
+							echo "<pre>";
+								print_r($details); 
+							echo "</pre>";
+							exit;
+*/
+								foreach ($details as $detail) :
+									$title = $detail['detail_title'];
+									$description = $detail['detail_content'];
+							?>
+								<div class="repeater-detail">
+									<div class="repeater-detail__title">
+										<h4 class="detail-title"><?= $title; ?></h4>
+									</div>
+									<div class="repeater-detail__content">
+										<?= $description; ?>
+									</div>
+								</div>
+							
+							<?php endforeach; ?>
+							</div>
+							<?php endif; ?>
+						
 						<?php get_template_part('template-parts/module','post_navigator'); ?>
 					</div>
 				</div>
@@ -355,58 +385,6 @@
 			lbi_contact($form_array, 'contact');
 		endif;
 	
-	
-
-	  ///////////////////////////////////
-	 // / /     ARRAY TESTING     / / //
-	///////////////////////////////////
-	
-// 		echo "<pre>";
-/*
-		print_r( $exterior_glam );
-		print_r( $interior_glam );
-		print_r( $engine_bay_glam );
-		print_r( $trunk_space_glam );
-		print_r( $exterior_reg );
-		print_r( $interior_reg );
-		print_r( $engine_bay_reg );
-		print_r( $trunk_space_reg );
-		print_r( $underside_reg );
-*/
-
-/* 			print_r($photos); */
-
-
-	
-		// Example: loop through a photos['category']
-/*
-				$loop_number = 0;
-				foreach($photos['glams'] as $key=>$glam){
-					echo "<h3> $key </h3>";
-					 
-					foreach($glam as $id=>$photo){
-						
-						$url = $photo['sizes']['medium'];
-						$cat = strtolower( str_replace(" ", "_", $key) );
-						$slug = "$cat-$id";
-						
-						if($loop_number <= 6){
-							$image = "<img src='$url' />";
-						}else {
-							$image = "<img src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' data-src='$url' class='lazy-load' />";
-						}
-						
-						
-						echo "<h4> $slug </h4>";
-						echo $image;
-						
-						$loop_number++;
-					}
-					
-				}
-*/			
-/* 		echo "</pre>"; */
-
 
 	// Invoke site footer
 		get_footer();
