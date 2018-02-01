@@ -1,3 +1,7 @@
+## 01-31-2018 - v1.2.0
+### CHANGED: 
+- Add detail repeater feature
+
 ## 12-14-2017 - v1.1.2
 ### CHANGED:
 - Hide blur_img on offering pages after image is loaded
