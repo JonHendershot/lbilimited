@@ -1239,3 +1239,24 @@ body.single {
 		padding: 0px 15px;
 	}
 }
+.rdetail-content__title {
+	font-family: $body-font;
+	font-weight: 600;
+	text-transform: capitalize;
+	color: $blog_body;
+	margin: 13px 0 0;
+	font-size: 13px;
+}
+.rdetail-content:not(:last-child) {
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 12px;
+}
+.rdetail-content {
+	padding: 3px 0 10px;
+	p {
+		margin: 10px 0;
+		font-size: 13px;
+		color: $body-font;
+	}
+	
+}

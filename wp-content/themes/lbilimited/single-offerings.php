@@ -8,8 +8,17 @@
 	
 	// Get and store page content
 
-		// Details Repeater
+		// Details Repeater -- may need this for backwards compatibility
 		$details = get_field('details');
+		
+		// Details Flexible Content
+		$vehicle_details = array();
+		$vehicle_details['exterior'] = get_field('exterior');
+		$vehicle_details['interior'] = get_field('interior');
+		$vehicle_details['engine_bay_and_trunk'] = get_field('engine_bay_and_trunk');
+		$vehicle_details['mechanicals'] = get_field('mechanicals');
+		$vehicle_details['driving_experience'] = get_field('driving_experience');
+		$vehicle_details['custom_field'] = get_field('custom_field');
 		
 		// Offering Types
 		$terms = get_the_terms($post->ID, 'offering_type');
@@ -345,20 +354,34 @@
 							<?php
 /*
 							echo "<pre>";
-								print_r($details); 
+								print_r($vehicle_details); 
 							echo "</pre>";
 							exit;
 */
-								foreach ($details as $detail) :
-									$title = $detail['detail_title'];
-									$description = $detail['detail_content'];
+								foreach ($vehicle_details as $key=>$items) :
+									$title = $key;
 							?>
 								<div class="repeater-detail">
 									<div class="repeater-detail__title">
-										<h4 class="detail-title"><?= $title; ?></h4>
+										<h4 class="detail-title"><?= str_replace('_', ' ', $title); ?></h4>
 									</div>
+
 									<div class="repeater-detail__content">
-										<?= $description; ?>
+										<?php foreach ($items as $detail) :
+											$detail_title = trim(str_replace("_", " ", $detail['acf_fc_layout']));
+											$detail_key = $detail['acf_fc_layout'] . '_content';
+											$detail_content = trim($detail[$detail_key]);
+											$display_headline = isset($detail['display_headline']) ? $detail['display_headline'] : true;
+										?>
+										<div class="rdetail-content">
+											<?php if (!empty($detail_title) && $display_headline) : ?>
+												<h5 class="rdetail-content__title"><?= $detail_title; ?></h5>
+											<?php endif; ?>
+											<?php if (!empty($detail_content)) : ?>
+												<div class="rdetail-content__desc"><?= $detail_content; ?></div>
+											<?php endif; ?>
+										</div>
+										<?php endforeach; ?>
 									</div>
 								</div>
 							
