@@ -364,14 +364,14 @@
 							if( !empty($vehicle_details) ) : ?>
 							<div class="detail-repeater-container">
 							<?php
-/*
-							echo "<pre>";
-								print_r($vehicle_details); 
-							echo "</pre>";
-							exit;
-*/
+
+							// echo "<pre>";
+							// 	print_r($vehicle_details); 
+							// echo "</pre>";
+							// exit;
+
 								foreach ($vehicle_details as $key=>$items) :
-									$title = $key;
+									$title = $key !== 'custom_field' ? $key : get_field('custom_repeater_section_title');
 							?>
 								<div class="repeater-detail">
 									<div class="repeater-detail__title">
@@ -380,7 +380,7 @@
 
 									<div class="repeater-detail__content">
 										<?php foreach ($items as $detail) :
-											$detail_title = trim(str_replace("_", " ", $detail['acf_fc_layout']));
+											$detail_title = $detail['acf_fc_layout'] !== 'custom_field' ? trim(str_replace("_", " ", $detail['acf_fc_layout'])) : $detail['custom_field_title'];
 											$detail_key = $detail['acf_fc_layout'] . '_content';
 											$detail_content = trim($detail[$detail_key]);
 											$display_headline = isset($detail['display_headline']) ? $detail['display_headline'] : true;
