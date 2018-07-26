@@ -9,16 +9,28 @@
 	// Get and store page content
 
 		// Details Repeater -- may need this for backwards compatibility
-		$details = get_field('details');
+		// $details = get_field('details');
 		
 		// Details Flexible Content
 		$vehicle_details = array();
-		$vehicle_details['exterior'] = get_field('exterior');
-		$vehicle_details['interior'] = get_field('interior');
-		$vehicle_details['engine_bay_and_trunk'] = get_field('engine_bay_and_trunk');
-		$vehicle_details['mechanicals'] = get_field('mechanicals');
-		$vehicle_details['driving_experience'] = get_field('driving_experience');
-		$vehicle_details['custom_field'] = get_field('custom_field');
+		if (get_field('exterior')) {
+			$vehicle_details['exterior'] = get_field('exterior');
+		}
+		if (get_field('interior')) {
+			$vehicle_details['interior'] = get_field('interior');
+		}
+		if (get_field('engine_bay_and_trunk')) {
+			$vehicle_details['engine_bay_and_trunk'] = get_field('engine_bay_and_trunk');
+		}
+		if (get_field('mechanicals')) {
+			$vehicle_details['mechanicals'] = get_field('mechanicals');
+		}
+		if (get_field('driving_experience')) {
+			$vehicle_details['driving_experience'] = get_field('driving_experience');
+		}
+		if (get_field('custom_field')) {
+			$vehicle_details['custom_field'] = get_field('custom_field');
+		}
 		
 		// Offering Types
 		$terms = get_the_terms($post->ID, 'offering_type');
@@ -349,7 +361,7 @@
 					<div class="content_wrapper">
 						<?php the_content();
 							
-							if( $details ) : ?>
+							if( !empty($vehicle_details) ) : ?>
 							<div class="detail-repeater-container">
 							<?php
 /*
